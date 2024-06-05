@@ -1,0 +1,39 @@
+.background_dark {
+    background:#BFBBA8;
+}
+.background_light {
+    background:#ECE9DB;
+}
+.background_main {
+    background:#F5F3E8;
+}
+
+.primery_dark {
+    background: #DFC45C;
+}
+.primery_light {
+    background: #FCDE3A;
+}
+.primery_main {
+    background: #FFEA7B;
+}
+
+.text_dark {
+ color: #645F4D;
+}
+.text_light {
+    color: #ACA99D;
+}
+.text_main {
+    color: #221D17;
+}
+
+.error_dark {
+   color: #C62828;
+}
+.error_light {
+   color:#EF5350;
+}
+.error_main {
+   color: #D32F2F;
+}

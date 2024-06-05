@@ -1,0 +1,109 @@
+.footer-section{
+    height: 522px;
+    background-color: #221D17;
+    background-image:url(/wp-content/themes/balace/img/icon/footer-bg.webp);
+    background-repeat:no-repeat;
+    background-position: 100%  0%;
+    border-radius: 40px 40px 0 0;
+  }
+  
+  .footer-content {
+    padding-top: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: #fff;
+  }
+  
+  .footer__item {
+    max-width: 146px;
+   width: 100%;
+  }
+  
+  .footer__list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer__list-item {
+    margin-bottom: 24px;
+  }
+  .footer__item--contact {
+    max-width: 41%;
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+  }
+  .footer__item--contact a {
+    color: #FFFFFF;
+  }
+  .footer__item--contact a:nth-child(2){
+    margin-top: 72px;
+  }
+  .footer__item--contact a:nth-child(3){
+    margin-top: 12px;
+  }
+  .footer__item_document {
+    margin-right: 200px;
+  }
+  .footer__list.first-item > li:nth-child(2) > a { 
+    display: flex;
+    align-items: center;
+  }
+.footer__list.first-item > li:nth-child(2) > a:after{
+    content: "";
+    display: block;
+    width: 14px;
+    height: 14px;
+    background:url(/wp-content/themes/balace/img/icon/arrow-white.svg);
+    background-repeat:no-repeat;
+    margin-left: 9px;
+    margin-top: 5px;
+  }
+  
+  .footer__link {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer__item--bottom {
+    margin-top: 103px;
+    width: 100%;
+    display:flex;
+    justify-content: flex-start;
+    align-items:center;
+  }
+  .footer__bottom-logo {
+    max-width: 120px;
+    height: 32px;
+    margin-right: 100px;
+  }
+  .footer__bottom-center{
+        display:flex;
+        justify-content: space-between;
+        align-items:flex-end;
+        height:32px;
+        margin-right: 160px;
+  }
+  .footer__bottom-center a {
+    color: #FFFFFF;
+    margin-right: 49px;
+  }
+  .footer__bottom-right {
+    width: 42%;
+    display:flex;
+    justify-content: space-between;
+    align-items:flex-end;
+    height:32px;
+  }
+  .footer__bottom-right a {
+    color: #FFFFFF;
+  }
+  .footer__bottom-right p {
+    color: #FFFFFF;
+    margin-right: 49px;
+  }
+  .footer__developer img {
+    transform: translate(10px,10px);
+  }

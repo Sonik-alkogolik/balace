@@ -1,0 +1,77 @@
+
+/* ............. Button ............ */
+
+.btn_go_catalog {
+    max-width: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Manrope", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    text-align: center;
+  }
+  
+  .btn_header_menu {
+    width: 52px;
+    height: 52px;
+    background: url(/wp-content/themes/balace/img/icon/header_menu.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+  }
+  
+  .btn_header_menu:hover {
+    width: 52px;
+    height: 52px;
+    background: url(/wp-content/themes/balace/img/icon/header_menu_hover.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+  }
+  .btn_header_menu.menu_clouse {
+    width: 52px;
+    height: 52px;
+    background: url(/wp-content/themes/balace/img/icon/clouse_menu.webp);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+  }
+  
+  .btn_add-to-wishlist {
+    width: 52px;
+    height: 52px;
+    background: url(/wp-content/themes/balace/img/icon/icon_wishlist_header.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+  }
+  
+  .btn_add-to-wishlist:hover {
+    width: 52px;
+    height: 52px;
+    background: url(/wp-content/themes/balace/img/icon/icon_wishlist_header_hover.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .btn_add-to-cart {
+    width: 52px;
+    height: 52px;
+    background: url(/wp-content/themes/balace/img/icon/iacon_basket_header.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+  }
+  
+  .btn_add-to-cart:hover {
+    width: 52px;
+    height: 52px;
+    background: url(/wp-content/themes/balace/img/icon/iacon_basket_header_hover.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+  }

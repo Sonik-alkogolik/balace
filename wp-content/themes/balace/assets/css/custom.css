@@ -1,0 +1,188 @@
+@import url('../css/layouts/header.css');
+@import url('../css/layouts/footer.css');
+@import url('../css/layouts/btn.css');
+@import url('../css/layouts/color.css');
+body,
+span,
+p,
+a,
+ul,
+li,
+button {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #FFFFFF;
+  overflow: hidden;
+}
+a {
+  cursor: pointer;
+}
+
+/* ............. font-family ............ */
+
+
+.h1 {
+  font-family: "Manrope", sans-serif;
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 84.02px;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+
+.h2 {
+  font-family: "Manrope", sans-serif;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 72px;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+
+.h3 {
+  font-family: "Manrope", sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 56.02px;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+
+.h4 {
+  font-family: "Manrope", sans-serif;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 41.99px;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+
+.h5 {
+  font-family: "Manrope", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32.02px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+.h6 {
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+.subtitle1 {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+.subtitle2 {
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.8px;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+
+.body1 {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  text-align: left;
+}
+
+.body2 {
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.6px;
+  letter-spacing: 0.04em;
+  text-align: left;
+}
+
+.caption {
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 15.6px;
+  letter-spacing: 0.04em;
+  text-align: left;
+}
+
+.overline {
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 14.4px;
+  letter-spacing: 0.05em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+
+/* ....... block elements ......*/
+
+section {
+  width: 1440px;
+    padding-left: 70px; /* (1440px - 1300px) / 2 */
+    padding-right: 70px; /* (1440px - 1300px) / 2 */
+    box-sizing: border-box; /* Включает padding в общую ширину */
+    margin: 0 auto;
+}
+
+.container {
+  width: 100%;
+}
+
+@media(max-width:1200px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+
+@media(max-width:520px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
+
+
