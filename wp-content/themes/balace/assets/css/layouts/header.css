@@ -36,13 +36,13 @@ header {
     cursor: pointer;
     margin-right: 180px;
 }
-.header-search::after{
+.header-search::after {
     content: '';
     width: 28px;
     height: 28px;
     display: flex;
-    background:url(/wp-content/themes/balace/img/icon/icon-search.svg);
-    background-repeat:no-repeat;
+    background: url('/wp-content/themes/balace/img/icon/icon-search.svg');
+    background-repeat: no-repeat;
     background-size: 100% 100%;
     padding-right: 38px;
 }
@@ -51,8 +51,8 @@ header {
     width: 28px;
     height: 28px;
     display: flex;
-    background:url(/wp-content/themes/balace/img/icon/icon-search-hover.svg);
-    background-repeat:no-repeat;
+    background: url('/wp-content/themes/balace/img/icon/icon-search-hover.svg');
+    background-repeat: no-repeat;
     background-size: 100% 100%;
     padding-right: 38px;
 }
@@ -72,6 +72,7 @@ header {
 }
 .header-link-pages a{
     margin-right: 24px;
+    
 }
 
 .header-product-actions .btn_add-to-wishlist {
@@ -136,17 +137,16 @@ header {
     display: flex;
     align-items: center;
 }
-.header-catalog-item.catalog-menu nav ul li:nth-child(1):after{
+.header-catalog-item.catalog-menu nav ul li:nth-child(1)::after {
     content: "";
     width: 14px;
     height: 14px;
     display: block;
-    background:url(/wp-content/themes/balace/img/icon/icon_arrow_catalog.svg);
-    background-repeat:no-repeat;
+    background: url('/wp-content/themes/balace/img/icon/icon_arrow_catalog.svg');
+    background-repeat: no-repeat;
     background-size: 100% 100%;
     margin-left: 12px;
 }
-
 
 .action-content {
     position: relative;

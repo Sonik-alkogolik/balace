@@ -1,12 +1,12 @@
-.footer-section{
-    height: 522px;
-    background-color: #221D17;
-    background-image:url(/wp-content/themes/balace/img/icon/footer-bg.webp);
-    background-repeat:no-repeat;
-    background-position: 100%  0%;
-    border-radius: 40px 40px 0 0;
-  }
-  
+.footer-section {
+  height: 522px;
+  background-color: #221D17;
+  background-image: url('/wp-content/themes/balace/img/icon/footer-bg.webp');
+  background-repeat: no-repeat;
+  background-position: 100% 0%;
+  border-radius: 40px 40px 0 0;
+}
+
   .footer-content {
     padding-top: 70px;
     display: flex;
@@ -55,7 +55,7 @@
     display: block;
     width: 14px;
     height: 14px;
-    background:url(/wp-content/themes/balace/img/icon/arrow-white.svg);
+    background-image: url('/wp-content/themes/balace/img/icon/arrow-white.svg');
     background-repeat:no-repeat;
     margin-left: 9px;
     margin-top: 5px;

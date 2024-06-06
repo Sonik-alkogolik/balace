@@ -1,7 +1,7 @@
-@import url('../css/layouts/header.css');
-@import url('../css/layouts/footer.css');
-@import url('../css/layouts/btn.css');
-@import url('../css/layouts/color.css');
+@import url('./layouts/header.css');
+@import url('./layouts/footer.css');
+@import url('./layouts/btn.css');
+@import url('./layouts/color.css');
 body,
 span,
 p,
@@ -31,12 +31,12 @@ h6 {
   margin: 0;
 }
 
-body {
-  background: #FFFFFF;
-  overflow: hidden;
-}
 a {
   cursor: pointer;
+}
+
+body {
+  background-color:#FFFFFF;
 }
 
 /* ............. font-family ............ */
@@ -157,6 +157,13 @@ a {
 .show {
   display: block;
 }
+
+/* .arrow_circle_white {
+  width: 52px;
+  height: 52px;
+  background:url(/img/icon/arrow_circle_white.webp);
+  background-repeat:no-repeat;
+} */
 
 /* ....... block elements ......*/
 
