@@ -4,7 +4,6 @@
     height: 770px;
     border-bottom: 1px solid rgba(191, 187, 168, 0.4);
     border-radius: 32px;
-    margin-bottom: 72px;
     background: #ffffff;
 }
 .home-page-top-content {
@@ -216,7 +215,6 @@
     padding-top: 54px;
     padding-bottom: 54px;
     border-radius: 20px;
-    margin-bottom:96px;
 }
 
 .promotional-item {
@@ -253,6 +251,7 @@
 }
 .promotional-slider-content p {
     width: 68%;
+    height: 60px;
   margin-top: 8px;
   margin-left: 16px;
   margin-bottom: 38px;
@@ -285,4 +284,61 @@
 }
 .promotional-button-next {
     margin-right: 12px;
+}
+
+
+/* .......... advantages ..........*/
+.advantages{
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+    height: 848px;
+}
+.advantages-title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 24px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.advantages-content-block {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background:url('/wp-content/themes/balace/img/advantages-bg.png');
+    background-repeat:no-repeat;
+    background-size: 505px 543px;
+    background-position:top center;
+}
+.advantages-content-item {
+    max-width: 290px;
+    width: 100%;
+    position: absolute;
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+} 
+.advantages-content-item img {
+    margin-bottom: 16px;
+}
+.advantages-content-item:nth-child(1) {
+    top:0px
+}
+.advantages-content-item:nth-child(2) {
+    bottom: 210px;
+    left: 110px;
+}
+.advantages-content-item:nth-child(3) {
+    right: 0;
+    top: 55px;
+    max-width: 308px;
+    width: 100%;
+}
+.advantages-content-item:nth-child(4) {
+    right: 50px;
+    bottom: 115px;
+    max-width: 371px;
+    width: 100%;
 }

@@ -1,13 +1,12 @@
-
 /* ............. Button ............ */
 
 .btn_go_catalog {
     max-width: 300px;
     width: 100%;
     height: 68px;
-    display:flex;
+    display: flex;
     justify-content: space-between;
-    align-items:center;
+    align-items: center;
     font-family: "Manrope", sans-serif;
     font-size: 20px;
     font-weight: 600;
@@ -16,9 +15,11 @@
     text-align: center;
     border-radius: 100px;
 }
+
 .btn_go_catalog span {
     padding-left: 20px;
 }
+
 .btn_go_catalog:after {
     content: '';
     width: 52px;
@@ -34,29 +35,30 @@
 }
 
 .btn_brand_products_black {
-    display:flex;
+    display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     background: #000000;
-    color:#FFEA7B;
+    color: #FFEA7B;
     border-radius: 100px;
     padding: 16px 24px;
 }
 
 .btn_brand_products_black:hover {
     background: #DFC45C;
-    color:#FFFFFF;
+    color: #FFFFFF;
 }
 
 .btn_brand_products_light {
-    display:flex;
+    display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     background: #ECE9DB;
     color: #221D17;
     border-radius: 100px;
     padding: 16px 24px;
-} 
+}
+
 .btn_brand_products_light:hover {
     background: #BFBBA8;
 }
@@ -65,15 +67,15 @@
     max-width: 90px;
     width: 100%;
     height: 48px;
-    display:flex;
+    display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     background: #FFFFFF;
     border-radius: 100px;
 }
 
 .btn_ozon_white:after {
-    content:'';
+    content: '';
     width: 42px;
     height: 16px;
     display: flex;
@@ -83,7 +85,7 @@
 }
 
 .btn_ozon_white:hover:after {
-    content:'';
+    content: '';
     width: 42px;
     height: 10px;
     display: flex;
@@ -91,6 +93,7 @@
     background-repeat: no-repeat;
     background-size: contain;
 }
+
 .btn_ozon_white:hover {
     background: #0259FF;
 }
@@ -99,9 +102,9 @@
     max-width: 114px;
     width: 100%;
     height: 48px;
-    display:flex;
+    display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     background: #FFFFFF;
     border-radius: 100px;
 }
@@ -111,7 +114,7 @@
 }
 
 .btn_wild_white:after {
-    content:'';
+    content: '';
     width: 75px;
     height: 16px;
     display: flex;
@@ -119,11 +122,13 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .btn_wild_white:hover {
     background: linear-gradient(90deg, #C30EA8 0%, #560F79 100%);
 }
+
 .btn_wild_white:hover:after {
-    content:'';
+    content: '';
     width: 75px;
     height: 16px;
     display: flex;
@@ -150,6 +155,7 @@
     background-size: cover;
     cursor: pointer;
 }
+
 .btn_header_menu.menu_clouse {
     width: 52px;
     height: 52px;
@@ -176,19 +182,40 @@
     background-size: cover;
 }
 
-.btn_add-to-cart {
+.btn_add_to_basket {
     width: 52px;
     height: 52px;
-    background: url('/wp-content/themes/balace/img/icon/iacon_basket_header.webp');
+    background: url('/wp-content/themes/balace/img/icon/icon_add_product.svg');
     background-repeat: no-repeat;
     background-size: cover;
     cursor: pointer;
 }
 
-.btn_add-to-cart:hover {
+.btn_add_to_basket:hover {
     width: 52px;
     height: 52px;
-    background: url('/wp-content/themes/balace/img/icon/iacon_basket_header_hover.webp');
+    background: url('/wp-content/themes/balace/img/icon/icon_add_product_hover.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.woocommerce a.button.btn_add_to_basket {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
+    background: url('/wp-content/themes/balace/img/icon/icon_add_product.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.woocommerce a.button.btn_add_to_basket:hover {
+    width: 52px;
+    height: 52px;
+    background: url('/wp-content/themes/balace/img/icon/icon_add_product_hover.svg');
     background-repeat: no-repeat;
     background-size: cover;
     cursor: pointer;
@@ -205,6 +232,7 @@
     background-size: 100% 100%;
     cursor: pointer;
 }
+
 .btn_slider_right {
     width: 52px;
     height: 52px;
@@ -215,4 +243,49 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
     cursor: pointer;
+}
+
+
+.btn_basket {
+    width: 52px;
+    height: 52px;
+    background: url('/wp-content/themes/balace/img/icon/iacon_basket_header.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.btn_basket:hover {
+    width: 52px;
+    height: 52px;
+    background: url('/wp-content/themes/balace/img/icon/iacon_basket_header_hover.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart:before {
+    content: '';
+}
+
+.tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart.no-txt {
+    position: absolute;
+    top: 20px;
+    right: 84px;
+    margin: 0;
+    width: 52px;
+    height: 52px;
+    background-color:#FFFFFF;
+    background: url('/wp-content/themes/balace/img/icon/icon_wishlist_catalog.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart:hover {
+    width: 52px;
+    height: 52px;
+    background: url('/wp-content/themes/balace/img/icon/icon_wishlist_header_hover.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
 }

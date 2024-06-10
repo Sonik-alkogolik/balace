@@ -12,9 +12,8 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-
-<section>
-        <div class="container">
+<div class="container">
+<section class="header-section">
             <div class="header-wrapp">
                 <header>
                     <div class="logo">
@@ -28,12 +27,12 @@
                             <input type="text" placeholder="быстрый и удобный поиск"> 
                     </div>
                     <div class="header-link-pages">
-                        <a class="subtitle2" href="">О нас</a>
-                        <a class="subtitle2" href="">Сравнение товаров</a>
+                        <a class="subtitle2 text_main" href="">О нас</a>
+                        <a class="subtitle2 text_main" href="">Сравнение товаров</a>
                     </div>
                     <div class="header-product-actions">
                         <button class="btn_add-to-wishlist"></button>
-                        <button class="btn_add-to-cart"></button>
+                        <button class="btn_basket"></button>
                       </div>
                 </header>
                 <div class="header-catalog background_main hide">
@@ -84,7 +83,6 @@
                       </div>
                 </div>
             </div>
-        </div>
 </section>
 
 

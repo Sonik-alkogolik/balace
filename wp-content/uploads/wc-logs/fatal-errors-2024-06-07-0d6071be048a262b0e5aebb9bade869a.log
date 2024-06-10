@@ -1,0 +1,60 @@
+2024-06-07T10:28:19+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\catalog-product.php:44
+Stack trace:
+#0 [internal function]: {closure}()
+#1 C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\catalog-product.php(45): array_map()
+#2 C:\OSPanel\domains\balace\wp-includes\template.php(785): require('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\balace\wp-includes\template.php(718): load_template()
+#4 C:\OSPanel\domains\balace\wp-includes\general-template.php(204): locate_template()
+#5 C:\OSPanel\domains\balace\wp-content\themes\balace\pages\home_page.php(15): get_template_part()
+#6 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#7 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#8 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#9 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\catalog-product.php на строке 44
+
+2024-06-07T10:29:50+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\catalog-product.php:44
+Stack trace:
+#0 [internal function]: {closure}()
+#1 C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\catalog-product.php(45): array_map()
+#2 C:\OSPanel\domains\balace\wp-includes\template.php(785): require('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\balace\wp-includes\template.php(718): load_template()
+#4 C:\OSPanel\domains\balace\wp-includes\general-template.php(204): locate_template()
+#5 C:\OSPanel\domains\balace\wp-content\themes\balace\pages\home_page.php(15): get_template_part()
+#6 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#7 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#8 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#9 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\catalog-product.php на строке 44
+
+2024-06-07T11:05:24+00:00 CRITICAL Unclosed '{' on line 206 в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 218
+
+2024-06-07T11:05:25+00:00 CRITICAL Unclosed '{' on line 206 в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 218
+
+2024-06-07T13:42:03+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "custom_product_attribute_type" not found or invalid function name in C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#1 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\templates\content-product.php(57): do_action()
+#3 C:\OSPanel\domains\balace\wp-includes\template.php(785): require('C:\\OSPanel\\doma...')
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(284): load_template()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-products.php(660): wc_get_template_part()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-products.php(100): WC_Shortcode_Products->product_loop()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(283): WC_Shortcode_Products->get_content()
+#8 C:\OSPanel\domains\balace\wp-includes\shortcodes.php(355): WC_Shortcodes::products()
+#9 [internal function]: do_shortcode_tag()
+#10 C:\OSPanel\domains\balace\wp-includes\shortcodes.php(227): preg_replace_callback()
+#11 C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\catalog-product.php(5): do_shortcode()
+#12 C:\OSPanel\domains\balace\wp-includes\template.php(785): require('C:\\OSPanel\\doma...')
+#13 C:\OSPanel\domains\balace\wp-includes\template.php(718): load_template()
+#14 C:\OSPanel\domains\balace\wp-includes\general-template.php(204): locate_template()
+#15 C:\OSPanel\domains\balace\wp-content\themes\balace\pages\home_page.php(15): get_template_part()
+#16 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#17 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#18 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#19 {main}
+  thrown в C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php на строке 308
+
+2024-06-07T13:48:26+00:00 CRITICAL Cannot redeclare custom_woocommerce_template_loop_product_image() (previously declared in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:219) в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 244
+
+2024-06-07T13:48:27+00:00 CRITICAL Cannot redeclare custom_woocommerce_template_loop_product_image() (previously declared in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:219) в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 244
+

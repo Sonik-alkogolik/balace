@@ -1,5 +1,4 @@
 <section class="footer-section">
-    <div class="container">
           <footer class="footer">
             <div class="footer-content">
            <div class="footer__item">
@@ -41,7 +40,6 @@
               <p class="footer__copyright caption">© Все права защищены 2024 balace</p>
               <a href="#" class="footer__developer caption">Разработка сайта <img src="<?php echo get_template_directory_uri(); ?>/img/logo-jamit.png" alt=""></a>
             </div>
-        </div>
     </footer>
   </div>
 </section>

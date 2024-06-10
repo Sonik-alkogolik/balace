@@ -1,5 +1,4 @@
 <section>
-        <div class="container">
             <div class="home-page-top-content">
             <div class="top-content-block1">
                 <div class="top-content-item-wrapp">
@@ -50,5 +49,4 @@
             </a>
           </div>
           </div>
-        </div>
     </section>

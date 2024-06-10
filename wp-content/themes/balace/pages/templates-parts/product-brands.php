@@ -1,5 +1,5 @@
 <section>
-            <div class="container">
+
                 <div class="product-brands-container">
                     <div class="product-brands-item" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/home-page/brand_box_bg.webp');
                     background-repeat:no-repeat;
@@ -38,6 +38,6 @@
                      </div>
                     </div>
                     </div>
-                </div>
-            </div>
+              
+         
         </section>

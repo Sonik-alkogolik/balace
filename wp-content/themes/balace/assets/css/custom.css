@@ -169,24 +169,32 @@ body {
 
 section {
   width: 1440px;
-    padding-left: 70px; /* (1440px - 1300px) / 2 */
-    padding-right: 70px; /* (1440px - 1300px) / 2 */
-    box-sizing: border-box; /* Включает padding в общую ширину */
+    padding-left: 70px; 
+    padding-right: 70px; 
+    box-sizing: border-box;
     margin: 0 auto;
+    margin-bottom: 96px;
 }
-
+.section-marquee {
+  width: 100%;
+  padding: 0;
+}
+.header-section {
+  margin-bottom: 40px;
+}
 .container {
   width: 100%;
 }
 
+
 @media(max-width:1200px) {
-  .container {
+  section {
     padding: 0 24px;
   }
 }
 
 @media(max-width:520px) {
-  .container {
+  section {
     padding: 0 16px;
   }
 }

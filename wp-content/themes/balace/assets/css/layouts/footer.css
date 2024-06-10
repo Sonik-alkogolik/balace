@@ -1,10 +1,12 @@
 .footer-section {
+  width: 100%;
   height: 522px;
   background-color: #221D17;
   background-image: url('/wp-content/themes/balace/img/icon/footer-bg.webp');
   background-repeat: no-repeat;
   background-position: 100% 0%;
   border-radius: 40px 40px 0 0;
+  margin-bottom: 0px;
 }
 
   .footer-content {

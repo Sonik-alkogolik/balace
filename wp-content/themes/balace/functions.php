@@ -177,6 +177,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 
+add_theme_support( 'woocommerce' );
 
 function my_theme_enqueue_styles_scripts() {
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap', array(), null);
@@ -185,8 +186,10 @@ function my_theme_enqueue_styles_scripts() {
 	wp_enqueue_style('btn-style', get_template_directory_uri() . '/assets/css/layouts/btn.css');
 	wp_enqueue_style('header-style', get_template_directory_uri() . '/assets/css/layouts/header.css');
 	wp_enqueue_style('footer-style', get_template_directory_uri() . '/assets/css/layouts/footer.css');
+	wp_enqueue_style('catalog-style', get_template_directory_uri() . '/assets/css/layouts/catalog-product.css');
     wp_enqueue_script('jquery');
     wp_enqueue_script('header-script', get_template_directory_uri() . '/assets/js/header.js');
+	
 
 
 
@@ -195,10 +198,93 @@ function my_theme_enqueue_styles_scripts() {
 		wp_enqueue_style('home-style', get_template_directory_uri() . '/assets/css/pages/home-page.css');
 		wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js');
 		wp_enqueue_script('slider-prom-script', get_template_directory_uri() . '/assets/js/slider-promotional.js');
+		wp_enqueue_script('marquee-jq', get_template_directory_uri() . '/assets/js/marquee_jq.js');
+		wp_enqueue_script('marquee', get_template_directory_uri() . '/assets/js/marquee.js');
 	}
 
 }
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles_scripts');
 
- 
 
+
+
+function custom_product_loop_start() {
+    echo '<ul class="products product-main">';
+}
+add_action('woocommerce_product_loop_start', 'custom_product_loop_start', 10);
+
+
+remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
+function add_custom_class_to_product_title() {
+    echo '';
+}
+add_action('woocommerce_shop_loop_item_title', 'add_custom_class_to_product_title', 10);
+
+remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10);
+remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
+add_action('woocommerce_before_shop_loop_item_title', 'custom_woocommerce_template_loop_product_image', 10);
+add_action('woocommerce_after_shop_loop_item_title', 'custom_product_attributes', 15);
+
+function custom_woocommerce_template_loop_product_image() {
+    global $product;
+    echo '<div class="product_image_item">';
+    echo woocommerce_get_product_thumbnail();
+    echo '</div>';
+}
+
+
+function custom_product_attributes() {
+    global $product;
+    $attribute_type = $product->get_attribute('тип-товара');
+    $attribute_volume = $product->get_attribute('объём');
+    $price = $product->get_price_html();
+	if (!empty($attribute_type)) {
+        echo '<div class="product-attribute-type" title="' . esc_attr($attribute_type) . '"><p class="body2 text_main">' . esc_html($attribute_type) . '</p></div>';
+    }
+    echo '<div class="product-attribute-wrapp">';
+    echo '<h2 class="woocommerce-loop-product__title h4 text_main">' . get_the_title() . '</h2>';
+    echo '<div class="product_attribute_container" title="' . esc_attr($attribute_volume) . '">';
+	if (!empty($price)) {
+        echo '<div class="h6 text_dark" title="' . esc_attr($price) . '">' . $price . '</div>';
+    }
+	if (!empty($attribute_volume)) {
+        echo '<div class="product-attribute-value"><p class="h6 text_light">' . esc_html($attribute_volume) . '</div>';
+    }
+    echo '</div>';
+    echo '</div>';
+}
+
+add_filter( 'woocommerce_loop_add_to_cart_link', 'custom_woocommerce_loop_add_to_cart_link', 10, 3 );
+function custom_woocommerce_loop_add_to_cart_link( $button, $product, $args ) {
+    $button = preg_replace( '/>[^<]*</', '><', $button );
+    $button = str_replace( 'class="', 'class="btn_add_to_basket ', $button );
+    return $button;
+}
+
+
+add_action( 'init', 'true_register_post_type_promotions' );
+function true_register_post_type_promotions() {
+    $labels = array(
+        'name' => 'Акции',
+        'singular_name' => 'Акция',
+        'add_new' => 'Добавить акцию',
+        'add_new_item' => 'Добавить акцию',
+        'edit_item' => 'Редактировать акцию',
+        'new_item' => 'Новая акция',
+        'all_items' => 'Все акции',
+        'search_items' => 'Искать акции',
+        'not_found' => 'Акций по заданным критериям не найдено.',
+        'not_found_in_trash' => 'В корзине нет акций.',
+        'menu_name' => 'Акции'
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => false,
+        'has_archive' => false,
+        'menu_icon' => 'dashicons-admin-post',
+        'menu_position' => 2,
+		'supports' => array( 'title', 'editor', 'thumbnail' ) 
+    );
+    register_post_type( 'promotions', $args );
+}
