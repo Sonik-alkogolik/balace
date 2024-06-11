@@ -41,7 +41,7 @@
                             <div class="header-catalog-item catalog-menu">
                                 <nav>
                                     <ul>
-                                        <li>  <a   class="h5" href="">Каталог</a> </li>
+                                        <li>  <a class="h5 catalog-header" >Каталог</a> </li>
                                         <li> <a  class="h5" href=""> Акции и розыгрыши</a></li>
                                         <li> <a  class="h5" href=""> Отзывы</a></li>
                                         <li> <a  class="h5" href="">Блог</a></li>
@@ -62,6 +62,62 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="woocommerce_categories background_main hide">
+                                    <?php                                                                                                                
+                                            $categories = get_terms(array(
+                                                'taxonomy' => 'product_cat',
+                                                'hide_empty' => false,
+                                            ));
+                                            $desired_categories = array('balace', 'balace natural pharm');
+
+                                            if (!empty($categories) ) {
+                                                foreach ($categories as $category) {
+                                                    if ($category->parent == 0 && in_array($category->name, $desired_categories)) {
+                                                        echo '<div class="product_cat_item"><p>' . $category->name . '</p>';
+                                                        $subcategories = get_terms(array(
+                                                            'taxonomy' => 'product_cat',
+                                                            'hide_empty' => false,
+                                                            'parent' => $category->term_id,
+                                                        ));
+                                                        
+                                                        if (!empty($subcategories)) {
+                                                            echo '<ul class="product_cat_list">';
+                                                            foreach ($subcategories as $subcategory) {
+                                                                $subcategory_link = get_term_link($subcategory);
+                                                                echo '<li><a class="product_cat_sub_menu_active subtitle1" >' . $subcategory->name . '</a>';
+                                                                $subsubcategories = get_terms(array(
+                                                                    'taxonomy' => 'product_cat',
+                                                                    'hide_empty' => false,
+                                                                    'parent' => $subcategory->term_id,
+                                                                ));
+                                                                
+                                                                if (!empty($subsubcategories) ) {
+                                                                    echo '<ul class="header_product_cat_sub_menu hide">';
+                                                                    foreach ($subsubcategories as $subsubcategory) {
+                                                                        $subsubcategory_link = get_term_link($subsubcategory);
+                                                                        echo '<li><a class="subtitle1 text_dark" href="' . esc_url($subsubcategory_link) . '">' . $subsubcategory->name . '</a></li>';
+                                                                    }
+                                                                    echo '</ul>';
+                                                                }
+                                                                
+                                                                echo '</li>';
+                                                            }
+                                                            echo '</ul>';
+                                                        } else {
+                                                            //echo '<ul><li>Нет подкатегорий</li></ul>';
+                                                        }
+                                                        
+                                                        echo '
+                                                        <a href="" class="product_cat_item_all_category"> смотреть всё </a>
+                                                        </div>';
+                                                    }
+                                                }
+                                            } else {
+                                               // echo 'Нет категорий';
+                                            }
+                                    ?>
+                                </div>
+
                             </div>
                         </div>
                         <div class="header-catalog-info">

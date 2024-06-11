@@ -133,11 +133,11 @@ header {
 .header-catalog-item.catalog-menu nav ul li a {
     color: #221D17;
 }
-.header-catalog-item.catalog-menu nav ul li:nth-child(1) {
+.catalog-header {
     display: flex;
     align-items: center;
 }
-.header-catalog-item.catalog-menu nav ul li:nth-child(1)::after {
+.catalog-header::after {
     content: "";
     width: 14px;
     height: 14px;
@@ -147,7 +147,9 @@ header {
     background-size: 100% 100%;
     margin-left: 12px;
 }
-
+.catalog-header.catalog-link-active::after {
+    transform: rotate(270deg);
+}
 .action-content {
     position: relative;
     width: 578px;
@@ -249,4 +251,94 @@ header {
 }
 .catalog-info-link a {
     color: #ACA99D;
+}
+.woocommerce_categories {
+    position: absolute;
+    top: 60px;
+    max-width: 640px;
+    width:100%;
+    height: 562px;
+    justify-content: space-between;
+   
+}
+.product_cat_item {
+    margin-top: 20px;
+    width: 49%;
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+.product_cat_item p {
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16.8px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    color: rgba(34, 29, 23, 1);
+    margin-bottom: 24px;
+}
+.product_cat_list {
+    max-width: 252px;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+.product_cat_list li {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.header_product_cat_sub_menu {
+    margin-top: 20px;
+    margin-left: 20px;
+    flex-direction: column;
+    align-items:flex-start;
+}
+.header_product_cat_sub_menu li {
+    padding: 8px, 24px, 8px, 48px;
+}
+.product_cat_sub_menu_active {
+    position: relative;
+}
+.product_cat_sub_menu_active:after {
+    position: absolute;
+    top: 7px;
+    right: -18px;
+    content:'';
+    display:flex;
+    max-width:11px;
+    width:100%;
+    height:11px;
+    background:url('/wp-content/themes/balace/img/icon/arrow_sub_menu.webp');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
+.product_cat_sub_menu_active.active_link:after {
+    transform: rotate(270deg);
+}
+
+.product_cat_item_all_category {
+    position: relative;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.2px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    color: rgba(0, 0, 0, 1);
+}
+.product_cat_item_all_category:after {
+    position: absolute;
+    top: 4px;
+    right: -18px;
+    content:'';
+    display:flex;
+    max-width:11px;
+    width:100%;
+    height:11px;
+    background:url('/wp-content/themes/balace/img/icon/arrow_sub_menu.webp');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    transform: rotate(270deg);
 }
