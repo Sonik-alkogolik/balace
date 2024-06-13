@@ -288,3 +288,30 @@ function true_register_post_type_promotions() {
     );
     register_post_type( 'promotions', $args );
 }
+
+add_action( 'init', 'true_register_post_type_blog' );
+function true_register_post_type_blog() {
+    $labels = array(
+        'name' => 'Блог',
+        'singular_name' => 'Запись блога',
+        'add_new' => 'Добавить запись',
+        'add_new_item' => 'Добавить запись',
+        'edit_item' => 'Редактировать запись',
+        'new_item' => 'Новая запись',
+        'all_items' => 'Все записи',
+        'search_items' => 'Искать записи',
+        'not_found' => 'Записей по заданным критериям не найдено.',
+        'not_found_in_trash' => 'В корзине нет записей.',
+        'menu_name' => 'Блог'
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-admin-post',
+        'menu_position' => 5,
+        'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'author', 'comments' ),
+        'taxonomies' => array( 'category', 'post_tag' )
+    );
+    register_post_type( 'blog', $args );
+}

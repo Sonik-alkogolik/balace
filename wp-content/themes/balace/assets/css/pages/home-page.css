@@ -293,6 +293,9 @@
     flex-direction: column;
     align-items:flex-start;
     height: 848px;
+    border-radius: 20px;
+    border-top: 1px solid rgba(191, 187, 168, 1);
+    border-bottom:1px solid rgba(191, 187, 168, 1);
 }
 .advantages-title {
     width: 100%;
@@ -302,7 +305,6 @@
     justify-content: center;
     align-items:center;
 }
-
 .advantages-content-block {
     position: relative;
     width: 100%;
@@ -341,4 +343,140 @@
     bottom: 115px;
     max-width: 371px;
     width: 100%;
+}
+
+
+
+/* ............  about block ..........*/
+.about-product-wrapp {
+    width: 100%;
+    background: rgba(34, 29, 23, 1);
+    border-radius: 40px;
+    height: 653px;
+}
+.about-product-content {
+    padding: 20px;
+    display:flex;
+    justify-content: space-between;
+    align-items:flex-start;
+}
+.about-product-item {
+    width: 49%;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+
+.about-product-item.deskription a{
+    margin-top: 24px;
+    margin-bottom: 135px;
+}
+.about-product-deskription-title h3{
+    color:rgba(255, 255, 255, 1);
+    margin-bottom: 40px;
+}
+.about-product-deskription-title p{
+    color:rgba(255, 255, 255, 1);
+}
+.below_item_wrapp {
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+    align-items:flex-start;
+}
+.below_item {
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+    width: 30%;
+    color: rgba(255, 255, 255, 1);
+}
+.below_item img {
+    margin-bottom: 16px;
+}
+
+
+/* ......... blog ......... */
+
+/* Общие стили для секции и обёртки блога */
+
+
+.blog-wrapp {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 902px;
+}
+
+.blog-wrapp-item{
+    width: 49%;
+    border-radius: 40px;
+}
+
+.blog-wrapp-item.left-item .thumbnail {
+    max-width: 640px;
+    object-fit: cover;
+    width: 100%;
+    height: 670px;
+}
+
+.blog-wrapp-item.left-item a .title {
+    margin-top: 24px;
+    width: 75%;
+}
+
+.blog-wrapp-item.left-item .description {
+    margin-top: 8px;
+    width: 75%;
+}
+
+.blog-wrapp-item.left-item .publish-date {
+    margin-top: 32px;
+}
+
+
+ .blog-wrapp-item.right-item {
+    width: 49%;
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+
+.blog-wrapp-item.right-item .blog-item-title {
+    width: 100%;
+}
+.blog-wrapp-item.right-item .blog-item-title h3 {
+    margin-bottom: 32px;
+}
+.blog-news-wrapp {
+    margin-top: 203px;
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+}
+.blog-news-wrapp a{
+    width: 49%;
+
+}
+.blog-news-item {
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+.blog-news-item .title {
+    width: 100%;
+    margin-top: 24px;
+    margin-bottom: 32px;
+    color: rgba(0, 0, 0, 1);
+}
+.blog-news-item .thumbnail {
+    width: 310px;
+    height: 310px;
+    display: flex;
+    object-fit: cover;
+}
+.blog-news-item .publish-date {
+    color: rgba(0, 0, 0, 1);
 }

@@ -63,6 +63,35 @@
     background: #BFBBA8;
 }
 
+.btn_learn_more{
+    position: relative;
+     max-width: 263px;
+     width: 100%;
+     height: 68px;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     border-radius: 100px;
+     border: 1px solid rgba(172, 169, 157, 1);
+     color: rgba(172, 169, 157, 1);
+}
+.btn_learn_more:after{
+    content: "";
+    width: 52px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('/wp-content/themes/balace/img/icon/slider_arrow_right.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+.btn_learn_more:hover {
+    background: rgba(172, 169, 157, 1);
+    color:rgba(245, 243, 232, 1);
+}
+
 .btn_ozon_white {
     max-width: 90px;
     width: 100%;
