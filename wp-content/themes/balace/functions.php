@@ -200,6 +200,7 @@ function my_theme_enqueue_styles_scripts() {
 		wp_enqueue_script('slider-prom-script', get_template_directory_uri() . '/assets/js/slider-promotional.js');
 		wp_enqueue_script('marquee-jq', get_template_directory_uri() . '/assets/js/marquee_jq.js');
 		wp_enqueue_script('marquee', get_template_directory_uri() . '/assets/js/marquee.js');
+		wp_enqueue_script('faq', get_template_directory_uri() . '/assets/js/faq.js');
 	}
 
 }

@@ -214,7 +214,7 @@
     border-bottom: 1px solid rgba(191, 187, 168, 0.4);
     padding-top: 54px;
     padding-bottom: 54px;
-    border-radius: 20px;
+    border-radius: 32px;
 }
 
 .promotional-item {
@@ -293,9 +293,9 @@
     flex-direction: column;
     align-items:flex-start;
     height: 848px;
-    border-radius: 20px;
-    border-top: 1px solid rgba(191, 187, 168, 1);
-    border-bottom:1px solid rgba(191, 187, 168, 1);
+    border-radius: 32px;
+    border-top: 1px solid rgba(191, 187, 168, 0.4);
+    border-bottom:1px solid rgba(191, 187, 168, 0.4);
 }
 .advantages-title {
     width: 100%;
@@ -479,4 +479,72 @@
 }
 .blog-news-item .publish-date {
     color: rgba(0, 0, 0, 1);
+}
+
+/* ......... FAQ ........ */
+.faq-item-content span {
+    display: none;
+}
+
+.faq-wrapp {
+    width: 100%;
+    border-top: 1px solid rgba(191, 187, 168, 0.4);
+    border-radius: 32px;
+}
+.faq-content {
+    padding-top: 32px;
+    width: 100%;
+    height: 100%;
+    display:flex;
+    justify-content: space-between;
+    align-items:flex-start;
+}
+
+.faq-item.left {
+    max-width: 310px;
+    height: 168px;
+}
+.faq-item.left h3 {
+    text-align: right;
+}
+.faq-item.right {
+    max-width: 860px;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+.faq-item-content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius:92px;
+    margin-bottom: 20px;
+}
+.faq-item-content:after {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+        content:'';
+        display:flex;
+        max-width:52px;
+        width:100%;
+        height:52px;
+        background:url('/wp-content/themes/balace/img/icon/plus.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+.faq-item-content.faq-item-active:after {
+    transform: rotate(45deg);
+}
+.faq-item-content p {
+    padding-left: 35px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+.faq-item-content span {
+    padding-left: 35px;
+    padding-bottom: 35px;
 }

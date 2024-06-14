@@ -15,6 +15,7 @@ get_header();
 <?php get_template_part( 'pages/templates-parts/advantages' ); ?> 
 <?php get_template_part( 'pages/templates-parts/about-product' ); ?> 
 <?php get_template_part( 'pages/templates-parts/blog-template' ); ?> 
+<?php get_template_part( 'pages/templates-parts/FAQ' ); ?> 
 </div>
 
 
