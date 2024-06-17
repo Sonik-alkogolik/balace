@@ -2,24 +2,20 @@
           <footer class="footer">
             <div class="footer-content">
            <div class="footer__item">
-        <ul class="footer__list first-item ">
-          <li class="footer__list-item"><a  href="#" class="footer__link body2">о компании</a></li>
-          <li class="footer__list-item"><a  href="#" class="footer__link body2">каталог</a></li>
-          <li class="footer__list-item"><a  href="#" class="footer__link body2">корзина</a></li>
-          <li class="footer__list-item"><a  href="#" class="footer__link body2">избранное</a></li>
-          <li class="footer__list-item"><a  href="#" class="footer__link body2">сравнение товаров</a></li>
-          <li class="footer__list-item"><a  href="#" class="footer__link body2">оформление заказа</a></li>
-        </ul>
+           <?php
+            wp_nav_menu(array(
+                'theme_location' => 'footer-menu-left',
+                'container' => false, 
+            ));
+            ?>
            </div>
            <div class="footer__item footer__item_document">
-        <ul class="footer__list">
-          <li class="footer__list-item"><a  href="#" class="footer__link body2">документы</a></li>
-          <li class="footer__list-item"><a  href="#" class="footer__link body2">проверка лицензии</a></li>
-          <li class="footer__list-item"><a  href="#" class="footer__link body2">доставка и оплата</a></li>
-          <li class="footer__list-item"><a  href="#" class="footer__link body2">акции и розыгрыши</a></li>
-          <li class="footer__list-item"><a  href="#" class="footer__link body2">отзывы</a></li>
-          <li class="footer__list-item"><a  href="#" class="footer__link body2">блог</a></li>
-        </ul>
+           <?php
+            wp_nav_menu(array(
+                'theme_location' => 'footer-menu-left',
+                'container' => false, 
+            ));
+            ?>
            </div>
            <div class="footer__item footer__item--contact">
         <p class="h4 footer__contact-title">Свяжитесь с нами и мы решим ваши вопросы</p>

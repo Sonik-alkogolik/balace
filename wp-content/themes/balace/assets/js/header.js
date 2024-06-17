@@ -17,5 +17,17 @@
         submenu.toggleClass("hide show");
     });
 
+        var $searchButton = $('.header-search.mob');
+        $searchButton.on('click', function() {
+            $(this).toggleClass('search_mob_active');
+            $('.search-mob-wrapp').toggleClass("hide show");
+            if ($(this).hasClass('search_mob_active')) {
+              $('.header-section').css('background', 'rgba(245, 243, 232, 1)');
+          } else {
+              $('.header-section').css('background', '');
+          }
+        });
+   
+
   });
 })(jQuery);

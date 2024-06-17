@@ -522,6 +522,7 @@
     align-items: flex-start;
     border-radius:92px;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 .faq-item-content:after {
     position: absolute;

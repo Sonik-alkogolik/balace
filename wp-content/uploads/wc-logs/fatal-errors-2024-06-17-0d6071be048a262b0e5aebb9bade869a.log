@@ -1,0 +1,44 @@
+2024-06-17T11:25:26+00:00 CRITICAL Cannot redeclare add_menu_link_class() (previously declared in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:200) в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 229
+
+2024-06-17T11:25:28+00:00 CRITICAL Cannot redeclare add_menu_link_class() (previously declared in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:200) в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 229
+
+2024-06-17T11:52:24+00:00 CRITICAL Uncaught TypeError: implode(): Argument #1 ($pieces) must be of type array, string given in C:\OSPanel\domains\balace\wp-includes\class-walker-nav-menu.php:158
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-walker-nav-menu.php(158): implode()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-walker.php(147): Walker_Nav_Menu->start_el()
+#2 C:\OSPanel\domains\balace\wp-includes\class-wp-walker.php(247): Walker->display_element()
+#3 C:\OSPanel\domains\balace\wp-includes\nav-menu-template.php(616): Walker->walk()
+#4 C:\OSPanel\domains\balace\wp-includes\nav-menu-template.php(236): walk_nav_menu_tree()
+#5 C:\OSPanel\domains\balace\wp-content\themes\balace\header.php(45): wp_nav_menu()
+#6 C:\OSPanel\domains\balace\wp-includes\template.php(783): require_once('C:\\OSPanel\\doma...')
+#7 C:\OSPanel\domains\balace\wp-includes\template.php(718): load_template()
+#8 C:\OSPanel\domains\balace\wp-includes\general-template.php(48): locate_template()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\pages\home_page.php(5): get_header()
+#10 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#11 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#12 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#13 {main}
+  thrown в C:\OSPanel\domains\balace\wp-includes\class-walker-nav-menu.php на строке 158
+
+2024-06-17T12:26:15+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function add_footer_menu_classes_and_link_attributes(), 3 passed in C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php on line 310 and exactly 4 expected in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:247
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(310): add_footer_menu_classes_and_link_attributes()
+#1 C:\OSPanel\domains\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\class-walker-nav-menu.php(217): apply_filters()
+#3 C:\OSPanel\domains\balace\wp-includes\class-wp-walker.php(147): Walker_Nav_Menu->start_el()
+#4 C:\OSPanel\domains\balace\wp-includes\class-wp-walker.php(247): Walker->display_element()
+#5 C:\OSPanel\domains\balace\wp-includes\nav-menu-template.php(616): Walker->walk()
+#6 C:\OSPanel\domains\balace\wp-includes\nav-menu-template.php(236): walk_nav_menu_tree()
+#7 C:\OSPanel\domains\balace\wp-content\themes\balace\header.php(45): wp_nav_menu()
+#8 C:\OSPanel\domains\balace\wp-includes\template.php(783): require_once('C:\\OSPanel\\doma...')
+#9 C:\OSPanel\domains\balace\wp-includes\template.php(718): load_template()
+#10 C:\OSPanel\domains\balace\wp-includes\general-template.php(48): locate_template()
+#11 C:\OSPanel\domains\balace\wp-content\themes\balace\pages\home_page.php(5): get_header()
+#12 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#13 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#14 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#15 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 247
+
+2024-06-17T12:58:13+00:00 CRITICAL Cannot redeclare add_footer_menu_link_attributes() (previously declared in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:257) в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 274
+

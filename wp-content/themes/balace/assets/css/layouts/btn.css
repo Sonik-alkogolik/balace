@@ -184,6 +184,14 @@
     background-size: cover;
     cursor: pointer;
 }
+.btn_header_menu.mob {
+    width: 52px;
+    height: 52px;
+    background: url('/wp-content/themes/balace/img/icon/icon-mob-menu.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
 
 .btn_header_menu.menu_clouse {
     width: 52px;

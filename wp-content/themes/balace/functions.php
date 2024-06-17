@@ -179,6 +179,105 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 add_theme_support( 'woocommerce' );
 
+
+function top_nav_menu() {
+    register_nav_menus(
+        array(
+            'top-nav-menu' => __( 'top-nav-menu' ),
+        )
+    );
+}
+add_action( 'init', 'top_nav_menu' );
+
+function filter_class_on_li($classes, $item, $args) {
+    if($args->theme_location == 'top-nav-menu') {
+        $classes[] = 'nav-item';
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'filter_class_on_li', 1, 3);
+
+function add_menu_link_class($atts, $item, $args, $depth) {
+    static $first_item = true;
+    if ($args->theme_location == 'top-nav-menu') {
+        $classes = 'h5';
+        if ($item->title == 'Каталог') {
+            $classes .= ' catalog-header';
+        }
+        if ($first_item) {
+            $atts['href'] = '#';
+            $first_item = false;
+			$atts['class'] = $classes;
+        } else {
+            $atts['class'] = $classes;
+        }
+    }
+    return $atts;
+}
+add_filter('nav_menu_link_attributes', 'add_menu_link_class', 10, 4);
+
+function Top_bottom_Nav() {
+    register_nav_menus(
+        array(
+            'top-nav-menu' => __( 'Top Navigation Menu' ),
+            'catalog-info-menu' => __( 'Catalog Info Menu' ),
+        )
+    );
+}
+add_action( 'init', 'Top_bottom_Nav' );
+
+function add_link_class($atts, $item, $args, $depth) {
+    if ($args->theme_location == 'catalog-info-menu') {
+        $classes = 'body2';
+        $atts['class'] = $classes;
+    }
+    return $atts;
+}
+add_filter('nav_menu_link_attributes', 'add_link_class', 10, 4);
+
+function footer_menus() {
+    register_nav_menus(
+        array(
+            'footer-menu-left' => __( 'Footer Menu Left' ),
+            'footer-menu-right' => __( 'Footer Menu Right' ),
+        )
+    );
+}
+add_action( 'init', 'footer_menus' );
+
+function add_footer_menu_left_classes($classes, $item, $args, $depth) {
+    if ($args->theme_location === 'footer-menu-left') {
+        $classes[] = 'footer__list-item';
+        return $classes;
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'add_footer_menu_left_classes', 10, 4);
+
+function add_footer_menu_left_link_attributes($atts, $item, $args) {
+    if ($args->theme_location === 'footer-menu-left') {
+        $atts['class'] = 'footer__link body2';
+    }
+    return $atts;
+}
+add_filter('nav_menu_link_attributes', 'add_footer_menu_left_link_attributes', 10, 3);
+
+function add_footer_menu_right_classes($classes, $item, $args, $depth) {
+    if ($args->theme_location === 'footer-menu-right') {
+        $classes[] = 'footer__list-item';
+        return $classes;
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'add_footer_menu_right_classes', 10, 4);
+
+function add_footer_menu_right_link_attributes($atts, $item, $args) {
+    if ($args->theme_location === 'footer-menu-right') {
+        $atts['class'] = 'footer__link body2';
+    }
+    return $atts;
+}
+add_filter('nav_menu_link_attributes', 'add_footer_menu_right_link_attributes', 10, 3);
 function my_theme_enqueue_styles_scripts() {
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap', array(), null);
 	wp_enqueue_style('color-style', get_template_directory_uri() . '/assets/css/layouts/color.css');

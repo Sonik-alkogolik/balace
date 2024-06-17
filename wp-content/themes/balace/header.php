@@ -16,6 +16,7 @@
 <section class="header-section">
             <div class="header-wrapp">
                 <header>
+                    <div class="header-desktop">
                     <div class="logo">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="">
                     </div>
@@ -33,20 +34,48 @@
                     <div class="header-product-actions">
                         <button class="btn_add-to-wishlist"></button>
                         <button class="btn_basket"></button>
+                    </div>
+                    </div>
+                    <div class="header-mob">
+                    <div class="header-mob-left-item">
+                      <div class="header-menu">
+                            <button class="btn_header_menu mob">
+                            </button>
+                       </div>
+                       <div class="header-search mob">
+                    
                       </div>
-                </header>
+                      
+                      </div>
+                        <div class="logo">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="">
+                       </div>
+                       <div class="header-product-actions">
+                        <button class="btn_add-to-wishlist"></button>
+                        <button class="btn_basket"></button>
+                       </div>
+                       
+                    </div>
+                    </header>
+                 
+
+                
                 <div class="header-catalog background_main hide">
                     <div class="header-catalog-content">
                       <div class="header-catalog-wrapp">
                             <div class="header-catalog-item catalog-menu">
-                                <nav>
-                                    <ul>
-                                        <li>  <a class="h5 catalog-header" >Каталог</a> </li>
-                                        <li> <a  class="h5" href=""> Акции и розыгрыши</a></li>
-                                        <li> <a  class="h5" href=""> Отзывы</a></li>
-                                        <li> <a  class="h5" href="">Блог</a></li>
-                                    </ul>
-                                </nav>
+                            <nav>
+                                <?php
+                                wp_nav_menu(array(
+                                    'theme_location' => 'top-nav-menu',
+                                    'container' => false,
+                                    'menu_class' => 'nav-menu',
+                                    'fallback_cb' => false,
+                                    'items_wrap' => '<ul>%3$s</ul>',
+                                    'depth' => 1,
+                                ));
+                                ?>
+                            </nav>
                             </div>
                             <div class="header-catalog-item action-item ">
                                 <div class="action-content">
@@ -121,12 +150,18 @@
                             </div>
                         </div>
                         <div class="header-catalog-info">
-                                <div class="catalog-info-link">
-                                    <a class="body2" href="">доставка и оплата</a>
-                                    <a class="body2" href="">проверка лицензии</a>
-                                    <a class="body2" href="">оформление заказа</a>
-                                    <a class="body2" href="">документы</a>
-                                </div>
+                        <div class="catalog-info-link">
+                            <?php
+                            wp_nav_menu(array(
+                                'theme_location' => 'catalog-info-menu',
+                                'container' => false,
+                                'menu_class' => '', 
+                                'fallback_cb' => false,
+                                'items_wrap' => '%3$s',
+                                'depth' => 1,
+                            ));
+                            ?>
+                        </div>
                                 <div class="catalog-info-phone">
                                     <p>Телефон</p>
                                     <a class="h4" href="tel:+78432345678">+7 (843) 234 56 78</a>
@@ -139,6 +174,11 @@
                       </div>
                 </div>
             </div>
+            <div class="search-mob-wrapp hide">
+                <div class="search-mob-input-wrapp">
+                            <input type="text" placeholder="быстрый и удобный поиск"> 
+                            </div>
+                        </div>
 </section>
 
 
