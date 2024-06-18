@@ -158,12 +158,25 @@ body {
   display: flex;
 }
 
-/* .arrow_circle_white {
-  width: 52px;
-  height: 52px;
-  background:url(/img/icon/arrow_circle_white.webp);
-  background-repeat:no-repeat;
-} */
+@media(max-width:640px){
+  .h6 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .h3 {
+    font-size: 24px;
+    line-height: 32.02px;
+  }
+  .caption {
+    font-size: 12px;
+    line-height: 15.6px;
+  }
+  .body2 {
+    font-size: 14px;
+    line-height: 19.6px;
+  }
+  
+}
 
 /* ....... block elements ......*/
 
@@ -198,6 +211,11 @@ section {
   section {
     padding: 0 16px;
   }
+}
+@media(max-width:360px){
+    section {
+        padding: 0 10px;
+    }
 }
 
 
