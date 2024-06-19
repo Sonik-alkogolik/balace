@@ -547,7 +547,9 @@ header {
     .woocommerce_categories.tablet.show {
         display: flex;
     }
-   
+    .header-mob-left-item {
+        align-items: flex-start;
+    }
 }
 
 @media(max-width:1080px){
