@@ -19,10 +19,18 @@
       }
   });
 
+
+
       $(".catalog-header").click(function() {
-          $(".woocommerce_categories").toggleClass("hide show");
-          $(".catalog-header").toggleClass("catalog-link-active");
-      });
+        $(".woocommerce_categories").toggleClass("hide show");
+        $(this).toggleClass("catalog-link-active");
+        if ($(this).hasClass("catalog-link-active")) {
+            $(".catalog-menu nav ul li a").not(this).addClass("catalog-link-opacity");
+        } else {
+            $("юcatalog-menu nav ul li a").removeClass("catalog-link-opacity");
+        }
+    });
+
       $(".product_cat_sub_menu_active").click(function() {
         var submenu = $(this).next("ul.header_product_cat_sub_menu");
         $(".product_cat_sub_menu_active").not(this).removeClass("active_link");

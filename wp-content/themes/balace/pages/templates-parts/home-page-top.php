@@ -1,52 +1,53 @@
-<section>
-            <div class="home-page-top-content">
-            <div class="top-content-block1">
-                <div class="top-content-item-wrapp">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/home-page/home-page-top-img.webp" alt="Image 1">
-                <p class="caption text_main">здоровье</p>
-                </div>
+<section class="top-content-block-wrapp">
+        <div class="home-page-top-content">
+        <div class="top-content-block1">
+            <div class="top-content-item-wrapp">
+            <img src="http://balace/wp-content/themes/balace/img/home-page/home-page-top-img.webp" alt="Image 1">
+            <p class="caption text_main">здоровье</p>
             </div>
-            <div class="top-content-block2">
-                <div class="top-content-item-wrapp">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/home-page/home-page-top-img1.webp" alt="Image 2">
-                <p class="caption text_main">чистота</p>
+        </div>
+        <div class="top-content-block2">
+            <div class="top-content-item-wrapp">
+            <img src="http://balace/wp-content/themes/balace/img/home-page/home-page-top-img1.webp" alt="Image 2">
+            <p class="caption text_main">чистота</p>
+        </div>
+        </div>
+        <div class="top-content-block3">
+            <div class="top-content-item-wrapp">
+            <img src="http://balace/wp-content/themes/balace/img/home-page/home-page-top-img2.webp" alt="Image 3">
+            <p class="caption text_main">сила</p>
             </div>
+        </div>
+        <div class="top-content-block4">
+            <div class="top-content-item-wrapp">
+            <img src="http://balace/wp-content/themes/balace/img/home-page/home-page-top-img3.webp" alt="Image 4">
+            <p class="caption text_main">идеальная фигура</p>
             </div>
-            <div class="top-content-block3">
-                <div class="top-content-item-wrapp">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/home-page/home-page-top-img2.webp" alt="Image 3">
-                <p class="caption text_main">сила</p>
-                </div>
+        </div>
+        <div class="top-content-block5">
+            <div class="top-content-item-wrapp">
+            <img src="http://balace/wp-content/themes/balace/img/home-page/home-page-top-img4.webp" alt="Image 5">
+            <p class="caption text_main">витамины</p>
             </div>
-            <div class="top-content-block4">
-                <div class="top-content-item-wrapp">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/home-page/home-page-top-img3.webp" alt="Image 4">
-                <p class="caption text_main">идеальная фигура</p>
-                </div>
+        </div>
+        <div class="top-content-block6">
+            <div class="top-content-item-wrapp">
+            <img class="top-content-item-img desktop" src="http://balace/wp-content/themes/balace/img/home-page/home-page-top-img5.webp" alt="Image 6">
+            <img class="top-content-item-img mob" src="http://balace/wp-content/themes/balace/img/home-page/home-page-top-img5.png" alt="Image 6">
+            <p class="caption text_main">красота</p>
             </div>
-            <div class="top-content-block5">
-                <div class="top-content-item-wrapp">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/home-page/home-page-top-img4.webp" alt="Image 5">
-                <p class="caption text_main">витамины</p>
-                </div>
-            </div>
-            <div class="top-content-block6">
-                <div class="top-content-item-wrapp">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/home-page/home-page-top-img5.webp" alt="Image 6">
-                <p class="caption text_main">красота</p>
-                </div>
-            </div>
-            <div class="top-content-center">
-            <div class="top-content-center-item">
-                <p class="h3 text_main"> Баланс здоровья и красоты</p>
-                <img src="<?php echo get_template_directory_uri(); ?>/img/home-page/top-img-block.webp" alt="">
-                <p class="h3 text_main"> для вашего тела</p>
-           </div>
-           </div>
-           <div class="top-content-center-btn">
-            <a class="btn_go_catalog primery_main h6 text_main" href="">
-                <span>Перейти в каталог </span>    
-            </a>
-          </div>
-          </div>
-    </section>
+        </div>
+        <div class="top-content-center">
+        <div class="top-content-center-item">
+            <p class="h3 text_main"> Баланс здоровья и красоты</p>
+            <img src="http://balace/wp-content/themes/balace/img/home-page/top-img-block.webp" alt="">
+            <p class="h3 text_main"> для вашего тела</p>
+       </div>
+       </div>
+       <div class="top-content-center-btn">
+        <a class="btn_go_catalog primery_main h6 text_main" href="">
+            <span>Перейти в каталог </span>    
+        </a>
+      </div>
+      </div>
+</section>

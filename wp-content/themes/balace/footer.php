@@ -51,7 +51,7 @@
                 <div class="label">
                     <div class="label_text_bottom_mob">   
                       <a href="#" class="caption">политика конфиденциальности</a>   
-                      <a href="#" class="caption">лицензии</a>
+                      <a href="#" class="caption">лицензии</a>      
                     </div>
                    <a href="#" class="footer__developer caption">Разработка сайта <img src="<?php echo get_template_directory_uri(); ?>/img/logo-jamit.png" alt=""></a>
                </div>

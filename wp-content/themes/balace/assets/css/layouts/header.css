@@ -221,7 +221,8 @@ header {
 .header-catalog-item.catalog-menu nav ul li {
     width: 100%;
     border-radius: 32px;
-    border-bottom: 1px solid #BFBBA8;
+    border-bottom: 1px solid rgba(191, 187, 168, 0.4);
+
     padding: 12px 0 12px 12px ;
     margin-bottom: 36px;
     cursor: pointer;
@@ -471,6 +472,10 @@ header {
 }
 .content-deskription-bottom.mob a {
     color: #221D17;
+}
+
+.catalog-link-opacity {
+    opacity: 0.5; 
 }
 
 @media(max-width:1439px){
@@ -728,7 +733,7 @@ header {
         line-height: 30px;
     }
     .header-catalog.mob {
-        top: 60px;
+        top: 58px;
     }
 }
 @media(max-width:520px){

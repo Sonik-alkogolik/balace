@@ -3,7 +3,7 @@
                 <div class="product-brands-container">
                     <div class="product-brands-item" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/home-page/brand_box_bg.webp');
                     background-repeat:no-repeat;
-                    background-size: 100% 100%;">
+                    background-size: cover;">
                         <div class="product-brands-item-img">
                         <img class="logo-brand-box" src="<?php echo get_template_directory_uri(); ?>/img/home-page/iacon_logo_brand.webp">
                       </div>
@@ -21,7 +21,7 @@
                     </div>
                     <div class="product-brands-item" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/home-page/brand_box_bg1.webp');
                     background-repeat:no-repeat;
-                    background-size: 100% 100%;">
+                    background-size: cover;">
                         <div class="product-brands-item-img">
                         <img class="logo-brand-box" src="<?php echo get_template_directory_uri(); ?>/img/home-page/iacon_logo_brand_2.webp">
                       </div>
