@@ -169,6 +169,10 @@ body {
    font-size: 34px;
    line-height: 41.99px;
   }
+  .body1 {
+    font-size: 14px;
+    line-height: 19.6px;
+  }
 }
 
 @media(max-width:640px){
@@ -263,6 +267,7 @@ section {
 @media(max-width:520px) {
   section {
     padding: 0 16px;
+    margin-bottom: 32px;
   }
 }
 @media(max-width:360px){

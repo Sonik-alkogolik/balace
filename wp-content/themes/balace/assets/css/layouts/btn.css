@@ -370,6 +370,13 @@
     .tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart.no-txt {
         background: url('/wp-content/themes/balace/img/icon/icon_wishlist_catalog_mob.svg');
     }
+    .btn_learn_more {
+        height: 64px;
+    }
+    .btn_learn_more:after {
+        width: 32px;
+        height: 32px;
+    }
 }
 
 @media(max-width:480px){

@@ -17,13 +17,41 @@ if ($home_about_group) {
         <div class="about-product-item img">
             <img src="<?php echo esc_url($img); ?>" alt="">
         </div>
-        <div class="about-product-item deskription">
+        <div class="about-product-item deskription desktop">
             <div class="about-product-deskription-title">
                 <h3 class="h3"><?php echo esc_html($text_title); ?></h3>
                 <p class="body1"><?php echo esc_html($description); ?></p>
             </div>
 
             <a  class="btn_learn_more h6" href="">Узнать больше</a>
+
+            <div class="below_item_wrapp">
+            <div class="below_item">
+                <img src="<?php echo esc_url($img_below_deskription_1); ?>" alt="">
+                <p class="h6"><?php echo esc_html($text_below_description1); ?></p>
+            </div>
+            <div class="below_item">
+                <img src="<?php echo esc_url($img_below_deskription_2); ?>" alt="">
+                <p class="h6"><?php echo esc_html($text_below_description2); ?></p>
+            </div>
+            <div class="below_item">
+                <img src="<?php echo esc_url($img_below_deskription_3); ?>" alt="">
+                <p class="h6"><?php echo esc_html($text_below_description3); ?></p>
+            </div>
+            </div>
+        </div>
+        <div class="about-product-item deskription table">
+            <div class="about-deskription-block">
+            <div class="about-product-deskription-title">
+                <h3 class="h3"><?php echo esc_html($text_title); ?></h3>
+                <a  class="btn_learn_more h6" href="">Узнать больше</a>
+            </div>
+            <div class="about-product-text">
+               <p class="body1"><?php echo esc_html($description); ?></p>
+            </div>
+            </div>
+
+
 
             <div class="below_item_wrapp">
             <div class="below_item">

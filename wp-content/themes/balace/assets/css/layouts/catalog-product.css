@@ -167,7 +167,7 @@ a.button.added::after {
    margin-bottom: 24px;
 }
 
-.btn-go-catalog {
+.btn-go-catalog-product-block {
     width: 100%;
     height: 110px;
     display: flex;
@@ -175,6 +175,15 @@ a.button.added::after {
     justify-content: center;
     border-radius: 100px;
     border: 1px solid rgba(236, 233, 219, 1);
+}
+.btn-go-catalog-product-block a {
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -296,6 +305,9 @@ a.button.added::after {
     }
     .woocommerce ul.products li.product a img {
         max-height: 100px;
+    }
+    .btn-go-catalog-product-block {
+        height: 56px;
     }
     
 }
