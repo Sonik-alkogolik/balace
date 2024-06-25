@@ -379,6 +379,12 @@
     }
 }
 
+@media(max-width:520px){
+    .btn_learn_more {
+        height: 44px;
+    }
+}
+
 @media(max-width:480px){
     .btn_ozon_white {
         max-width: 82px;

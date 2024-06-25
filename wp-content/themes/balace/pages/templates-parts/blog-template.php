@@ -1,5 +1,8 @@
 <section>
     <div class="blog-wrapp">
+        <div class="blog-item-title mob">
+                        <h3 class="h3">Блог</h3>
+                    </div>
         <?php
         $args_first_post = array(
             'post_type' => 'blog',
@@ -11,10 +14,15 @@
             while ($query_first_post->have_posts()) : $query_first_post->the_post();
                 ?>
                  <div class="blog-wrapp-item left-item">
-                  <a href="<?php echo esc_url(get_permalink()); ?>" class="post-link">
+                   <div class="blog-item-title tablet">
+                        <h3 class="h3">Блог</h3>
+                        <a class="btn_learn_more h6" href="<?php the_permalink(); ?>">Узнать больше</a>
+                     </div>
+                     <a href="<?php echo esc_url(get_permalink()); ?>" class="post-link">
                         <div class="thumbnail">
                             <?php the_post_thumbnail(); ?>
                         </div>
+                        <div class="blog-wrapp-item-content-tablet">
                         <div class="title">
                             <h4 class="h4 text_main"><?php the_title(); ?></h4>
                         </div>
@@ -24,24 +32,25 @@
                         <div class="publish-date h6 text_main ">
                             <?php echo get_the_date(); ?>
                         </div>
-                    </a>
+                        </div>
+                       </a>
                     </div>
             <?php
             endwhile;
             wp_reset_postdata();
         endif;
         ?>
- <div class="blog-wrapp-item right-item">
-                    <div class="blog-item-title">
+        <div class="blog-wrapp-item right-item">
+                    <div class="blog-item-title desktop">
                         <h3 class="h3">Блог</h3>
                         <a class="btn_learn_more h6" href="<?php the_permalink(); ?>">Узнать больше</a>
                     </div>
                
-        <div class="blog-news-wrapp">
+            <div class="blog-news-wrapp desktop">
             <?php
             $args_news = array(
                 'post_type' => 'blog',
-                'posts_per_page' => 2,
+                'posts_per_page' => 3,
                 'offset' => 1, 
             );
             $query_news = new WP_Query($args_news);
@@ -67,7 +76,8 @@
                 wp_reset_postdata();
             endif;
             ?>
+            </div>
         </div>
-        </div>
+        <a class="btn_learn_more blog-mob h6" href="<?php the_permalink(); ?>">Узнать больше</a>
     </div>
 </section>
