@@ -1,0 +1,190 @@
+.woocommerce ul.products li.product a img {
+    display: flex;
+    width: 155px;
+    max-height: 195px;
+    object-fit: contain;
+    margin-bottom: 40px;
+}
+
+
+
+.wrapper_catalog {
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+.wrapper-catalog-category {
+    width: 100%;
+    height: 637px;
+    border-radius: 32px;
+    margin-bottom: 20px;
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+    cursor:pointer;
+}
+.wrapper-catalog-category.first{
+    background:url('/wp-content/themes/balace/img/catalog-page/bg-cat-balase-first.png');
+    background-repeat:no-repeat;
+}
+.wrapper-catalog-category.second{
+    background:url('/wp-content/themes/balace/img/catalog-page/bg-cat-balace-second.png');
+    background-repeat:no-repeat;
+}
+.wrapper-catalog-category.third{
+    background:url('/wp-content/themes/balace/img/catalog-page/bg-cat-balace-third.png');
+    background-repeat:no-repeat;
+}
+
+.catalog-top-content {
+    margin-top: 32px;
+    margin-left: 40px;
+    max-width: 1030px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.catalog-category-title {
+    width: 47%;
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+.catalog-category-title h2 {
+    color: #FFFFFF;
+    margin-bottom: 24px;
+}
+.category_child_title_link {
+    max-width: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.category_child_title_link a {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    padding:8px 24px;
+    background: #FFFFFF;
+    border-radius: 100px;
+}
+
+.catalog-category-description {
+    max-width: 409px;
+    width: 100%;
+    display: flex;
+    margin-top: 90px;
+}
+.catalog-category-description p{
+        color: rgba(255, 255, 255, 1);
+}
+.catalog-category-product {
+    width: 100%;
+    margin-top: 84px;
+}
+.woocommerce.columns-3  ul.products.category-main {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.woocommerce.columns-3  ul.products.category-main .product  {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    height: 290px;
+    background: url(/wp-content/themes/balace/img/icon/icon_circle_product.svg), url(/wp-content/themes/balace/img/icon/bg_item_product.png);
+    background-repeat: no-repeat;
+    background-size: 172px 172px, 100% 100%;
+    background-position: center, center;
+    border-radius: 24px;
+    margin: 0;
+    padding: 0;
+}
+.woocommerce.columns-3  ul.products.category-main .product a.woocommerce-LoopProduct-link {
+    max-width: 300px;
+    width: 100%;
+    height: 290px;
+    display: flex;
+    flex-direction: column;
+}
+.woocommerce.columns-3 ul.products.category-main .product a.woocommerce-LoopProduct-link .product_image_item{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a.woocommerce-LoopProduct-link .product-attribute-wrapp .product_attribute_container{
+    display: none;
+}
+.wrapper-catalog-category .catalog-category-product .woocommerce.columns-3 .products.category-main li.product .tinv-wraper.tinv-wishlist a{
+    width: 32px;
+    height: 32px;
+    margin-top: 0;
+    top: 12px;
+    right: 52px;
+}
+.wrapper-catalog-category .catalog-category-product .woocommerce.columns-3 .products.category-main li.product a.btn_add_to_basket {
+    width: 32px;
+    height: 32px;
+    margin-top: 0;
+    top: 12px;
+    right: 12px;
+}
+
+
+.woocommerce ul.products li.product a.woocommerce-LoopProduct-link img {
+    display: flex;
+    width: 155px;
+    max-height: 195px;
+    object-fit: contain;
+    margin-bottom: 0px;
+}
+.woocommerce ul.products li.product a.woocommerce-LoopProduct-link .product-attribute-type {
+    display: none;
+}
+.woocommerce ul.products li.product a.woocommerce-LoopProduct-link .product-attribute-wrapp {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 70%;
+}
+.woocommerce ul.products li.product a.woocommerce-LoopProduct-link .product-attribute-wrapp h2 {
+    padding: 0;
+    font-size: 24px;
+    line-height: 32.02px;
+}
+.wrapper-catalog-category.second .catalog-top-content .catalog-category-description {
+    margin-top: 65px;
+}
+.wrapper-catalog-category.third .catalog-top-content .catalog-category-description {
+    margin-top: 65px;
+}
+@media(max-width:1024px){
+    .wrapper-catalog-category {
+        height: 485px;
+    }
+    .catalog-top-content {
+        margin-top: 24px;
+        margin-left: 24px;
+    }
+    .catalog-category-title h3 {
+        font-size: 34px;
+        line-height: 41.99px;
+    }
+}
+
+@media(max-width:420px){
+    .wrapper-catalog-category {
+        height: 598px;
+    }
+    .catalog-top-content {
+        margin-top: 20px;
+        margin-left: 16px;
+    }
+    .catalog-category-title h3 {
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 32.02px;
+        margin-bottom: 24px;
+    }
+}

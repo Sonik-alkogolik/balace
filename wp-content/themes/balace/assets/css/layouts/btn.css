@@ -247,6 +247,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     cursor: pointer;
+    padding: 0;
+    margin: 0;
 }
 
 .woocommerce a.button.btn_add_to_basket:hover {
@@ -256,6 +258,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     cursor: pointer;
+    padding: 0;
+    margin: 0;
 }
 
 .btn_slider_left {
@@ -313,16 +317,17 @@
     width: 52px;
     height: 52px;
     background-color:#FFFFFF;
-    background: url('/wp-content/themes/balace/img/icon/icon_wishlist_catalog.webp');
+    background-image: url('/wp-content/themes/balace/img/icon/icon_wishlist_catalog.webp');
     background-repeat: no-repeat;
     background-size: cover;
     cursor: pointer;
+    border-radius: 100px;
 }
 
 .tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart:hover {
     width: 52px;
     height: 52px;
-    background: url('/wp-content/themes/balace/img/icon/icon_wishlist_header_hover.webp');
+    background-image: url('/wp-content/themes/balace/img/icon/icon_wishlist_header_hover.webp');
     background-repeat: no-repeat;
     background-size: cover;
 }

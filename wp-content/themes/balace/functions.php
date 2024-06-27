@@ -285,7 +285,6 @@ function my_theme_enqueue_styles_scripts() {
 	wp_enqueue_style('btn-style', get_template_directory_uri() . '/assets/css/layouts/btn.css');
 	wp_enqueue_style('header-style', get_template_directory_uri() . '/assets/css/layouts/header.css');
 	wp_enqueue_style('footer-style', get_template_directory_uri() . '/assets/css/layouts/footer.css');
-	wp_enqueue_style('catalog-style', get_template_directory_uri() . '/assets/css/layouts/catalog-product.css');
     wp_enqueue_script('jquery');
     wp_enqueue_script('header-script', get_template_directory_uri() . '/assets/js/header.js');
 	
@@ -295,6 +294,7 @@ function my_theme_enqueue_styles_scripts() {
 	if ( is_front_page() ) {
 		wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css');
 		wp_enqueue_style('home-style', get_template_directory_uri() . '/assets/css/pages/home-page.css');
+        wp_enqueue_style('catalog-style', get_template_directory_uri() . '/assets/css/layouts/catalog-product.css');
 		wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js');
 		wp_enqueue_script('slider-prom-script', get_template_directory_uri() . '/assets/js/slider-promotional.js');
         wp_enqueue_script('slider-advan-script', get_template_directory_uri() . '/assets/js/slider-advantages.js');
@@ -302,17 +302,36 @@ function my_theme_enqueue_styles_scripts() {
 		wp_enqueue_script('marquee', get_template_directory_uri() . '/assets/js/marquee.js');
 		wp_enqueue_script('faq', get_template_directory_uri() . '/assets/js/faq.js');
 	}
+ 
+     if (strpos($_SERVER['REQUEST_URI'], '/balace/') !== false) {
+        wp_enqueue_style('page-category', get_template_directory_uri() . '/assets/css/pages/page-category.css');
+    } elseif (strpos($_SERVER['REQUEST_URI'], '/balace-natural-pharm/') !== false) {
+        wp_enqueue_style('page-category', get_template_directory_uri() . '/assets/css/pages/page-category.css');
+    }
 
 }
+
+
+
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles_scripts');
-
-
-
+remove_action('woocommerce_product_loop_start', 'woocommerce_product_loop_start', 10);
+remove_action('woocommerce_product_loop_end', 'woocommerce_product_loop_end', 10);
 
 function custom_product_loop_start() {
-    echo '<ul class="products product-main">';
+    if (strpos($_SERVER['REQUEST_URI'], '/balace/') !== false) {
+        echo '<ul class="products category-main">';
+    } elseif (strpos($_SERVER['REQUEST_URI'], '/balace-natural-pharm/') !== false) {
+        echo '<ul class="products category-main">';
+    } else {
+        echo '<ul class="products product-main">';
+    }
 }
 add_action('woocommerce_product_loop_start', 'custom_product_loop_start', 10);
+
+function custom_product_loop_end() {
+    echo '</ul>';
+}
+add_action('woocommerce_product_loop_end', 'custom_product_loop_end', 10);
 
 
 remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
@@ -361,6 +380,11 @@ function custom_woocommerce_loop_add_to_cart_link( $button, $product, $args ) {
     $button = str_replace( 'class="', 'class="btn_add_to_basket ', $button );
     return $button;
 }
+
+
+
+
+
 
 
 add_action( 'init', 'true_register_post_type_promotions' );

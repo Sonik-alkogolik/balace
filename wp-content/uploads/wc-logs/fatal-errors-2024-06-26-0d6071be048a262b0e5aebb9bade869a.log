@@ -1,0 +1,2 @@
+2024-06-26T14:25:42+00:00 CRITICAL Maximum execution time of 60 seconds exceeded в C:\OSPanel\domains\balace\wp-includes\Requests\src\Transport\Curl.php на строке 534
+

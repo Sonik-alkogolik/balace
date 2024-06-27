@@ -1598,9 +1598,7 @@
     .btn_learn_more.blog-mob:after{
         display: none;
     }
-    .btn_learn_more.blog-mob:hover {
-
-    }
+ 
 }
 
 @media(max-width:420px){

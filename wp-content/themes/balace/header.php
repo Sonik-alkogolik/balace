@@ -13,7 +13,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div class="container">
-<section class="header-section">
+ <section class="header-section">
             <div class="header-wrapp">
                 <header>
                  <div class="header-desktop">
@@ -329,8 +329,8 @@
                                 </div>
 
                             </div>
-                        </div>
-                        <div class="header-catalog-info">
+            </div>
+                <div class="header-catalog-info">
                         <div class="catalog-info-link mob">
                             <?php
                             wp_nav_menu(array(
@@ -357,23 +357,23 @@
                         <div class="header-catalog-item action-item mob">
                         <?php
 
-$args = array(
-    'post_type' => 'promotions',
-    'posts_per_page' => 1, 
-);
+                            $args = array(
+                                'post_type' => 'promotions',
+                                'posts_per_page' => 1, 
+                            );
 
-$query = new WP_Query($args);
+                            $query = new WP_Query($args);
 
-if ($query->have_posts()) {
-    while ($query->have_posts()) {
-        $query->the_post();
+                            if ($query->have_posts()) {
+                                while ($query->have_posts()) {
+                                    $query->the_post();
 
-        $title = get_the_title();
-        $discount_percentage = get_field('discount_percentage');
-        $date = get_the_date('d.m.y');
-        $image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+                                    $title = get_the_title();
+                                    $discount_percentage = get_field('discount_percentage');
+                                    $date = get_the_date('d.m.y');
+                                    $image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
 
-?>
+                            ?>
 <div class="action-content mob background_main">
     <div class="action-content-deskription">
         <div class="content-deskription-top mob">
@@ -456,6 +456,8 @@ if ($query->have_posts()) {
                                 </div>
                 </div>
 </section>
+
+
 
 
 
