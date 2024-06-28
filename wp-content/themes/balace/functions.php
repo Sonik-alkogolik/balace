@@ -311,7 +311,14 @@ function my_theme_enqueue_styles_scripts() {
 
 }
 
-
+function enqueue_swiper_slider() {
+    if (is_product_category()) {
+        wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css');
+        wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js');
+        wp_enqueue_script('best-products', get_template_directory_uri() . '/assets/js/best-product-slider.js');
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_swiper_slider');
 
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles_scripts');
 remove_action('woocommerce_product_loop_start', 'woocommerce_product_loop_start', 10);
@@ -322,7 +329,9 @@ function custom_product_loop_start() {
         echo '<ul class="products category-main">';
     } elseif (strpos($_SERVER['REQUEST_URI'], '/balace-natural-pharm/') !== false) {
         echo '<ul class="products category-main">';
-    } else {
+    }elseif (is_product_category()) {
+        echo '<ul class="products category-product-page">';
+    }  else {
         echo '<ul class="products product-main">';
     }
 }

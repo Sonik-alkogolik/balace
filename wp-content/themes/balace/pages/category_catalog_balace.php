@@ -33,7 +33,7 @@ get_header();
                         <?php if ($child_categories) : ?>
                             <div class="category_child_title_link">
                                 <?php foreach ($child_categories as $child_category) : ?>
-                                    <a class="subtitle1 text_dark" href="<?php echo esc_url(get_category_link($child_category->term_id)); ?>"><?php echo esc_html($child_category->name); ?></a>,
+                                    <a class="subtitle1 text_dark" href="<?php echo esc_url(get_category_link($child_category->term_id)); ?>"><?php echo esc_html($child_category->name); ?></a>
                                 <?php endforeach; ?>
                             </div>
                         <?php endif; ?>
@@ -47,6 +47,9 @@ get_header();
             </div>
             <div class="catalog-category-product">
                 <?php echo do_shortcode('[products limit="4" columns="3" category="'.$subcategory_id_first.'"]'); ?>
+            </div>
+            <div class="description-bottom-link desktop">
+                <a class="h6 text_dark" href="<?php echo esc_url(get_term_link($subcategory_id_first, 'product_cat')); ?>">перейти в каталог</a>
             </div>
         </div>
         
@@ -66,7 +69,7 @@ get_header();
                         <?php if ($child_categories) : ?>
                             <div class="category_child_title_link">
                                 <?php foreach ($child_categories as $child_category) : ?>
-                                    <a class="subtitle1 text_dark" href="<?php echo esc_url(get_category_link($child_category->term_id)); ?>"><?php echo esc_html($child_category->name); ?></a>,
+                                    <a class="subtitle1 text_dark" href="<?php echo esc_url(get_category_link($child_category->term_id)); ?>"><?php echo esc_html($child_category->name); ?></a>
                                 <?php endforeach; ?>
                             </div>
                         <?php endif; ?>
@@ -80,6 +83,9 @@ get_header();
             </div>
             <div class="catalog-category-product">
                 <?php echo do_shortcode('[products limit="4" columns="3" category="'.$subcategory_id_second.'"]'); ?>
+            </div>
+            <div class="description-bottom-link desktop">
+                <a class="h6 text_dark" href="<?php echo esc_url(get_term_link($subcategory_id_second, 'product_cat')); ?>">перейти в каталог</a>
             </div>
         </div>
         
@@ -99,7 +105,7 @@ get_header();
                         <?php if ($child_categories) : ?>
                             <div class="category_child_title_link">
                                 <?php foreach ($child_categories as $child_category) : ?>
-                                    <a class="subtitle1 text_dark" href="<?php echo esc_url(get_category_link($child_category->term_id)); ?>"><?php echo esc_html($child_category->name); ?></a>,
+                                    <a class="subtitle1 text_dark" href="<?php echo esc_url(get_category_link($child_category->term_id)); ?>"><?php echo esc_html($child_category->name); ?></a>
                                 <?php endforeach; ?>
                             </div>
                         <?php endif; ?>
@@ -114,8 +120,25 @@ get_header();
             <div class="catalog-category-product">
                 <?php echo do_shortcode('[products limit="4" columns="3" category="'.$subcategory_id_third.'"]'); ?>
             </div>
+            <div class="description-bottom-link desktop">
+                <a class="h6 text_dark" href="<?php echo esc_url(get_term_link($subcategory_id_third, 'product_cat')); ?>">перейти в каталог</a>
+            </div>
         </div>
-        
+
+ 
+        <div class="description-bottom-catalog-category">
+                <div class="item left">
+                    <p class="h6">В основе нашей компании лежит стремление создавать продукты, которые сочетают в себе мощь природы и передовые технологии. Мы верим, что красота должна быть в гармонии со здоровьем, поэтому каждый наш продукт разработан с использованием только натуральных, органических ингредиентов</p>
+                </div>
+                <div class="item right">
+                    <img src="/wp-content/themes/balace/img/catalog-page/bottom-catalog-category-balace.png" alt="">
+                </div>
+        </div>
+            <div class="description-bottom-link">
+                <a class="h6 text_dark" href="<?php echo esc_url(get_term_link($subcategory_id_third, 'product_cat')); ?>">перейти в каталог</a>
+            </div>
+
+
     </div>
 </section>
 
