@@ -85,8 +85,8 @@ a.button.added::after {
 } */
 .products.product-main {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Три карточки в ряду */
-    grid-gap: 20px; /* Отступ между карточками */
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px; 
 }
 .woocommerce ul.products.product-main:before {
     display: none;
@@ -129,7 +129,7 @@ a.button.added::after {
 .woocommerce ul.products li.product a img {
     display: flex;
     width: 155px;
-    max-height: 195px;
+    max-height: 260px;
     object-fit: contain;
     margin-bottom: 40px;
 }
@@ -208,6 +208,7 @@ a.button.added::after {
     background-size: 200px, 100% 100%;
 }
 .woocommerce ul.products li.product a img {
+    max-height: 180px;
     margin-bottom: 30px;
 }
 

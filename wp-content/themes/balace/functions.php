@@ -305,14 +305,19 @@ function my_theme_enqueue_styles_scripts() {
  
      if (strpos($_SERVER['REQUEST_URI'], '/balace/') !== false) {
         wp_enqueue_style('page-category', get_template_directory_uri() . '/assets/css/pages/page-category.css');
+        wp_enqueue_style('catalog-style', get_template_directory_uri() . '/assets/css/layouts/catalog-product.css');
     } elseif (strpos($_SERVER['REQUEST_URI'], '/balace-natural-pharm/') !== false) {
         wp_enqueue_style('page-category', get_template_directory_uri() . '/assets/css/pages/page-category.css');
+        wp_enqueue_style('catalog-style', get_template_directory_uri() . '/assets/css/layouts/catalog-product.css');
     }
 
 }
 
 function enqueue_swiper_slider() {
     if (is_product_category()) {
+        wp_enqueue_style('page-category', get_template_directory_uri() . '/assets/css/pages/page-category.css');
+        wp_enqueue_style('catalog-style', get_template_directory_uri() . '/assets/css/layouts/catalog-product.css');
+        wp_enqueue_style('page-catalog-products', get_template_directory_uri() . '/assets/css/layouts/category-products.css');
         wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css');
         wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js');
         wp_enqueue_script('best-products', get_template_directory_uri() . '/assets/js/best-product-slider.js');
@@ -325,17 +330,23 @@ remove_action('woocommerce_product_loop_start', 'woocommerce_product_loop_start'
 remove_action('woocommerce_product_loop_end', 'woocommerce_product_loop_end', 10);
 
 function custom_product_loop_start() {
-    if (strpos($_SERVER['REQUEST_URI'], '/balace/') !== false) {
-        echo '<ul class="products category-main">';
-    } elseif (strpos($_SERVER['REQUEST_URI'], '/balace-natural-pharm/') !== false) {
-        echo '<ul class="products category-main">';
-    }elseif (is_product_category()) {
-        echo '<ul class="products category-product-page">';
-    }  else {
-        echo '<ul class="products product-main">';
+    if (is_product_category()) {
+        $category = get_queried_object(); 
+        if ($category->parent === 0 && ($category->slug === 'balace' || $category->slug === 'balace-natural-pharm')) {
+            echo '<ul class="products category-main">';
+        } else {
+            echo '<ul class="products sub-category">';
+        }
+    } else {
+        if (strpos($_SERVER['REQUEST_URI'], '/balace/') !== false || strpos($_SERVER['REQUEST_URI'], '/balace-natural-pharm/') !== false) {
+            echo '<ul class="products category-main">';
+        } else {
+            echo '<ul class="products product-main">';
+        }
     }
 }
 add_action('woocommerce_product_loop_start', 'custom_product_loop_start', 10);
+
 
 function custom_product_loop_end() {
     echo '</ul>';
@@ -343,50 +354,54 @@ function custom_product_loop_end() {
 add_action('woocommerce_product_loop_end', 'custom_product_loop_end', 10);
 
 
+// Удаляем стандартные действия по выводу заголовка, цены и изображения товара
 remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
-function add_custom_class_to_product_title() {
-    echo '';
-}
-add_action('woocommerce_shop_loop_item_title', 'add_custom_class_to_product_title', 10);
-
 remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10);
 remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
-add_action('woocommerce_before_shop_loop_item_title', 'custom_woocommerce_template_loop_product_image', 10);
+
+// Добавляем кастомизированное отображение товара в ленте категории и на главной странице магазина
+add_action('woocommerce_before_shop_loop_item_title', 'custom_woocommerce_template_loop_product', 10);
 add_action('woocommerce_after_shop_loop_item_title', 'custom_product_attributes', 15);
 
-function custom_woocommerce_template_loop_product_image() {
+function custom_woocommerce_template_loop_product() {
     global $product;
     echo '<div class="product_image_item">';
     echo woocommerce_get_product_thumbnail();
     echo '</div>';
 }
 
-
 function custom_product_attributes() {
     global $product;
     $attribute_type = $product->get_attribute('тип-товара');
     $attribute_volume = $product->get_attribute('объём');
     $price = $product->get_price_html();
-	if (!empty($attribute_type)) {
-        echo '<div class="product-attribute-type" title="' . esc_attr($attribute_type) . '"><p class="body2 text_main">' . esc_html($attribute_type) . '</p></div>';
-    }
+
     echo '<div class="product-attribute-wrapp">';
     echo '<h2 class="woocommerce-loop-product__title h4 text_main">' . get_the_title() . '</h2>';
+
+    if (!empty($attribute_type)) {
+        echo '<div class="product-attribute-type" title="' . esc_attr($attribute_type) . '"><p class="body2 text_main">' . esc_html($attribute_type) . '</p></div>';
+    }
+
     echo '<div class="product_attribute_container" title="' . esc_attr($attribute_volume) . '">';
-	if (!empty($price)) {
+
+    if (!empty($price)) {
         echo '<div class="h6 text_dark" title="' . esc_attr($price) . '">' . $price . '</div>';
     }
-	if (!empty($attribute_volume)) {
-        echo '<div class="product-attribute-value"><p class="h6 text_light">' . esc_html($attribute_volume) . '</div>';
+
+    if (!empty($attribute_volume)) {
+        echo '<div class="product-attribute-value"><p class="h6 text_light">' . esc_html($attribute_volume) . '</p></div>';
     }
+
     echo '</div>';
     echo '</div>';
 }
 
-add_filter( 'woocommerce_loop_add_to_cart_link', 'custom_woocommerce_loop_add_to_cart_link', 10, 3 );
-function custom_woocommerce_loop_add_to_cart_link( $button, $product, $args ) {
-    $button = preg_replace( '/>[^<]*</', '><', $button );
-    $button = str_replace( 'class="', 'class="btn_add_to_basket ', $button );
+add_filter('woocommerce_loop_add_to_cart_link', 'custom_woocommerce_loop_add_to_cart_link', 10, 3);
+
+function custom_woocommerce_loop_add_to_cart_link($button, $product, $args) {
+    $button = preg_replace('/>[^<]*</', '><', $button);
+    $button = str_replace('class="', 'class="btn_add_to_basket ', $button);
     return $button;
 }
 
@@ -448,4 +463,10 @@ function true_register_post_type_blog() {
         'taxonomies' => array( 'category', 'post_tag' )
     );
     register_post_type( 'blog', $args );
+}
+
+add_action('init', 'remove_woocommerce_breadcrumbs');
+
+function remove_woocommerce_breadcrumbs() {
+    remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
 }

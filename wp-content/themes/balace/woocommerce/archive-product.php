@@ -29,16 +29,14 @@ get_header( 'shop' );
 do_action( 'woocommerce_before_main_content' );
 
 ?>
-<?php if (is_product_category()){
-  get_template_part( 'pages/templates-parts/product-sales');
-}
-?>
-
-
-<header class="woocommerce-products-header">
-	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
-	<?php endif; ?>
+	<?php if (is_product_category()){
+     	get_template_part( 'pages/templates-parts/product-sales');
+	  }
+	?>
+    <header class="woocommerce-products-header">
+	<?php //if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+		<!-- <h1 class="woocommerce-products-header__title page-title"><?php //woocommerce_page_title(); ?></h1> -->
+	<?php //endif; ?>
 
 	<?php
 	/**
@@ -47,9 +45,11 @@ do_action( 'woocommerce_before_main_content' );
 	 * @hooked woocommerce_taxonomy_archive_description - 10
 	 * @hooked woocommerce_product_archive_description - 10
 	 */
-	do_action( 'woocommerce_archive_description' );
+	//do_action( 'woocommerce_archive_description' );
 	?>
 </header>
+<section>
+	<div class="woocommerce <?php if (is_product_category()){echo 'category-wrapp';}?> columns">
 <?php
 if ( woocommerce_product_loop() ) {
 
@@ -106,6 +106,9 @@ do_action( 'woocommerce_after_main_content' );
  *
  * @hooked woocommerce_get_sidebar - 10
  */
-do_action( 'woocommerce_sidebar' );
+//do_action( 'woocommerce_sidebar' );
 
 get_footer( 'shop' );
+?>
+</div>
+</section>
