@@ -1,67 +1,75 @@
 <?php
-// Получаем категорию
+// Получаем текущую категорию товара
 $current_category_slug = get_query_var('product_cat');
-if ($current_category_slug) {
-    $current_category = get_term_by('slug', $current_category_slug, 'product_cat');
-    $current_category_id = $current_category ? $current_category->term_id : 0;
-    $subcategories = get_terms(array(
-        'taxonomy' => 'product_cat',
-        'hide_empty' => false,
-        'parent' => $current_category_id,
-    ));
+$current_category = get_term_by('slug', $current_category_slug, 'product_cat');
+$current_category_id = $current_category ? $current_category->term_id : 0;
+
+// Отладочная информация: вывод текущей категории товара и её ID
+if ($current_category) {
+    echo '<p>Текущая категория товара: ' . esc_html($current_category_slug) . '</p>';
+    echo '<p>Текущая категория ID: ' . esc_html($current_category_id) . '</p>';
 }
 
-// бренды 
-$brands = get_terms(array(
-    'taxonomy' => 'product_cat',
-    'hide_empty' => false,
-    'exclude' => '20',
-    'parent' => 0,
-));
+// Параметры для запроса товаров
+$args = array(
+    'post_type' => 'product',
+    'posts_per_page' => -1,
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'product_cat',
+            'field' => 'term_id',
+            'terms' => $current_category_id,
+        ),
+    ),
+);
 
-$product_types = get_terms( array(
-    'taxonomy'   => 'pa_тип-товара', 
-    'hide_empty' => false, 
-) );
+// Создаем новый запрос WP_Query
+$products_query = new WP_Query($args);
+
+// Отладочная информация: вывод товаров текущей категории
+if ($products_query->have_posts()) {
+    echo '<h2>Товары текущей категории:</h2>';
+    echo '<ul>';
+    while ($products_query->have_posts()) {
+        $products_query->the_post();
+        global $product;
+
+        // Получаем атрибуты товара
+        $product_attributes = $product->get_attributes();
+
+        // Отладочная информация: вывод атрибутов товара
+        echo '<li>' . get_the_title() . ' - Атрибуты: ';
+        foreach ($product_attributes as $attribute) {
+            echo $attribute->get_name() . ', ';
+        }
+        echo '</li>';
+    }
+    echo '</ul>';
+} else {
+    echo '<p>Товары не найдены для текущей категории.</p>';
+}
+
+// Сбрасываем запрос
+wp_reset_postdata();
 ?>
-
-
 
 <section>
     <div class="products-filter">
-    <div id="brand">
-    <span>Бренд</span>
-    <?php foreach ($brands as $brand) : ?>
-        <label>
-            <input type="checkbox" name="brands[]" value="<?php echo esc_attr($brand->slug); ?>" data-url="<?php echo esc_url(get_term_link($brand)); ?>">
-            <?php echo esc_html($brand->name); ?>
-        </label>
-    <?php endforeach; ?>
-</div>
+        <div id="brand">
+            <span>Бренд</span>
+            <!-- Ваш код для вывода брендов здесь -->
+        </div>
 
-<div id="category">
-    <span>Категория</span>
-    <?php if (!empty($subcategories)) : ?>
-        <?php foreach ($subcategories as $subcategory) : ?>
-            <label>
-                <input type="checkbox" name="categories[]" value="<?php echo esc_attr($subcategory->slug); ?>" data-url="<?php echo esc_url(get_term_link($subcategory)); ?>">
-                <?php echo esc_html($subcategory->name); ?>
-            </label>
-        <?php endforeach; ?>
-    <?php endif; ?>
-</div>
+        <div id="category">
+            <span>Категория</span>
+            <!-- Ваш код для вывода подкатегорий здесь -->
+        </div>
 
         <select id="product_type" name="product_type">
             <option value="">Тип товара</option>
-            <?php foreach ($product_types as $type) : ?>
-                <option value="<?php echo esc_attr($type->name); ?>" data-url="<?php echo esc_url(get_term_link($type)); ?>">
-                    <?php echo esc_html($type->name); ?>
-                </option>
-            <?php endforeach; ?>
+            <!-- Ваш код для вывода типов товара (атрибутов) здесь -->
         </select>
-        <button id="your-button-id">Категория</button>
-                
 
+        <button id="your-button-id">Фильтровать</button>
     </div>
 </section>
-

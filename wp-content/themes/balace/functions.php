@@ -499,16 +499,85 @@ add_action('wp_ajax_nopriv_get_category_products', 'get_category_products');
 
 function get_category_products() {
     // Проверяем nonce для безопасности
-    $nonce = $_POST['nonce'];
-    if (!wp_verify_nonce($nonce, 'ajax-nonce')) {
-        die('Permission check failed');
+    check_ajax_referer('ajax-nonce', 'nonce');
+
+    $category_id = intval($_POST['category_id']);
+    if (!$category_id) {
+        wp_send_json_error('Invalid category ID');
+        wp_die();
     }
 
-    // Получаем ID категории из AJAX запроса
-    $category_id = intval($_POST['category_id']);
+    // Получаем товары текущей категории
+    $args = array(
+        'post_type' => 'product',
+        'posts_per_page' => -1,
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'product_cat',
+                'field' => 'term_id',
+                'terms' => $category_id
+            )
+        )
+    );
 
-    // Пример вывода ID категории в ответе AJAX
-    echo $category_id;
+    $products_query = new WP_Query($args);
+
+    // Формируем HTML для списка товаров и их атрибутов
+    ob_start();
+
+    if ($products_query->have_posts()) {
+        echo '<ul>';
+        while ($products_query->have_posts()) {
+            $products_query->the_post();
+            $product = wc_get_product(get_the_ID());
+
+            // Выводим название товара
+            echo '<li>' . get_the_title() . '</li>';
+
+            // Получаем атрибуты товара
+            $attributes = $product->get_attributes();
+
+            // Выводим атрибуты товара
+            if (!empty($attributes)) {
+                echo '<ul class="atribute">';
+                foreach ($attributes as $attribute) {
+                    $attribute_name = wc_attribute_label($attribute->get_name());
+                    $attribute_values = implode(', ', $attribute->get_options());
+                    echo '<li>' . $attribute_name . ': ' . $attribute_values . '</li>';
+                }
+                echo '</ul>';
+            } else {
+                echo '<p>Атрибуты не найдены.</p>';
+            }
+
+            // Получаем термины для таксономий текущего товара
+            $taxonomies = get_object_taxonomies('product', 'names');
+            if (!empty($taxonomies)) {
+                echo '<ul>';
+                foreach ($taxonomies as $taxonomy) {
+                    $terms = wp_get_post_terms(get_the_ID(), $taxonomy);
+                    if (!is_wp_error($terms) && !empty($terms)) {
+                        echo '<li>' . $taxonomy . ': ';
+                        $term_names = array();
+                        foreach ($terms as $term) {
+                            $term_names[] = $term->name;
+                        }
+                        echo implode(', ', $term_names);
+                        echo '</li>';
+                    }
+                }
+                echo '</ul>';
+            }
+        }
+        echo '</ul>';
+    } else {
+        echo '<p>Товары не найдены.</p>';
+    }
+
+    wp_reset_postdata();
+
+    // Возвращаем HTML списком товаров
+    echo ob_get_clean();
 
     // Обязательно завершаем выполнение скрипта
     wp_die();
