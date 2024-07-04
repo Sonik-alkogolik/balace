@@ -1,0 +1,76 @@
+2024-07-03T10:35:34+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "custom_scripts_and_styles" not found or invalid function name in C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#1 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#2 C:\OSPanel\domains\balace\wp-includes\script-loader.php(2194): do_action()
+#3 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): wp_enqueue_scripts()
+#4 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#6 C:\OSPanel\domains\balace\wp-includes\general-template.php(3049): do_action()
+#7 C:\OSPanel\domains\balace\wp-content\themes\balace\header.php(9): wp_head()
+#8 C:\OSPanel\domains\balace\wp-includes\template.php(783): require_once('C:\\OSPanel\\doma...')
+#9 C:\OSPanel\domains\balace\wp-includes\template.php(718): load_template()
+#10 C:\OSPanel\domains\balace\wp-includes\general-template.php(48): locate_template()
+#11 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\archive-product.php(20): get_header()
+#12 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\OSPanel\\doma...')
+#13 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\taxonomy-product-cat.php(22): wc_get_template()
+#14 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#15 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#16 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#17 {main}
+  thrown в C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php на строке 308
+
+2024-07-03T10:36:21+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "custom_scripts_and_styles" not found or invalid function name in C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#1 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#2 C:\OSPanel\domains\balace\wp-includes\script-loader.php(2194): do_action()
+#3 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): wp_enqueue_scripts()
+#4 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#6 C:\OSPanel\domains\balace\wp-includes\general-template.php(3049): do_action()
+#7 C:\OSPanel\domains\balace\wp-content\themes\balace\header.php(9): wp_head()
+#8 C:\OSPanel\domains\balace\wp-includes\template.php(783): require_once('C:\\OSPanel\\doma...')
+#9 C:\OSPanel\domains\balace\wp-includes\template.php(718): load_template()
+#10 C:\OSPanel\domains\balace\wp-includes\general-template.php(48): locate_template()
+#11 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\archive-product.php(20): get_header()
+#12 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\OSPanel\\doma...')
+#13 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\taxonomy-product-cat.php(22): wc_get_template()
+#14 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#15 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#16 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#17 {main}
+  thrown в C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php на строке 308
+
+2024-07-03T11:09:19+00:00 CRITICAL Cannot redeclare custom_product_loop_end() (previously declared in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:338) в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 343
+
+2024-07-03T11:09:20+00:00 CRITICAL Cannot redeclare custom_product_loop_end() (previously declared in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:338) в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 343
+
+2024-07-03T16:36:30+00:00 CRITICAL Uncaught Error: Call to undefined function wc_get_attribute_terms() in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\filter-options.php:23
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\template.php(785): require()
+#1 C:\OSPanel\domains\balace\wp-includes\template.php(718): load_template()
+#2 C:\OSPanel\domains\balace\wp-includes\general-template.php(204): locate_template()
+#3 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\archive-product.php(34): get_template_part()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\taxonomy-product-cat.php(22): wc_get_template()
+#6 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#7 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#8 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#9 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\filter-options.php на строке 23
+
+2024-07-03T16:36:47+00:00 CRITICAL Uncaught Error: Call to undefined function wc_get_attribute_terms() in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\filter-options.php:23
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\template.php(785): require()
+#1 C:\OSPanel\domains\balace\wp-includes\template.php(718): load_template()
+#2 C:\OSPanel\domains\balace\wp-includes\general-template.php(204): locate_template()
+#3 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\archive-product.php(34): get_template_part()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\taxonomy-product-cat.php(22): wc_get_template()
+#6 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#7 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#8 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#9 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\filter-options.php на строке 23
+

@@ -294,6 +294,7 @@ function my_theme_enqueue_styles_scripts() {
 	if ( is_front_page() ) {
 		wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css');
 		wp_enqueue_style('home-style', get_template_directory_uri() . '/assets/css/pages/home-page.css');
+        wp_enqueue_style('block-blog-style', get_template_directory_uri() . '/assets/css/layouts/block-blog.css');
         wp_enqueue_style('catalog-style', get_template_directory_uri() . '/assets/css/layouts/catalog-product.css');
 		wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js');
 		wp_enqueue_script('slider-prom-script', get_template_directory_uri() . '/assets/js/slider-promotional.js');
@@ -312,46 +313,60 @@ function my_theme_enqueue_styles_scripts() {
     }
 
 }
+add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles_scripts');
+
+
 
 function enqueue_swiper_slider() {
     if (is_product_category()) {
         wp_enqueue_style('page-category', get_template_directory_uri() . '/assets/css/pages/page-category.css');
         wp_enqueue_style('catalog-style', get_template_directory_uri() . '/assets/css/layouts/catalog-product.css');
+        wp_enqueue_style('best-products-slider', get_template_directory_uri() . '/assets/css/layouts/best-products-slider.css');
         wp_enqueue_style('page-catalog-products', get_template_directory_uri() . '/assets/css/layouts/category-products.css');
         wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css');
         wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js');
         wp_enqueue_script('best-products', get_template_directory_uri() . '/assets/js/best-product-slider.js');
+        wp_enqueue_script('ajax-filter', get_template_directory_uri() . '/assets/js/ajax-filter.js');
     }
 }
 add_action('wp_enqueue_scripts', 'enqueue_swiper_slider');
 
-add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles_scripts');
+function enqueue_about_page_styles() {
+    if (is_page_template('pages/about.php')) {
+        wp_enqueue_style('about-style', get_template_directory_uri() . '/assets/css/pages/about.css');
+        wp_enqueue_style('block-blog-style', get_template_directory_uri() . '/assets/css/layouts/block-blog.css');
+        wp_enqueue_style('best-products-slider', get_template_directory_uri() . '/assets/css/layouts/best-products-slider.css');
+        wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css');
+        wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js');
+        wp_enqueue_script('best-products', get_template_directory_uri() . '/assets/js/best-product-slider.js');
+        wp_enqueue_script('marquee-jq', get_template_directory_uri() . '/assets/js/marquee_jq.js');
+        wp_enqueue_script('marquee', get_template_directory_uri() . '/assets/js/marquee.js');
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_about_page_styles');
+
+
+
 remove_action('woocommerce_product_loop_start', 'woocommerce_product_loop_start', 10);
 remove_action('woocommerce_product_loop_end', 'woocommerce_product_loop_end', 10);
 
 function custom_product_loop_start() {
-    if (is_product_category()) {
-        $category = get_queried_object(); 
-        if ($category->parent === 0 && ($category->slug === 'balace' || $category->slug === 'balace-natural-pharm')) {
-            echo '<ul class="products category-main">';
-        } else {
-            echo '<ul class="products sub-category">';
-        }
+    $current_post_id = get_the_ID();
+    if (is_front_page()) {
+        echo '<ul class="products product-main">';
+    } elseif ($current_post_id == 394 || $current_post_id == 397) {
+        echo '<ul class="products category-main">';
     } else {
-        if (strpos($_SERVER['REQUEST_URI'], '/balace/') !== false || strpos($_SERVER['REQUEST_URI'], '/balace-natural-pharm/') !== false) {
-            echo '<ul class="products category-main">';
-        } else {
-            echo '<ul class="products product-main">';
-        }
+        echo '<ul class="products sub-category">';
     }
 }
 add_action('woocommerce_product_loop_start', 'custom_product_loop_start', 10);
-
 
 function custom_product_loop_end() {
     echo '</ul>';
 }
 add_action('woocommerce_product_loop_end', 'custom_product_loop_end', 10);
+
 
 
 // Удаляем стандартные действия по выводу заголовка, цены и изображения товара
@@ -404,11 +419,6 @@ function custom_woocommerce_loop_add_to_cart_link($button, $product, $args) {
     $button = str_replace('class="', 'class="btn_add_to_basket ', $button);
     return $button;
 }
-
-
-
-
-
 
 
 add_action( 'init', 'true_register_post_type_promotions' );
@@ -469,4 +479,37 @@ add_action('init', 'remove_woocommerce_breadcrumbs');
 
 function remove_woocommerce_breadcrumbs() {
     remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
+}
+
+
+// Добавляем скрипт и данные категории в footer
+function enqueue_my_ajax_scripts() {
+    wp_enqueue_script('my-custom-ajax-script', get_template_directory_uri() . '/assets/js/ajax-filter.js', array('jquery'), '', true);
+    wp_localize_script('my-custom-ajax-script', 'ajax_params', array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'nonce' => wp_create_nonce('ajax-nonce'),
+        'current_category_id' => get_queried_object_id() 
+    ));
+}
+add_action('wp_enqueue_scripts', 'enqueue_my_ajax_scripts');
+
+
+add_action('wp_ajax_get_category_products', 'get_category_products');
+add_action('wp_ajax_nopriv_get_category_products', 'get_category_products'); 
+
+function get_category_products() {
+    // Проверяем nonce для безопасности
+    $nonce = $_POST['nonce'];
+    if (!wp_verify_nonce($nonce, 'ajax-nonce')) {
+        die('Permission check failed');
+    }
+
+    // Получаем ID категории из AJAX запроса
+    $category_id = intval($_POST['category_id']);
+
+    // Пример вывода ID категории в ответе AJAX
+    echo $category_id;
+
+    // Обязательно завершаем выполнение скрипта
+    wp_die();
 }

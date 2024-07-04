@@ -7,7 +7,7 @@
                 <div class="swiper-button-prev btn_slider_right best-slider-btn"></div>
             </div>
         </div>
-        <div class="swiper-container best_products">
+        <div class="swiper-container woocommerce  best_products">
             <ul class="swiper-wrapper">
                 <?php
                 $args = array(

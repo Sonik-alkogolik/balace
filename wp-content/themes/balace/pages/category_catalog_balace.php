@@ -134,9 +134,9 @@ get_header();
                     <img src="/wp-content/themes/balace/img/catalog-page/bottom-catalog-category-balace.png" alt="">
                 </div>
         </div>
-            <div class="description-bottom-link">
-                <a class="h6 text_dark" href="<?php echo esc_url(get_term_link($subcategory_id_third, 'product_cat')); ?>">перейти в каталог</a>
-            </div>
+        <div class="description-bottom-link">
+    <a class="h6 text_dark" href="<?php echo esc_url(get_term_link(32, 'product_cat')); ?>">перейти в каталог</a>
+</div>
 
 
     </div>
