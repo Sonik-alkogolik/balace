@@ -335,12 +335,12 @@ function enqueue_about_page_styles() {
     if (is_page_template('pages/about.php')) {
         wp_enqueue_style('about-style', get_template_directory_uri() . '/assets/css/pages/about.css');
         wp_enqueue_style('block-blog-style', get_template_directory_uri() . '/assets/css/layouts/block-blog.css');
-        wp_enqueue_style('best-products-slider', get_template_directory_uri() . '/assets/css/layouts/best-products-slider.css');
         wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css');
         wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js');
         wp_enqueue_script('best-products', get_template_directory_uri() . '/assets/js/best-product-slider.js');
         wp_enqueue_script('marquee-jq', get_template_directory_uri() . '/assets/js/marquee_jq.js');
         wp_enqueue_script('marquee', get_template_directory_uri() . '/assets/js/marquee.js');
+        wp_enqueue_script('history', get_template_directory_uri() . '/assets/js/history-company-slider.js');
     }
 }
 add_action('wp_enqueue_scripts', 'enqueue_about_page_styles');
@@ -493,9 +493,8 @@ function enqueue_my_ajax_scripts() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_my_ajax_scripts');
 
-
 add_action('wp_ajax_get_category_products', 'get_category_products');
-add_action('wp_ajax_nopriv_get_category_products', 'get_category_products'); 
+add_action('wp_ajax_nopriv_get_category_products', 'get_category_products');
 
 function get_category_products() {
     // Проверяем nonce для безопасности
@@ -507,7 +506,10 @@ function get_category_products() {
         wp_die();
     }
 
-    // Получаем товары текущей категории
+    // Получаем атрибуты, переданные через AJAX
+    $selected_attributes = isset($_POST['attributes']) ? $_POST['attributes'] : array();
+
+    // Параметры для запроса товаров
     $args = array(
         'post_type' => 'product',
         'posts_per_page' => -1,
@@ -520,9 +522,27 @@ function get_category_products() {
         )
     );
 
+    // Добавляем условия для фильтрации по выбранным атрибутам
+    if (!empty($selected_attributes)) {
+        $tax_query = array('relation' => 'AND');
+
+        foreach ($selected_attributes as $attribute_name => $attribute_values) {
+            if (!empty($attribute_values)) {
+                $tax_query[] = array(
+                    'taxonomy' => $attribute_name, // Используем имя атрибута как taxonomy
+                    'field' => 'slug',
+                    'terms' => $attribute_values,
+                    'operator' => 'IN',
+                );
+            }
+        }
+
+        $args['tax_query'] = $tax_query;
+    }
+
     $products_query = new WP_Query($args);
 
-    // Формируем HTML для списка товаров и их атрибутов
+    // Формируем HTML для списка отфильтрованных товаров и их атрибутов
     ob_start();
 
     if ($products_query->have_posts()) {
@@ -539,7 +559,7 @@ function get_category_products() {
 
             // Выводим атрибуты товара
             if (!empty($attributes)) {
-                echo '<ul class="atribute">';
+                echo '<ul class="attribute">';
                 foreach ($attributes as $attribute) {
                     $attribute_name = wc_attribute_label($attribute->get_name());
                     $attribute_values = implode(', ', $attribute->get_options());
@@ -577,8 +597,6 @@ function get_category_products() {
     wp_reset_postdata();
 
     // Возвращаем HTML списком товаров
-    echo ob_get_clean();
-
-    // Обязательно завершаем выполнение скрипта
     wp_die();
 }
+

@@ -10,6 +10,22 @@ if ($current_category) {
     echo '<p>Текущая категория ID: ' . esc_html($current_category_id) . '</p>';
 }
 
+// Получаем бренды
+$brands = get_terms(array(
+    'taxonomy' => 'product_cat',
+    'hide_empty' => false,
+    'exclude' => '20',
+    'parent' => 0,
+));
+
+// Получаем подкатегории
+$subcategories = get_terms(array(
+    'taxonomy' => 'product_cat',
+    'hide_empty' => false,
+    'exclude' => '20',
+    'parent' => $current_category_id,
+));
+
 // Параметры для запроса товаров
 $args = array(
     'post_type' => 'product',
@@ -26,6 +42,9 @@ $args = array(
 // Создаем новый запрос WP_Query
 $products_query = new WP_Query($args);
 
+// Массив для хранения уникальных атрибутов
+$product_attributes = array();
+
 // Отладочная информация: вывод товаров текущей категории
 if ($products_query->have_posts()) {
     echo '<h2>Товары текущей категории:</h2>';
@@ -35,11 +54,19 @@ if ($products_query->have_posts()) {
         global $product;
 
         // Получаем атрибуты товара
-        $product_attributes = $product->get_attributes();
+        $attributes = $product->get_attributes();
+
+        // Собираем уникальные атрибуты
+        foreach ($attributes as $attribute) {
+            $name = $attribute->get_name();
+            if (!isset($product_attributes[$name])) {
+                $product_attributes[$name] = wc_get_product_terms($product->get_id(), $name, array('fields' => 'all'));
+            }
+        }
 
         // Отладочная информация: вывод атрибутов товара
         echo '<li>' . get_the_title() . ' - Атрибуты: ';
-        foreach ($product_attributes as $attribute) {
+        foreach ($attributes as $attribute) {
             echo $attribute->get_name() . ', ';
         }
         echo '</li>';
@@ -54,22 +81,43 @@ wp_reset_postdata();
 ?>
 
 <section>
-    <div class="products-filter">
-        <div id="brand">
-            <span>Бренд</span>
-            <!-- Ваш код для вывода брендов здесь -->
-        </div>
-
-        <div id="category">
-            <span>Категория</span>
-            <!-- Ваш код для вывода подкатегорий здесь -->
-        </div>
-
-        <select id="product_type" name="product_type">
-            <option value="">Тип товара</option>
-            <!-- Ваш код для вывода типов товара (атрибутов) здесь -->
-        </select>
-
-        <button id="your-button-id">Фильтровать</button>
+<div class="products-filter">
+    <div id="brand">
+        <span>Бренд</span>
+        <?php foreach ($brands as $brand) : ?>
+            <label>
+                <input type="checkbox" name="brands[]" value="<?php echo esc_attr($brand->slug); ?>" data-url="<?php echo esc_url(get_term_link($brand)); ?>">
+                <?php echo esc_html($brand->name); ?>
+            </label>
+        <?php endforeach; ?>
     </div>
+
+    <div id="category">
+        <span>Категория</span>
+        <?php if (!is_wp_error($subcategories) && !empty($subcategories)) : ?>
+            <?php foreach ($subcategories as $subcategory) : ?>
+                <label>
+                    <input type="checkbox" name="categories[]" value="<?php echo esc_attr($subcategory->slug); ?>" data-url="<?php echo esc_url(get_term_link($subcategory)); ?>">
+                    <?php echo esc_html($subcategory->name); ?>
+                </label>
+            <?php endforeach; ?>
+        <?php else : ?>
+            <p>Подкатегории не найдены или произошла ошибка при получении</p>
+        <?php endif; ?>
+    </div>
+
+    <div id="product_attributes">
+        <span>Тип товара</span>
+        <?php foreach ($product_attributes as $attribute_name => $terms) : ?>
+            <?php foreach ($terms as $term) : ?>
+                <label>
+                    <input type="checkbox" name="product_attributes[<?php echo esc_attr($attribute_name); ?>][]" value="<?php echo esc_attr($term->slug); ?>">
+                    <?php echo esc_html($term->name); ?>
+                </label>
+            <?php endforeach; ?>
+        <?php endforeach; ?>
+    </div>
+
+    <button id="your-button-id">Фильтровать</button>
+</div>
 </section>

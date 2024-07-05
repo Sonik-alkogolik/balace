@@ -319,10 +319,10 @@
         font-weight: 600;
         line-height: 15.6px;
     }
-    .best_products ul.swiper-wrapper li.swiper-slide {
+    .best_products ul.swiper-wrapper li.swiper-slide  {
+        max-width: 51%;
         border-radius: 16px;
     }
-  
 
 }
 
@@ -338,4 +338,5 @@
         max-height: 100px;
         width: 155px;
     }
+  
 } 

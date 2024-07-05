@@ -335,6 +335,7 @@
 @media(max-width:980px){
     .woocommerce.columns-3 ul.products.category-main .product {
         max-width: 31%;
+        border-radius: 10px;
     }
 }
 
@@ -463,7 +464,7 @@
         border-radius: 24px;
     } */
     .woocommerce.columns-3 ul.products.category-main .product a.woocommerce-LoopProduct-link .product_image_item {
-        height: 80%;
+        height: 98%;
     }
     .woocommerce.columns-3 ul.products.category-main .product a.woocommerce-LoopProduct-link .product_image_item {
         background-size: 100px, 100% 100%;
