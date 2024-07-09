@@ -1,0 +1,225 @@
+2024-07-08T12:24:02+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:563
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): custom_product_card_wrapper()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\product-sales.php(54): do_action()
+#4 C:\OSPanel\domains\balace\wp-includes\template.php(785): require('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\balace\wp-includes\template.php(718): load_template()
+#6 C:\OSPanel\domains\balace\wp-includes\general-template.php(204): locate_template()
+#7 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\archive-product.php(35): get_template_part()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\OSPanel\\doma...')
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\taxonomy-product-cat.php(22): wc_get_template()
+#10 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#11 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#12 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#13 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 563
+
+2024-07-08T12:24:13+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:563
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): custom_product_card_wrapper()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\product-sales.php(54): do_action()
+#4 C:\OSPanel\domains\balace\wp-includes\template.php(785): require('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\balace\wp-includes\template.php(718): load_template()
+#6 C:\OSPanel\domains\balace\wp-includes\general-template.php(204): locate_template()
+#7 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\archive-product.php(35): get_template_part()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\OSPanel\\doma...')
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\taxonomy-product-cat.php(22): wc_get_template()
+#10 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#11 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#12 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#13 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 563
+
+2024-07-08T12:29:21+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\content-single-product.php:81
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\template.php(785): require()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(284): load_template()
+#2 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\single-product.php(37): wc_get_template_part()
+#3 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#4 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#6 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\content-single-product.php на строке 81
+
+2024-07-08T12:30:59+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\content-single-product.php:81
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\template.php(785): require()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(284): load_template()
+#2 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\single-product.php(37): wc_get_template_part()
+#3 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#4 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#6 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\content-single-product.php на строке 81
+
+2024-07-08T12:31:41+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\content-single-product.php:83
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\template.php(785): require()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(284): load_template()
+#2 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\single-product.php(37): wc_get_template_part()
+#3 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#4 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#6 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\content-single-product.php на строке 83
+
+2024-07-08T12:42:26+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function wc_get_product_terms(), 1 passed in C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\content-single-product.php on line 34 and at least 2 expected in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-term-functions.php:176
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\content-single-product.php(34): wc_get_product_terms()
+#1 C:\OSPanel\domains\balace\wp-includes\template.php(785): require('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(284): load_template()
+#3 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\single-product.php(37): wc_get_template_part()
+#4 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#6 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#7 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-term-functions.php на строке 176
+
+2024-07-08T12:54:35+00:00 CRITICAL Uncaught Error: Call to undefined function wc_get_product_gallery() in C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\content-single-product.php:189
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\template.php(785): require()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(284): load_template()
+#2 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\single-product.php(37): wc_get_template_part()
+#3 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#4 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#6 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\content-single-product.php на строке 189
+
+2024-07-08T14:39:04+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\content-single-product.php:138
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\template.php(785): require()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(284): load_template()
+#2 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\single-product.php(37): wc_get_template_part()
+#3 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#4 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#6 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\content-single-product.php на строке 138
+
+2024-07-08T14:39:36+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\content-single-product.php:137
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\template.php(785): require()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(284): load_template()
+#2 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\single-product.php(37): wc_get_template_part()
+#3 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#4 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#6 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\content-single-product.php на строке 137
+
+2024-07-08T14:40:29+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\content-single-product.php:138
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\template.php(785): require()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(284): load_template()
+#2 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\single-product.php(37): wc_get_template_part()
+#3 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#4 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#6 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\content-single-product.php на строке 138
+
+2024-07-08T16:33:42+00:00 CRITICAL Uncaught TypeError: stripslashes(): Argument #1 ($string) must be of type string, array given in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:522
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(522): stripslashes()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#2 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#3 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#4 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#5 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 522
+
+2024-07-08T16:33:43+00:00 CRITICAL Uncaught TypeError: stripslashes(): Argument #1 ($string) must be of type string, array given in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:522
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(522): stripslashes()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#2 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#3 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#4 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#5 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 522
+
+2024-07-08T16:34:46+00:00 CRITICAL Uncaught TypeError: stripslashes(): Argument #1 ($string) must be of type string, array given in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:522
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(522): stripslashes()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#2 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#3 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#4 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#5 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 522
+
+2024-07-08T16:34:46+00:00 CRITICAL Uncaught TypeError: stripslashes(): Argument #1 ($string) must be of type string, array given in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:522
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(522): stripslashes()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#2 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#3 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#4 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#5 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 522
+
+2024-07-08T16:35:00+00:00 CRITICAL Uncaught TypeError: stripslashes(): Argument #1 ($string) must be of type string, array given in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:522
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(522): stripslashes()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#2 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#3 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#4 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#5 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 522
+
+2024-07-08T16:35:00+00:00 CRITICAL Uncaught TypeError: stripslashes(): Argument #1 ($string) must be of type string, array given in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:522
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(522): stripslashes()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#2 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#3 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#4 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#5 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 522
+
+2024-07-08T16:35:10+00:00 CRITICAL Uncaught TypeError: stripslashes(): Argument #1 ($string) must be of type string, array given in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:522
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(522): stripslashes()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#2 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#3 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#4 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#5 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 522
+
+2024-07-08T16:35:10+00:00 CRITICAL Uncaught TypeError: stripslashes(): Argument #1 ($string) must be of type string, array given in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:522
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(522): stripslashes()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#2 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#3 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#4 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#5 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 522
+
+2024-07-08T16:35:26+00:00 CRITICAL Uncaught TypeError: stripslashes(): Argument #1 ($string) must be of type string, array given in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:522
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(522): stripslashes()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#2 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#3 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#4 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#5 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 522
+
+2024-07-08T16:35:26+00:00 CRITICAL Uncaught TypeError: stripslashes(): Argument #1 ($string) must be of type string, array given in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:522
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(522): stripslashes()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#2 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#3 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#4 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#5 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 522
+

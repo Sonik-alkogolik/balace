@@ -1,0 +1,817 @@
+2024-07-09T09:48:54+00:00 CRITICAL Unmatched '}' в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 561
+
+2024-07-09T09:48:56+00:00 CRITICAL Unmatched '}' в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 561
+
+2024-07-09T09:48:56+00:00 CRITICAL Unmatched '}' в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 561
+
+2024-07-09T09:48:58+00:00 CRITICAL Unmatched '}' в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 561
+
+2024-07-09T09:48:59+00:00 CRITICAL Unmatched '}' в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 561
+
+2024-07-09T09:49:02+00:00 CRITICAL Unmatched '}' в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 561
+
+2024-07-09T09:49:03+00:00 CRITICAL Unmatched '}' в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 561
+
+2024-07-09T10:10:38+00:00 CRITICAL Unclosed '{' on line 514 в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 593
+
+2024-07-09T10:10:39+00:00 CRITICAL Unclosed '{' on line 514 в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 593
+
+2024-07-09T10:45:03+00:00 CRITICAL Uncaught Error: Call to undefined function wc_get_product_class_array() in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:547
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 547
+
+2024-07-09T10:45:04+00:00 CRITICAL Uncaught Error: Call to undefined function wc_get_product_class_array() in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:547
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 547
+
+2024-07-09T10:45:39+00:00 CRITICAL Uncaught Error: Call to undefined function wc_get_product_class_array() in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:547
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 547
+
+2024-07-09T10:45:39+00:00 CRITICAL Uncaught Error: Call to undefined function wc_get_product_class_array() in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:547
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 547
+
+2024-07-09T10:55:34+00:00 CRITICAL Uncaught Error: Call to a member function is_visible() on null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:541
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 541
+
+2024-07-09T10:55:34+00:00 CRITICAL Uncaught Error: Call to a member function is_visible() on null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:541
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 541
+
+2024-07-09T10:55:40+00:00 CRITICAL Uncaught Error: Call to a member function is_visible() on null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:541
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 541
+
+2024-07-09T10:55:41+00:00 CRITICAL Uncaught Error: Call to a member function is_visible() on null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:541
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 541
+
+2024-07-09T10:57:00+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Simple::get_gallery_image_html() in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:552
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 552
+
+2024-07-09T10:58:46+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Simple::get_gallery_image_html() in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:548
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 548
+
+2024-07-09T10:58:46+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Simple::get_gallery_image_html() in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:548
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 548
+
+2024-07-09T11:00:48+00:00 CRITICAL syntax error, unexpected token "/" в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 542
+
+2024-07-09T11:01:39+00:00 CRITICAL syntax error, unexpected token "}", expecting "," or ";" в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 544
+
+2024-07-09T11:01:41+00:00 CRITICAL syntax error, unexpected token "}", expecting "," or ";" в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 544
+
+2024-07-09T11:07:27+00:00 CRITICAL Uncaught TypeError: implode(): Argument #1 ($pieces) must be of type array, string given in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:542
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(542): implode()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#2 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#3 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#4 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#5 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 542
+
+2024-07-09T11:07:27+00:00 CRITICAL Uncaught TypeError: implode(): Argument #1 ($pieces) must be of type array, string given in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:542
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(542): implode()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#2 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#3 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#4 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#5 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 542
+
+2024-07-09T11:07:36+00:00 CRITICAL Uncaught TypeError: implode(): Argument #1 ($pieces) must be of type array, string given in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:542
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(542): implode()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#2 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#3 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#4 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#5 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 542
+
+2024-07-09T11:07:36+00:00 CRITICAL Uncaught TypeError: implode(): Argument #1 ($pieces) must be of type array, string given in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:542
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(542): implode()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#2 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#3 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#4 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#5 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 542
+
+2024-07-09T11:19:23+00:00 CRITICAL Uncaught Error: Call to a member function get_permalink() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:546
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 546
+
+2024-07-09T11:19:23+00:00 CRITICAL Uncaught Error: Call to a member function get_permalink() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:546
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 546
+
+2024-07-09T11:19:37+00:00 CRITICAL Uncaught Error: Call to a member function get_permalink() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:546
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 546
+
+2024-07-09T11:19:37+00:00 CRITICAL Uncaught Error: Call to a member function get_permalink() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:546
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 546
+
+2024-07-09T11:20:28+00:00 CRITICAL Uncaught Error: Call to a member function get_permalink() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:548
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 548
+
+2024-07-09T11:20:28+00:00 CRITICAL Uncaught Error: Call to a member function get_permalink() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:548
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 548
+
+2024-07-09T11:21:17+00:00 CRITICAL Uncaught Error: Call to a member function get_permalink() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:548
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 548
+
+2024-07-09T11:21:17+00:00 CRITICAL Uncaught Error: Call to a member function get_permalink() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:548
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 548
+
+2024-07-09T11:21:56+00:00 CRITICAL Uncaught Error: Call to a member function get_permalink() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:548
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 548
+
+2024-07-09T11:21:56+00:00 CRITICAL Uncaught Error: Call to a member function get_permalink() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:548
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 548
+
+2024-07-09T11:22:26+00:00 CRITICAL Uncaught Error: Call to a member function get_permalink() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:548
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 548
+
+2024-07-09T11:22:26+00:00 CRITICAL Uncaught Error: Call to a member function get_permalink() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:548
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 548
+
+2024-07-09T11:22:42+00:00 CRITICAL Uncaught Error: Call to a member function get_permalink() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:546
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 546
+
+2024-07-09T11:22:42+00:00 CRITICAL Uncaught Error: Call to a member function get_permalink() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:546
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 546
+
+2024-07-09T11:26:58+00:00 CRITICAL Uncaught Error: Call to a member function get_permalink() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:546
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 546
+
+2024-07-09T11:26:59+00:00 CRITICAL Uncaught Error: Call to a member function get_permalink() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:546
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 546
+
+2024-07-09T11:32:57+00:00 CRITICAL Uncaught Error: Call to a member function get_image_id() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:550
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 550
+
+2024-07-09T11:32:58+00:00 CRITICAL Uncaught Error: Call to a member function get_image_id() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:550
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 550
+
+2024-07-09T11:33:46+00:00 CRITICAL Uncaught Error: Call to a member function get_image_id() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:550
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 550
+
+2024-07-09T11:33:46+00:00 CRITICAL Uncaught Error: Call to a member function get_image_id() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:550
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 550
+
+2024-07-09T11:35:13+00:00 CRITICAL Uncaught Error: Call to a member function get_image_id() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:548
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 548
+
+2024-07-09T11:35:13+00:00 CRITICAL Uncaught Error: Call to a member function get_image_id() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:548
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 548
+
+2024-07-09T11:55:11+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function WC_Product::get_attribute(), 0 passed in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 390 and exactly 1 expected in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\abstracts\abstract-wc-product.php:2025
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(390): WC_Product->get_attribute()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): custom_product_attributes()
+#2 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#3 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#4 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\content-product.php(57): do_action()
+#5 C:\OSPanel\domains\balace\wp-includes\template.php(785): require('C:\\OSPanel\\doma...')
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(284): load_template()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-products.php(660): wc_get_template_part()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-products.php(100): WC_Shortcode_Products->product_loop()
+#9 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(283): WC_Shortcode_Products->get_content()
+#10 C:\OSPanel\domains\balace\wp-includes\shortcodes.php(355): WC_Shortcodes::products()
+#11 [internal function]: do_shortcode_tag()
+#12 C:\OSPanel\domains\balace\wp-includes\shortcodes.php(227): preg_replace_callback()
+#13 C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\catalog-product.php(7): do_shortcode()
+#14 C:\OSPanel\domains\balace\wp-includes\template.php(785): require('C:\\OSPanel\\doma...')
+#15 C:\OSPanel\domains\balace\wp-includes\template.php(718): load_template()
+#16 C:\OSPanel\domains\balace\wp-includes\general-template.php(204): locate_template()
+#17 C:\OSPanel\domains\balace\wp-content\themes\balace\pages\home_page.php(10): get_template_part()
+#18 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#19 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#20 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#21 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\abstracts\abstract-wc-product.php на строке 2025
+
+2024-07-09T11:56:59+00:00 CRITICAL Uncaught Error: Call to a member function get_image_id() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:553
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 553
+
+2024-07-09T11:57:00+00:00 CRITICAL Uncaught Error: Call to a member function get_image_id() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:553
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 553
+
+2024-07-09T11:59:00+00:00 CRITICAL Uncaught Error: Call to a member function get_image_id() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:553
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 553
+
+2024-07-09T11:59:01+00:00 CRITICAL Uncaught Error: Call to a member function get_image_id() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:553
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 553
+
+2024-07-09T11:59:13+00:00 CRITICAL Uncaught Error: Call to a member function get_image_id() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:553
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 553
+
+2024-07-09T11:59:13+00:00 CRITICAL Uncaught Error: Call to a member function get_image_id() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:553
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 553
+
+2024-07-09T12:02:58+00:00 CRITICAL Uncaught Error: Call to a member function get_attributes() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:545
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 545
+
+2024-07-09T12:02:59+00:00 CRITICAL Uncaught Error: Call to a member function get_attributes() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:545
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 545
+
+2024-07-09T12:04:33+00:00 CRITICAL Uncaught Error: Call to a member function get_attributes() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:545
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 545
+
+2024-07-09T12:04:33+00:00 CRITICAL Uncaught Error: Call to a member function get_attributes() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:545
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 545
+
+2024-07-09T12:04:55+00:00 CRITICAL Uncaught Error: Call to a member function get_attributes() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:545
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 545
+
+2024-07-09T12:04:55+00:00 CRITICAL Uncaught Error: Call to a member function get_attributes() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:545
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 545
+
+2024-07-09T12:05:18+00:00 CRITICAL Uncaught Error: Call to a member function get_attributes() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:545
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 545
+
+2024-07-09T12:05:19+00:00 CRITICAL Uncaught Error: Call to a member function get_attributes() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:545
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 545
+
+2024-07-09T12:05:33+00:00 CRITICAL Uncaught Error: Call to a member function get_attributes() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:545
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 545
+
+2024-07-09T12:05:33+00:00 CRITICAL Uncaught Error: Call to a member function get_attributes() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:545
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 545
+
+2024-07-09T12:05:58+00:00 CRITICAL Uncaught Error: Call to a member function get_attributes() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:545
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 545
+
+2024-07-09T12:05:58+00:00 CRITICAL Uncaught Error: Call to a member function get_attributes() on bool in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:545
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 545
+
+2024-07-09T12:32:01+00:00 CRITICAL syntax error, unexpected variable "$attribute_label", expecting "," or ";" в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 571
+
+2024-07-09T12:32:03+00:00 CRITICAL syntax error, unexpected variable "$attribute_label", expecting "," or ";" в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 571
+
+2024-07-09T12:32:35+00:00 CRITICAL Unclosed '{' on line 569 does not match ')' в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 571
+
+2024-07-09T12:57:46+00:00 CRITICAL syntax error, unexpected single-quoted string ": ", expecting "," or ";" в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 575
+
+2024-07-09T12:57:47+00:00 CRITICAL syntax error, unexpected single-quoted string ": ", expecting "," or ";" в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 575
+
+2024-07-09T13:13:49+00:00 CRITICAL Uncaught Error: Call to undefined function get_product_attributes() in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:546
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 546
+
+2024-07-09T13:13:49+00:00 CRITICAL Uncaught Error: Call to undefined function get_product_attributes() in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:546
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 546
+
+2024-07-09T13:15:09+00:00 CRITICAL Uncaught Error: Call to undefined function get_product_attributes() in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:546
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 546
+
+2024-07-09T13:15:09+00:00 CRITICAL Uncaught Error: Call to undefined function get_product_attributes() in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:546
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 546
+
+2024-07-09T13:20:23+00:00 CRITICAL syntax error, unexpected token "else", expecting end of file в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 581
+
+2024-07-09T13:47:22+00:00 CRITICAL Uncaught Error: Call to undefined function get_product_attributes_by_type() in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\filter-options.php:120
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\template.php(785): require()
+#1 C:\OSPanel\domains\balace\wp-includes\template.php(718): load_template()
+#2 C:\OSPanel\domains\balace\wp-includes\general-template.php(204): locate_template()
+#3 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\archive-product.php(36): get_template_part()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\taxonomy-product-cat.php(22): wc_get_template()
+#6 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#7 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#8 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#9 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\filter-options.php на строке 120
+
+2024-07-09T13:48:24+00:00 CRITICAL Uncaught Error: Call to undefined function get_product_attributes() in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\filter-options.php:71
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\template.php(785): require()
+#1 C:\OSPanel\domains\balace\wp-includes\template.php(718): load_template()
+#2 C:\OSPanel\domains\balace\wp-includes\general-template.php(204): locate_template()
+#3 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\archive-product.php(36): get_template_part()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\taxonomy-product-cat.php(22): wc_get_template()
+#6 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#7 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#8 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#9 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\filter-options.php на строке 71
+
+2024-07-09T13:49:32+00:00 CRITICAL Uncaught Error: Call to undefined function get_product_attributes() in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\filter-options.php:71
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\template.php(785): require()
+#1 C:\OSPanel\domains\balace\wp-includes\template.php(718): load_template()
+#2 C:\OSPanel\domains\balace\wp-includes\general-template.php(204): locate_template()
+#3 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\archive-product.php(36): get_template_part()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\taxonomy-product-cat.php(22): wc_get_template()
+#6 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#7 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#8 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#9 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\filter-options.php на строке 71
+
+2024-07-09T13:49:39+00:00 CRITICAL Uncaught Error: Call to undefined function get_product_attributes() in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\filter-options.php:71
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\template.php(785): require()
+#1 C:\OSPanel\domains\balace\wp-includes\template.php(718): load_template()
+#2 C:\OSPanel\domains\balace\wp-includes\general-template.php(204): locate_template()
+#3 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\archive-product.php(36): get_template_part()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\taxonomy-product-cat.php(22): wc_get_template()
+#6 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#7 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#8 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#9 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\filter-options.php на строке 71
+
+2024-07-09T13:53:40+00:00 CRITICAL Uncaught Error: Call to undefined function get_product_attributes_by_type() in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\filter-options.php:120
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\template.php(785): require()
+#1 C:\OSPanel\domains\balace\wp-includes\template.php(718): load_template()
+#2 C:\OSPanel\domains\balace\wp-includes\general-template.php(204): locate_template()
+#3 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\archive-product.php(36): get_template_part()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\taxonomy-product-cat.php(22): wc_get_template()
+#6 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#7 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#8 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#9 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\filter-options.php на строке 120
+
+2024-07-09T13:54:17+00:00 CRITICAL Uncaught Error: Call to undefined function get_product_attributes_by_type() in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\filter-options.php:120
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\template.php(785): require()
+#1 C:\OSPanel\domains\balace\wp-includes\template.php(718): load_template()
+#2 C:\OSPanel\domains\balace\wp-includes\general-template.php(204): locate_template()
+#3 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\archive-product.php(36): get_template_part()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\taxonomy-product-cat.php(22): wc_get_template()
+#6 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#7 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#8 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#9 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\filter-options.php на строке 120
+
+2024-07-09T14:39:32+00:00 CRITICAL Uncaught TypeError: preg_match(): Argument #2 ($subject) must be of type string, array given in C:\OSPanel\domains\balace\wp-includes\formatting.php:1596
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\formatting.php(1596): preg_match()
+#1 C:\OSPanel\domains\balace\wp-includes\formatting.php(2208): remove_accents()
+#2 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(530): sanitize_title()
+#3 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#4 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#6 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#7 {main}
+  thrown в C:\OSPanel\domains\balace\wp-includes\formatting.php на строке 1596
+
+2024-07-09T14:39:32+00:00 CRITICAL Uncaught TypeError: preg_match(): Argument #2 ($subject) must be of type string, array given in C:\OSPanel\domains\balace\wp-includes\formatting.php:1596
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\formatting.php(1596): preg_match()
+#1 C:\OSPanel\domains\balace\wp-includes\formatting.php(2208): remove_accents()
+#2 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(530): sanitize_title()
+#3 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#4 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#6 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#7 {main}
+  thrown в C:\OSPanel\domains\balace\wp-includes\formatting.php на строке 1596
+
+2024-07-09T15:07:30+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function custom_loop_add_to_cart_link(), 0 passed in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 560 and exactly 3 expected in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:504
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(560): custom_loop_add_to_cart_link()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#2 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#3 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#4 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#5 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 504
+
+2024-07-09T15:07:30+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function custom_loop_add_to_cart_link(), 0 passed in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 560 and exactly 3 expected in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:504
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(560): custom_loop_add_to_cart_link()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#2 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#3 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#4 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#5 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 504
+
+2024-07-09T15:07:40+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function custom_loop_add_to_cart_link(), 0 passed in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 560 and exactly 3 expected in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:504
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(560): custom_loop_add_to_cart_link()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#2 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#3 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#4 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#5 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 504
+
+2024-07-09T15:07:41+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function custom_loop_add_to_cart_link(), 0 passed in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 560 and exactly 3 expected in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:504
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(560): custom_loop_add_to_cart_link()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#2 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#3 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#4 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#5 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 504
+
+2024-07-09T15:11:39+00:00 CRITICAL Uncaught Error: Call to undefined function tinvwl_add_to_wishlist_button() in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:561
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 561
+
+2024-07-09T15:11:39+00:00 CRITICAL Uncaught Error: Call to undefined function tinvwl_add_to_wishlist_button() in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:561
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 561
+
+2024-07-09T15:11:48+00:00 CRITICAL Uncaught Error: Call to undefined function tinvwl_add_to_wishlist_button() in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:561
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 561
+
+2024-07-09T15:11:49+00:00 CRITICAL Uncaught Error: Call to undefined function tinvwl_add_to_wishlist_button() in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:561
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 561
+
+2024-07-09T15:17:06+00:00 CRITICAL Uncaught Error: Call to undefined function tinvwl_add_to_wishlist_button() in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:562
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 562
+
+2024-07-09T15:17:06+00:00 CRITICAL Uncaught Error: Call to undefined function tinvwl_add_to_wishlist_button() in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:562
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 562
+
+2024-07-09T15:18:30+00:00 CRITICAL Uncaught Error: Call to undefined function tinvwl_add_to_wishlist_button() in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:562
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 562
+
+2024-07-09T15:18:31+00:00 CRITICAL Uncaught Error: Call to undefined function tinvwl_add_to_wishlist_button() in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:562
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): get_category_products()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 562
+

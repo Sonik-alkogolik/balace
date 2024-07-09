@@ -395,10 +395,10 @@ function custom_product_attributes() {
     echo '<h2 class="woocommerce-loop-product__title h4 text_main">' . get_the_title() . '</h2>';
 
     if (!empty($attribute_type)) {
-        echo '<div class="product-attribute-type" title="' . esc_attr($attribute_type) . '"><p class="body2 text_main">' . esc_html($attribute_type) . '</p></div>';
+        echo '<div class="product-attribute-type" ><p class="body2 text_main">' . esc_html($attribute_type) . '</p></div>';
     }
 
-    echo '<div class="product_attribute_container" title="' . esc_attr($attribute_volume) . '">';
+    echo '<div class="product_attribute_container" >';
 
     if (!empty($price)) {
         echo '<div class="h6 text_dark" title="' . esc_attr($price) . '">' . $price . '</div>';
@@ -480,123 +480,115 @@ add_action('init', 'remove_woocommerce_breadcrumbs');
 function remove_woocommerce_breadcrumbs() {
     remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
 }
+function remove_woocommerce_sidebar() {
+    if (is_product()) {
+        remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
+    }
+}
+add_action('wp', 'remove_woocommerce_sidebar');
+
+function remove_woocommerce_styles() {
+    if (is_product()) {
+        wp_dequeue_style('woocommerce-layout');
+        wp_dequeue_style('woocommerce-general');
+        wp_dequeue_style('woocommerce-smallscreen');
+        wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css');
+        wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js');
+        wp_enqueue_style('block-blog-style', get_template_directory_uri() . '/assets/css/pages/card-product-page.css');
+        wp_enqueue_script('card-slider ', get_template_directory_uri() . '/assets/js/card-slider-gallery.js');
+    }
+}
+add_action('wp_enqueue_scripts', 'remove_woocommerce_styles', 100);
 
 
-// Добавляем скрипт и данные категории в footer
-function enqueue_my_ajax_scripts() {
-    wp_enqueue_script('my-custom-ajax-script', get_template_directory_uri() . '/assets/js/ajax-filter.js', array('jquery'), '', true);
-    wp_localize_script('my-custom-ajax-script', 'ajax_params', array(
-        'ajax_url' => admin_url('admin-ajax.php'),
-        'nonce' => wp_create_nonce('ajax-nonce'),
-        'current_category_id' => get_queried_object_id() 
+
+function add_ajax_scripts() {
+    wp_enqueue_script('ajax-script-handle', get_template_directory_uri() . '/assets/js/ajax-filter.js', array('jquery'), null, true);
+    wp_localize_script('ajax-script-handle', 'ajax_object', array(
+        'ajaxurl' => admin_url('admin-ajax.php'),
+        'ajax_nonce' => wp_create_nonce('ajax-nonce')
     ));
 }
-add_action('wp_enqueue_scripts', 'enqueue_my_ajax_scripts');
+add_action('wp_enqueue_scripts', 'add_ajax_scripts');
 
+function get_category_products() {
+    check_ajax_referer('ajax-nonce', 'nonce');
+    if (isset($_POST['attributes']) && isset($_POST['name'])) {
+        $attributes_value = $_POST['attributes'];
+        $attributes_name = $_POST['name'];
+
+        // Создаем массив аргументов для WP_Query
+        $args = array(
+            'post_type' => 'product',
+            'posts_per_page' => -1,
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'pa_тип-товара', 
+                    'field' => 'name',
+                    'terms' => $attributes_value, 
+                ),
+            ),
+        );
+
+        $query = new WP_Query($args);
+
+        if ($query->have_posts()) {
+            while ($query->have_posts()) {
+                $query->the_post();
+                $product = wc_get_product(get_the_ID());
+                
+                if (!$product) {
+                    continue; 
+                }
+                
+               
+                echo '<li ';
+                post_class('product_item');
+                echo '>';
+                echo '<a href="' . esc_url(get_permalink()) . '" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">';
+                echo '<div class="product_image_item">';
+                echo get_the_post_thumbnail($product->get_id(), 'woocommerce_thumbnail', array('class' => 'attachment-woocommerce_thumbnail size-woocommerce_thumbnail'));
+                echo '</div>';
+                custom_product_attributes($product);
+           
+			   
+                woocommerce_template_loop_add_to_cart(array(
+                    'class' => 'btn_add_to_basket button product_type_simple add_to_cart_button ajax_add_to_cart', 
+                ), $product);
+
+                 echo do_shortcode('[ti_wishlists_addtowishlist]');
+
+                echo '</a>';
+                echo '</li>';
+            }
+            
+            wp_reset_postdata();
+        } else {
+            echo 'No posts found.';
+        }
+    } else {
+        echo 'Attributes or name not provided.';
+    }
+
+    wp_die();
+}
+
+// Добавляем обработчики AJAX запросов
 add_action('wp_ajax_get_category_products', 'get_category_products');
 add_action('wp_ajax_nopriv_get_category_products', 'get_category_products');
 
-function get_category_products() {
-    // Проверяем nonce для безопасности
-    check_ajax_referer('ajax-nonce', 'nonce');
 
-    $category_id = intval($_POST['category_id']);
-    if (!$category_id) {
-        wp_send_json_error('Invalid category ID');
-        wp_die();
-    }
 
-    // Получаем атрибуты, переданные через AJAX
-    $selected_attributes = isset($_POST['attributes']) ? $_POST['attributes'] : array();
 
-    // Параметры для запроса товаров
-    $args = array(
-        'post_type' => 'product',
-        'posts_per_page' => -1,
-        'tax_query' => array(
-            array(
-                'taxonomy' => 'product_cat',
-                'field' => 'term_id',
-                'terms' => $category_id
-            )
-        )
-    );
 
-    // Добавляем условия для фильтрации по выбранным атрибутам
-    if (!empty($selected_attributes)) {
-        $tax_query = array('relation' => 'AND');
 
-        foreach ($selected_attributes as $attribute_name => $attribute_values) {
-            if (!empty($attribute_values)) {
-                $tax_query[] = array(
-                    'taxonomy' => $attribute_name, // Используем имя атрибута как taxonomy
-                    'field' => 'slug',
-                    'terms' => $attribute_values,
-                    'operator' => 'IN',
-                );
-            }
-        }
 
-        $args['tax_query'] = $tax_query;
-    }
 
-    $products_query = new WP_Query($args);
 
-    // Формируем HTML для списка отфильтрованных товаров и их атрибутов
-    ob_start();
 
-    if ($products_query->have_posts()) {
-        echo '<ul>';
-        while ($products_query->have_posts()) {
-            $products_query->the_post();
-            $product = wc_get_product(get_the_ID());
 
-            // Выводим название товара
-            echo '<li>' . get_the_title() . '</li>';
 
-            // Получаем атрибуты товара
-            $attributes = $product->get_attributes();
 
-            // Выводим атрибуты товара
-            if (!empty($attributes)) {
-                echo '<ul class="attribute">';
-                foreach ($attributes as $attribute) {
-                    $attribute_name = wc_attribute_label($attribute->get_name());
-                    $attribute_values = implode(', ', $attribute->get_options());
-                    echo '<li>' . $attribute_name . ': ' . $attribute_values . '</li>';
-                }
-                echo '</ul>';
-            } else {
-                echo '<p>Атрибуты не найдены.</p>';
-            }
 
-            // Получаем термины для таксономий текущего товара
-            $taxonomies = get_object_taxonomies('product', 'names');
-            if (!empty($taxonomies)) {
-                echo '<ul>';
-                foreach ($taxonomies as $taxonomy) {
-                    $terms = wp_get_post_terms(get_the_ID(), $taxonomy);
-                    if (!is_wp_error($terms) && !empty($terms)) {
-                        echo '<li>' . $taxonomy . ': ';
-                        $term_names = array();
-                        foreach ($terms as $term) {
-                            $term_names[] = $term->name;
-                        }
-                        echo implode(', ', $term_names);
-                        echo '</li>';
-                    }
-                }
-                echo '</ul>';
-            }
-        }
-        echo '</ul>';
-    } else {
-        echo '<p>Товары не найдены.</p>';
-    }
 
-    wp_reset_postdata();
-
-    // Возвращаем HTML списком товаров
-    wp_die();
-}
 

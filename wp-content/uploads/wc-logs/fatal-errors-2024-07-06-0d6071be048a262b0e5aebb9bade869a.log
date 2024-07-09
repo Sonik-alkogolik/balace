@@ -1,0 +1,4 @@
+2024-07-06T13:18:01+00:00 CRITICAL Cannot redeclare get_product_attributes() (previously declared in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\filter-options.php:45) в C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\filter-options.php на строке 86
+
+2024-07-06T13:19:14+00:00 CRITICAL Cannot redeclare get_product_attributes() (previously declared in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\filter-options.php:45) в C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\filter-options.php на строке 93
+
