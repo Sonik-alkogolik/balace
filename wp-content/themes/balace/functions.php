@@ -540,8 +540,6 @@ function get_category_products() {
                 if (!$product) {
                     continue; 
                 }
-                
-               
                 echo '<li ';
                 post_class('product_item');
                 echo '>';
@@ -573,7 +571,6 @@ function get_category_products() {
     wp_die();
 }
 
-// Добавляем обработчики AJAX запросов
 add_action('wp_ajax_get_category_products', 'get_category_products');
 add_action('wp_ajax_nopriv_get_category_products', 'get_category_products');
 
@@ -581,7 +578,71 @@ add_action('wp_ajax_nopriv_get_category_products', 'get_category_products');
 
 
 
+function filter_products_by_price() {
+    check_ajax_referer('ajax-nonce', 'nonce');
 
+    $min_price = isset($_POST['min_price']) ? floatval($_POST['min_price']) : 0;
+    $max_price = isset($_POST['max_price']) ? floatval($_POST['max_price']) : PHP_INT_MAX;
+
+    $args = array(
+        'post_type' => 'product',
+        'posts_per_page' => -1,
+        'meta_query' => array(
+            'relation' => 'AND',
+            array(
+                'key' => '_price',
+                'value' => $min_price,
+                'compare' => '>=',
+                'type' => 'NUMERIC'
+            ),
+            array(
+                'key' => '_price',
+                'value' => $max_price,
+                'compare' => '<=',
+                'type' => 'NUMERIC'
+            )
+        )
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+            $product = wc_get_product(get_the_ID());
+            
+            if (!$product) {
+                continue; 
+            }
+            
+            echo '<li ';
+            post_class('product_item');
+            echo '>';
+            echo '<a href="' . esc_url(get_permalink()) . '" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">';
+            echo '<div class="product_image_item">';
+            echo get_the_post_thumbnail($product->get_id(), 'woocommerce_thumbnail', array('class' => 'attachment-woocommerce_thumbnail size-woocommerce_thumbnail'));
+            echo '</div>';
+            custom_product_attributes($product);
+            woocommerce_template_loop_add_to_cart(array(
+                'class' => 'btn_add_to_basket button product_type_simple add_to_cart_button ajax_add_to_cart',
+            ), $product);
+            echo '<div class="tinv-wraper woocommerce tinvwishlist tinvwl-after-add-to-cart tinvwl-loop-button-wrapper tinvwl-woocommerce_after_shop_loop_item" data-tinvwl_product_id="' . esc_attr($product->get_id()) . '">';
+            echo do_shortcode('[yith_wcwl_add_to_wishlist]');
+            echo '</div>';
+            echo '</a>';
+            echo '</li>';
+        }
+        
+        wp_reset_postdata();
+    } else {
+        echo 'No posts found.';
+    }
+
+    wp_die();
+}
+
+add_action('wp_ajax_filter_products_by_price', 'filter_products_by_price');
+add_action('wp_ajax_nopriv_filter_products_by_price', 'filter_products_by_price');
 
 
 

@@ -14,15 +14,31 @@ jQuery(document).ready(function($) {
     });
 
     
-    $('.filter-block').click(function() {
+    $('.filter-block').click(function(e) {
         var $list = $(this).find('.filter-list');
         $('.filter-list').not($list).removeClass('active-list');
         $('.filter-block').removeClass('filter-active-block');
         $list.addClass('active-list');
         $(this).addClass('filter-active-block');
+        e.stopPropagation(); // Останавливаем всплытие события клика
     });
-    
-    
+
+    document.addEventListener("click", function(e) {
+        var contentPopups = document.querySelectorAll('.filter-list');
+        var targetElement = e.target;
+        var clickedOutside = true;
+
+        contentPopups.forEach(function(contentPopup) {
+            if (contentPopup.contains(targetElement)) {
+                clickedOutside = false;
+            }
+        });
+
+        if (clickedOutside) {
+            $('.filter-list').removeClass('active-list');
+            $('.filter-block').removeClass('filter-active-block');
+        }
+    });
     
 });
 
@@ -57,6 +73,27 @@ jQuery(function($) {
                 }
             });
         }
+    });
+
+    $('#filter-form').on('submit', function(event) {
+        event.preventDefault();
+
+        var formData = $(this).serialize();
+        $.ajax({
+            url: ajax_object.ajaxurl,
+            type: 'POST',
+            data: {
+                action: 'filter_products_by_price',
+                nonce: ajax_object.ajax_nonce,
+                formData: formData
+            },
+            success: function(response) {
+                $('#products-list').html(response);
+            },
+            error: function(xhr, status, error) {
+                console.log('AJAX Error: ' + status + ' - ' + error);
+            }
+        });
     });
 });
 

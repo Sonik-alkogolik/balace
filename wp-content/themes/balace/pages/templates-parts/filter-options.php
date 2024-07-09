@@ -144,8 +144,16 @@ $product_attributes = get_product_attributes($products_query);
     <div class="filter-block" id="product-price">
         <span>Цена</span>
         <div class="filter-list">
-            Цена $
-          </div>
+        <form id="price-filter-form">
+        <label for="min-price">Минимальная цена:</label>
+        <input type="number" id="min-price" name="min_price" min="0" step="1">
+        
+        <label for="max-price">Максимальная цена:</label>
+        <input type="number" id="max-price" name="max_price" min="0" step="1">
+        
+        <button type="submit">Фильтровать</button>
+        </form>
+    </div>
     </div>
 </div>
 </section>
