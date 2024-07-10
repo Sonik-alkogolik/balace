@@ -319,6 +319,7 @@ add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles_scripts');
 
 function enqueue_swiper_slider() {
     if (is_product_category()) {
+        wp_enqueue_style('rage-style', get_template_directory_uri() . '/assets/css/layouts/jquery-ui.css');
         wp_enqueue_style('page-category', get_template_directory_uri() . '/assets/css/pages/page-category.css');
         wp_enqueue_style('catalog-style', get_template_directory_uri() . '/assets/css/layouts/catalog-product.css');
         wp_enqueue_style('best-products-slider', get_template_directory_uri() . '/assets/css/layouts/best-products-slider.css');
@@ -326,7 +327,9 @@ function enqueue_swiper_slider() {
         wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css');
         wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js');
         wp_enqueue_script('best-products', get_template_directory_uri() . '/assets/js/best-product-slider.js');
-        wp_enqueue_script('ajax-filter', get_template_directory_uri() . '/assets/js/ajax-filter.js');
+        // wp_enqueue_script('ajax-filter', get_template_directory_uri() . '/assets/js/ajax-filter.js');
+        wp_enqueue_script('jquery-rage-slider', get_template_directory_uri() . '/assets/js/jquery-ui.min.js');
+        wp_enqueue_script('jquery-ui-touch-punch', get_template_directory_uri() . '/assets/js/jquery.ui.touch-punch.min.js');
     }
 }
 add_action('wp_enqueue_scripts', 'enqueue_swiper_slider');
@@ -627,7 +630,7 @@ function filter_products_by_price() {
                 'class' => 'btn_add_to_basket button product_type_simple add_to_cart_button ajax_add_to_cart',
             ), $product);
             echo '<div class="tinv-wraper woocommerce tinvwishlist tinvwl-after-add-to-cart tinvwl-loop-button-wrapper tinvwl-woocommerce_after_shop_loop_item" data-tinvwl_product_id="' . esc_attr($product->get_id()) . '">';
-            echo do_shortcode('[yith_wcwl_add_to_wishlist]');
+            echo do_shortcode('[ti_wishlists_addtowishlist]');
             echo '</div>';
             echo '</a>';
             echo '</li>';
@@ -644,10 +647,8 @@ function filter_products_by_price() {
 add_action('wp_ajax_filter_products_by_price', 'filter_products_by_price');
 add_action('wp_ajax_nopriv_filter_products_by_price', 'filter_products_by_price');
 
-
-
-
-
+//Сортировка woocommerce
+add_action('woocommerce_catalog_ordering', 'woocommerce_catalog_ordering', 30);
 
 
 

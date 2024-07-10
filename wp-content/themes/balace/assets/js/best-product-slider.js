@@ -8,12 +8,17 @@ document.addEventListener('DOMContentLoaded', function() {
             prevEl: '.swiper-button-prev.best-slider-btn',
         },
         breakpoints: {
-            1920:{
-                slidesPerView: 4,
+            1440:{
+                slidesPerView: 3.8,
+                spaceBetween: 20, 
+            },
+            1250: {
+                slidesPerView: 4.01,
+                spaceBetween: 15, 
             },
             1024: {
-                slidesPerView: 4,
-                spaceBetween: 15, 
+                slidesPerView: 3,
+                spaceBetween: 20, 
             },
             720: {
                 slidesPerView: 3,

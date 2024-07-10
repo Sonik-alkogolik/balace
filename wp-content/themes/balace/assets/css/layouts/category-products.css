@@ -324,6 +324,7 @@ a.button.added::after {
     line-height: 15.6px;
     letter-spacing: 0.04em;
     text-align: left;
+    flex-wrap: wrap;
 }
 .filter-list {
     display: none;
@@ -353,12 +354,17 @@ a.button.added::after {
     z-index: 99;
 }
 .filter-list.active-list label {
+    width: 80%;
     margin-top: 14px;
     margin-left: 16px;
     margin-bottom: 6px;
     display: flex;
 }
+.filter-list.active-list label:last-child {
+    margin-bottom: 12px;
+}
 .filter-list.active-list label p {
+    cursor: pointer;
     font-size: 12px;
     font-weight: 600;
     line-height: 15.6px;
@@ -366,6 +372,9 @@ a.button.added::after {
     text-align: left;
     color: rgba(34, 29, 23, 1);
     padding-left: 12px;
+}
+.filter-list.active-list label p:hover {
+    color: #efe1ad;
 }
 
 .filter-block {
@@ -378,6 +387,7 @@ a.button.added::after {
     background:rgba(245, 243, 232, 1);
     border-radius: 12px;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 .filter-block::after{
@@ -427,18 +437,19 @@ a.button.added::after {
     display: inline-block;
     width: 15px;
     height: 15px;
-    background-image: url('/wp-content/themes/balace/img/icon/_Checkbox_.png'); 
+    /* background-image: url('/wp-content/themes/balace/img/icon/_Checkbox_.png');  */
     background-size: cover; 
     background-repeat: no-repeat; 
     cursor: pointer;
 }
+.custom-checkbox.checked .checkbox-image {
+    background-image: url('/wp-content/themes/balace/img/icon/_Checkbox_.png');
+}
+
 ul.products.sub-category  li.product a.woocommerce-LoopProduct-link.woocommerce-loop-product__link .product-attribute-wrapp .product-attribute-type {
     display: flex;
 }
 
-.custom-checkbox input[type="checkbox"]:checked + .checkbox-image {
-    background-image: url('/wp-content/themes/balace/img/icon/_Checkbox_Checked.png');
-}
 
 @media(max-width:1430px){
     .woocommerce ul.sub-category li.product {
@@ -458,14 +469,13 @@ ul.products.sub-category  li.product a.woocommerce-LoopProduct-link.woocommerce-
         height: 74px;
     }
  
-.product_image_item { 
+    .product_image_item { 
     background-size: 200px, 100% 100%;
-}
-.woocommerce.category-wrapp ul.products li.product a.woocommerce-LoopProduct-link img{
+    }
+    .woocommerce.category-wrapp ul.products li.product a.woocommerce-LoopProduct-link img{
     max-height: 180px;
     margin-bottom: 30px;
-}
-
+    }
 
 }
 
@@ -489,6 +499,21 @@ ul.products.sub-category  li.product a.woocommerce-LoopProduct-link.woocommerce-
         line-height: 32.02px;
     }
 } */
+
+@media(max-width:1280px){
+    .products-filter {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(257px, 1fr));
+        gap: 20px;
+        font-family: "Manrope", sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 15.6px;
+        letter-spacing: 0.04em;
+        text-align: left;
+    }
+}
 
 @media(max-width:1024px){
     .woocommerce ul.sub-category li.product {
@@ -699,7 +724,7 @@ ul.products.sub-category  li.product a.woocommerce-LoopProduct-link.woocommerce-
     }
     .woocommerce.category-wrapp ul.products.sub-category li.product .product-attribute-wrapp{
         height: 80px;
-        position: relative;
+        position: initial;
     }
     .woocommerce ul.sub-category li.product {
         border-radius: 10px;
@@ -707,10 +732,29 @@ ul.products.sub-category  li.product a.woocommerce-LoopProduct-link.woocommerce-
     .product_image_item {
         border-radius: 10px;
     }
-
-    
+    .product_attribute_container {
+        width: 90%;
+    }
+    .product-attribute-type {
+        left: 15px;
+        top: 15px;
+    }
     
     /* /стили карточки */
+
+
+    .products-filter {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(32%, 1fr));
+        gap: 20px;
+        font-family: "Manrope", sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 15.6px;
+        letter-spacing: 0.04em;
+        text-align: left;
+    }
 }
 
 /* @media(max-width:600px){
@@ -768,7 +812,7 @@ ul.products.sub-category  li.product a.woocommerce-LoopProduct-link.woocommerce-
     }
     .woocommerce.category-wrapp ul.products.sub-category li.product .product-attribute-wrapp {
         height: 100px;
-        position: relative;
+        position: initial;
     }
     .woocommerce ul.sub-category li.product a img {
         max-height: 100px;
@@ -785,3 +829,58 @@ ul.products.sub-category  li.product a.woocommerce-LoopProduct-link.woocommerce-
         width: 155px;
     } */
 } 
+
+
+
+/* ..... стандартная сортировка woocommerce*/
+
+.select-options.custom-select-options {
+    left: 0;
+}
+
+.select-options.custom-select-options .option  {
+    padding: 10px;
+}
+.select-options.custom-select-options .option:hover {
+    color: #efe1ad;
+}
+#product-ordering {
+    max-width: 150px;
+    border: 1px solid rgba(191, 187, 168, 1);
+    background: transparent;
+}
+
+/* ..... фильтр цен ..... */
+#price-filter-form {
+    width: 95%;
+    background: transparent;
+}
+.price-filter-form span {
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15.6px;
+    letter-spacing: 0.04em;
+    text-align: left;
+    color: rgba(34, 29, 23, 1);
+    padding-left: 0px;
+}
+.rice-filter-form span:hover {
+    color: #efe1ad;
+}
+.filter-list.product-price {
+    padding: 20px;
+    padding-top: 5px;
+}
+#price-filter-form > label {
+    margin: 0;
+    padding-bottom: 15px;
+}
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+    border: none;
+    background:#efe1ad;
+    outline: none;
+}
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus, .ui-button:hover, .ui-button:focus {
+    outline: none;
+}

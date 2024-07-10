@@ -20,12 +20,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<form class="woocommerce-ordering" method="get">
-	<select name="orderby" class="orderby" aria-label="<?php esc_attr_e( 'Shop order', 'woocommerce' ); ?>">
-		<?php foreach ( $catalog_orderby_options as $id => $name ) : ?>
-			<option value="<?php echo esc_attr( $id ); ?>" <?php selected( $orderby, $id ); ?>><?php echo esc_html( $name ); ?></option>
-		<?php endforeach; ?>
+<!-- <form class="woocommerce-ordering" method="get">
+	<select name="orderby" class="orderby" aria-label="<?php //esc_attr_e( 'Shop order', 'woocommerce' ); ?>">
+		<?php //foreach ( $catalog_orderby_options as $id => $name ) : ?>
+			<option value="<?php //echo esc_attr( $id ); ?>" <?php //selected( $orderby, $id ); ?>><?php //echo esc_html( $name ); ?></option>
+		<?php //endforeach; ?>
 	</select>
 	<input type="hidden" name="paged" value="1" />
-	<?php wc_query_string_form_fields( null, array( 'orderby', 'submit', 'paged', 'product-page' ) ); ?>
+	<?php //wc_query_string_form_fields( null, array( 'orderby', 'submit', 'paged', 'product-page' ) ); ?>
+</form> --> 
+<form class="woocommerce-ordering" method="get">
+
+            <ul class="select-options custom-select-options filter-list">
+                <?php foreach ( $catalog_orderby_options as $id => $name ) : ?>
+                    <li class="option <?php echo ( $orderby === $id ) ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( $id ); ?>"><?php echo esc_html( $name ); ?></li>
+                <?php endforeach; ?>
+            </ul>
+            <input type="hidden" name="orderby" value="<?php echo esc_attr( $orderby ); ?>">
+    <input type="hidden" name="paged" value="1" />
+    <?php wc_query_string_form_fields( null, array( 'orderby', 'submit', 'paged', 'product-page' ) ); ?>
 </form>
+

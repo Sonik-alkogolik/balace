@@ -53,8 +53,6 @@ function get_product_attributes($products_query) {
 
             foreach ($attributes as $attribute) {
                 $name = $attribute->get_name();
-
-                // Check if the attribute name is 'pa_тип-товара'
                 if ($name === 'pa_тип-товара') {
                     if (!isset($product_attributes[$name])) {
                         $product_attributes[$name] = array();
@@ -136,24 +134,30 @@ $product_attributes = get_product_attributes($products_query);
         <?php
             endforeach;
         } else {
-            //echo '<p>No attributes found.</p>';
+            
         }
         ?>
     </div>
 </div>
     <div class="filter-block" id="product-price">
         <span>Цена</span>
-        <div class="filter-list">
-        <form id="price-filter-form">
-        <label for="min-price">Минимальная цена:</label>
-        <input type="number" id="min-price" name="min_price" min="0" step="1">
-        
-        <label for="max-price">Максимальная цена:</label>
-        <input type="number" id="max-price" name="max_price" min="0" step="1">
-        
-        <button type="submit">Фильтровать</button>
-        </form>
+        <div class="filter-list product-price">
+            <form id="price-filter-form">
+                <label for="price-range">Диапазон цен:</label>
+                <div id="price-range"></div>
+                <input type="hidden" id="min-price" name="min_price" value="0">
+                <input type="hidden" id="max-price" name="max_price" value="1000">
+                <br>
+                <span>Минимальная цена: <span id="min-price-display">0</span></span>
+                <br>
+                <span>Максимальная цена: <span id="max-price-display">1000</span></span>
+            </form>
+        </div>
     </div>
+    
+    <div class="filter-block" id="product-ordering">
+        <span>Сортировать по:</span>
+        <?php do_action('woocommerce_catalog_ordering'); ?>
     </div>
 </div>
 </section>
