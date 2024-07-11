@@ -23,7 +23,7 @@
 .swiper-container.best_products {
     margin: 0 auto;
     margin-bottom: 20px;
-    width: 98%;
+    width: 97%;
     overflow: hidden;
 }
 
@@ -158,6 +158,9 @@
 @media(max-width:1250px){
     .best_products ul.swiper-wrapper li.swiper-slide {
         max-width: 32%;
+    }
+    .best-products-block-title {
+        width: 97%;
     }
 }
 @media(max-width:1200px){

@@ -72,55 +72,57 @@ if ( post_password_required() ) {
 			<div class="card-info-item">
 							<img src="/wp-content/themes/balace/img/icon/statick-img-card.png" />
 							<p class="h6">Эффективность</p>
-							<span>8 из 10 опрошенных заметили положительный эффект с 1 недели</span>
+							<span class="body2">8 из 10 опрошенных заметили положительный эффект с 1 недели</span>
 						</div>
 
 						<div class="card-info-item">
 						<img src="/wp-content/themes/balace/img/icon/statick-img-card2.png" />
 							<p class="h6">Качественные компоненты</p>
-							<span>Рецептура и сырьё из Европы</span>
+							<span class="body2">Рецептура и сырьё из Европы</span>
 						</div>
 
 						<div class="card-info-item">
 						<img src="/wp-content/themes/balace/img/icon/statick-img-card3.png" />
 							<p class="h6">Доступность</p>
-							<span>Профессиональная косметика по разумной цене</span>
+							<span class="body2">Профессиональная косметика по разумной цене</span>
 						</div>
 
 						<div class="card-info-item">
 						<img src="/wp-content/themes/balace/img/icon/statick-img-card4.png" />
 							<p class="h6">Animal friendly</p>
-							<span>Мы не проводим испытания на животных</span>
+							<span class="body2">Мы не проводим испытания на животных</span>
 						</div>
             </div> 
 
             <div class="card-deskription-wrapp">
+				<div class="card-deskription-content">
 				<p class="h6">Действующее вещество</p>
-				<?php
+				 <?php
 					$active_substances = get_field('active_substance_list'); 
 					if ($active_substances && is_array($active_substances)) {
 						echo '<div class="card-deskription-list">';
 						if (isset($active_substances['picture_substance']) && isset($active_substances['description_substance'])) {
 							echo '<div class="card-deskription-list-item">';
 							echo '<img src="' . $active_substances['picture_substance'] . '" />';
-							echo '<p>' . $active_substances['description_substance'] . '</p>';
+							echo '<p class="body1">' . $active_substances['description_substance'] . '</p>';
 							echo '</div>';
 						}
 						if (isset($active_substances['picture_substance_2']) && isset($active_substances['description_substance_2'])) {
 							echo '<div class="card-deskription-list-item">';
 							echo '<img src="' . $active_substances['picture_substance_2'] . '" />';
-							echo '<p>' . $active_substances['description_substance_2'] . '</p>';
+							echo '<p class="body1">' . $active_substances['description_substance_2'] . '</p>';
 							echo '</div>';
 						}
 						if (isset($active_substances['picture_substance_3']) && isset($active_substances['description_substance_3'])) {
 							echo '<div class="card-deskription-list-item">';
 							echo '<img src="' . $active_substances['picture_substance_3'] . '" />';
-							echo '<p>' . $active_substances['description_substance_3'] . '</p>';
+							echo '<p class="body1">' . $active_substances['description_substance_3'] . '</p>';
 							echo '</div>';
 						}
 						echo '</div>';
 					}
 					?>
+				</div>
 
                 <div class="card-deskription-product">
                     <div class="deskription-product-item">
@@ -157,26 +159,37 @@ if ( post_password_required() ) {
 
                 <div class="method-application-wrapp">
                     <div class="method-application">
-                        <p>Способ применения</p>
+                        <p class="h6">Способ применения</p>
                         <div class="method-application-list">
-                            <?php
-                            $method_list = array(
-                                'method_application_1',
-                                'method_application_2',
-                                'method_application_3'
-                            );
-
-                            foreach ($method_list as $method) {
-                                echo '<p>' . get_field($method) . '</p>'; 
-                            }
-                            ?>
+						 <?php
+							$method_application_list = get_field('method_application_list');
+							if ($method_application_list) {
+								$method_list = array(
+									'method_application_1',
+									'method_application_2',
+									'method_application_3',
+								);
+								$additional_text = 'method_application_deskription_text';
+								foreach ($method_list as $index => $method) {
+									if (isset($method_application_list[$method])) {
+										echo '<div class="method-application-list-item">';
+										echo '<span class="number_method">'. ($index + 1) . '</span> ';
+										echo '<p class="body1 text_dark">'. $method_application_list[$method] . '</p>';
+										echo '</div>';
+									}
+								}
+								if (isset($method_application_list[$additional_text])) {
+									echo '<span class="text_dark">' . $method_application_list[$additional_text] . '</span>';
+								}
+							 }
+							?>
                         </div> 
                     </div> 
                 </div>
 
                 <div class="her-him-wrapp">
                     <div class="her-him-title">
-                        <?php echo '<p>' . get_field('her_him_text') . '</p>';?>
+                        <?php echo '<p class="h5">' . get_field('her_him_text') . '</p>';?>
                     </div>
                     <img src="<?php echo get_field('her_him_img'); ?>" />
                 </div>
@@ -185,7 +198,7 @@ if ( post_password_required() ) {
 
         </div>
 
-        <div class="product-card-item right">
+       <div class="product-card-item right">
 		<div class="product-card-item-img">
 		<?php
 			$product = wc_get_product( get_the_ID() );
@@ -206,19 +219,85 @@ if ( post_password_required() ) {
 				echo '</div>';
 			}
 		?>
-	</div>
-	<div class="product-card-item-bottom">
+	  </div>
+	   <div class="product-card-item-bottom">
         <a class="btn_ozon_white"></a>
         <a class="btn_wild_white"></a>
 
-		<?php
+		 <?php
 			woocommerce_template_single_add_to_cart();
-		?>
-    </div> 
+		 ?>
+        </div> 
         </div>
-
     </div> 
 
+	<?php
+		// Получаем рекомендованные товары
+	$recommended_products = get_field('recommend_products');
+	if ($recommended_products):
+	?>
+	 <div class="recommend-products-wrapp">
+				<div class="recommend-products-item left">
+					<div class="recommend-products-title">
+						<h2 class="h3">Рекомендуем так же</h2>
+					</div>
+					<?php foreach ($recommended_products as $post): ?>
+					<?php
+					setup_postdata($post);
+					$product = wc_get_product($post->ID);
+					?>
+					<div class="recommend-products-deskription">
+					  <?php  echo $product->get_description();?>
+					</div>
+					<?php endforeach; ?>
+					<div class="recommend-products-btn-go-catalog">
+					<?php
+						global $product;
+						$terms = get_the_terms($product->get_id(), 'product_cat');
+
+						if ($terms && !is_wp_error($terms)) {
+							$category_ids = array();
+							foreach ($terms as $term) {
+							$category_ids[] = $term->term_id;
+							}
+							$first_category_id = reset($category_ids);
+							$category_link = get_term_link($first_category_id, 'product_cat');
+						}
+            		?>
+            <a class="btn_go_catalog primery_main h6 text_main" href="<?php echo esc_url($category_link); ?>">
+			<span>перейти в каталог</span>
+			</a>
+					</div>
+				</div>
+
+				<div class="recommend-products-item right">
+				<?php foreach ($recommended_products as $post): ?>
+        <?php
+        setup_postdata($post);
+        $product = wc_get_product($post->ID);
+        ?>
+		    <div class="recommend-products-item-product">
+            <div class="recommend-products-card">
+                <li <?php post_class('product_item'); ?>>
+                    <a href="<?php echo esc_url(get_permalink($product->get_id())); ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
+                        <div class="product_image_item">
+                            <?php echo get_the_post_thumbnail($product->get_id(), 'woocommerce_thumbnail', array('class' => 'attachment-woocommerce_thumbnail size-woocommerce_thumbnail')); ?>
+                        </div>
+                        <?php custom_product_attributes($product); ?>
+                        <?php
+                        woocommerce_template_loop_add_to_cart(array(
+                            'class' => 'btn_add_to_basket button product_type_simple add_to_cart_button ajax_add_to_cart',
+                        ), $product);
+                        ?>
+                        <?php echo do_shortcode('[ti_wishlists_addtowishlist]'); ?>
+                    </a>
+                </li>
+            </div>
+        </div>
+          <?php endforeach; ?>
+				</div>
+	 <?php endif; ?>
+	</div>
 </div> 
 
 <?php
@@ -232,3 +311,4 @@ if ( post_password_required() ) {
 do_action( 'woocommerce_after_single_product' );
 ?>
 </section>
+<?php get_template_part( '/pages/templates-parts/FAQ' ); ?> 

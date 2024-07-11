@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     var mySwiper = new Swiper('.best_products', {
         slidesPerView: 4,  
-        spaceBetween: 20, 
         loop: true,        
         navigation: {
             nextEl: '.swiper-button-next.best-slider-btn',
@@ -9,11 +8,10 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         breakpoints: {
             1440:{
-                slidesPerView: 3.8,
-                spaceBetween: 20, 
+                spaceBetween: 15, 
             },
             1250: {
-                slidesPerView: 4.01,
+                slidesPerView: 4,
                 spaceBetween: 15, 
             },
             1024: {

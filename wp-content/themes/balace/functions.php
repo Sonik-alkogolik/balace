@@ -331,6 +331,9 @@ function enqueue_swiper_slider() {
         wp_enqueue_script('jquery-rage-slider', get_template_directory_uri() . '/assets/js/jquery-ui.min.js');
         wp_enqueue_script('jquery-ui-touch-punch', get_template_directory_uri() . '/assets/js/jquery.ui.touch-punch.min.js');
     }
+    if (is_product()) {
+        wp_enqueue_script('faq', get_template_directory_uri() . '/assets/js/faq.js', array('jquery'), '1.0', true);
+    }
 }
 add_action('wp_enqueue_scripts', 'enqueue_swiper_slider');
 
@@ -345,6 +348,7 @@ function enqueue_about_page_styles() {
         wp_enqueue_script('marquee', get_template_directory_uri() . '/assets/js/marquee.js');
         wp_enqueue_script('history', get_template_directory_uri() . '/assets/js/history-company-slider.js');
     }
+   
 }
 add_action('wp_enqueue_scripts', 'enqueue_about_page_styles');
 
@@ -605,6 +609,7 @@ function filter_products_by_price() {
                 'type' => 'NUMERIC'
             )
         )
+        
     );
 
     $query = new WP_Query($args);
@@ -647,7 +652,7 @@ function filter_products_by_price() {
 add_action('wp_ajax_filter_products_by_price', 'filter_products_by_price');
 add_action('wp_ajax_nopriv_filter_products_by_price', 'filter_products_by_price');
 
-//Сортировка woocommerce
+// .... Стандартная сортировка woocommerce GET в файле filter-options .....
 add_action('woocommerce_catalog_ordering', 'woocommerce_catalog_ordering', 30);
 
 

@@ -51,8 +51,8 @@ jQuery(function($) {
         if (checkedCheckbox.is(':checked')) { 
             var name = checkedCheckbox.attr('name').replace(/\[\]$/, '');
             var value = checkedCheckbox.val();
-            console.log(name);
-            console.log(value);
+            // console.log(name);
+            // console.log(value);
             attributes[name] = value;
         
             // AJAX запрос
@@ -79,8 +79,8 @@ jQuery(function($) {
     $('#price-range').slider({
         range: true,
         min: 0,
-        max: 10000,
-        values: [0, 10000],
+        max: 5000,
+        values: [0, 5000],
         slide: function(event, ui) {
             $('#min-price').val(ui.values[0]);
             $('#max-price').val(ui.values[1]);
@@ -131,12 +131,9 @@ jQuery(function($) {
         $('.woocommerce-ordering').submit();
     });
 
-    // Добавление класса при изменении состояния чекбокса
     $('.custom-checkbox input[type="checkbox"]').on('change', function() {
         var $checkbox = $(this);
         var $parent = $checkbox.closest('.custom-checkbox');
-        
-        // Добавляем или удаляем класс в зависимости от состояния чекбокса
         if ($checkbox.prop('checked')) {
             $parent.addClass('checked');
         } else {
