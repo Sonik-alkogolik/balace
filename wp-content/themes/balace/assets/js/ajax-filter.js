@@ -98,18 +98,23 @@ jQuery(function($) {
 
     $('#price-filter-form').on('submit', function(event) {
         event.preventDefault();
-
-        var formData = $(this).serialize();
-
+        var minPrice = $('#min-price').val();
+        var maxPrice = $('#max-price').val();
+        var selectedAttributes = [];
+        $('input[name="pa_тип-товара[]"]:checked').each(function() {
+            selectedAttributes.push($(this).val());
+        });
+        var data = {
+            action: 'filter_products_by_price',  
+            nonce: ajax_object.ajax_nonce,
+            min_price: minPrice,
+            max_price: maxPrice,
+            attributes: selectedAttributes  
+        };
         $.ajax({
-            url: ajax_object.ajaxurl, 
-            type: 'POST', 
-            data: {
-                action: 'filter_products_by_price', 
-                nonce: ajax_object.ajax_nonce,
-                min_price: $('#min-price').val(),
-                max_price: $('#max-price').val() 
-            },
+            url: ajax_object.ajaxurl,
+            type: 'POST',
+            data: data,
             success: function(response) {
                 $('.products').html(response); 
             },
@@ -118,6 +123,7 @@ jQuery(function($) {
             }
         });
     });
+    
 
 
     

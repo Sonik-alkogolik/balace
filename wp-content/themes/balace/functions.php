@@ -582,14 +582,21 @@ add_action('wp_ajax_get_category_products', 'get_category_products');
 add_action('wp_ajax_nopriv_get_category_products', 'get_category_products');
 
 
-
-
-
 function filter_products_by_price() {
     check_ajax_referer('ajax-nonce', 'nonce');
-
     $min_price = isset($_POST['min_price']) ? floatval($_POST['min_price']) : 0;
     $max_price = isset($_POST['max_price']) ? floatval($_POST['max_price']) : PHP_INT_MAX;
+    $tax_query = array();
+    if (isset($_POST['attributes']) && is_array($_POST['attributes']) && !empty($_POST['attributes'])) {
+        $tax_query = array(
+            'relation' => 'AND',
+            array(
+                'taxonomy' => 'pa_тип-товара',
+                'field' => 'name',
+                'terms' => $_POST['attributes'],
+            ),
+        );
+    }
 
     $args = array(
         'post_type' => 'product',
@@ -608,12 +615,10 @@ function filter_products_by_price() {
                 'compare' => '<=',
                 'type' => 'NUMERIC'
             )
-        )
-        
+        ),
+        'tax_query' => $tax_query,
     );
-
     $query = new WP_Query($args);
-
     if ($query->have_posts()) {
         while ($query->have_posts()) {
             $query->the_post();
@@ -651,6 +656,7 @@ function filter_products_by_price() {
 
 add_action('wp_ajax_filter_products_by_price', 'filter_products_by_price');
 add_action('wp_ajax_nopriv_filter_products_by_price', 'filter_products_by_price');
+
 
 // .... Стандартная сортировка woocommerce GET в файле filter-options .....
 add_action('woocommerce_catalog_ordering', 'woocommerce_catalog_ordering', 30);
