@@ -85,7 +85,7 @@ $products_query = new WP_Query($args);
 // }
 $product_attributes = get_product_attributes($products_query);
 ?>
-
+<input type="hidden" id="current-category-id" value="<?php echo get_queried_object_id(); ?>">
 <section>
 <div class="products-filter">
     <div class="filter-block" id="brand">

@@ -135,6 +135,9 @@
     .blog-news-wrapp {
         margin-top: 217px;
     }
+    .blog-wrapp {
+        height:auto;
+    }
 }
 @media(max-width:1024px){
     .blog-wrapp {

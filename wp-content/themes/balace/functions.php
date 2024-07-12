@@ -586,16 +586,37 @@ function filter_products_by_price() {
     check_ajax_referer('ajax-nonce', 'nonce');
     $min_price = isset($_POST['min_price']) ? floatval($_POST['min_price']) : 0;
     $max_price = isset($_POST['max_price']) ? floatval($_POST['max_price']) : PHP_INT_MAX;
-    $tax_query = array();
+    $tax_query = array('relation' => 'AND');
+
+    // Use the passed category ID
+    if (isset($_POST['category_id']) && !empty($_POST['category_id'])) {
+        $category_id = intval($_POST['category_id']);
+        $category = get_term_by('id', $category_id, 'product_cat');
+
+        if ($category) {
+            $tax_query[] = array(
+                'taxonomy' => 'product_cat',
+                'field' => 'id',
+                'terms' => $category_id,
+            );
+           // echo " esc_html($category_id) ;
+        } else {
+           // echo "Категория ID.<br>";
+        }
+    } else {
+        //echo "нет категории";
+    }
+
+    // Additional taxonomy query based on attributes
     if (isset($_POST['attributes']) && is_array($_POST['attributes']) && !empty($_POST['attributes'])) {
-        $tax_query = array(
-            'relation' => 'AND',
-            array(
-                'taxonomy' => 'pa_тип-товара',
-                'field' => 'name',
-                'terms' => $_POST['attributes'],
-            ),
+        $tax_query[] = array(
+            'taxonomy' => 'pa_тип-товара',
+            'field' => 'name',
+            'terms' => $_POST['attributes'],
         );
+       
+    } else {
+        
     }
 
     $args = array(
@@ -618,16 +639,17 @@ function filter_products_by_price() {
         ),
         'tax_query' => $tax_query,
     );
+
     $query = new WP_Query($args);
     if ($query->have_posts()) {
         while ($query->have_posts()) {
             $query->the_post();
             $product = wc_get_product(get_the_ID());
-            
+
             if (!$product) {
-                continue; 
+                continue;
             }
-            
+
             echo '<li ';
             post_class('product_item');
             echo '>';
@@ -645,10 +667,10 @@ function filter_products_by_price() {
             echo '</a>';
             echo '</li>';
         }
-        
+
         wp_reset_postdata();
     } else {
-        echo 'No posts found.';
+        //echo 'Нет товаров';
     }
 
     wp_die();
@@ -656,6 +678,7 @@ function filter_products_by_price() {
 
 add_action('wp_ajax_filter_products_by_price', 'filter_products_by_price');
 add_action('wp_ajax_nopriv_filter_products_by_price', 'filter_products_by_price');
+
 
 
 // .... Стандартная сортировка woocommerce GET в файле filter-options .....

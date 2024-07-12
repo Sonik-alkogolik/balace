@@ -71,26 +71,34 @@ if ( post_password_required() ) {
             <div class="block-card-info-wrapp">
 			<div class="card-info-item">
 							<img src="/wp-content/themes/balace/img/icon/statick-img-card.png" />
-							<p class="h6">Эффективность</p>
+							    <div class="card-info-item-deskription">
+								<p class="h6">Эффективность</p>
 							<span class="body2">8 из 10 опрошенных заметили положительный эффект с 1 недели</span>
+								</div>
 						</div>
 
 						<div class="card-info-item">
 						<img src="/wp-content/themes/balace/img/icon/statick-img-card2.png" />
+						    <div class="card-info-item-deskription">
 							<p class="h6">Качественные компоненты</p>
 							<span class="body2">Рецептура и сырьё из Европы</span>
+							</div>
 						</div>
 
 						<div class="card-info-item">
 						<img src="/wp-content/themes/balace/img/icon/statick-img-card3.png" />
+						    <div class="card-info-item-deskription">
 							<p class="h6">Доступность</p>
 							<span class="body2">Профессиональная косметика по разумной цене</span>
+							</div>
 						</div>
 
 						<div class="card-info-item">
 						<img src="/wp-content/themes/balace/img/icon/statick-img-card4.png" />
+						    <div class="card-info-item-deskription">
 							<p class="h6">Animal friendly</p>
 							<span class="body2">Мы не проводим испытания на животных</span>
+							</div>
 						</div>
             </div> 
 
@@ -200,34 +208,40 @@ if ( post_password_required() ) {
 
        <div class="product-card-item right">
 		<div class="product-card-item-img">
-		<?php
-			$product = wc_get_product( get_the_ID() );
-			$gallery_ids = $product->get_gallery_image_ids();
-			if ( $gallery_ids ) {
-				echo '<div class="swiper-container product-gallery-slider">';
-				echo '<div class="swiper-wrapper">';
-				foreach ( $gallery_ids as $gallery_id ) {
-					$image_url = wp_get_attachment_image_url( $gallery_id, 'full' );
+		<div class="swiper-container product-gallery-slider">
+        <div class="swiper-wrapper">
+           <?php
+            $product = wc_get_product(get_the_ID());
+             $gallery_ids = $product->get_gallery_image_ids();
+        
+               if ($gallery_ids) {
+               foreach ($gallery_ids as $gallery_id) {
+                $image_url = wp_get_attachment_image_url($gallery_id, 'full');
+                
+                if ($image_url) {
+                    echo '<div class="swiper-slide card-slide">';
+                    echo '<img src="' . esc_url($image_url) . '" alt="">';
+                    echo '</div>';
+                }
+               }
+           }
+          ?>
+       </div>
+    <div class="btn_slider_left card-slider-gallery"></div>
+    <div class="btn_slider_right card-slider-gallery"></div>
+	<!-- <button> в сравнение </button> -->
 
-					if ( $image_url ) {
-						echo '<div class="swiper-slide">';
-						echo '<img src="' . esc_url( $image_url ) . '" alt="">';
-						echo '</div>';
-					}
-				}
-				echo '</div>';
-				echo '</div>';
-			}
-		?>
-	  </div>
-	   <div class="product-card-item-bottom">
-        <a class="btn_ozon_white"></a>
-        <a class="btn_wild_white"></a>
-
-		 <?php
+	<div class="product-card-item-bottom">
+	      <?php
 			woocommerce_template_single_add_to_cart();
-		 ?>
+		   ?>
+          <a class="btn_ozon_white product-page"></a>
+           <a class="btn_wild_white product-page"></a>
         </div> 
+</div>
+
+	  </div>
+	  
         </div>
     </div> 
 

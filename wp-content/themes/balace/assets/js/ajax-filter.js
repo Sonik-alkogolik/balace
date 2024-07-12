@@ -106,25 +106,32 @@ jQuery(function($) {
         $('input[name="pa_тип-товара[]"]:checked').each(function() {
             selectedAttributes.push($(this).val());
         });
+    
+        // Получаем идентификатор текущей категории
+        var currentCategoryId = $('#current-category-id').val();
+    
         var data = {
-            action: 'filter_products_by_price',  
+            action: 'filter_products_by_price',
             nonce: ajax_object.ajax_nonce,
             min_price: minPrice,
             max_price: maxPrice,
-            attributes: selectedAttributes  
+            attributes: selectedAttributes,
+            category_id: currentCategoryId 
         };
+    
         $.ajax({
             url: ajax_object.ajaxurl,
             type: 'POST',
             data: data,
             success: function(response) {
-                $('.products').html(response); 
+                $('.products').html(response);
             },
             error: function(xhr, status, error) {
                 console.log('AJAX Error: ' + status + ' - ' + error);
             }
         });
     });
+    
     
 
 
