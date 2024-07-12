@@ -23,6 +23,8 @@ jQuery(document).ready(function($) {
         e.stopPropagation(); 
     });
 
+
+    
     document.addEventListener("click", function(e) {
         var contentPopups = document.querySelectorAll('.filter-list');
         var targetElement = e.target;
