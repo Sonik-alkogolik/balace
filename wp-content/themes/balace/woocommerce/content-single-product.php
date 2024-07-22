@@ -24,7 +24,7 @@ if ( post_password_required() ) {
     return;
 }
 ?>
-<section>
+<section class="section-page-product-card">
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 
     <div class="product-card-wrapp background_main">
@@ -245,14 +245,26 @@ if ( post_password_required() ) {
         </div>
     </div> 
 
-	<?php
+<?php
+/**
+ * Hook: woocommerce_after_single_product.
+ *
+ * @hooked woocommerce_output_product_data_tabs - 10
+ * @hooked woocommerce_upsell_display - 15
+ * @hooked woocommerce_output_related_products - 20
+ */
+do_action( 'woocommerce_after_single_product' );
+?>
+</section>
+<section class="section-recommend-card">
+<?php
 		// Получаем рекомендованные товары
 	$recommended_products = get_field('recommend_products');
 	if ($recommended_products):
 	?>
 	 <div class="recommend-products-wrapp">
 				<div class="recommend-products-item left">
-					<div class="recommend-products-title">
+					<div class="recommend-products-title desktop">
 						<h2 class="h3">Рекомендуем так же</h2>
 					</div>
 					<?php foreach ($recommended_products as $post): ?>
@@ -279,18 +291,21 @@ if ( post_password_required() ) {
 						}
             		?>
             <a class="btn_go_catalog primery_main h6 text_main" href="<?php echo esc_url($category_link); ?>">
-			<span>перейти в каталог</span>
+			<span>Вернуться в каталог</span>
 			</a>
 					</div>
 				</div>
 
 				<div class="recommend-products-item right">
+				<div class="recommend-products-title mob">
+						<h2 class="h3">Рекомендуем так же</h2>
+					</div>
 				<?php foreach ($recommended_products as $post): ?>
         <?php
         setup_postdata($post);
         $product = wc_get_product($post->ID);
         ?>
-		    <div class="recommend-products-item-product">
+		 <div class="recommend-products-item-product">
             <div class="recommend-products-card">
                 <li <?php post_class('product_item'); ?>>
                     <a href="<?php echo esc_url(get_permalink($product->get_id())); ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
@@ -313,16 +328,5 @@ if ( post_password_required() ) {
 	 <?php endif; ?>
 	</div>
 </div> 
-
-<?php
-/**
- * Hook: woocommerce_after_single_product.
- *
- * @hooked woocommerce_output_product_data_tabs - 10
- * @hooked woocommerce_upsell_display - 15
- * @hooked woocommerce_output_related_products - 20
- */
-do_action( 'woocommerce_after_single_product' );
-?>
 </section>
 <?php get_template_part( '/pages/templates-parts/FAQ' ); ?> 

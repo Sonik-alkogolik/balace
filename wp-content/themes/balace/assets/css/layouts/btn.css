@@ -383,6 +383,14 @@
         width: 32px;
         height: 32px;
     }
+    .woocommerce a.button.btn_add_to_basket:hover {
+        width: 32px;
+        height: 32px;
+    }
+    .tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart:hover {
+        width: 32px;
+        height: 32px;
+    }
 }
 
 @media(max-width:520px){

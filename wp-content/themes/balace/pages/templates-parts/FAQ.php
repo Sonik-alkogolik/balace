@@ -1,4 +1,4 @@
-<section>
+<section class="section-faq">
 <?php
 $Faq = get_field('list_questions');
 if ($Faq) {

@@ -36,18 +36,24 @@ jQuery(document).ready(function($) {
     });
 
     
-    // var $productCard = $('.product-card-item-img');
+    // var $productCard = $('.product-card-item right');
     // var $productCardWrapp = $('.product-card-wrapp');
-    // var stickyPoint = $productCard.offset().top;
-    // var cardHeight = $productCard.outerHeight();
-    // var cardWidth = $productCard.outerWidth();
-    // var wrapperHeight = $productCardWrapp.outerHeight();
-    // var wrapperTop = $productCardWrapp.offset().top;
-    // var wrapperLeft = $productCardWrapp.offset().left; 
-    // var wrapperBottom = wrapperTop + wrapperHeight - 30; 
-    // var wrapperRight = wrapperLeft + $productCardWrapp.outerWidth() - cardWidth;
     
-    // $(window).scroll(function() {
+    // function updateDimensions() {
+    //     stickyPoint = $productCardWrapp.offset().top;
+    //     cardHeight = $productCard.outerHeight();
+    //     cardWidth = $productCard.outerWidth();
+    //     wrapperHeight = $productCardWrapp.outerHeight();
+    //     wrapperTop = $productCardWrapp.offset().top;
+    //     wrapperLeft = $productCardWrapp.offset().left;
+    //     wrapperBottom = wrapperTop + wrapperHeight - 30;
+    //     wrapperRight = wrapperLeft + $productCardWrapp.outerWidth() - cardWidth;
+    // }
+
+    // updateDimensions();
+
+    // $(window).on('scroll resize', function() {
+    //     updateDimensions();
     //     var scrollTop = $(window).scrollTop();
     //     var cardBottom = scrollTop + cardHeight;
     //     var currentLeft = $productCard.offset().left;
@@ -57,27 +63,30 @@ jQuery(document).ready(function($) {
     //         $productCard.css({
     //             position: 'fixed',
     //             top: 0,
-    //             left: Math.max(wrapperLeft, Math.min(currentLeft, wrapperRight)), 
-    //             width: cardWidth
+    //             left: 'auto',
+    //             right: '24px',
     //         });
-    //     } else if (scrollTop < stickyPoint) {
+    //     } 
+    //     else if (scrollTop < stickyPoint) {
     //         $productCard.removeClass('sticky');
     //         $productCard.css({
     //             position: 'relative',
     //             top: 0,
     //             left: 'auto',
-    //             width: 'auto'
+    //             right: '24px',
     //         });
-    //     } else if (cardBottom > wrapperBottom) {
+    //     } 
+    //     else if (cardBottom > wrapperBottom) {
     //         $productCard.removeClass('sticky');
     //         $productCard.css({
     //             position: 'absolute',
     //             top: wrapperHeight - cardHeight - 30,
-    //             left: Math.max(wrapperLeft, Math.min(currentLeft, wrapperRight)), 
-    //             width: cardWidth
+    //             left: 'auto',
     //         });
     //     }
     // });
+
+   
     
     
 });

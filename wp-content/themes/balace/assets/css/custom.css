@@ -239,9 +239,9 @@ section {
   
 }
 @media(max-width:1080px){
-  body {
+  /* body {
     background: rgb(242 242 242);
-  }
+  } */
   .header-section {
     margin-bottom: 15px;
     background: #ffffff;

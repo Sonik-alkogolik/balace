@@ -1,4 +1,7 @@
 /* ......... FAQ ........ */
+.section-faq {
+    background: #FFF;
+}
 .faq-item-content span {
     display: none;
 }
@@ -7,6 +10,7 @@
     width: 100%;
     border-top: 1px solid rgba(191, 187, 168, 0.4);
     border-radius: 32px;
+    background: #FFF;
 }
 .faq-content {
     padding-top: 32px;
@@ -100,6 +104,10 @@
         top: 20px;
     }
     .faq-item-content p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .faq-item-content span {
         font-size: 16px;
         line-height: 24px;
     }
