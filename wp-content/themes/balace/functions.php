@@ -352,7 +352,12 @@ function enqueue_about_page_styles() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_about_page_styles');
 
-
+function enqueue_blog_page_styles() {
+    if (is_page_template('pages/blog-page.php')) {
+        wp_enqueue_style('blog-style', get_template_directory_uri() . '/assets/css/pages/blog-page.css');
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_blog_page_styles');
 
 remove_action('woocommerce_product_loop_start', 'woocommerce_product_loop_start', 10);
 remove_action('woocommerce_product_loop_end', 'woocommerce_product_loop_end', 10);

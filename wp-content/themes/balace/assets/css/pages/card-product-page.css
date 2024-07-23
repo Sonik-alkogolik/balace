@@ -766,9 +766,11 @@ a.button.added::after {
     }
     .product-card-item.right {
         width: 100%;
+        max-width: 100%;
     }
     .product-card-item.left {
         width: 100%;
+        max-width: 100%;
     }
     .product-card-item-img {
         max-width: 100%;
