@@ -554,7 +554,19 @@ a.button.added::after {
 .recommend-products-title.mob {
     display: none;
 }
-
+.card-play-video {
+    position: absolute;
+    top:16px;
+    left: 16px;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background:url(/wp-content/themes/balace/img/icon/play-button.png);
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    z-index: 99;
+}
 
 @media(max-width:1430px){
    .product-card-item-title h1 {

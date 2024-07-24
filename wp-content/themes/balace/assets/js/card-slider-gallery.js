@@ -34,59 +34,16 @@ jQuery(document).ready(function($) {
             $this.addClass('deskription-product-item-active');
         }
     });
-
     
-    // var $productCard = $('.product-card-item right');
-    // var $productCardWrapp = $('.product-card-wrapp');
-    
-    // function updateDimensions() {
-    //     stickyPoint = $productCardWrapp.offset().top;
-    //     cardHeight = $productCard.outerHeight();
-    //     cardWidth = $productCard.outerWidth();
-    //     wrapperHeight = $productCardWrapp.outerHeight();
-    //     wrapperTop = $productCardWrapp.offset().top;
-    //     wrapperLeft = $productCardWrapp.offset().left;
-    //     wrapperBottom = wrapperTop + wrapperHeight - 30;
-    //     wrapperRight = wrapperLeft + $productCardWrapp.outerWidth() - cardWidth;
-    // }
+});
 
-    // updateDimensions();
 
-    // $(window).on('scroll resize', function() {
-    //     updateDimensions();
-    //     var scrollTop = $(window).scrollTop();
-    //     var cardBottom = scrollTop + cardHeight;
-    //     var currentLeft = $productCard.offset().left;
+document.addEventListener('DOMContentLoaded', function() {
+    var button = document.querySelector('.card-play-video');
+    var iframe = document.getElementById('video-frame');
 
-    //     if (scrollTop >= stickyPoint && cardBottom <= (wrapperTop + wrapperHeight)) {
-    //         $productCard.addClass('sticky');
-    //         $productCard.css({
-    //             position: 'fixed',
-    //             top: 0,
-    //             left: 'auto',
-    //             right: '24px',
-    //         });
-    //     } 
-    //     else if (scrollTop < stickyPoint) {
-    //         $productCard.removeClass('sticky');
-    //         $productCard.css({
-    //             position: 'relative',
-    //             top: 0,
-    //             left: 'auto',
-    //             right: '24px',
-    //         });
-    //     } 
-    //     else if (cardBottom > wrapperBottom) {
-    //         $productCard.removeClass('sticky');
-    //         $productCard.css({
-    //             position: 'absolute',
-    //             top: wrapperHeight - cardHeight - 30,
-    //             left: 'auto',
-    //         });
-    //     }
-    // });
-
-   
-    
-    
+    button.addEventListener('click', function() {
+        iframe.style.display = 'block';
+        button.style.display = 'none';
+    });
 });

@@ -85,11 +85,13 @@
     width: 100%;
     display: flex;
     border-radius: 40px;
+    height: 100%;
 }
 .blog-news-item .thumbnail img {
     width: 100%;
     display: flex;
     border-radius: 40px;
+    height: 100%;
 }
 .blog-wrapp-item.left-item a {
     width: 100%;

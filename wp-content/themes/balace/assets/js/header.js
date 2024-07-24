@@ -51,6 +51,26 @@
           }
         });
    
+        $(document).on('added_to_cart', function(event, fragments, cart_hash, $button) {
+          var $product = $button.closest('.product');
+          var image_url = $product.find('.product_image_item img').attr('src');
+          var title = $product.find('.woocommerce-loop-product__title').text();
+          var price = $product.find('.woocommerce-Price-amount').html();
+          var words = title.split(' ');
+          if (words.length > 2) {
+              title = words.slice(0, 2).join(' ') + '...';
+          }
+          $('#custom-popup-product .popup-product-image').html('<img src="' + image_url + '" alt="' + title + '">');
+          $('#custom-popup-product .popup-product-title').text(title);
+          $('#custom-popup-product .popup-product-price').html(price);
+          $('#custom-popup-product').show();
+          setTimeout(function() {
+            $('#custom-popup-product').hide();
+        }, 3000);
+      });
+
+     
+
 
   });
 })(jQuery);

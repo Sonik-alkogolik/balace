@@ -10,6 +10,13 @@
     <title><?php wp_title(); ?></title>
 </head>
 
+<script type="text/javascript">
+        // var timeToReload = 4000; 
+        // function reloadPage() {
+        //     window.location.reload();
+        // }
+        // setTimeout(reloadPage, timeToReload);
+    </script>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div class="container">
@@ -18,7 +25,9 @@
                 <header>
                  <div class="header-desktop">
                     <div class="logo">
+                        <a href="/">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="">
+                        </a>
                     </div>
                      <div class="header-menu">
                             <button class="btn_header_menu desktop">
@@ -34,6 +43,7 @@
                     <div class="header-product-actions">
                         <button class="btn_add-to-wishlist"></button>
                         <button class="btn_basket"></button>
+                      <?php get_template_part( 'pages/templates-parts/popup-product-add' ); ?>
                     </div>
                     </div>
                     <div class="header-mob">
@@ -53,6 +63,8 @@
                        <div class="header-product-actions">
                         <button class="btn_add-to-wishlist"></button>
                         <button class="btn_basket"></button>
+                     
+                        <?php get_template_part( 'pages/templates-parts/popup-product-add' ); ?>
                        </div>
                        
                     </div>
@@ -131,7 +143,8 @@
                                             if (!empty($categories) ) {
                                                 foreach ($categories as $category) {
                                                     if ($category->parent == 0 && in_array($category->name, $desired_categories)) {
-                                                        echo '<div class="product_cat_item"><p>' . $category->name . '</p>';
+                                                        $category_url = get_term_link($category); 
+                                                        echo '<div class="product_cat_item"><a href="'  . esc_url($category_url) .  '">' . htmlspecialchars($category->name) . '</a>';
                                                         $subcategories = get_terms(array(
                                                             'taxonomy' => 'product_cat',
                                                             'hide_empty' => false,
@@ -455,7 +468,9 @@
                                     ?>
                                 </div>
                 </div>
+
 </section>
+
 
 
 

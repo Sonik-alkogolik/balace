@@ -5,18 +5,6 @@ Template Name: Блог
 get_header();
 ?>
 
-<script type="text/javascript">
-        // Время в миллисекундах до перезагрузки
-        var timeToReload = 5000; // 3 секунды
-
-        // Функция перезагрузки страницы
-        function reloadPage() {
-            window.location.reload();
-        }
-
-        // Устанавливаем таймер на перезагрузку
-        setTimeout(reloadPage, timeToReload);
-    </script>
 <section>
 <div class="blog-wrapp">
     <div class="blog-titel">
@@ -33,7 +21,7 @@ get_header();
     $first_post_query = new WP_Query($args_first_post);
     
     if ($first_post_query->have_posts()) :
-        $post_count = 0; // Счетчик постов
+        $post_count = 0; 
         ?>
 
         <div class="blog-item-wrapp-top">
