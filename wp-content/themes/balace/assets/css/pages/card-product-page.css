@@ -335,7 +335,8 @@ display: none;
     height: 640px;
 }
 .product-card-item-bottom > form > div.tinv-wraper.woocommerce.tinv-wishlist.tinvwl-after-add-to-cart.tinvwl-woocommerce_after_add_to_cart_button > a {
-    top: 40px;
+    top: 20px;
+    right: 20px;
 }
 
 
@@ -1079,4 +1080,14 @@ a.button.added::after {
         font-weight: 400;
         line-height: 24px;
     }
+}
+
+
+#video-frame {
+    position: absolute;
+    top: 0;
+    z-index: 9;
+    height: 640px;
+    width: 100%;
+    border-radius: 24px;
 }

@@ -10,13 +10,7 @@
     <title><?php wp_title(); ?></title>
 </head>
 
-<script type="text/javascript">
-        // var timeToReload = 4000; 
-        // function reloadPage() {
-        //     window.location.reload();
-        // }
-        // setTimeout(reloadPage, timeToReload);
-    </script>
+
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div class="container">

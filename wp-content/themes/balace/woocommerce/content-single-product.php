@@ -241,8 +241,8 @@ if ( post_password_required() ) {
     <div class="btn_slider_right card-slider-gallery"></div>
 	<!-- <button> в сравнение </button> -->
 	<?php $video_url = get_field('url_video_link'); ?>
-<button class="card-play-video" data-url-video="<?php echo $video_url; ?>">Play Video</button>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/OoQOgLqItGE?si=89uyr61fQyI1L_i4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	<button class="card-play-video"></button>
+	<iframe id="video-frame" width="560" height="315" src="<?php echo $video_url; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="display: none;"></iframe>
 
 
 

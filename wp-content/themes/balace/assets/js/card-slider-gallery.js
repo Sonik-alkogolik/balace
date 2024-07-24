@@ -41,9 +41,22 @@ jQuery(document).ready(function($) {
 document.addEventListener('DOMContentLoaded', function() {
     var button = document.querySelector('.card-play-video');
     var iframe = document.getElementById('video-frame');
-
+    var btnLeft = document.querySelector('.btn_slider_left.card-slider-gallery');
+    var btnRight = document.querySelector('.btn_slider_right.card-slider-gallery');
     button.addEventListener('click', function() {
         iframe.style.display = 'block';
         button.style.display = 'none';
+        iframe.style.zIndex = '99'; 
+    });
+
+    btnLeft.addEventListener('click', function() {
+        iframe.style.zIndex = '-1'; 
+        iframe.style.display = 'block'; 
+        button.style.display = 'block';
+    });
+    btnRight.addEventListener('click', function() {
+        iframe.style.zIndex = '-1'; 
+        iframe.style.display = 'block';
+        button.style.display = 'block'; 
     });
 });
