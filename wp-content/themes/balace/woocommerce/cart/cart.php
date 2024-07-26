@@ -19,6 +19,12 @@ defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_before_cart' ); ?>
 
+<button class="clouse-basket-popup">
+          <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.25732 3.75732L12.7426 12.2426" stroke="#221D17" stroke-linecap="round"/>
+          <path d="M4.25732 12.2427L12.7426 3.75739" stroke="#221D17" stroke-linecap="round"/>
+         </svg>
+      </button>
 <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 	<?php do_action( 'woocommerce_before_cart_table' ); ?>
 
@@ -193,3 +199,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 </div>
 
 <?php do_action( 'woocommerce_after_cart' ); ?>
+<div class="basket-bottom-text">
+	<p>В стоимость заказа не включена стоимость доставки. Стоимость доставки будет известна после обработки заказа.</p>
+</div>

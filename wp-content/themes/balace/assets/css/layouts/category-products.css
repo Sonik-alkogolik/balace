@@ -152,7 +152,6 @@ a.button.added::after {
 }
 
 .woocommerce.category-wrapp ul.products li.product a.woocommerce-LoopProduct-link .product-attribute-wrapp h2{
-    padding: .5em 0;
     font-family: "Manrope", sans-serif;
     font-size: 34px;
     font-weight: 500;
@@ -270,7 +269,7 @@ a.button.added::after {
 .woocommerce-loop-product__title {
    width: 80%;
    margin-top: 20px;
-   height: 84px;
+   height: 75px;
    margin-bottom: 24px;
 }
 
@@ -682,8 +681,8 @@ ul.products.sub-category  li.product a.woocommerce-LoopProduct-link.woocommerce-
     .woocommerce.category-wrapp ul.products li.product a.woocommerce-LoopProduct-link .product-attribute-wrapp h2{
         font-size: 12px;
         line-height: 16px;
-        padding: 12px 0 0 0;
         height: auto;
+        margin-top: 15px;
     }
     .woocommerce.category-wrapp ul.products li.product a.woocommerce-LoopProduct-link img {
         margin-bottom: 15px;
@@ -809,6 +808,9 @@ ul.products.sub-category  li.product a.woocommerce-LoopProduct-link.woocommerce-
 @media(max-width:420px){
     .product_image_item {
         height: 154px;
+    }
+    .woocommerce.category-wrapp ul.products li.product a.woocommerce-LoopProduct-link .product-attribute-wrapp h2{
+        margin-top: 20px;
     }
     .woocommerce.category-wrapp ul.products.sub-category li.product .product-attribute-wrapp {
         height: 100px;

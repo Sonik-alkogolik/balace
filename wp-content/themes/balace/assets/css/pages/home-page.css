@@ -422,7 +422,7 @@
         line-height: 24.02px;
     }
     .top-content-block-wrapp {
-        width: 90%;
+        width: 100%;
         padding: 0;
     }
     .top-content-block3 {
@@ -542,7 +542,7 @@
     }
     .top-content-block-wrapp {
         width: 100%;
-        max-width: 287px;
+        max-width: 100%;
         padding: 0;
     }
 }

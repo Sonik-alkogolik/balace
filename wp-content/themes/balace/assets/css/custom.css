@@ -250,6 +250,10 @@ section {
  }
  section {
   margin-bottom: 64px;
+  overflow: hidden;
+ }
+ .top-content-block-wrapp {
+  padding: 0;
  }
 }
 
@@ -268,6 +272,7 @@ section {
   section {
     padding: 0 16px;
     margin-bottom: 32px;
+    overflow: hidden;
   }
 }
 @media(max-width:360px){

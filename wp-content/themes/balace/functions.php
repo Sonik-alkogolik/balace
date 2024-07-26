@@ -285,6 +285,7 @@ function my_theme_enqueue_styles_scripts() {
 	wp_enqueue_style('btn-style', get_template_directory_uri() . '/assets/css/layouts/btn.css');
 	wp_enqueue_style('header-style', get_template_directory_uri() . '/assets/css/layouts/header.css');
 	wp_enqueue_style('footer-style', get_template_directory_uri() . '/assets/css/layouts/footer.css');
+    wp_enqueue_style('basket-style', get_template_directory_uri() . '/assets/css/layouts/popup-basket.css');
     wp_enqueue_script('jquery');
     wp_enqueue_script('header-script', get_template_directory_uri() . '/assets/js/header.js');
 	
@@ -307,9 +308,15 @@ function my_theme_enqueue_styles_scripts() {
      if (strpos($_SERVER['REQUEST_URI'], '/balace/') !== false) {
         wp_enqueue_style('page-category', get_template_directory_uri() . '/assets/css/pages/page-category.css');
         wp_enqueue_style('catalog-style', get_template_directory_uri() . '/assets/css/layouts/catalog-product.css');
+         wp_dequeue_style('woocommerce-layout');
+        wp_dequeue_style('woocommerce-general');
+        wp_dequeue_style('woocommerce-smallscreen');
     } elseif (strpos($_SERVER['REQUEST_URI'], '/balace-natural-pharm/') !== false) {
         wp_enqueue_style('page-category', get_template_directory_uri() . '/assets/css/pages/page-category.css');
         wp_enqueue_style('catalog-style', get_template_directory_uri() . '/assets/css/layouts/catalog-product.css');
+        wp_dequeue_style('woocommerce-layout');
+        wp_dequeue_style('woocommerce-general');
+        wp_dequeue_style('woocommerce-smallscreen');
     }
 
 }
@@ -333,6 +340,7 @@ function enqueue_swiper_slider() {
     }
     if (is_product()) {
         wp_enqueue_script('faq', get_template_directory_uri() . '/assets/js/faq.js', array('jquery'), '1.0', true);
+
     }
 }
 add_action('wp_enqueue_scripts', 'enqueue_swiper_slider');
@@ -593,7 +601,6 @@ function filter_products_by_price() {
     $max_price = isset($_POST['max_price']) ? floatval($_POST['max_price']) : PHP_INT_MAX;
     $tax_query = array('relation' => 'AND');
 
-    // Use the passed category ID
     if (isset($_POST['category_id']) && !empty($_POST['category_id'])) {
         $category_id = intval($_POST['category_id']);
         $category = get_term_by('id', $category_id, 'product_cat');
@@ -612,7 +619,6 @@ function filter_products_by_price() {
         //echo "нет категории";
     }
 
-    // Additional taxonomy query based on attributes
     if (isset($_POST['attributes']) && is_array($_POST['attributes']) && !empty($_POST['attributes'])) {
         $tax_query[] = array(
             'taxonomy' => 'pa_тип-товара',
@@ -689,7 +695,141 @@ add_action('wp_ajax_nopriv_filter_products_by_price', 'filter_products_by_price'
 // .... Стандартная сортировка woocommerce GET в файле filter-options .....
 add_action('woocommerce_catalog_ordering', 'woocommerce_catalog_ordering', 30);
 
+// // Добавление в корзину
+function enqueue_custom_scripts() {
+    wp_enqueue_script('ajax-add-to-cart', get_template_directory_uri() . '/assets/js/ajax-add-to-cart.js', array('jquery'), null, true);
+
+    wp_localize_script('ajax-add-to-cart', 'ajax_add_to_cart_params', array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'nonce'    => wp_create_nonce('ajax-add-to-cart-nonce')
+    ));
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
+function my_custom_add_to_cart_function() {
+    if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], 'ajax-add-to-cart-nonce' ) ) {
+        wp_send_json_error('Nonce verification failed');
+        return;
+    }
+    
+    // Получаем данные из запроса
+    $product_id = intval($_POST['product_id']);
+    $quantity = intval($_POST['quantity']);
+    if ( $product_id <= 0 || $quantity <= 0 ) {
+        wp_send_json_error('Invalid product ID or quantity');
+        return;
+    }
+
+    // Добавляем товар в корзину
+    $added = WC()->cart->add_to_cart($product_id, $quantity);
+    if ( !$added ) {
+        wp_send_json_error('Failed to add product to cart');
+        return;
+    }
+
+    // Обновляем корзину
+    ob_start();
+    wc_get_template_part('pages/templates-parts/popup-basket');
+    $cart_html = ob_get_clean();
+
+    ob_start();
+    do_action('woocommerce_cart_collaterals');
+    $cart_collaterals = ob_get_clean();
+
+    wp_send_json_success(array(
+        'cart_html' => $cart_html,
+        'cart_collaterals' => $cart_collaterals
+    ));
+}
+
+add_action('wp_ajax_add_to_cart', 'my_custom_add_to_cart_function');
+add_action('wp_ajax_nopriv_add_to_cart', 'my_custom_add_to_cart_function');
+
+// Кнопка очистить корзину 
+function enqueue_clear_cart_script() {
+    wp_enqueue_script( 'clear-cart-script',  get_template_directory_uri() . '/assets/js/clear-cart.js', array( 'jquery' ), null, true );
+    wp_localize_script( 'clear-cart-script', 'wc_clear_cart_params', array(
+        'ajax_url' => admin_url( 'admin-ajax.php' ),
+        'nonce'    => wp_create_nonce( 'clear_cart_nonce' )
+    ) );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_clear_cart_script' );
+
+function handle_clear_cart() {
+    check_ajax_referer( 'clear_cart_nonce', 'security' );
+    // Очистка корзины
+    WC()->cart->empty_cart();
+    wp_send_json_success();
+}
+add_action( 'wp_ajax_clear_cart', 'handle_clear_cart' );
+add_action( 'wp_ajax_nopriv_clear_cart', 'handle_clear_cart' ); 
 
 
 
+function enqueue_remove_from_cart_script() {
+    wp_enqueue_script('remove-from-cart-script', get_template_directory_uri() . '/assets/js/ajax-remove.js', array('jquery'), null, true);
+    wp_localize_script('remove-from-cart-script', 'wc_remove_from_cart_params', array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'nonce'    => wp_create_nonce('remove_from_cart_nonce')
+    ));
+}
+add_action('wp_enqueue_scripts', 'enqueue_remove_from_cart_script');
 
+function remove_from_cart() {
+    check_ajax_referer('remove_from_cart_nonce', 'nonce');
+
+    if (isset($_POST['cart_key'])) {
+        $cart_key = sanitize_text_field($_POST['cart_key']);
+
+        // Удаляем товар из корзины
+        WC()->cart->remove_cart_item($cart_key);
+
+        // Обновляем корзину
+        ob_start();
+
+        // Проверяем, пуста ли корзина
+        if ( WC()->cart->is_empty() ) {
+            echo ' <div class="popup-div-wrapp">';
+            echo '<button class="clouse-basket-popup">
+            <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.25732 3.75732L12.7426 12.2426" stroke="#221D17" stroke-linecap="round"/>
+            <path d="M4.25732 12.2427L12.7426 3.75739" stroke="#221D17" stroke-linecap="round"/>
+           </svg>
+         </button>';
+            echo '<p class="empty-cart-message">Ваша корзина пуста.</p>';
+            echo '</div>';
+        } else {
+            // Если корзина не пуста, загружаем шаблон корзины
+            wc_get_template_part('pages/templates-parts/popup-basket'); // Загружаем шаблон корзины
+        }
+
+        $cart_html = ob_get_clean();
+
+        ob_start();
+        do_action('woocommerce_cart_collaterals'); 
+        $cart_totals = ob_get_clean();
+
+        wp_send_json_success(array(
+            'cart_html' => $cart_html,
+            'cart_totals' => $cart_totals 
+        ));
+    } else {
+        wp_send_json_error('Ошибка удаления товара');
+    }
+}
+
+add_action('wp_ajax_remove_from_cart', 'remove_from_cart');
+add_action('wp_ajax_nopriv_remove_from_cart', 'remove_from_cart');
+
+function custom_cart_content_check() {
+    if ( WC()->cart->is_empty() ) {
+        echo ' <div class="popup-div-wrapp">';
+        echo '<p class="empty-cart-message">Ваша корзина пуста.</p>';
+        echo '<style>
+                .wrapp-popup-basket { display: none; }
+            </style>';
+        echo '</div>';
+    } else {
+        //wc_get_template_part('pages/templates-parts/popup-basket');
+    }
+}
+add_action('woocommerce_before_cart', 'custom_cart_content_check');

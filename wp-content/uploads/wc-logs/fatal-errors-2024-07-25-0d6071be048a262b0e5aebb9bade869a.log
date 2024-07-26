@@ -1,0 +1,27 @@
+2024-07-25T11:04:30+00:00 CRITICAL Unmatched '}' в C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\popup-basket.php на строке 165
+
+2024-07-25T13:12:10+00:00 CRITICAL Cannot redeclare handle_clear_cart() (previously declared in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:759) в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 801
+
+2024-07-25T13:12:11+00:00 CRITICAL Cannot redeclare handle_clear_cart() (previously declared in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:759) в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 801
+
+2024-07-25T13:15:46+00:00 CRITICAL Cannot redeclare handle_clear_cart() (previously declared in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:759) в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 808
+
+2024-07-25T13:15:47+00:00 CRITICAL Cannot redeclare handle_clear_cart() (previously declared in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:759) в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 808
+
+2024-07-25T13:18:10+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Cart::get_cart_collaterals() in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:802
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): handle_add_to_cart()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#4 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 802
+
+2024-07-25T14:59:11+00:00 CRITICAL syntax error, unexpected token "endforeach", expecting end of file в C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\popup-basket.php на строке 216
+
+2024-07-25T14:59:30+00:00 CRITICAL syntax error, unexpected token "endforeach", expecting end of file в C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\popup-basket.php на строке 216
+
+2024-07-25T14:59:52+00:00 CRITICAL syntax error, unexpected token "endforeach", expecting end of file в C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\popup-basket.php на строке 216
+
+2024-07-25T15:01:34+00:00 CRITICAL Unmatched '}' в C:\OSPanel\domains\balace\wp-content\themes\balace\pages\templates-parts\popup-basket.php на строке 180
+

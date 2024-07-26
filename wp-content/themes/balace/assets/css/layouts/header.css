@@ -182,7 +182,7 @@ header {
     width:100%;
     height: 802px;
     border-radius: 32px;
-    z-index: 99;
+    z-index: 199;
 }
 .header-catalog-content  {
     max-width: 1180px;

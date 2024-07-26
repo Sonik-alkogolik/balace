@@ -66,11 +66,44 @@
           $('#custom-popup-product').show();
           setTimeout(function() {
             $('#custom-popup-product').hide();
+            // location.reload();
         }, 3000);
       });
 
+
+          // Функция для загрузки содержимого корзины через AJAX
+    function loadCartContent() {
+      $.ajax({
+          url: ajax_add_to_cart_params.ajax_url,
+          type: 'POST',
+          data: {
+              action: 'check_cart_status',
+              nonce: ajax_add_to_cart_params.nonce
+          },
+          success: function(response) {
+              if (response.success) {
+                  $('.woocommerce-cart-form').html(response.data.cart_content);
+              }
+          }
+      });
+  }
+
+  // Загрузка содержимого корзины при загрузке страницы
+  loadCartContent();
      
 
+      var $popupBasket = $('.wrapp-popup-basket-bg');
+      $('.btn_basket').on('click', function() {
+            $popupBasket.addClass('active-popup-basket');
+            console.log(true);
+      }); 
+
+       $('.clouse-basket-popup').on('click', function() {
+          $popupBasket.removeClass('active-popup-basket');
+          console.log(true);
+      });
 
   });
 })(jQuery);
+
+

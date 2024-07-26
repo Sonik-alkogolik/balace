@@ -204,13 +204,13 @@
     }
     .woocommerce ul.swiper-wrapper li.swiper-slide .tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart.no-txt {
         top: auto;
-        bottom: 0;
-        right: 40px;
+        bottom: 10px;
+        right: 50px;
     }
     .woocommerce ul.swiper-wrapper li.swiper-slide a.button.btn_add_to_basket {
         top: auto;
-        bottom: 0;
-        right: 0px;
+        bottom: 10px;
+        right: 10px;
     }
     .best_products ul.swiper-wrapper li.swiper-slide .product-attribute-wrapp{
         margin: 0 auto;

@@ -63,8 +63,11 @@
           </div>
     </footer>
 
-
-
+    <div class="wrapp-popup-basket-bg">
+      <div class="popup-div-wrapp">
+       <?php get_template_part( 'pages/templates-parts/popup-basket' ); ?>
+    </div>
+  </div>
 </section>
 <?php wp_footer(); ?>
 </body>
