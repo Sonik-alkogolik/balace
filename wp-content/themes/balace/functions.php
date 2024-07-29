@@ -360,15 +360,17 @@ function enqueue_about_page_styles() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_about_page_styles');
 
-function enqueue_blog_page_styles() {
-    if (is_page_template('pages/blog-page.php')) {
-        wp_enqueue_style('blog-style', get_template_directory_uri() . '/assets/css/pages/blog-page.css');
-    }
-}
-add_action('wp_enqueue_scripts', 'enqueue_blog_page_styles');
 
 remove_action('woocommerce_product_loop_start', 'woocommerce_product_loop_start', 10);
 remove_action('woocommerce_product_loop_end', 'woocommerce_product_loop_end', 10);
+
+function enqueue_promotions_page_styles() {
+    if (is_page_template('pages/promotions.php') || is_post_type_archive('promotions') || is_singular('promotions')) {
+        wp_enqueue_style('blog-style', get_template_directory_uri() . '/assets/css/pages/promotions.css');
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_promotions_page_styles');
+
 
 function custom_product_loop_start() {
     $current_post_id = get_the_ID();
@@ -443,7 +445,7 @@ function custom_woocommerce_loop_add_to_cart_link($button, $product, $args) {
 
 add_action( 'init', 'true_register_post_type_promotions' );
 function true_register_post_type_promotions() {
-    $labels = array(
+    $labels_prom = array(
         'name' => 'Акции',
         'singular_name' => 'Акция',
         'add_new' => 'Добавить акцию',
@@ -456,16 +458,17 @@ function true_register_post_type_promotions() {
         'not_found_in_trash' => 'В корзине нет акций.',
         'menu_name' => 'Акции'
     );
-    $args = array(
-        'labels' => $labels,
+    $args_prom = array(
+        'labels' => $labels_prom,
         'public' => true,
-        'publicly_queryable' => false,
-        'has_archive' => false,
+        'has_archive' => true,
         'menu_icon' => 'dashicons-admin-post',
+        // 'rewrite' => array('slug' => 'promotions'),
         'menu_position' => 2,
-		'supports' => array( 'title', 'editor', 'thumbnail' ) 
+        'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'author', 'comments' ),
+        'taxonomies' => array( 'category', 'post_tag' )
     );
-    register_post_type( 'promotions', $args );
+    register_post_type( 'promotions', $args_prom );
 }
 
 add_action( 'init', 'true_register_post_type_blog' );
@@ -496,6 +499,17 @@ function true_register_post_type_blog() {
 }
 
 add_action('init', 'remove_woocommerce_breadcrumbs');
+
+
+function enqueue_blog_page_styles() {
+    if (is_page_template('pages/blog-page.php') || is_post_type_archive('blog') || is_singular('blog')) {
+        wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css');
+        wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js');
+        wp_enqueue_style('blog-style', get_template_directory_uri() . '/assets/css/pages/blog-page.css');
+        wp_enqueue_script('blog-slider', get_template_directory_uri() . '/assets/js/article-slider.js');
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_blog_page_styles');
 
 function remove_woocommerce_breadcrumbs() {
     remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
@@ -799,7 +813,7 @@ function remove_from_cart() {
             echo '</div>';
         } else {
             // Если корзина не пуста, загружаем шаблон корзины
-            wc_get_template_part('pages/templates-parts/popup-basket'); // Загружаем шаблон корзины
+            wc_get_template_part('pages/templates-parts/popup-basket'); 
         }
 
         $cart_html = ob_get_clean();
@@ -823,10 +837,16 @@ add_action('wp_ajax_nopriv_remove_from_cart', 'remove_from_cart');
 function custom_cart_content_check() {
     if ( WC()->cart->is_empty() ) {
         echo ' <div class="popup-div-wrapp">';
+        echo '<button class="clouse-basket-popup">
+              <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.25732 3.75732L12.7426 12.2426" stroke="#221D17" stroke-linecap="round"></path>
+            <path d="M4.25732 12.2427L12.7426 3.75739" stroke="#221D17" stroke-linecap="round"></path>
+            </svg>
+         </button>';
         echo '<p class="empty-cart-message">Ваша корзина пуста.</p>';
         echo '<style>
                 .wrapp-popup-basket { display: none; }
-            </style>';
+              </style>';
         echo '</div>';
     } else {
         //wc_get_template_part('pages/templates-parts/popup-basket');

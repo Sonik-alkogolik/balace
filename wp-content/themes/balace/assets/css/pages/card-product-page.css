@@ -1009,15 +1009,12 @@ a.button.added::after {
     .tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart.no-txt {
         top: auto;
         bottom: 12px;
-        left: 8px;
+        right: 20px;
+        left: auto;
         width: 32px;
         height: 32px;
     }
-    .product_attribute_container {
-        justify-content: flex-end;
-        position: absolute;
-        bottom: 12px;
-    }
+ 
     .products {
         grid-gap: 10px;
     }
