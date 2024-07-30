@@ -1,4 +1,4 @@
-<div id="custom-popup-product" style="display:none;">
+<div id="custom-popup-product-mob" style="display:none;">
     <div class="popup-product-add">
         <div class="popup-product-content">
             <div class="popup-product-image">

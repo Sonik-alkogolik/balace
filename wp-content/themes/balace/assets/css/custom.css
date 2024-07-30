@@ -248,13 +248,16 @@ section {
     margin-bottom: 0;
     padding-bottom: 12px;
  }
+ section.top-content-block-wrapp {
+  padding: 0;
+  /* overflow: visible; */
+ }
  section {
   margin-bottom: 64px;
-  overflow: hidden;
+  /* overflow: hidden; */
  }
- .top-content-block-wrapp {
-  padding: 0;
- }
+ 
+
 }
 
 @media(max-width:1024px){

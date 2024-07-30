@@ -11,14 +11,42 @@ document.addEventListener('DOMContentLoaded', function() {
             clickable: true,
         },
         breakpoints: {
-            768: {
+            420: {
                 slidesPerView: 1,
                 spaceBetween: 20
             },
-            992: {
+            768: {
                 slidesPerView: 2,
+                spaceBetween: 20
+            },
+            992: {
+                slidesPerView: 3,
                 spaceBetween: 30
             }
         }
+    });
+});
+
+jQuery(document).ready(function($) {
+    var postIndex = 2; 
+    var postsPerPage = 2; 
+
+
+    function showMorePosts() {
+        var $hiddenPosts = $('#article-list-mob .article-item-mob').filter(':hidden');
+        if ($hiddenPosts.length > 0) {
+            $hiddenPosts.slice(0, postsPerPage).show();
+            postIndex += postsPerPage;
+
+     
+            if ($hiddenPosts.length <= postsPerPage) {
+                $('#load-more-posts-mob').hide();
+            }
+        }
+    }
+
+  
+    $('#load-more-posts-mob').on('click', function() {
+        showMorePosts();
     });
 });

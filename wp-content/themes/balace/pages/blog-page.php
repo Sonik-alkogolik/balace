@@ -5,6 +5,7 @@ Template Name: Блог
 get_header();
 ?>
 
+
 <section>
 <div class="blog-wrapp">
     <div class="blog-titel">
@@ -41,7 +42,10 @@ get_header();
                             <div class="blog-item-description">
                                 <div class="blog-item-date"><?php echo esc_html($post_date); ?></div>
                                 <div class="blog-item-title"><p><?php echo esc_html($post_title); ?></p></div>
-                                <div class="blog-item-excerpt"><?php echo esc_html($post_excerpt); ?></div>
+                                <div class="blog-item-excerpt"><?php
+                            $excerpt = get_the_excerpt();
+                            echo wp_trim_words($excerpt, 20, '...');
+                            ?></div>
                             </div>
                         </a>
                     </div>
@@ -71,7 +75,10 @@ get_header();
                             <div class="blog-item-description">
                                 <div class="blog-item-date"><?php echo esc_html($post_date); ?></div>
                                 <div class="blog-item-title"><p><?php echo esc_html($post_title); ?></p></div>
-                                <div class="blog-item-excerpt"><?php echo esc_html($post_excerpt); ?></div>
+                                <div class="blog-item-excerpt"><?php
+                            $excerpt = get_the_excerpt();
+                            echo wp_trim_words($excerpt, 12, '...');
+                            ?></div>
                             </div>
                         </a>
                     </div>

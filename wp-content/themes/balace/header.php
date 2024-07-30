@@ -36,7 +36,10 @@
                     </div>
                     <div class="header-product-actions">
                         <button class="btn_add-to-wishlist"></button>
-                        <button class="btn_basket"></button>
+                        <button class="btn_basket">
+                            <img class="basket-empty" src="/wp-content/themes/balace/img/icon/active_basket_img.png" alt="">
+                        </button>
+
                       <?php get_template_part( 'pages/templates-parts/popup-product-add' ); ?>
                     </div>
                     </div>
@@ -56,9 +59,10 @@
                        </div>
                        <div class="header-product-actions">
                         <button class="btn_add-to-wishlist"></button>
-                        <button class="btn_basket"></button>
-                     
-                        <?php get_template_part( 'pages/templates-parts/popup-product-add' ); ?>
+                        <button class="btn_basket">
+                          <img class="basket-empty" src="/wp-content/themes/balace/img/icon/active_basket_img.png" alt="">
+                        </button>
+                        <?php get_template_part( 'pages/templates-parts/popup-product-add-mob' ); ?>
                        </div>
                        
                     </div>
@@ -290,7 +294,7 @@
                                             if (!empty($categories) ) {
                                                 foreach ($categories as $category) {
                                                     if ($category->parent == 0 && in_array($category->name, $desired_categories)) {
-                                                        echo '<div class="product_cat_item"><p>' . $category->name . '</p>';
+                                                        echo '<div class="product_cat_item"><a href="'  . esc_url($category_url) .  '">' . htmlspecialchars($category->name) . '</a>';
                                                         $subcategories = get_terms(array(
                                                             'taxonomy' => 'product_cat',
                                                             'hide_empty' => false,
@@ -417,7 +421,7 @@
                                             if (!empty($categories) ) {
                                                 foreach ($categories as $category) {
                                                     if ($category->parent == 0 && in_array($category->name, $desired_categories)) {
-                                                        echo '<div class="product_cat_item"><p>' . $category->name . '</p>';
+                                                        echo '<div class="product_cat_item"><a href="'  . esc_url($category_url) .  '">' . htmlspecialchars($category->name) . '</a>';
                                                         $subcategories = get_terms(array(
                                                             'taxonomy' => 'product_cat',
                                                             'hide_empty' => false,

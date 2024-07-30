@@ -52,26 +52,54 @@
         });
    
         $(document).on('added_to_cart', function(event, fragments, cart_hash, $button) {
-          var $product = $button.closest('.product');
-          var image_url = $product.find('.product_image_item img').attr('src');
-          var title = $product.find('.woocommerce-loop-product__title').text();
-          var price = $product.find('.woocommerce-Price-amount').html();
-          var words = title.split(' ');
-          if (words.length > 2) {
-              title = words.slice(0, 2).join(' ') + '...';
-          }
-          $('#custom-popup-product .popup-product-image').html('<img src="' + image_url + '" alt="' + title + '">');
-          $('#custom-popup-product .popup-product-title').text(title);
-          $('#custom-popup-product .popup-product-price').html(price);
-          $('#custom-popup-product').show();
-          setTimeout(function() {
-            $('#custom-popup-product').hide();
-            // location.reload();
-        }, 3000);
-      });
+            var $product = $button.closest('.product, .swiper-slide.best_products_slide, .product-item');
+            
+            if ($product.length > 0) {
+                var image_url = $product.find('.product_image_item img').attr('src');
+                var title = $product.find('.woocommerce-loop-product__title').text();
+                var price = $product.find('.woocommerce-Price-amount').html();
+                var words = title.split(' ');
+                if (words.length > 2) {
+                    title = words.slice(0, 2).join(' ') + '...';
+                }
+                $('#custom-popup-product .popup-product-image').html('<img src="' + image_url + '" alt="' + title + '">');
+                $('#custom-popup-product .popup-product-title').text(title);
+                $('#custom-popup-product .popup-product-price').html(price);
+                $('#custom-popup-product').show();
+                setTimeout(function() {
+                    $('#custom-popup-product').hide();
+                    // location.reload();
+                }, 3000);
 
+               
+            }
+        });
+        $(document).on('added_to_cart', function(event, fragments, cart_hash, $button) {
+            var $product = $button.closest('.product, .swiper-slide.best_products_slide, .product-item');
+            
+            if ($product.length > 0) {
+                var image_url = $product.find('.product_image_item img').attr('src');
+                var title = $product.find('.woocommerce-loop-product__title').text();
+                var price = $product.find('.woocommerce-Price-amount').html();
+                var words = title.split(' ');
+                if (words.length > 2) {
+                    title = words.slice(0, 2).join(' ') + '...';
+                }
+                $('#custom-popup-product-mob .popup-product-image').html('<img src="' + image_url + '" alt="' + title + '">');
+                $('#custom-popup-product-mob .popup-product-title').text(title);
+                $('#custom-popup-product-mob .popup-product-price').html(price);
+                // $('.top-content-block-wrapp').css('overflow', 'visible');
+                $('#custom-popup-product-mob').show();
+                setTimeout(function() {
+                    $('#custom-popup-product-mob').hide();
+                    // $('.top-content-block-wrapp').css('overflow', 'hidden');
+                    // location.reload();
+                }, 3000);
 
-          // Функция для загрузки содержимого корзины через AJAX
+               
+            }
+        });
+
     function loadCartContent() {
       $.ajax({
           url: ajax_add_to_cart_params.ajax_url,
@@ -88,20 +116,27 @@
       });
   }
 
-  // Загрузка содержимого корзины при загрузке страницы
   loadCartContent();
      
 
       var $popupBasket = $('.wrapp-popup-basket-bg');
       $('.btn_basket').on('click', function() {
             $popupBasket.addClass('active-popup-basket');
-            console.log(true);
+            //console.log(true);
       }); 
 
        $('.clouse-basket-popup').on('click', function() {
           $popupBasket.removeClass('active-popup-basket');
-          console.log(true);
+          //console.log(true);
       });
+    //   $(document).on('click', function(event) {
+    //     var $contentPopup = $('.wrapp-popup-basket.active-popup-basket');
+    //     var $targetElement = $(event.target);
+    //     if (!$contentPopup.is($targetElement) && $contentPopup.has($targetElement).length === 0) {
+    //         $popupBasket.removeClass('active-popup-basket');
+    //     }
+    // });
+    
 
   });
 })(jQuery);

@@ -804,14 +804,19 @@ function remove_from_cart() {
         if ( WC()->cart->is_empty() ) {
             echo ' <div class="popup-div-wrapp">';
             echo '<button class="clouse-basket-popup">
-            <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4.25732 3.75732L12.7426 12.2426" stroke="#221D17" stroke-linecap="round"/>
-            <path d="M4.25732 12.2427L12.7426 3.75739" stroke="#221D17" stroke-linecap="round"/>
-           </svg>
-         </button>';
+               <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M4.25732 3.75732L12.7426 12.2426" stroke="#221D17" stroke-linecap="round"/>
+               <path d="M4.25732 12.2427L12.7426 3.75739" stroke="#221D17" stroke-linecap="round"/>
+               </svg>
+               </button>';
             echo '<p class="empty-cart-message">Ваша корзина пуста.</p>';
             echo '</div>';
         } else {
+            echo '<style>
+                .basket-empty{
+                    display: flex;
+                }
+                 </style>';
             // Если корзина не пуста, загружаем шаблон корзины
             wc_get_template_part('pages/templates-parts/popup-basket'); 
         }
@@ -849,6 +854,17 @@ function custom_cart_content_check() {
               </style>';
         echo '</div>';
     } else {
+        echo '<button class="clouse-basket-popup">
+        <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4.25732 3.75732L12.7426 12.2426" stroke="#221D17" stroke-linecap="round"></path>
+      <path d="M4.25732 12.2427L12.7426 3.75739" stroke="#221D17" stroke-linecap="round"></path>
+      </svg>
+   </button>';
+        echo '<style>
+        .basket-empty{
+            display: flex;
+        }
+         </style>';
         //wc_get_template_part('pages/templates-parts/popup-basket');
     }
 }

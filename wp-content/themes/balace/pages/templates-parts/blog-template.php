@@ -27,7 +27,10 @@
                             <h4 class="h4 text_main"><?php the_title(); ?></h4>
                         </div>
                         <div class="description h6 text_main">
-                            <?php the_excerpt(); ?>
+                        <?php
+                            $excerpt = get_the_excerpt();
+                            echo wp_trim_words($excerpt, 12, '...');
+                            ?>
                         </div>
                         <div class="publish-date h6 text_main ">
                             <?php echo get_the_date(); ?>

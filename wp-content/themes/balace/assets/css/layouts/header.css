@@ -409,6 +409,16 @@ header {
     color: rgba(34, 29, 23, 1);
     margin-bottom: 24px;
 }
+.product_cat_item p {
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16.8px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    color: rgba(34, 29, 23, 1);
+    margin-bottom: 24px;
+}
 .product_cat_list {
     max-width: 252px;
     width: 100%;
@@ -479,6 +489,16 @@ header {
 
 .catalog-link-opacity {
     opacity: 0.5; 
+}
+
+.basket-empty {
+    display: none;
+    position: absolute;
+    bottom: 5px;
+    right: 1px;
+}
+a.added_to_cart.wc-forward {
+    display: none;
 }
 
 @media(max-width:1439px){
@@ -845,6 +865,19 @@ header {
     border-radius: 16px;
     font-family: "Manrope", sans-serif;
   }
+  #custom-popup-product-mob {
+    position: absolute;
+    top: 60px;
+    right: -17px;
+    width: 436px;
+    height: 135px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    border-radius: 16px;
+    font-family: "Manrope", sans-serif;
+  }
   .popup-product-content {
     display: flex;
     color: rgba(255, 255, 255, 1);
@@ -925,10 +958,17 @@ header {
     #custom-popup-product {
         right: 0px;
     }
+    #custom-popup-product-mob {
+        right: 0px;
+    }
   }
 
   @media(max-width:520px){
     #custom-popup-product {
+        width: 344px;
+        height: 135px;
+    }
+    #custom-popup-product-mob {
         width: 344px;
         height: 135px;
     }
@@ -943,6 +983,9 @@ header {
 
   @media(max-width:373px){
     #custom-popup-product {
+        width: 300px;
+    }
+    #custom-popup-product-mob {
         width: 300px;
     }
   }
