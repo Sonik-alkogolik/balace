@@ -335,6 +335,7 @@ function enqueue_swiper_slider() {
         wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js');
         wp_enqueue_script('best-products', get_template_directory_uri() . '/assets/js/best-product-slider.js');
         // wp_enqueue_script('ajax-filter', get_template_directory_uri() . '/assets/js/ajax-filter.js');
+        wp_enqueue_script('price-rage-slider', get_template_directory_uri() . '/assets/js/price-range.js');
         wp_enqueue_script('jquery-rage-slider', get_template_directory_uri() . '/assets/js/jquery-ui.min.js');
         wp_enqueue_script('jquery-ui-touch-punch', get_template_directory_uri() . '/assets/js/jquery.ui.touch-punch.min.js');
     }
@@ -869,3 +870,91 @@ function custom_cart_content_check() {
     }
 }
 add_action('woocommerce_before_cart', 'custom_cart_content_check');
+
+
+function dequeue_woocommerce_styles_on_checkout() {
+
+    if ( is_checkout() ) {
+        wp_dequeue_style('woocommerce-layout');
+        wp_dequeue_style('woocommerce-general');
+        wp_dequeue_style('woocommerce-smallscreen');
+    }
+}
+add_action('wp_enqueue_scripts', 'dequeue_woocommerce_styles_on_checkout', 20);
+
+
+// Добавляем дополнительные поля в WooCommerce Checkout
+add_filter( 'woocommerce_checkout_fields', 'add_custom_checkout_fields' );
+
+function add_custom_checkout_fields( $fields ) {
+    // Добавляем новые поля в раздел 'billing'
+    $fields['billing']['billing_doorbell'] = array(
+        'label'       => 'Домофон',
+        'placeholder' => 'Введите код домофона (необязательно)',
+        'class'       => array('form-row-wide'),
+        'clear'       => true,
+    );
+    $fields['billing']['billing_entrance'] = array(
+        'label'       => 'Подъезд',
+        'placeholder' => 'Введите номер подъезда (необязательно)',
+        'class'       => array('form-row-wide'),
+        'clear'       => true,
+    );
+    $fields['billing']['billing_floor'] = array(
+        'label'       => 'Этаж',
+        'placeholder' => 'Введите номер этажа (необязательно)',
+        'class'       => array('form-row-wide'),
+        'clear'       => true,
+    );
+
+    return $fields;
+}
+
+// Сохраняем новые поля
+add_action( 'woocommerce_checkout_update_order_meta', 'save_custom_checkout_fields' );
+
+function save_custom_checkout_fields( $order_id ) {
+    if ( ! empty( $_POST['billing_doorbell'] ) ) {
+        update_post_meta( $order_id, '_billing_doorbell', sanitize_text_field( $_POST['billing_doorbell'] ) );
+    }
+    if ( ! empty( $_POST['billing_entrance'] ) ) {
+        update_post_meta( $order_id, '_billing_entrance', sanitize_text_field( $_POST['billing_entrance'] ) );
+    }
+    if ( ! empty( $_POST['billing_floor'] ) ) {
+        update_post_meta( $order_id, '_billing_floor', sanitize_text_field( $_POST['billing_floor'] ) );
+    }
+}
+
+// Отключаем обязательность полей Страна регион и Область/район
+add_filter( 'woocommerce_checkout_fields', 'custom_override_checkout_fields' );
+
+function custom_override_checkout_fields( $fields ) {
+
+    if ( isset( $fields['billing']['billing_state'] ) ) {
+        $fields['billing']['billing_state']['required'] = false;
+    }
+
+      if ( isset( $fields['billing']['billing_address_1'] ) ) {
+        $fields['billing']['billing_address_1']['required'] = false;
+    }
+    $fields['billing']['billing_address_2']['required'] = false;
+    $fields['billing']['billing_city']['required'] = false;
+    $fields['billing']['billing_postcode']['required'] = false;
+    return $fields;
+}
+
+// Программно устанавливаем страну
+function carrie_customer_default_shipping_country($value, $customer) {
+    $value = !empty($value) ? $value : 'RU';
+    return $value;
+}
+add_filter('woocommerce_customer_get_shipping_country', 'carrie_customer_default_shipping_country', 10, 2);
+
+// убираем поле страны из формы
+add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields_two' ); 
+function custom_override_checkout_fields_two( $fields ) {
+  unset($fields['billing']['billing_country']); // Отключаем страны оплаты
+  unset($fields['shipping']['shipping_country']);// Отключаем страны доставки
+  return $fields;
+}
+

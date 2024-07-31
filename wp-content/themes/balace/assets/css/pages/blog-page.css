@@ -965,36 +965,7 @@
     display: none;
 }
 
-.section-article-mob {
-}
-.article-container-mob {
-}
-.article-title-mob {
-}
-.h3 {
-}
-.mob {
-}
-.btn-load-more-mob {
-}
-.article-list-mob {
-}
-.article-item-mob {
-}
-.article-item-img-mob {
-}
-.date-caption-mob {
-}
-.text_main {
-}
-.h5 {
-}
-.article-excerpt-mob {
-}
-.text_dark {
-}
-.body1 {
-}
+
 
 @media(max-width:1280px){
     .article-wrapp {
@@ -1094,12 +1065,87 @@
     }
     .section-article-mob { 
         display: flex;
+        margin-top: 56px;
     }
+    .article-container-mob {
+        width: 100%;
+        border-radius: 26px;
+        border-top: 1px solid rgba(191, 187, 168, 1);
+    }
+    .article-list-mob.mob {
+        display:flex;
+        flex-direction: column;
+        align-items:flex-start;
+        height: auto;
+    }
+    .article-title-mob p {
+        margin-top: 34px;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 32.02px;
+        letter-spacing: 0.02em;
+        text-align: left;
+        padding-left: 8px;
+        margin-bottom: 24px;
+    }
+    .article-item-mob-link {
+        font-family: "Manrope", sans-serif;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .article-item-mob {
+        margin-bottom: 20px;
+    }
+    .article-item-img-mob {
+        max-width: 137px;
+        width: 100%;
+        height: 155px;
+    }
+    .article-item-img-mob img {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius:16px;
+    }
+    .article-item-img-mob-text {
+        margin-left: 20px;
+        max-width: 187px;
+        width: 100%;
+    }
+   .article-title-mob {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 21px;
+        letter-spacing: 0.02em;
+        text-align: left;
+        color: rgba(0, 0, 0, 1);
+        overflow-wrap: break-word;
+   }
+   .btn-load-more-mob {
+     border: 1px solid rgba(236, 233, 219, 1);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+     height: 56px;
+     background: transparent;
+     margin: 0 auto;
+     margin-bottom: 20px;
+     margin-top: 12px;
+     border-radius: 16px;
+   }
+   .date-caption-mob {
+    margin-bottom: 32px;
+    color: rgba(0, 0, 0, 1);
+   }
 }
 
 @media(max-width:420px){
     .article-title h1 {
         width: 100%;
+        
     }
 }
 

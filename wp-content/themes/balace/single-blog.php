@@ -5,13 +5,6 @@ Template Name:Записи блога
 get_header();
 ?>
 
-<script type="text/javascript">
-        var timeToReload = 15000; 
-        function reloadPage() {
-            window.location.reload();
-        }
-        setTimeout(reloadPage, timeToReload);
-    </script>
 
 <section>
 
@@ -252,15 +245,14 @@ $current_post_id = get_the_ID();
                     $post_count++;
                     ?>
                     <div class="article-item-mob" style="display: <?php echo ($post_count <= 2) ? 'block' : 'none'; ?>;">
-                        <a href="<?php the_permalink(); ?>">
+                        <a  class="article-item-mob-link" href="<?php the_permalink(); ?>">
                             <div class="article-item-img-mob">
                                 <?php the_post_thumbnail(''); ?>
                             </div>
-                            <p class="date-caption-mob"><?php the_date(); ?></p>
-                            <h3 class="article-title-mob text_main h5"><?php the_title(); ?></h3>
-                            <p class="article-excerpt-mob text_dark body1">
-                                <?php $excerpt = get_the_excerpt(); echo wp_trim_words($excerpt, 12, '...'); ?>
-                            </p>
+                            <div class="article-item-img-mob-text">
+                                <p class="date-caption-mob caption"><?php the_date(); ?></p>
+                                <h3 class="article-title-mob"><?php the_title(); ?></h3>
+                            </div>
                         </a>
                     </div>
                     <?php

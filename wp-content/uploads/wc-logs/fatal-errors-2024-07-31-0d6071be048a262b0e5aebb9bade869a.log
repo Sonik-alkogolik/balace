@@ -1,0 +1,102 @@
+2024-07-31T12:54:03+00:00 CRITICAL syntax error, unexpected token "," в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 888
+
+2024-07-31T12:54:05+00:00 CRITICAL syntax error, unexpected token "," в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 888
+
+2024-07-31T13:36:02+00:00 CRITICAL Uncaught Error: Call to a member function get_value() on null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:904
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): true_custom_checkout_field()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#3 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\checkout\form-shipping.php(51): do_action()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(342): wc_get_template()
+#6 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): WC_Checkout->checkout_form_shipping()
+#7 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#8 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\checkout\form-checkout.php(44): do_action()
+#10 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\OSPanel\\doma...')
+#11 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(361): wc_get_template()
+#12 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(67): WC_Shortcode_Checkout::checkout()
+#13 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(72): WC_Shortcode_Checkout::output()
+#14 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(95): WC_Shortcodes::shortcode_wrapper()
+#15 C:\OSPanel\domains\balace\wp-includes\shortcodes.php(355): WC_Shortcodes::checkout()
+#16 [internal function]: do_shortcode_tag()
+#17 C:\OSPanel\domains\balace\wp-includes\shortcodes.php(227): preg_replace_callback()
+#18 C:\OSPanel\domains\balace\wp-content\themes\balace\pages\checkout-page.php(9): do_shortcode()
+#19 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#20 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#21 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#22 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 904
+
+2024-07-31T14:26:45+00:00 CRITICAL Cannot redeclare custom_override_checkout_fields() (previously declared in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:931) в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 952
+
+2024-07-31T14:26:47+00:00 CRITICAL Cannot redeclare custom_override_checkout_fields() (previously declared in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:931) в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 952
+
+2024-07-31T14:29:40+00:00 CRITICAL Uncaught TypeError: array_push(): Argument #1 ($array) must be of type array, null given in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:951
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(951): array_push()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): custom_override_checkout_fields_two()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(300): apply_filters()
+#4 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\checkout\form-checkout.php(34): WC_Checkout->get_checkout_fields()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\OSPanel\\doma...')
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(361): wc_get_template()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(67): WC_Shortcode_Checkout::checkout()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(72): WC_Shortcode_Checkout::output()
+#9 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(95): WC_Shortcodes::shortcode_wrapper()
+#10 C:\OSPanel\domains\balace\wp-includes\shortcodes.php(355): WC_Shortcodes::checkout()
+#11 [internal function]: do_shortcode_tag()
+#12 C:\OSPanel\domains\balace\wp-includes\shortcodes.php(227): preg_replace_callback()
+#13 C:\OSPanel\domains\balace\wp-content\themes\balace\pages\checkout-page.php(9): do_shortcode()
+#14 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#15 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#16 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#17 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 951
+
+2024-07-31T14:29:41+00:00 CRITICAL Uncaught TypeError: array_push(): Argument #1 ($array) must be of type array, null given in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:951
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(951): array_push()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): custom_override_checkout_fields_two()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(300): apply_filters()
+#4 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\checkout\form-checkout.php(34): WC_Checkout->get_checkout_fields()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\OSPanel\\doma...')
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(361): wc_get_template()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(67): WC_Shortcode_Checkout::checkout()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(72): WC_Shortcode_Checkout::output()
+#9 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(95): WC_Shortcodes::shortcode_wrapper()
+#10 C:\OSPanel\domains\balace\wp-includes\shortcodes.php(355): WC_Shortcodes::checkout()
+#11 [internal function]: do_shortcode_tag()
+#12 C:\OSPanel\domains\balace\wp-includes\shortcodes.php(227): preg_replace_callback()
+#13 C:\OSPanel\domains\balace\wp-content\themes\balace\pages\checkout-page.php(9): do_shortcode()
+#14 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#15 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#16 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#17 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 951
+
+2024-07-31T14:38:29+00:00 CRITICAL Uncaught Error: Undefined constant "php" in C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\checkout\form-shipping.php:57
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(342): wc_get_template()
+#2 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): WC_Checkout->checkout_form_shipping()
+#3 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#4 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#5 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\checkout\form-checkout.php(44): do_action()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\OSPanel\\doma...')
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(361): wc_get_template()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(67): WC_Shortcode_Checkout::checkout()
+#9 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(72): WC_Shortcode_Checkout::output()
+#10 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(95): WC_Shortcodes::shortcode_wrapper()
+#11 C:\OSPanel\domains\balace\wp-includes\shortcodes.php(355): WC_Shortcodes::checkout()
+#12 [internal function]: do_shortcode_tag()
+#13 C:\OSPanel\domains\balace\wp-includes\shortcodes.php(227): preg_replace_callback()
+#14 C:\OSPanel\domains\balace\wp-content\themes\balace\pages\checkout-page.php(9): do_shortcode()
+#15 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#16 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#17 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#18 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\checkout\form-shipping.php на строке 57
+
