@@ -1,0 +1,100 @@
+
+.optional {
+    display: none;
+}
+.wrapper-form-checkout {
+    display: flex;
+    width: 100%;
+    font-family: "Manrope", sans-serif;
+}
+.woocommerce-billing-fields {
+    max-width: 750px;
+    width: 100%;
+}
+.woocommerce-checkout-review-order {
+    max-width: 518px;
+    width: 100%;
+}
+.woocommerce-billing-fields__field-wrapper {
+    display:flex;
+    flex-direction: column;
+    align-items:flex-end;
+}
+.block-input {
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items:flex-end;
+}
+.billing-title {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+.block-input-item {
+    max-width: 640px;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+
+.billing-title p {
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 41.99px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: rgba(100, 95, 77, 1);
+}
+.billing-title h3 {
+    margin-left: 63px;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 41.99px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: rgba(100, 95, 77, 1);
+    margin-bottom: 40px;
+}
+.form-row {
+    width: 100%;
+    border-bottom: 1px solid rgba(236, 233, 219, 1);
+    margin-bottom: 28px;
+}
+.form-row .input-text::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    color: rgba(100, 95, 77, 1);
+}
+.form-row-wide {
+}
+.address-field {
+}
+.input-text {
+}
+.block-recipient {
+}
+.block-recipient-item {
+}
+.woocommerce-account-fields {
+}
+.create-account {
+}
+.woocommerce-form__label {
+}
+.woocommerce-form__label-for-checkbox {
+}
+.checkbox {
+}
+.woocommerce-form__input {
+}
+.woocommerce-form__input-checkbox {
+}
+.input-checkbox {
+}
+.clear {
+}

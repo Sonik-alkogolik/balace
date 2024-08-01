@@ -878,83 +878,118 @@ function dequeue_woocommerce_styles_on_checkout() {
         wp_dequeue_style('woocommerce-layout');
         wp_dequeue_style('woocommerce-general');
         wp_dequeue_style('woocommerce-smallscreen');
+        wp_enqueue_style('checkout-style', get_template_directory_uri() . '/assets/css/pages/checkout.css');
+        wp_enqueue_script( 'quantity-control-script',  get_template_directory_uri() . '/assets/js/quantity-control.js', array( 'jquery' ), null, true );
     }
 }
 add_action('wp_enqueue_scripts', 'dequeue_woocommerce_styles_on_checkout', 20);
 
 
-// Добавляем дополнительные поля в WooCommerce Checkout
-add_filter( 'woocommerce_checkout_fields', 'add_custom_checkout_fields' );
 
-function add_custom_checkout_fields( $fields ) {
-    // Добавляем новые поля в раздел 'billing'
+// Добавляем кастомные поля в форму оформления заказа
+add_filter('woocommerce_checkout_fields', 'add_custom_checkout_fields');
+function add_custom_checkout_fields($fields) {
     $fields['billing']['billing_doorbell'] = array(
         'label'       => 'Домофон',
-        'placeholder' => 'Введите код домофона (необязательно)',
+        'placeholder' => '',
+        'required'    => false,
         'class'       => array('form-row-wide'),
-        'clear'       => true,
+        'clear'       => true
     );
     $fields['billing']['billing_entrance'] = array(
         'label'       => 'Подъезд',
-        'placeholder' => 'Введите номер подъезда (необязательно)',
+        'placeholder' => '',
+        'required'    => false,
         'class'       => array('form-row-wide'),
-        'clear'       => true,
+        'clear'       => true
     );
     $fields['billing']['billing_floor'] = array(
         'label'       => 'Этаж',
-        'placeholder' => 'Введите номер этажа (необязательно)',
+        'placeholder' => 'Введите номер этажа',
+        'required'    => false,
         'class'       => array('form-row-wide'),
-        'clear'       => true,
+        'clear'       => true
     );
-
+    $fields['billing']['custom_delivery_method'] = array(
+        'type'        => 'select',
+        'label'       => 'Способ доставки',
+        'options'     => array(
+            '' => 'Выберите способ доставки',
+            'courier' => 'Курьерская доставка',
+            'pickup'  => 'Самовывоз',
+        ),
+        'required'    => false,
+        'class'       => array('form-row-wide'),
+        'clear'       => true
+    );
     return $fields;
 }
 
-// Сохраняем новые поля
-add_action( 'woocommerce_checkout_update_order_meta', 'save_custom_checkout_fields' );
-
-function save_custom_checkout_fields( $order_id ) {
-    if ( ! empty( $_POST['billing_doorbell'] ) ) {
-        update_post_meta( $order_id, '_billing_doorbell', sanitize_text_field( $_POST['billing_doorbell'] ) );
+// Сохраняем кастомные поля
+add_action('woocommerce_checkout_update_order_meta', 'save_custom_checkout_fields');
+function save_custom_checkout_fields($order_id) {
+    if (!empty($_POST['billing_doorbell'])) {
+        update_post_meta($order_id, '_billing_doorbell', sanitize_text_field($_POST['billing_doorbell']));
     }
-    if ( ! empty( $_POST['billing_entrance'] ) ) {
-        update_post_meta( $order_id, '_billing_entrance', sanitize_text_field( $_POST['billing_entrance'] ) );
+    if (!empty($_POST['billing_entrance'])) {
+        update_post_meta($order_id, '_billing_entrance', sanitize_text_field($_POST['billing_entrance']));
     }
-    if ( ! empty( $_POST['billing_floor'] ) ) {
-        update_post_meta( $order_id, '_billing_floor', sanitize_text_field( $_POST['billing_floor'] ) );
+    if (!empty($_POST['billing_floor'])) {
+        update_post_meta($order_id, '_billing_floor', sanitize_text_field($_POST['billing_floor']));
+    }
+    if (!empty($_POST['custom_delivery_method'])) {
+        update_post_meta($order_id, '_custom_delivery_method', sanitize_text_field($_POST['custom_delivery_method']));
     }
 }
 
-// Отключаем обязательность полей Страна регион и Область/район
-add_filter( 'woocommerce_checkout_fields', 'custom_override_checkout_fields' );
 
-function custom_override_checkout_fields( $fields ) {
-
-    if ( isset( $fields['billing']['billing_state'] ) ) {
-        $fields['billing']['billing_state']['required'] = false;
-    }
-
-      if ( isset( $fields['billing']['billing_address_1'] ) ) {
-        $fields['billing']['billing_address_1']['required'] = false;
-    }
-    $fields['billing']['billing_address_2']['required'] = false;
-    $fields['billing']['billing_city']['required'] = false;
-    $fields['billing']['billing_postcode']['required'] = false;
+add_filter('woocommerce_checkout_fields', 'custom_override_checkout_fields_two');
+function custom_override_checkout_fields_two($fields) {
+    unset($fields['billing']['billing_country']);
+    unset($fields['shipping']['shipping_country']);
     return $fields;
 }
 
-// Программно устанавливаем страну
+// Отображаем кастомные поля в админке заказа
+add_action('woocommerce_admin_order_data_after_billing_address', 'display_custom_fields_in_admin_order', 10, 1);
+function display_custom_fields_in_admin_order($order) {
+    $doorbell = get_post_meta($order->get_id(), '_billing_doorbell', true);
+    $entrance = get_post_meta($order->get_id(), '_billing_entrance', true);
+    $floor = get_post_meta($order->get_id(), '_billing_floor', true);
+    $delivery_method = get_post_meta($order->get_id(), '_custom_delivery_method', true);
+
+    echo '<p><strong>Домофон:</strong> ' . esc_html($doorbell) . '</p>';
+    echo '<p><strong>Подъезд:</strong> ' . esc_html($entrance) . '</p>';
+    echo '<p><strong>Этаж:</strong> ' . esc_html($floor) . '</p>';
+    echo '<p><strong>Способ доставки:</strong> ' . esc_html($delivery_method) . '</p>';
+}
+
+// Устанавливаем страну по умолчанию
+add_filter('woocommerce_customer_get_shipping_country', 'carrie_customer_default_shipping_country', 10, 2);
 function carrie_customer_default_shipping_country($value, $customer) {
     $value = !empty($value) ? $value : 'RU';
     return $value;
 }
-add_filter('woocommerce_customer_get_shipping_country', 'carrie_customer_default_shipping_country', 10, 2);
 
-// убираем поле страны из формы
-add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields_two' ); 
-function custom_override_checkout_fields_two( $fields ) {
-  unset($fields['billing']['billing_country']); // Отключаем страны оплаты
-  unset($fields['shipping']['shipping_country']);// Отключаем страны доставки
-  return $fields;
+add_action('wp_ajax_woocommerce_update_cart_item', 'woocommerce_update_cart_item');
+add_action('wp_ajax_nopriv_woocommerce_update_cart_item', 'woocommerce_update_cart_item');
+
+function woocommerce_update_cart_item() {
+    WC()->cart->set_quantity($_POST['cart_item_key'], $_POST['quantity']);
+
+    // Получаем обновленные данные
+    ob_start();
+    wc_cart_totals_order_total_html();
+    $order_total = ob_get_clean();
+
+    ob_start();
+    wc_cart_totals_subtotal_html();
+    $subtotal = ob_get_clean();
+
+    // Возвращаем данные
+    wp_send_json_success(array(
+        'order_total' => $order_total,
+        'subtotal'    => $subtotal,
+        'quantity_html' => $quantity_html
+    ));
 }
-

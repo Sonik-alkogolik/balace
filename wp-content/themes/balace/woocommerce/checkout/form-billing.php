@@ -21,7 +21,7 @@ defined( 'ABSPATH' ) || exit;
 <div class="woocommerce-billing-fields">
 	<?php if ( wc_ship_to_billing_address_only() && WC()->cart->needs_shipping() ) : ?>
 
-		<h3> Адрес и доставка <?php //esc_html_e( 'Billing &amp; Shipping', 'woocommerce' ); ?></h3>
+		
 
 	<?php else : ?>
 
@@ -32,83 +32,122 @@ defined( 'ABSPATH' ) || exit;
 	<?php do_action( 'woocommerce_before_checkout_billing_form', $checkout ); ?>
 
 	<div class="woocommerce-billing-fields__field-wrapper">
-	<div class="block-address">
+	<div class="block-input">
+        <div class="billing-title">
+        <p>1/3</p> <h3> Адрес и доставка <?php //esc_html_e( 'Billing &amp; Shipping', 'woocommerce' ); ?></h3>
+        </div>
+    <div class="block-input-item">
+   
     <?php
-    // Получение полей для формы оформления заказа
-    $fields = $checkout->get_checkout_fields( 'billing' );
+// Получение полей для формы оформления заказа
+$fields = $checkout->get_checkout_fields('billing');
 
-    // Определяем необходимые поля
-    $address_fields = array(
-        'billing_city'        => array(
-            'label'       => 'Населённый пункт',
-            'placeholder' => 'Введите населённый пункт',
-        ),
-        'billing_address_1'   => array(
-            'label'       => 'Улица и дом',
-            'placeholder' => 'Введите улицу и номер дома',
-        ),
-        'billing_address_2'   => array(
-            'label'       => 'Квартира',
-            'placeholder' => 'Введите номер квартиры',
-        ),
-        // Дополнительные поля, не входящие в стандартный набор
-        'billing_doorbell'    => array(
-            'label'       => 'Домофон',
-            'placeholder' => 'Введите код домофона (необязательно)',
-        ),
-        'billing_entrance'    => array(
-            'label'       => 'Подъезд',
-            'placeholder' => 'Введите номер подъезда (необязательно)',
-        ),
-        'billing_floor'       => array(
-            'label'       => 'Этаж',
-            'placeholder' => 'Введите номер этажа (необязательно)',
-        ),
-    );
+// Определяем необходимые поля
+$address_fields = array(
+    'billing_city'        => array(
+        'placeholder' => 'Населённый пункт',
+    ),
+    'billing_address_1'   => array(
+        'placeholder' => 'Улица и дом',
+    ),
+    'billing_address_2'   => array(
+        'placeholder' => 'Квартира',
+    ),
+    'billing_doorbell'    => array(
+        'placeholder' => 'Домофон',
+    ),
+    'billing_entrance'    => array(
+        'placeholder' => 'Подъезд',
+    ),
+    'billing_floor'       => array(
+        'placeholder' => 'Этаж',
+    ),
+);
 
-    // Отображаем поля
-    foreach ( $address_fields as $field_key => $field_params ) {
-        if ( isset( $fields[ $field_key ] ) ) {
-            woocommerce_form_field( $field_key, array_merge( $fields[ $field_key ], $field_params ), $checkout->get_value( $field_key ) );
-        } else {
-            // Отобразим поле настройках WooCommerce
-            echo '<p class="form-row form-row-wide address-field" id="' . esc_attr( $field_key ) . '_field">';
-            echo '<label for="' . esc_attr( $field_key ) . '">' . esc_html( $field_params['label'] ) . '</label>';
-            echo '<input type="text" class="input-text" name="' . esc_attr( $field_key ) . '" id="' . esc_attr( $field_key ) . '" placeholder="' . esc_attr( $field_params['placeholder'] ) . '" value="' . esc_attr( $checkout->get_value( $field_key ) ) . '">';
-            echo '</p>';
-        }
-    }
-
-    ?>
-
-
-    <div class="block-recipient">
-		<h3>Получатель </h3>
-        <?php
-        $recipient_fields = array(
-            'billing_first_name',
-            'billing_last_name',
-            'billing_phone',
-            'billing_email',
-        );
-
-        foreach ( $recipient_fields as $field_key ) {
-            if ( isset( $fields[ $field_key ] ) ) {
-                woocommerce_form_field( $field_key, $fields[ $field_key ], $checkout->get_value( $field_key ) );
-            }
-        }
-        ?>
-		 <p class="form-row form-row-wide">
-        <label for="custom_delivery_method">Способ доставки</label>
-        <select name="custom_delivery_method" id="custom_delivery_method">
-            <option value="courier">Курьерская доставка</option>
-            <option value="pickup">Самовывоз</option>
-        </select>
-    </p>
+// Отображаем поля
+foreach ($address_fields as $field_key => $field_params) {
+    // Если поле не найдено в существующих полях, добавляем его вручную
+    echo '<div class="form-row form-row-wide address-field" id="' . esc_attr($field_key) . '_field">';
+    echo '<input type="text" class="input-text" name="' . esc_attr($field_key) . '" id="' . esc_attr($field_key) . '" placeholder="' . esc_attr($field_params['placeholder']) . '" value="' . esc_attr($checkout->get_value($field_key)) . '">';
+    echo '</div>';
+}
+?>
+      </div>
     </div>
+    </div>
+<div class="woocommerce-billing-fields__field-wrapper">
+   <div class="block-input">
+   <div class="billing-title">
+		<p>2/3</p> <h3>Получатель </h3>
+     </div>
+        <div class="block-input-item">
+       
+        <?php
+// Получаем поля для формы оформления заказа
+$fields = $checkout->get_checkout_fields('billing');
+
+// Определяем необходимые поля и их параметры
+$recipient_fields = array(
+    'billing_first_name' => array(
+        'type'        => 'text',
+        'placeholder' => 'Имя',
+    ),
+    'billing_last_name'  => array(
+        'type'        => 'text',
+        'placeholder' => 'Фамилия',
+    ),
+    'billing_phone'      => array(
+        'type'        => 'tel',
+        'placeholder' => 'Телефон',
+    ),
+    'billing_email'      => array(
+        'type'        => 'email',
+        'placeholder' => 'Электронная почта',
+    ),
+    'custom_delivery_method' => array(
+        'type'        => 'select',
+        'options'     => array(
+            'courier' => 'Курьерская доставка',
+            'pickup'  => 'Самовывоз',
+        ),
+        'label'       => 'Способ доставки',
+    ),
+);
+
+foreach ($recipient_fields as $field_key => $field_params) {
+    if ($field_params['type'] === 'select') {
+        echo '<div class="form-row form-row-wide">';
+        echo '<label for="' . esc_attr($field_key) . '">' . esc_html($field_params['label']) . '</label>';
+        echo '<select name="' . esc_attr($field_key) . '" id="' . esc_attr($field_key) . '">';
+        foreach ($field_params['options'] as $value => $label) {
+            $selected = selected($checkout->get_value($field_key), $value, false);
+            echo '<option value="' . esc_attr($value) . '" ' . $selected . '>' . esc_html($label) . '</option>';
+        }
+        echo '</select>';
+        echo '</div>';
+    } else {
+        echo '<div class="form-row form-row-wide">';
+        echo '<input type="' . esc_attr($field_params['type']) . '" class="input-text" name="' . esc_attr($field_key) . '" id="' . esc_attr($field_key) . '" placeholder="' . esc_attr($field_params['placeholder']) . '" value="' . esc_attr($checkout->get_value($field_key)) . '">';
+        echo '</div>';
+    }
+}
+?>
+
+    </div>
+  </div>
+	<?php do_action( 'woocommerce_after_checkout_billing_form', $checkout ); ?>
 </div>
 
-	<?php do_action( 'woocommerce_after_checkout_billing_form', $checkout ); ?>
+<div class="woocommerce-billing-fields__field-wrapper">
+<div class="block-input">
+<div class="billing-title">
+ <p>3/3</p><h3>После оформления заказа с вами свяжется наш менеджер для подтверждения и оплаты</h3>
+    </div>
+    <div class="">
+    <?php //wc_get_template( 'checkout/payment.php' ); ?>
+</div>
+</div>
+  
 </div>
 
 <?php if ( ! is_user_logged_in() && $checkout->is_registration_enabled() ) : ?>
