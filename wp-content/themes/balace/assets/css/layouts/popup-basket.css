@@ -269,6 +269,38 @@
 .woocommerce-cart-form__cart-item.cart_item > td.product-price > span > bdi > span {
     color: #221D17;
 }
+
+.table-container {
+    max-height: 595px;
+    overflow-y: auto;
+  }
+  .table-container::-webkit-scrollbar {
+    width:2px; 
+  }
+  .table-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+  }
+
+  .table-container table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .table-container tbody {
+    display: block;
+    width: 100%;
+    overflow-y: auto;
+    height: 100%;
+  }
+
+  .table-container thead, .table-container tfoot {
+    display: table;
+    width: calc(100% - 1em);
+  }
+.wrapp-popup-basket > div.cart_totals-wrapp > div > table > tbody > tr.cart-subtotal {
+    margin-top: 0px;
+}
+
 @media(max-width:480px){
     .wrapp-popup-basket .basket-title p {
         padding-left: 16px;

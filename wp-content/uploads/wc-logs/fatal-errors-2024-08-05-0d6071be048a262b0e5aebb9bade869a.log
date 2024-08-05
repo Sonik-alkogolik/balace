@@ -1,0 +1,597 @@
+2024-08-05T09:41:39+00:00 CRITICAL Uncaught Error: Call to a member function get() on null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1025
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): truemisha_payments_on_shipping()
+#1 C:\OSPanel\domains\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(163): apply_filters()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Internal\Admin\WcPayWelcomePage.php(348): WC_Payment_Gateways->get_available_payment_gateways()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Internal\Admin\WcPayWelcomePage.php(79): Automattic\WooCommerce\Internal\Admin\WcPayWelcomePage->get_incentive()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Internal\Admin\Notes\PaymentsMoreInfoNeeded.php(42): Automattic\WooCommerce\Internal\Admin\WcPayWelcomePage->must_be_visible()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Internal\Admin\Notes\PaymentsMoreInfoNeeded.php(63): Automattic\WooCommerce\Internal\Admin\Notes\PaymentsMoreInfoNeeded::should_display_note()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Notes\NoteTraits.php(83): Automattic\WooCommerce\Internal\Admin\Notes\PaymentsMoreInfoNeeded::get_note()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Internal\Admin\Events.php(205): Automattic\WooCommerce\Internal\Admin\Notes\PaymentsMoreInfoNeeded::possibly_add_note()
+#9 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Internal\Admin\Events.php(145): Automattic\WooCommerce\Internal\Admin\Events->possibly_add_notes()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): Automattic\WooCommerce\Internal\Admin\Events->do_wc_admin_daily()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(565): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-cron.php(188): do_action_ref_array()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 1025
+
+2024-08-05T09:51:33+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: float * string in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:294
+Stack trace:
+#0 [internal function]: WC_Discounts->sort_by_price()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(92): uasort()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(48): WC_Discounts->set_items_from_cart()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(777): WC_Discounts->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(660): WC_Cart_Totals->calculate_discounts()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(981): WC_Cart->set_quantity()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php на строке 294
+
+2024-08-05T09:53:01+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: float * string in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:294
+Stack trace:
+#0 [internal function]: WC_Discounts->sort_by_price()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(92): uasort()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(48): WC_Discounts->set_items_from_cart()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(777): WC_Discounts->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(660): WC_Cart_Totals->calculate_discounts()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(981): WC_Cart->set_quantity()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php на строке 294
+
+2024-08-05T09:53:03+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: float * string in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:294
+Stack trace:
+#0 [internal function]: WC_Discounts->sort_by_price()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(92): uasort()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(48): WC_Discounts->set_items_from_cart()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(777): WC_Discounts->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(660): WC_Cart_Totals->calculate_discounts()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(981): WC_Cart->set_quantity()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php на строке 294
+
+2024-08-05T09:58:49+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: float * string in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:294
+Stack trace:
+#0 [internal function]: WC_Discounts->sort_by_price()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(92): uasort()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(48): WC_Discounts->set_items_from_cart()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(777): WC_Discounts->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(660): WC_Cart_Totals->calculate_discounts()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(982): WC_Cart->set_quantity()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php на строке 294
+
+2024-08-05T10:00:14+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: float * string in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:294
+Stack trace:
+#0 [internal function]: WC_Discounts->sort_by_price()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(92): uasort()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(48): WC_Discounts->set_items_from_cart()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(777): WC_Discounts->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(660): WC_Cart_Totals->calculate_discounts()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(982): WC_Cart->set_quantity()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php на строке 294
+
+2024-08-05T10:00:25+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: float * string in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:295
+Stack trace:
+#0 [internal function]: WC_Discounts->sort_by_price()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(92): uasort()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(48): WC_Discounts->set_items_from_cart()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(777): WC_Discounts->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(660): WC_Cart_Totals->calculate_discounts()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(982): WC_Cart->set_quantity()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php на строке 295
+
+2024-08-05T10:00:54+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: float * string in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:294
+Stack trace:
+#0 [internal function]: WC_Discounts->sort_by_price()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(92): uasort()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(48): WC_Discounts->set_items_from_cart()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(777): WC_Discounts->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(660): WC_Cart_Totals->calculate_discounts()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(982): WC_Cart->set_quantity()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php на строке 294
+
+2024-08-05T10:04:42+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: float * string in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:294
+Stack trace:
+#0 [internal function]: WC_Discounts->sort_by_price()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(92): uasort()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(48): WC_Discounts->set_items_from_cart()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(777): WC_Discounts->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(660): WC_Cart_Totals->calculate_discounts()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(982): WC_Cart->set_quantity()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php на строке 294
+
+2024-08-05T10:04:44+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: float * string in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:294
+Stack trace:
+#0 [internal function]: WC_Discounts->sort_by_price()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(92): uasort()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(48): WC_Discounts->set_items_from_cart()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(777): WC_Discounts->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(660): WC_Cart_Totals->calculate_discounts()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(982): WC_Cart->set_quantity()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php на строке 294
+
+2024-08-05T10:25:55+00:00 CRITICAL Uncaught Error: Call to a member function get() on null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1076
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): truemisha_payments_on_shipping()
+#1 C:\OSPanel\domains\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(163): apply_filters()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Internal\Admin\WcPayWelcomePage.php(348): WC_Payment_Gateways->get_available_payment_gateways()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Internal\Admin\WcPayWelcomePage.php(79): Automattic\WooCommerce\Internal\Admin\WcPayWelcomePage->get_incentive()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Internal\Admin\Notes\PaymentsMoreInfoNeeded.php(42): Automattic\WooCommerce\Internal\Admin\WcPayWelcomePage->must_be_visible()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Internal\Admin\Notes\PaymentsMoreInfoNeeded.php(63): Automattic\WooCommerce\Internal\Admin\Notes\PaymentsMoreInfoNeeded::should_display_note()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Notes\NoteTraits.php(83): Automattic\WooCommerce\Internal\Admin\Notes\PaymentsMoreInfoNeeded::get_note()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Internal\Admin\Events.php(205): Automattic\WooCommerce\Internal\Admin\Notes\PaymentsMoreInfoNeeded::possibly_add_note()
+#9 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Internal\Admin\Events.php(145): Automattic\WooCommerce\Internal\Admin\Events->possibly_add_notes()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): Automattic\WooCommerce\Internal\Admin\Events->do_wc_admin_daily()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(565): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-cron.php(188): do_action_ref_array()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 1076
+
+2024-08-05T11:26:47+00:00 CRITICAL Uncaught Error: Call to a member function get() on null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1066
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): truemisha_payments_on_shipping()
+#1 C:\OSPanel\domains\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(163): apply_filters()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(93): WC_Payment_Gateways->get_available_payment_gateways()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(71): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments::has_gateways()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments.php(125): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments->is_complete()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(304): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments->can_view()
+#7 [internal function]: Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->Automattic\WooCommerce\Admin\Features\OnboardingTasks\{closure}()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(305): array_filter()
+#9 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(239): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_viewable_tasks()
+#10 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(327): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->is_complete()
+#11 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(403): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->possibly_track_completion()
+#12 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(745): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_json()
+#13 [internal function]: Automattic\WooCommerce\Admin\API\OnboardingTasks->Automattic\WooCommerce\Admin\API\{closure}()
+#14 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(744): array_map()
+#15 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(1181): Automattic\WooCommerce\Admin\API\OnboardingTasks->get_tasks()
+#16 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(1028): WP_REST_Server->respond_to_request()
+#17 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(442): WP_REST_Server->dispatch()
+#18 C:\OSPanel\domains\balace\wp-includes\rest-api.php(410): WP_REST_Server->serve_request()
+#19 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): rest_api_loaded()
+#20 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#21 C:\OSPanel\domains\balace\wp-includes\plugin.php(565): WP_Hook->do_action()
+#22 C:\OSPanel\domains\balace\wp-includes\class-wp.php(399): do_action_ref_array()
+#23 C:\OSPanel\domains\balace\wp-includes\class-wp.php(780): WP->parse_request()
+#24 C:\OSPanel\domains\balace\wp-includes\functions.php(1334): WP->main()
+#25 C:\OSPanel\domains\balace\wp-blog-header.php(16): wp()
+#26 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#27 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 1066
+
+2024-08-05T11:27:05+00:00 CRITICAL Uncaught Error: Call to a member function get() on null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1066
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): truemisha_payments_on_shipping()
+#1 C:\OSPanel\domains\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(163): apply_filters()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(93): WC_Payment_Gateways->get_available_payment_gateways()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(71): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments::has_gateways()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments.php(125): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments->is_complete()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(304): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments->can_view()
+#7 [internal function]: Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->Automattic\WooCommerce\Admin\Features\OnboardingTasks\{closure}()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(305): array_filter()
+#9 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(239): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_viewable_tasks()
+#10 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(327): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->is_complete()
+#11 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(403): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->possibly_track_completion()
+#12 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(745): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_json()
+#13 [internal function]: Automattic\WooCommerce\Admin\API\OnboardingTasks->Automattic\WooCommerce\Admin\API\{closure}()
+#14 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(744): array_map()
+#15 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(1181): Automattic\WooCommerce\Admin\API\OnboardingTasks->get_tasks()
+#16 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(1028): WP_REST_Server->respond_to_request()
+#17 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(442): WP_REST_Server->dispatch()
+#18 C:\OSPanel\domains\balace\wp-includes\rest-api.php(410): WP_REST_Server->serve_request()
+#19 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): rest_api_loaded()
+#20 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#21 C:\OSPanel\domains\balace\wp-includes\plugin.php(565): WP_Hook->do_action()
+#22 C:\OSPanel\domains\balace\wp-includes\class-wp.php(399): do_action_ref_array()
+#23 C:\OSPanel\domains\balace\wp-includes\class-wp.php(780): WP->parse_request()
+#24 C:\OSPanel\domains\balace\wp-includes\functions.php(1334): WP->main()
+#25 C:\OSPanel\domains\balace\wp-blog-header.php(16): wp()
+#26 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#27 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 1066
+
+2024-08-05T11:31:56+00:00 CRITICAL Uncaught Error: Call to a member function get() on null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1066
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): truemisha_payments_on_shipping()
+#1 C:\OSPanel\domains\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(163): apply_filters()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(93): WC_Payment_Gateways->get_available_payment_gateways()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(71): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments::has_gateways()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments.php(125): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments->is_complete()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(304): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments->can_view()
+#7 [internal function]: Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->Automattic\WooCommerce\Admin\Features\OnboardingTasks\{closure}()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(305): array_filter()
+#9 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(239): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_viewable_tasks()
+#10 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(327): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->is_complete()
+#11 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(403): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->possibly_track_completion()
+#12 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(745): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_json()
+#13 [internal function]: Automattic\WooCommerce\Admin\API\OnboardingTasks->Automattic\WooCommerce\Admin\API\{closure}()
+#14 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(744): array_map()
+#15 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(1181): Automattic\WooCommerce\Admin\API\OnboardingTasks->get_tasks()
+#16 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(1028): WP_REST_Server->respond_to_request()
+#17 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(442): WP_REST_Server->dispatch()
+#18 C:\OSPanel\domains\balace\wp-includes\rest-api.php(410): WP_REST_Server->serve_request()
+#19 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): rest_api_loaded()
+#20 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#21 C:\OSPanel\domains\balace\wp-includes\plugin.php(565): WP_Hook->do_action()
+#22 C:\OSPanel\domains\balace\wp-includes\class-wp.php(399): do_action_ref_array()
+#23 C:\OSPanel\domains\balace\wp-includes\class-wp.php(780): WP->parse_request()
+#24 C:\OSPanel\domains\balace\wp-includes\functions.php(1334): WP->main()
+#25 C:\OSPanel\domains\balace\wp-blog-header.php(16): wp()
+#26 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#27 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 1066
+
+2024-08-05T11:56:59+00:00 CRITICAL Uncaught Error: Call to a member function get() on null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1066
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): truemisha_payments_on_shipping()
+#1 C:\OSPanel\domains\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(163): apply_filters()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(93): WC_Payment_Gateways->get_available_payment_gateways()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(71): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments::has_gateways()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments.php(125): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments->is_complete()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(304): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments->can_view()
+#7 [internal function]: Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->Automattic\WooCommerce\Admin\Features\OnboardingTasks\{closure}()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(305): array_filter()
+#9 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(239): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_viewable_tasks()
+#10 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(327): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->is_complete()
+#11 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(403): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->possibly_track_completion()
+#12 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(745): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_json()
+#13 [internal function]: Automattic\WooCommerce\Admin\API\OnboardingTasks->Automattic\WooCommerce\Admin\API\{closure}()
+#14 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(744): array_map()
+#15 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(1181): Automattic\WooCommerce\Admin\API\OnboardingTasks->get_tasks()
+#16 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(1028): WP_REST_Server->respond_to_request()
+#17 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(442): WP_REST_Server->dispatch()
+#18 C:\OSPanel\domains\balace\wp-includes\rest-api.php(410): WP_REST_Server->serve_request()
+#19 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): rest_api_loaded()
+#20 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#21 C:\OSPanel\domains\balace\wp-includes\plugin.php(565): WP_Hook->do_action()
+#22 C:\OSPanel\domains\balace\wp-includes\class-wp.php(399): do_action_ref_array()
+#23 C:\OSPanel\domains\balace\wp-includes\class-wp.php(780): WP->parse_request()
+#24 C:\OSPanel\domains\balace\wp-includes\functions.php(1334): WP->main()
+#25 C:\OSPanel\domains\balace\wp-blog-header.php(16): wp()
+#26 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#27 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 1066
+
+2024-08-05T12:43:44+00:00 CRITICAL Uncaught Error: Call to a member function get() on null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1052
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): truemisha_payments_on_shipping()
+#1 C:\OSPanel\domains\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(163): apply_filters()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(93): WC_Payment_Gateways->get_available_payment_gateways()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(71): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments::has_gateways()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments.php(125): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments->is_complete()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(304): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments->can_view()
+#7 [internal function]: Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->Automattic\WooCommerce\Admin\Features\OnboardingTasks\{closure}()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(305): array_filter()
+#9 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(239): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_viewable_tasks()
+#10 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(327): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->is_complete()
+#11 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(403): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->possibly_track_completion()
+#12 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(745): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_json()
+#13 [internal function]: Automattic\WooCommerce\Admin\API\OnboardingTasks->Automattic\WooCommerce\Admin\API\{closure}()
+#14 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(744): array_map()
+#15 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(1181): Automattic\WooCommerce\Admin\API\OnboardingTasks->get_tasks()
+#16 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(1028): WP_REST_Server->respond_to_request()
+#17 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(442): WP_REST_Server->dispatch()
+#18 C:\OSPanel\domains\balace\wp-includes\rest-api.php(410): WP_REST_Server->serve_request()
+#19 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): rest_api_loaded()
+#20 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#21 C:\OSPanel\domains\balace\wp-includes\plugin.php(565): WP_Hook->do_action()
+#22 C:\OSPanel\domains\balace\wp-includes\class-wp.php(399): do_action_ref_array()
+#23 C:\OSPanel\domains\balace\wp-includes\class-wp.php(780): WP->parse_request()
+#24 C:\OSPanel\domains\balace\wp-includes\functions.php(1334): WP->main()
+#25 C:\OSPanel\domains\balace\wp-blog-header.php(16): wp()
+#26 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#27 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 1052
+
+2024-08-05T12:43:53+00:00 CRITICAL Uncaught Error: Call to a member function get() on null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1052
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): truemisha_payments_on_shipping()
+#1 C:\OSPanel\domains\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(163): apply_filters()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(93): WC_Payment_Gateways->get_available_payment_gateways()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(71): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments::has_gateways()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments.php(125): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments->is_complete()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(304): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments->can_view()
+#7 [internal function]: Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->Automattic\WooCommerce\Admin\Features\OnboardingTasks\{closure}()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(305): array_filter()
+#9 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(239): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_viewable_tasks()
+#10 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(327): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->is_complete()
+#11 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(403): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->possibly_track_completion()
+#12 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(745): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_json()
+#13 [internal function]: Automattic\WooCommerce\Admin\API\OnboardingTasks->Automattic\WooCommerce\Admin\API\{closure}()
+#14 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(744): array_map()
+#15 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(1181): Automattic\WooCommerce\Admin\API\OnboardingTasks->get_tasks()
+#16 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(1028): WP_REST_Server->respond_to_request()
+#17 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(442): WP_REST_Server->dispatch()
+#18 C:\OSPanel\domains\balace\wp-includes\rest-api.php(410): WP_REST_Server->serve_request()
+#19 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): rest_api_loaded()
+#20 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#21 C:\OSPanel\domains\balace\wp-includes\plugin.php(565): WP_Hook->do_action()
+#22 C:\OSPanel\domains\balace\wp-includes\class-wp.php(399): do_action_ref_array()
+#23 C:\OSPanel\domains\balace\wp-includes\class-wp.php(780): WP->parse_request()
+#24 C:\OSPanel\domains\balace\wp-includes\functions.php(1334): WP->main()
+#25 C:\OSPanel\domains\balace\wp-blog-header.php(16): wp()
+#26 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#27 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 1052
+
+2024-08-05T12:44:14+00:00 CRITICAL Uncaught Error: Call to a member function get() on null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1052
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): truemisha_payments_on_shipping()
+#1 C:\OSPanel\domains\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(163): apply_filters()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(93): WC_Payment_Gateways->get_available_payment_gateways()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(71): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments::has_gateways()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments.php(125): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments->is_complete()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(304): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments->can_view()
+#7 [internal function]: Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->Automattic\WooCommerce\Admin\Features\OnboardingTasks\{closure}()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(305): array_filter()
+#9 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(239): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_viewable_tasks()
+#10 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(327): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->is_complete()
+#11 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(403): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->possibly_track_completion()
+#12 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(745): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_json()
+#13 [internal function]: Automattic\WooCommerce\Admin\API\OnboardingTasks->Automattic\WooCommerce\Admin\API\{closure}()
+#14 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(744): array_map()
+#15 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(1181): Automattic\WooCommerce\Admin\API\OnboardingTasks->get_tasks()
+#16 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(1028): WP_REST_Server->respond_to_request()
+#17 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(442): WP_REST_Server->dispatch()
+#18 C:\OSPanel\domains\balace\wp-includes\rest-api.php(410): WP_REST_Server->serve_request()
+#19 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): rest_api_loaded()
+#20 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#21 C:\OSPanel\domains\balace\wp-includes\plugin.php(565): WP_Hook->do_action()
+#22 C:\OSPanel\domains\balace\wp-includes\class-wp.php(399): do_action_ref_array()
+#23 C:\OSPanel\domains\balace\wp-includes\class-wp.php(780): WP->parse_request()
+#24 C:\OSPanel\domains\balace\wp-includes\functions.php(1334): WP->main()
+#25 C:\OSPanel\domains\balace\wp-blog-header.php(16): wp()
+#26 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#27 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 1052
+
+2024-08-05T12:50:09+00:00 CRITICAL Uncaught Error: Call to a member function get() on null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1052
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): truemisha_payments_on_shipping()
+#1 C:\OSPanel\domains\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(163): apply_filters()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(93): WC_Payment_Gateways->get_available_payment_gateways()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(71): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments::has_gateways()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments.php(125): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments->is_complete()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(304): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments->can_view()
+#7 [internal function]: Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->Automattic\WooCommerce\Admin\Features\OnboardingTasks\{closure}()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(305): array_filter()
+#9 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(239): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_viewable_tasks()
+#10 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(327): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->is_complete()
+#11 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(403): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->possibly_track_completion()
+#12 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(745): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_json()
+#13 [internal function]: Automattic\WooCommerce\Admin\API\OnboardingTasks->Automattic\WooCommerce\Admin\API\{closure}()
+#14 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(744): array_map()
+#15 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(1181): Automattic\WooCommerce\Admin\API\OnboardingTasks->get_tasks()
+#16 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(1028): WP_REST_Server->respond_to_request()
+#17 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(442): WP_REST_Server->dispatch()
+#18 C:\OSPanel\domains\balace\wp-includes\rest-api.php(410): WP_REST_Server->serve_request()
+#19 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): rest_api_loaded()
+#20 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#21 C:\OSPanel\domains\balace\wp-includes\plugin.php(565): WP_Hook->do_action()
+#22 C:\OSPanel\domains\balace\wp-includes\class-wp.php(399): do_action_ref_array()
+#23 C:\OSPanel\domains\balace\wp-includes\class-wp.php(780): WP->parse_request()
+#24 C:\OSPanel\domains\balace\wp-includes\functions.php(1334): WP->main()
+#25 C:\OSPanel\domains\balace\wp-blog-header.php(16): wp()
+#26 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#27 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 1052
+
+2024-08-05T12:50:33+00:00 CRITICAL Uncaught Error: Call to a member function get() on null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1052
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): truemisha_payments_on_shipping()
+#1 C:\OSPanel\domains\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(163): apply_filters()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(93): WC_Payment_Gateways->get_available_payment_gateways()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(71): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments::has_gateways()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments.php(125): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments->is_complete()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(304): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments->can_view()
+#7 [internal function]: Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->Automattic\WooCommerce\Admin\Features\OnboardingTasks\{closure}()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(305): array_filter()
+#9 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(239): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_viewable_tasks()
+#10 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(327): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->is_complete()
+#11 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(403): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->possibly_track_completion()
+#12 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(745): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_json()
+#13 [internal function]: Automattic\WooCommerce\Admin\API\OnboardingTasks->Automattic\WooCommerce\Admin\API\{closure}()
+#14 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(744): array_map()
+#15 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(1181): Automattic\WooCommerce\Admin\API\OnboardingTasks->get_tasks()
+#16 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(1028): WP_REST_Server->respond_to_request()
+#17 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(442): WP_REST_Server->dispatch()
+#18 C:\OSPanel\domains\balace\wp-includes\rest-api.php(410): WP_REST_Server->serve_request()
+#19 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): rest_api_loaded()
+#20 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#21 C:\OSPanel\domains\balace\wp-includes\plugin.php(565): WP_Hook->do_action()
+#22 C:\OSPanel\domains\balace\wp-includes\class-wp.php(399): do_action_ref_array()
+#23 C:\OSPanel\domains\balace\wp-includes\class-wp.php(780): WP->parse_request()
+#24 C:\OSPanel\domains\balace\wp-includes\functions.php(1334): WP->main()
+#25 C:\OSPanel\domains\balace\wp-blog-header.php(16): wp()
+#26 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#27 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 1052
+
+2024-08-05T13:57:06+00:00 CRITICAL Uncaught Error: Call to a member function get() on null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1052
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): truemisha_payments_on_shipping()
+#1 C:\OSPanel\domains\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(163): apply_filters()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(93): WC_Payment_Gateways->get_available_payment_gateways()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(71): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments::has_gateways()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments.php(125): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments->is_complete()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(304): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments->can_view()
+#7 [internal function]: Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->Automattic\WooCommerce\Admin\Features\OnboardingTasks\{closure}()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(305): array_filter()
+#9 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(239): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_viewable_tasks()
+#10 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(327): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->is_complete()
+#11 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(403): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->possibly_track_completion()
+#12 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(745): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_json()
+#13 [internal function]: Automattic\WooCommerce\Admin\API\OnboardingTasks->Automattic\WooCommerce\Admin\API\{closure}()
+#14 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(744): array_map()
+#15 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(1181): Automattic\WooCommerce\Admin\API\OnboardingTasks->get_tasks()
+#16 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(1028): WP_REST_Server->respond_to_request()
+#17 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(442): WP_REST_Server->dispatch()
+#18 C:\OSPanel\domains\balace\wp-includes\rest-api.php(410): WP_REST_Server->serve_request()
+#19 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): rest_api_loaded()
+#20 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#21 C:\OSPanel\domains\balace\wp-includes\plugin.php(565): WP_Hook->do_action()
+#22 C:\OSPanel\domains\balace\wp-includes\class-wp.php(399): do_action_ref_array()
+#23 C:\OSPanel\domains\balace\wp-includes\class-wp.php(780): WP->parse_request()
+#24 C:\OSPanel\domains\balace\wp-includes\functions.php(1334): WP->main()
+#25 C:\OSPanel\domains\balace\wp-blog-header.php(16): wp()
+#26 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#27 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 1052
+
+2024-08-05T13:58:45+00:00 CRITICAL syntax error, unexpected double-quoted string " for=", expecting "," or ";" в C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\checkout\form-billing.php на строке 87
+
+2024-08-05T14:12:57+00:00 CRITICAL Uncaught Error: Call to a member function get() on null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1052
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): truemisha_payments_on_shipping()
+#1 C:\OSPanel\domains\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(163): apply_filters()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(93): WC_Payment_Gateways->get_available_payment_gateways()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(71): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments::has_gateways()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments.php(125): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments->is_complete()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(304): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments->can_view()
+#7 [internal function]: Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->Automattic\WooCommerce\Admin\Features\OnboardingTasks\{closure}()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(305): array_filter()
+#9 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(239): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_viewable_tasks()
+#10 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(327): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->is_complete()
+#11 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(403): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->possibly_track_completion()
+#12 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(745): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_json()
+#13 [internal function]: Automattic\WooCommerce\Admin\API\OnboardingTasks->Automattic\WooCommerce\Admin\API\{closure}()
+#14 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(744): array_map()
+#15 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(1181): Automattic\WooCommerce\Admin\API\OnboardingTasks->get_tasks()
+#16 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(1028): WP_REST_Server->respond_to_request()
+#17 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(442): WP_REST_Server->dispatch()
+#18 C:\OSPanel\domains\balace\wp-includes\rest-api.php(410): WP_REST_Server->serve_request()
+#19 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): rest_api_loaded()
+#20 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#21 C:\OSPanel\domains\balace\wp-includes\plugin.php(565): WP_Hook->do_action()
+#22 C:\OSPanel\domains\balace\wp-includes\class-wp.php(399): do_action_ref_array()
+#23 C:\OSPanel\domains\balace\wp-includes\class-wp.php(780): WP->parse_request()
+#24 C:\OSPanel\domains\balace\wp-includes\functions.php(1334): WP->main()
+#25 C:\OSPanel\domains\balace\wp-blog-header.php(16): wp()
+#26 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#27 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 1052
+
+2024-08-05T14:20:29+00:00 CRITICAL syntax error, unexpected identifier "esc_attr", expecting "," or ";" в C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\checkout\form-billing.php на строке 73
+
+2024-08-05T14:55:05+00:00 CRITICAL Uncaught Error: Call to a member function get() on null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1052
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): truemisha_payments_on_shipping()
+#1 C:\OSPanel\domains\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(163): apply_filters()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(93): WC_Payment_Gateways->get_available_payment_gateways()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(71): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments::has_gateways()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments.php(125): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments->is_complete()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(304): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments->can_view()
+#7 [internal function]: Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->Automattic\WooCommerce\Admin\Features\OnboardingTasks\{closure}()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(305): array_filter()
+#9 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(239): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_viewable_tasks()
+#10 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(327): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->is_complete()
+#11 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(403): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->possibly_track_completion()
+#12 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(745): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_json()
+#13 [internal function]: Automattic\WooCommerce\Admin\API\OnboardingTasks->Automattic\WooCommerce\Admin\API\{closure}()
+#14 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(744): array_map()
+#15 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(1181): Automattic\WooCommerce\Admin\API\OnboardingTasks->get_tasks()
+#16 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(1028): WP_REST_Server->respond_to_request()
+#17 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(442): WP_REST_Server->dispatch()
+#18 C:\OSPanel\domains\balace\wp-includes\rest-api.php(410): WP_REST_Server->serve_request()
+#19 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): rest_api_loaded()
+#20 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#21 C:\OSPanel\domains\balace\wp-includes\plugin.php(565): WP_Hook->do_action()
+#22 C:\OSPanel\domains\balace\wp-includes\class-wp.php(399): do_action_ref_array()
+#23 C:\OSPanel\domains\balace\wp-includes\class-wp.php(780): WP->parse_request()
+#24 C:\OSPanel\domains\balace\wp-includes\functions.php(1334): WP->main()
+#25 C:\OSPanel\domains\balace\wp-blog-header.php(16): wp()
+#26 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#27 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 1052
+

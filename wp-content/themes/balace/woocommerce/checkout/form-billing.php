@@ -39,7 +39,7 @@ defined( 'ABSPATH' ) || exit;
     <div class="block-input-item">
    
     <?php
-// Получение полей для формы оформления заказа
+// Поля для формы оформления заказа
 $fields = $checkout->get_checkout_fields('billing');
 
 // Определяем необходимые поля
@@ -55,20 +55,51 @@ $address_fields = array(
     ),
     'billing_doorbell'    => array(
         'placeholder' => 'Домофон',
+        
     ),
     'billing_entrance'    => array(
         'placeholder' => 'Подъезд',
+        
     ),
     'billing_floor'       => array(
         'placeholder' => 'Этаж',
+        
+    ),
+    
+);
+
+foreach ($address_fields as $field_key => $field_params) {
+    echo '<div class="form-row form-row-wide address-field" id="' . esc_attr($field_key) . '_field">';
+    echo '<input type="text" class="input-text" name="' . esc_attr($field_key) . '" id="' . esc_attr($field_key) . '" placeholder="' . esc_attr($field_params['placeholder']) . '" value="' . esc_attr($checkout->get_value($field_key)) . '">';
+    echo '</div>';
+}
+
+$delivery_fields = array(
+    'custom_delivery_method' => array(
+        'type'        => 'select',
+        'options'     => array(
+            'courier' => 'Курьерская доставка',
+            'pickup'  => 'Самовывоз',
+        ),
+        'label'       => 'Способ доставки',
     ),
 );
 
-// Отображаем поля
-foreach ($address_fields as $field_key => $field_params) {
-    // Если поле не найдено в существующих полях, добавляем его вручную
-    echo '<div class="form-row form-row-wide address-field" id="' . esc_attr($field_key) . '_field">';
-    echo '<input type="text" class="input-text" name="' . esc_attr($field_key) . '" id="' . esc_attr($field_key) . '" placeholder="' . esc_attr($field_params['placeholder']) . '" value="' . esc_attr($checkout->get_value($field_key)) . '">';
+foreach ($delivery_fields as $delivery_key => $delivery_params) {
+    echo '<div class="form-group form-group-custom-delivery">';
+    echo '<label id="custom_delivery_method" for="' . esc_attr($delivery_key) . '">' . esc_html($delivery_params['label']) . '</label>';
+    
+    if ($delivery_params['type'] == 'select') {
+        echo '<div class="select-wrapper">';
+        echo '<input type="hidden" id="' . esc_attr($delivery_key) . '" name="' . esc_attr($delivery_key) . '">';
+        echo '<ul class="custom-select-delivery-method" style="display:none;">';
+        foreach ($delivery_params['options'] as $option_value => $option_label) {
+            echo '<li data-value="' . esc_attr($option_value) . '">' . esc_html($option_label) . '</li>';
+        }
+        echo '</ul>';
+        echo '</div>';
+    }
+    
     echo '</div>';
 }
 ?>
@@ -83,10 +114,9 @@ foreach ($address_fields as $field_key => $field_params) {
         <div class="block-input-item">
        
         <?php
-// Получаем поля для формы оформления заказа
+
 $fields = $checkout->get_checkout_fields('billing');
 
-// Определяем необходимые поля и их параметры
 $recipient_fields = array(
     'billing_first_name' => array(
         'type'        => 'text',
@@ -104,14 +134,7 @@ $recipient_fields = array(
         'type'        => 'email',
         'placeholder' => 'Электронная почта',
     ),
-    'custom_delivery_method' => array(
-        'type'        => 'select',
-        'options'     => array(
-            'courier' => 'Курьерская доставка',
-            'pickup'  => 'Самовывоз',
-        ),
-        'label'       => 'Способ доставки',
-    ),
+   
 );
 
 foreach ($recipient_fields as $field_key => $field_params) {
@@ -131,6 +154,24 @@ foreach ($recipient_fields as $field_key => $field_params) {
         echo '</div>';
     }
 }
+
+$chekbox_input = array(
+    'accept_terms' => array(
+        'type'        => 'checkbox',
+        'label'       => 'Я согласен с обработкой персональных данных',
+        'checked'     => true,
+    ),
+);
+
+// Отображаем чекбокса
+foreach ($chekbox_input as $checkbox_key => $checkbox_params) {
+    echo '<div class="form-group agree-personal-data">';
+    echo '<input type="checkbox" id="' . esc_attr($checkbox_key) . '" name="' . esc_attr($checkbox_key) . '" ' . ($checkbox_params['checked'] ? 'checked' : '') . '>';
+    echo '<span class="checkbox-custom checked"></span>'; 
+    echo '<label class="subtitle1" for="' . esc_attr($checkbox_key) . '">' . esc_html($checkbox_params['label']) . '</label>';
+    echo '</div>';
+}
+
 ?>
 
     </div>
@@ -144,8 +185,9 @@ foreach ($recipient_fields as $field_key => $field_params) {
  <p>3/3</p><h3>После оформления заказа с вами свяжется наш менеджер для подтверждения и оплаты</h3>
     </div>
     <div class="">
-    <?php //wc_get_template( 'checkout/payment.php' ); ?>
-</div>
+        
+        <?php //wc_get_template( 'checkout/payment.php' ); ?>
+    </div>
 </div>
   
 </div>

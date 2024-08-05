@@ -1,0 +1,485 @@
+2024-08-02T10:48:21+00:00 CRITICAL syntax error, unexpected token "?" в C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\checkout\review-order.php на строке 31
+
+2024-08-02T11:06:21+00:00 CRITICAL Uncaught ArgumentCountError: str_replace() expects at least 3 arguments, 2 given in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1000
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(1000): str_replace()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): truemisha_order_button_html()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters()
+#3 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\checkout\payment.php(53): apply_filters()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-template-functions.php(2404): wc_get_template()
+#6 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_checkout_payment()
+#7 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#8 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\checkout\form-checkout.php(69): do_action()
+#10 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\OSPanel\\doma...')
+#11 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(361): wc_get_template()
+#12 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(67): WC_Shortcode_Checkout::checkout()
+#13 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(72): WC_Shortcode_Checkout::output()
+#14 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(95): WC_Shortcodes::shortcode_wrapper()
+#15 C:\OSPanel\domains\balace\wp-includes\shortcodes.php(355): WC_Shortcodes::checkout()
+#16 [internal function]: do_shortcode_tag()
+#17 C:\OSPanel\domains\balace\wp-includes\shortcodes.php(227): preg_replace_callback()
+#18 C:\OSPanel\domains\balace\wp-content\themes\balace\pages\checkout-page.php(9): do_shortcode()
+#19 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#20 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#21 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#22 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 1000
+
+2024-08-02T11:06:38+00:00 CRITICAL Uncaught ArgumentCountError: str_replace() expects at least 3 arguments, 2 given in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1000
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(1000): str_replace()
+#1 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): truemisha_order_button_html()
+#2 C:\OSPanel\domains\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters()
+#3 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\checkout\payment.php(53): apply_filters()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-template-functions.php(2404): wc_get_template()
+#6 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_checkout_payment()
+#7 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#8 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\checkout\form-checkout.php(69): do_action()
+#10 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\OSPanel\\doma...')
+#11 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(361): wc_get_template()
+#12 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(67): WC_Shortcode_Checkout::checkout()
+#13 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(72): WC_Shortcode_Checkout::output()
+#14 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(95): WC_Shortcodes::shortcode_wrapper()
+#15 C:\OSPanel\domains\balace\wp-includes\shortcodes.php(355): WC_Shortcodes::checkout()
+#16 [internal function]: do_shortcode_tag()
+#17 C:\OSPanel\domains\balace\wp-includes\shortcodes.php(227): preg_replace_callback()
+#18 C:\OSPanel\domains\balace\wp-content\themes\balace\pages\checkout-page.php(9): do_shortcode()
+#19 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include('C:\\OSPanel\\doma...')
+#20 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#21 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#22 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 1000
+
+2024-08-02T11:06:52+00:00 CRITICAL syntax error, unexpected token "," в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 1000
+
+2024-08-02T11:06:53+00:00 CRITICAL syntax error, unexpected token "," в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 1000
+
+2024-08-02T11:33:33+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function custom_remove_payment_error(), 1 passed in C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php on line 308 and exactly 2 expected in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1012
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): custom_remove_payment_error()
+#1 C:\OSPanel\domains\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-notice-functions.php(87): apply_filters()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(1250): wc_add_notice()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(508): WC_Checkout->process_checkout()
+#5 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): WC_AJAX::checkout()
+#6 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#7 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(96): do_action()
+#9 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): WC_AJAX::do_wc_ajax()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#11 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#12 C:\OSPanel\domains\balace\wp-includes\template-loader.php(13): do_action()
+#13 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#14 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#15 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 1012
+
+2024-08-02T11:33:41+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function custom_remove_payment_error(), 1 passed in C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php on line 308 and exactly 2 expected in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1012
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): custom_remove_payment_error()
+#1 C:\OSPanel\domains\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\wc-notice-functions.php(87): apply_filters()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(1250): wc_add_notice()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(508): WC_Checkout->process_checkout()
+#5 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): WC_AJAX::checkout()
+#6 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#7 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(96): do_action()
+#9 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): WC_AJAX::do_wc_ajax()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#11 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#12 C:\OSPanel\domains\balace\wp-includes\template-loader.php(13): do_action()
+#13 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#14 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#15 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 1012
+
+2024-08-02T11:49:26+00:00 CRITICAL Uncaught Error: Call to a member function get() on null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1022
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): truemisha_payments_on_shipping()
+#1 C:\OSPanel\domains\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(163): apply_filters()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(93): WC_Payment_Gateways->get_available_payment_gateways()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(71): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments::has_gateways()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments.php(125): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments->is_complete()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(304): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments->can_view()
+#7 [internal function]: Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->Automattic\WooCommerce\Admin\Features\OnboardingTasks\{closure}()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(305): array_filter()
+#9 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(239): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_viewable_tasks()
+#10 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(327): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->is_complete()
+#11 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(403): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->possibly_track_completion()
+#12 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(745): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_json()
+#13 [internal function]: Automattic\WooCommerce\Admin\API\OnboardingTasks->Automattic\WooCommerce\Admin\API\{closure}()
+#14 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(744): array_map()
+#15 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(1181): Automattic\WooCommerce\Admin\API\OnboardingTasks->get_tasks()
+#16 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(1028): WP_REST_Server->respond_to_request()
+#17 C:\OSPanel\domains\balace\wp-includes\rest-api\class-wp-rest-server.php(442): WP_REST_Server->dispatch()
+#18 C:\OSPanel\domains\balace\wp-includes\rest-api.php(410): WP_REST_Server->serve_request()
+#19 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): rest_api_loaded()
+#20 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#21 C:\OSPanel\domains\balace\wp-includes\plugin.php(565): WP_Hook->do_action()
+#22 C:\OSPanel\domains\balace\wp-includes\class-wp.php(399): do_action_ref_array()
+#23 C:\OSPanel\domains\balace\wp-includes\class-wp.php(780): WP->parse_request()
+#24 C:\OSPanel\domains\balace\wp-includes\functions.php(1334): WP->main()
+#25 C:\OSPanel\domains\balace\wp-blog-header.php(16): wp()
+#26 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#27 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 1022
+
+2024-08-02T13:17:08+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: float * string in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:294
+Stack trace:
+#0 [internal function]: WC_Discounts->sort_by_price()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(92): uasort()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(48): WC_Discounts->set_items_from_cart()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(777): WC_Discounts->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(660): WC_Cart_Totals->calculate_discounts()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(980): WC_Cart->set_quantity()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php на строке 294
+
+2024-08-02T13:17:11+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: float * string in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:294
+Stack trace:
+#0 [internal function]: WC_Discounts->sort_by_price()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(92): uasort()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(48): WC_Discounts->set_items_from_cart()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(777): WC_Discounts->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(660): WC_Cart_Totals->calculate_discounts()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(980): WC_Cart->set_quantity()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php на строке 294
+
+2024-08-02T14:37:56+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: float * string in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:295
+Stack trace:
+#0 [internal function]: WC_Discounts->sort_by_price()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(92): uasort()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(48): WC_Discounts->set_items_from_cart()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(777): WC_Discounts->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(660): WC_Cart_Totals->calculate_discounts()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(981): WC_Cart->set_quantity()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php на строке 295
+
+2024-08-02T14:43:17+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: float * string in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:295
+Stack trace:
+#0 [internal function]: WC_Discounts->sort_by_price()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(92): uasort()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(48): WC_Discounts->set_items_from_cart()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(777): WC_Discounts->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(660): WC_Cart_Totals->calculate_discounts()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(981): WC_Cart->set_quantity()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php на строке 295
+
+2024-08-02T14:43:21+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: float * string in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:295
+Stack trace:
+#0 [internal function]: WC_Discounts->sort_by_price()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(92): uasort()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(48): WC_Discounts->set_items_from_cart()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(777): WC_Discounts->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(660): WC_Cart_Totals->calculate_discounts()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(981): WC_Cart->set_quantity()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php на строке 295
+
+2024-08-02T14:43:22+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: float * string in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:295
+Stack trace:
+#0 [internal function]: WC_Discounts->sort_by_price()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(92): uasort()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(48): WC_Discounts->set_items_from_cart()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(777): WC_Discounts->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(660): WC_Cart_Totals->calculate_discounts()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(981): WC_Cart->set_quantity()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php на строке 295
+
+2024-08-02T14:43:24+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: float * string in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:295
+Stack trace:
+#0 [internal function]: WC_Discounts->sort_by_price()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(92): uasort()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(48): WC_Discounts->set_items_from_cart()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(777): WC_Discounts->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(660): WC_Cart_Totals->calculate_discounts()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(981): WC_Cart->set_quantity()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php на строке 295
+
+2024-08-02T14:43:25+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: float * string in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:295
+Stack trace:
+#0 [internal function]: WC_Discounts->sort_by_price()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(92): uasort()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(48): WC_Discounts->set_items_from_cart()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(777): WC_Discounts->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(660): WC_Cart_Totals->calculate_discounts()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(981): WC_Cart->set_quantity()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php на строке 295
+
+2024-08-02T14:43:26+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: float * string in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:295
+Stack trace:
+#0 [internal function]: WC_Discounts->sort_by_price()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(92): uasort()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(48): WC_Discounts->set_items_from_cart()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(777): WC_Discounts->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(660): WC_Cart_Totals->calculate_discounts()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(981): WC_Cart->set_quantity()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php на строке 295
+
+2024-08-02T14:44:12+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: float * string in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:295
+Stack trace:
+#0 [internal function]: WC_Discounts->sort_by_price()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(92): uasort()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(48): WC_Discounts->set_items_from_cart()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(777): WC_Discounts->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(660): WC_Cart_Totals->calculate_discounts()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(981): WC_Cart->set_quantity()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php на строке 295
+
+2024-08-02T14:44:13+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: float * string in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:295
+Stack trace:
+#0 [internal function]: WC_Discounts->sort_by_price()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(92): uasort()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(48): WC_Discounts->set_items_from_cart()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(777): WC_Discounts->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(660): WC_Cart_Totals->calculate_discounts()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(981): WC_Cart->set_quantity()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php на строке 295
+
+2024-08-02T14:44:13+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: float * string in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:295
+Stack trace:
+#0 [internal function]: WC_Discounts->sort_by_price()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(92): uasort()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(48): WC_Discounts->set_items_from_cart()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(777): WC_Discounts->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(660): WC_Cart_Totals->calculate_discounts()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(981): WC_Cart->set_quantity()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php на строке 295
+
+2024-08-02T14:44:14+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: float * string in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:295
+Stack trace:
+#0 [internal function]: WC_Discounts->sort_by_price()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(92): uasort()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(48): WC_Discounts->set_items_from_cart()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(777): WC_Discounts->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(660): WC_Cart_Totals->calculate_discounts()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(981): WC_Cart->set_quantity()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php на строке 295
+
+2024-08-02T14:44:15+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: float * string in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:295
+Stack trace:
+#0 [internal function]: WC_Discounts->sort_by_price()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(92): uasort()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(48): WC_Discounts->set_items_from_cart()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(777): WC_Discounts->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(660): WC_Cart_Totals->calculate_discounts()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(981): WC_Cart->set_quantity()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php на строке 295
+
+2024-08-02T14:45:38+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: float * string in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:295
+Stack trace:
+#0 [internal function]: WC_Discounts->sort_by_price()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(92): uasort()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(48): WC_Discounts->set_items_from_cart()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(777): WC_Discounts->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(660): WC_Cart_Totals->calculate_discounts()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(981): WC_Cart->set_quantity()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php на строке 295
+
+2024-08-02T14:46:32+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: float * string in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:295
+Stack trace:
+#0 [internal function]: WC_Discounts->sort_by_price()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(92): uasort()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(48): WC_Discounts->set_items_from_cart()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(777): WC_Discounts->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(660): WC_Cart_Totals->calculate_discounts()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(981): WC_Cart->set_quantity()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php на строке 295
+
+2024-08-02T14:48:43+00:00 CRITICAL Uncaught Error: Call to a member function get_tax_class() on null in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:232
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(658): WC_Cart_Totals->get_items_from_cart()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#5 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(981): WC_Cart->set_quantity()
+#6 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#7 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#8 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#9 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#10 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php на строке 232
+
+2024-08-02T14:48:48+00:00 CRITICAL Uncaught Error: Call to a member function get_tax_class() on null in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php:232
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(658): WC_Cart_Totals->get_items_from_cart()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#5 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(981): WC_Cart->set_quantity()
+#6 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#7 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#8 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#9 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(203): do_action()
+#10 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php на строке 232
+
+2024-08-02T15:06:40+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: float * string in C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php:295
+Stack trace:
+#0 [internal function]: WC_Discounts->sort_by_price()
+#1 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(92): uasort()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php(48): WC_Discounts->set_items_from_cart()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(777): WC_Discounts->__construct()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(660): WC_Cart_Totals->calculate_discounts()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(150): WC_Cart_Totals->calculate_item_totals()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart-totals.php(141): WC_Cart_Totals->calculate()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1408): WC_Cart_Totals->__construct()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-cart.php(1367): WC_Cart->calculate_totals()
+#9 C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php(981): WC_Cart->set_quantity()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(308): woocommerce_update_cart_item()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(517): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-admin\admin-ajax.php(188): do_action()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-discounts.php на строке 295
+

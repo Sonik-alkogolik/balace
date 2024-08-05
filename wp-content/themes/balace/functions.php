@@ -469,7 +469,7 @@ function true_register_post_type_promotions() {
         'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'author', 'comments' ),
         'taxonomies' => array( 'category', 'post_tag' )
     );
-    register_post_type( 'promotions', $args_prom );
+    register_post_type( 'aktsii-i-rozygryshi', $args_prom );
 }
 
 add_action( 'init', 'true_register_post_type_blog' );
@@ -878,6 +878,9 @@ function dequeue_woocommerce_styles_on_checkout() {
         wp_dequeue_style('woocommerce-layout');
         wp_dequeue_style('woocommerce-general');
         wp_dequeue_style('woocommerce-smallscreen');
+        wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css');
+        wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js');
+        wp_enqueue_script( 'checkout-slider-script',  get_template_directory_uri() . '/assets/js/checkout.js', array( 'jquery' ), null, true );
         wp_enqueue_style('checkout-style', get_template_directory_uri() . '/assets/css/pages/checkout.css');
         wp_enqueue_script( 'quantity-control-script',  get_template_directory_uri() . '/assets/js/quantity-control.js', array( 'jquery' ), null, true );
     }
@@ -971,25 +974,123 @@ function carrie_customer_default_shipping_country($value, $customer) {
     return $value;
 }
 
+
 add_action('wp_ajax_woocommerce_update_cart_item', 'woocommerce_update_cart_item');
 add_action('wp_ajax_nopriv_woocommerce_update_cart_item', 'woocommerce_update_cart_item');
 
-function woocommerce_update_cart_item() {
-    WC()->cart->set_quantity($_POST['cart_item_key'], $_POST['quantity']);
 
-    // Получаем обновленные данные
+function woocommerce_update_cart_item() {
+
+    if (!isset($_POST['cart_item_key']) || !isset($_POST['quantity'])) {
+        wp_send_json_error('Missing cart_item_key or quantity');
+        return;
+    }
+    $cart_item_key = sanitize_text_field($_POST['cart_item_key']);
+    $quantity = absint($_POST['quantity']);
+    if (!$cart_item_key || !$quantity) {
+        wp_send_json_error('Invalid cart_item_key or quantity');
+        return;
+    }
+
+    // Обновляем корзину
+    WC()->cart->set_quantity($cart_item_key, $quantity);
+    $cart_item = WC()->cart->get_cart_item($cart_item_key);
+    if (!$cart_item) {
+        wp_send_json_error('Cart item not found');
+        return;
+    }
+    $product = $cart_item['data'];
+    if (!$product) {
+        wp_send_json_error('Product not found');
+        return;
+    }
     ob_start();
     wc_cart_totals_order_total_html();
     $order_total = ob_get_clean();
-
     ob_start();
     wc_cart_totals_subtotal_html();
     $subtotal = ob_get_clean();
+    ob_start();
+    woocommerce_quantity_input(array(
+        'input_value' => $quantity,
+    ), $product);
+    $quantity_html = ob_get_clean();
 
-    // Возвращаем данные
+    // Возвращаем
     wp_send_json_success(array(
         'order_total' => $order_total,
         'subtotal'    => $subtotal,
         'quantity_html' => $quantity_html
     ));
 }
+
+add_filter( 'woocommerce_checkout_fields', 'custom_override_checkout_fields' );
+function custom_override_checkout_fields( $fields ) {
+    unset($fields['billing']['billing_state']);
+    unset($fields['billing']['billing_postcode']);
+    return $fields;
+}
+
+add_filter( 'woocommerce_order_button_html', 'truemisha_order_button_html' );
+ 
+function truemisha_order_button_html( $button_html ) {
+	return ( '<button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="Подтвердить заказ" data-value="Подтвердить заказ">Оформить заказ</button>');
+}
+
+add_filter( 'woocommerce_available_payment_gateways', 'truemisha_payments_on_shipping' );
+ 
+function truemisha_payments_on_shipping( $available_gateways ) {
+ 
+	if( is_admin() ) {
+		return $available_gateways;
+	}
+ 
+	if( is_wc_endpoint_url( 'order-pay' ) ) {
+		return $available_gateways;
+	}
+ 
+	$chosen_methods = WC()->session->get( 'chosen_shipping_methods' );
+ 
+	//echo '<pre>';print_r( $chosen_methods );
+ 
+	if ( isset( $available_gateways[ 'cod' ] ) && 'free_shipping:1' == $chosen_methods[0] ) {
+		unset( $available_gateways[ 'cod' ] ); // отключаем оплату при доставке
+	}
+ 
+	return $available_gateways;
+ 
+}
+
+add_action('wp_ajax_remove_cart_item', 'chekout_remove_cart_item');
+add_action('wp_ajax_nopriv_remove_cart_item', 'chekout_remove_cart_item');
+
+function chekout_remove_cart_item() {
+    if (!isset($_POST['cart_item_key'])) {
+        wp_send_json_error('Invalid request.');
+    }
+    $cart_item_key = sanitize_text_field($_POST['cart_item_key']);
+    if (!WC()->cart || WC()->cart->is_empty()) {
+        wp_send_json_error('Cart is empty.');
+    }
+    // Удаление товара из корзины
+    WC()->cart->remove_cart_item($cart_item_key);
+    WC()->cart->calculate_totals();
+    // ответ
+    wp_send_json_success();
+}
+
+
+// function loadbasket_scripts() {
+//     wp_enqueue_script('jquery');
+//     wp_enqueue_script(
+//         'loadbasket-script',
+//         get_template_directory_uri() . '/assets/js/loadbasket.js',
+//         array('jquery'),
+//         null,
+//         true // Подключаем внизу страницы
+//     );
+//     wp_localize_script('loadbasket-script', 'ajax_add_to_cart_params', array(
+//         'nonce' => wp_create_nonce('check_cart_status_nonce')
+//     ));
+// }
+// add_action('wp_enqueue_scripts', 'loadbasket_scripts');

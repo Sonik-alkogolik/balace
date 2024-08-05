@@ -29,13 +29,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 ?>
 
-<script type="text/javascript">
-        var timeToReload = 15000; 
-        function reloadPage() {
-            window.location.reload();
-        }
-        //setTimeout(reloadPage, timeToReload);
-    </script>
+
 
 <section>
 
@@ -63,12 +57,13 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 	<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 	<?php do_action( 'woocommerce_checkout_before_order_review_heading' ); ?>
 	<div id="order_review" class="woocommerce-checkout-review-order">
-	<h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'woocommerce' ); ?></h3>
+	<h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'woocommerce' ); ?>/	   
+	<?php	global $woocommerce; ?>
+			<?php echo sprintf($woocommerce->cart->cart_contents_count); ?> шт.</h3>
 		<?php do_action( 'woocommerce_checkout_order_review' ); ?>
 	</div>
-
 	<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
-
 </form>
+
 	</section>
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
