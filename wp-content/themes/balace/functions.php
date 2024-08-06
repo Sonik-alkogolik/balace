@@ -469,7 +469,7 @@ function true_register_post_type_promotions() {
         'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'author', 'comments' ),
         'taxonomies' => array( 'category', 'post_tag' )
     );
-    register_post_type( 'aktsii-i-rozygryshi', $args_prom );
+    register_post_type( 'promotions', $args_prom );
 }
 
 add_action( 'init', 'true_register_post_type_blog' );

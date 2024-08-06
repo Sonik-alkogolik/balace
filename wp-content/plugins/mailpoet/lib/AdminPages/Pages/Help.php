@@ -1,4 +1,4 @@
-<?php // phpcs:ignore SlevomatCodingStandard.TypeHints.DeclareStrictTypes.DeclareStrictTypesMissing
+<?php declare(strict_types = 1);
 
 namespace MailPoet\AdminPages\Pages;
 
@@ -9,6 +9,7 @@ use MailPoet\AdminPages\PageRenderer;
 use MailPoet\Cron\ActionScheduler\Actions\DaemonRun;
 use MailPoet\Cron\ActionScheduler\Actions\DaemonTrigger;
 use MailPoet\Cron\CronHelper;
+use MailPoet\Cron\Workers\SendingQueue\SendingQueue;
 use MailPoet\Entities\ScheduledTaskEntity;
 use MailPoet\Mailer\MailerLog;
 use MailPoet\Newsletter\Sending\ScheduledTasksRepository;
@@ -17,8 +18,8 @@ use MailPoet\Newsletter\Url as NewsletterURL;
 use MailPoet\Router\Endpoints\CronDaemon;
 use MailPoet\Services\Bridge;
 use MailPoet\SystemReport\SystemReportCollector;
-use MailPoet\Tasks\Sending;
 use MailPoet\WP\DateTime;
+use MailPoet\WP\Functions as WPFunctions;
 
 class Help {
   /** @var PageRenderer */
@@ -61,7 +62,12 @@ class Help {
   }
 
   public function render() {
-    $systemInfoData = $this->systemReportCollector->getData(true);
+    /**
+     * Filter the system info.
+     *
+     * @param array<string, string> $systemInfoData The system info data array.
+     */
+    $systemInfoData = WPFunctions::get()->applyFilters('mailpoet_system_info_data', $this->systemReportCollector->getData(true));
     try {
       $cronPingUrl = $this->cronHelper->getCronUrl(CronDaemon::ACTION_PING);
       $cronPingResponse = $this->cronHelper->pingDaemon();
@@ -80,7 +86,7 @@ class Help {
       ],
       'mss' => [
         'enabled' => $this->bridge->isMailpoetSendingServiceEnabled(),
-        'isReachable' => $this->bridge->pingBridge(),
+        'isReachable' => $this->bridge->validateBridgePingResponse($this->bridge->pingBridge()),
       ],
       'cronStatus' => $this->cronHelper->getDaemon(),
       'queueStatus' => $mailerLog,
@@ -89,7 +95,7 @@ class Help {
     $systemStatusData['queueStatus']['tasksStatusCounts'] = $this->scheduledTasksRepository->getCountsPerStatus();
     $systemStatusData['queueStatus']['latestTasks'] = array_map(function ($task) {
       return $this->buildTaskData($task);
-    }, $this->scheduledTasksRepository->getLatestTasks(Sending::TASK_TYPE));
+    }, $this->scheduledTasksRepository->getLatestTasks(SendingQueue::TASK_TYPE));
     $this->pageRenderer->displayPage(
       'help.html',
       [
@@ -125,38 +131,47 @@ class Help {
     $store = \ActionScheduler_Store::instance();
     $action = $store->query_actions($query);
     if (!empty($action)) {
-      $dateObject = $store->get_date( $action[0] );
+      $dateObject = $store->get_date($action[0]);
       return $dateObject->format('Y-m-d H:i:s');
     }
     return null;
   }
 
   public function buildTaskData(ScheduledTaskEntity $task): array {
-    $queue = $newsletter = null;
-    if ($task->getType() === Sending::TASK_TYPE) {
+    $queue = $newsletter = $subscriber = null;
+    if ($task->getType() === SendingQueue::TASK_TYPE) {
       $queue = $this->sendingQueuesRepository->findOneBy(['task' => $task]);
       $newsletter = $queue ? $queue->getNewsletter() : null;
+      $subscribers = $task->getSubscribers();
+      // We only show subscriber's email for 1:1 emails (e.g. automations) and not bulk campaigns
+      if ($subscribers->count() === 1) {
+        $subscriber = $subscribers->first() ? $subscribers->first()->getSubscriber() : null;
+      }
     }
     return [
       'id' => $task->getId(),
       'type' => $task->getType(),
       'priority' => $task->getPriority(),
-      'updated_at' => $task->getUpdatedAt()->format(DateTime::DEFAULT_DATE_TIME_FORMAT),
-      'scheduled_at' => $task->getScheduledAt() ?
+      'updatedAt' => $task->getUpdatedAt()->format(DateTime::DEFAULT_DATE_TIME_FORMAT),
+      'scheduledAt' => $task->getScheduledAt() ?
         $task->getScheduledAt()->format(DateTime::DEFAULT_DATE_TIME_FORMAT)
+        : null,
+      'cancelledAt' => $task->getCancelledAt() ?
+        $task->getCancelledAt()->format(DateTime::DEFAULT_DATE_TIME_FORMAT)
         : null,
       'status' => $task->getStatus(),
       'newsletter' => $queue && $newsletter ? [
-        'newsletter_id' => $newsletter->getId(),
-        'queue_id' => $queue->getId(),
+        'newsletterId' => $newsletter->getId(),
+        'queueId' => $queue->getId(),
         'subject' => $queue->getNewsletterRenderedSubject() ?: $newsletter->getSubject(),
-        'preview_url' => $this->newsletterUrl->getViewInBrowserUrl($newsletter, null, $queue),
+        'previewUrl' => $this->newsletterUrl->getViewInBrowserUrl($newsletter, null, $queue),
       ] : [
-        'newsletter_id' => null,
-        'queue_id' => null,
+        'newsletterId' => null,
+        'queueId' => null,
         'subject' => null,
-        'preview_url' => null,
+        'previewUrl' => null,
       ],
+      'subscriberEmail' => $subscriber ? $subscriber->getEmail() : null,
     ];
   }
 }

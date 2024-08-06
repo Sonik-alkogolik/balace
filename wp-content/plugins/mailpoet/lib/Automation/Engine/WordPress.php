@@ -24,6 +24,10 @@ class WordPress {
     return add_action($hookName, $callback, $priority, $acceptedArgs);
   }
 
+  public function removeAction(string $hookName, callable $callback, int $priority = 10): bool {
+    return remove_action($hookName, $callback, $priority);
+  }
+
   /** @param mixed ...$arg */
   public function doAction(string $hookName, ...$arg): void {
     do_action($hookName, ...$arg);
@@ -61,6 +65,7 @@ class WordPress {
   }
 
   /**
+   * @param 'ARRAY_A'|'ARRAY_N'|'OBJECT' $object
    * @return array|WP_Post|null
    */
   public function getPost(int $id, string $object = OBJECT) {
@@ -89,6 +94,7 @@ class WordPress {
   }
 
   /**
+   * @param 'ARRAY_A'|'ARRAY_N'|'OBJECT' $output
    * @return WP_Comment|array|null
    */
   public function getComment(int $id, string $output = OBJECT) {
@@ -160,9 +166,10 @@ class WordPress {
   }
 
   /**
+   * @param 'and'|'or' $operator
    * @return string[]|\WP_Taxonomy[]
    */
-  public function getTaxonomies(array $args = [], string $output = 'names', string $operator = 'AND'): array {
+  public function getTaxonomies(array $args = [], string $output = 'names', string $operator = 'and'): array {
     return get_taxonomies($args, $output, $operator);
   }
 
@@ -176,7 +183,7 @@ class WordPress {
   /**
    * @param int|WP_Term|object $term
    * @param string $taxonomy
-   * @param string $output
+   * @param 'ARRAY_A'|'ARRAY_N'|'OBJECT' $output
    * @param string $filter
    * @return WP_Term|array|WP_Error|null
    */
@@ -187,5 +194,23 @@ class WordPress {
   /** @return \WP_Taxonomy|false */
   public function getTaxonomy(string $name) {
     return get_taxonomy($name);
+  }
+
+  /** @return int|string */
+  public function currentTime(string $type, bool $gmt = false) {
+    return current_time($type, $gmt);
+  }
+
+  /**
+   * @param string $field
+   * @param string|int $value
+   * @return false|WP_User
+   */
+  public function getUserBy(string $field, $value) {
+    return get_user_by($field, $value);
+  }
+
+  public function humanTimeDiff(int $from, int $to = 0): string {
+    return human_time_diff($from, $to);
   }
 }

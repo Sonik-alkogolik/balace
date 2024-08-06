@@ -109,6 +109,7 @@
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 16px;
+    margin-right: 24px;
 }
 .item-chekout-product.swiper-slide .product-img {
     max-width: 100%;
@@ -445,5 +446,8 @@
   }
   .cart-subtotal {
     width: 95%;
+  }
+  .item-chekout-product.swiper-slide { 
+    margin-right: 16px;
   }
 }

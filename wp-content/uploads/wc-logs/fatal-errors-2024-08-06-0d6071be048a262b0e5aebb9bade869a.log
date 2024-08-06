@@ -1,0 +1,43 @@
+2024-08-06T10:25:17+00:00 CRITICAL Uncaught Error: Call to a member function get() on null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1052
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(324): truemisha_payments_on_shipping()
+#1 C:\OSPanel\domains\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters()
+#2 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(163): apply_filters()
+#3 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Internal\Admin\WcPayWelcomePage.php(348): WC_Payment_Gateways->get_available_payment_gateways()
+#4 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Internal\Admin\WcPayWelcomePage.php(79): Automattic\WooCommerce\Internal\Admin\WcPayWelcomePage->get_incentive()
+#5 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Internal\Admin\Notes\PaymentsMoreInfoNeeded.php(42): Automattic\WooCommerce\Internal\Admin\WcPayWelcomePage->must_be_visible()
+#6 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Internal\Admin\Notes\PaymentsMoreInfoNeeded.php(63): Automattic\WooCommerce\Internal\Admin\Notes\PaymentsMoreInfoNeeded::should_display_note()
+#7 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Admin\Notes\NoteTraits.php(83): Automattic\WooCommerce\Internal\Admin\Notes\PaymentsMoreInfoNeeded::get_note()
+#8 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Internal\Admin\Events.php(205): Automattic\WooCommerce\Internal\Admin\Notes\PaymentsMoreInfoNeeded::possibly_add_note()
+#9 C:\OSPanel\domains\balace\wp-content\plugins\woocommerce\src\Internal\Admin\Events.php(145): Automattic\WooCommerce\Internal\Admin\Events->possibly_add_notes()
+#10 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(324): Automattic\WooCommerce\Internal\Admin\Events->do_wc_admin_daily()
+#11 C:\OSPanel\domains\balace\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters()
+#12 C:\OSPanel\domains\balace\wp-includes\plugin.php(565): WP_Hook->do_action()
+#13 C:\OSPanel\domains\balace\wp-cron.php(191): do_action_ref_array()
+#14 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 1052
+
+2024-08-06T10:37:06+00:00 CRITICAL Uncaught Error: Call to undefined method YITH_Woocompare_Frontend::get_instance() in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\product-comparison.php:10
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include()
+#1 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\pages\product-comparison.php на строке 10
+
+2024-08-06T10:37:18+00:00 CRITICAL Uncaught Error: Call to undefined method YITH_Woocompare_Frontend::get_instance() in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\product-comparison.php:10
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include()
+#1 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\pages\product-comparison.php на строке 10
+
+2024-08-06T10:38:42+00:00 CRITICAL Uncaught Error: Class "BeRocket_Compare_Products" not found in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\product-comparison.php:9
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include()
+#1 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown в C:\OSPanel\domains\balace\wp-content\themes\balace\pages\product-comparison.php на строке 9
+

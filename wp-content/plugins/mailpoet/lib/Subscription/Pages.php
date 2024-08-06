@@ -154,10 +154,10 @@ class Pages {
   }
 
   public function initPageFilters() {
-    $this->wp->addFilter('wp_title', [$this,'setWindowTitle'], 10, 3);
-    $this->wp->addFilter('document_title_parts', [$this,'setWindowTitleParts'], 10, 1);
-    $this->wp->addFilter('the_title', [$this,'setPageTitle'], 10, 1);
-    $this->wp->addFilter('the_content', [$this,'setPageContent'], 10, 1);
+    $this->wp->addFilter('wp_title', [$this, 'setWindowTitle'], 10, 3);
+    $this->wp->addFilter('document_title_parts', [$this, 'setWindowTitleParts'], 10, 1);
+    $this->wp->addFilter('the_title', [$this, 'setPageTitle'], 10, 1);
+    $this->wp->addFilter('the_content', [$this, 'setPageContent'], 10, 1);
     $this->wp->removeAction('wp_head', 'noindex', 1);
     $this->wp->addAction('wp_head', [$this, 'setMetaRobots'], 1);
   }
@@ -284,6 +284,8 @@ class Pages {
     global $post;
 
     if (
+      (!isset($post))
+      ||
       ($post->post_title !== __('MailPoet Page', 'mailpoet')) // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
       ||
       ($pageTitle !== $this->wp->singlePostTitle('', false))
