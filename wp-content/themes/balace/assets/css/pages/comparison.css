@@ -1,0 +1,224 @@
+.compare-wrapp .htcompare-row:nth-child(2n) .htcompare-col {
+    background: transparent;
+}
+
+.compare-wrapp .compare-data-primary.htcompare-row .htcompare-col {
+    border: none;
+    border-right: none;
+}
+.compare-wrapp .htcompare-col {
+    border-right: none;
+}
+.compare-wrapp .htcompare-remove:before {
+    display: none;
+}
+.compare-wrapp .htcompare-remove:after {
+    display: none;
+}
+.compare-wrapp .htcompare-remove {
+    width: 32px;
+    height: 32px;
+    background: url(/wp-content/themes/balace/img/icon/delete_product-basket.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+}
+.htcompare-primary-content-area {
+    position: relative;
+        width: 100%;
+        height: 290px;
+        background:url('/wp-content/themes/balace/img/icon/icon_circle_product.svg'),url('/wp-content/themes/balace/img/icon/bg_item_product.png');
+        background-repeat:no-repeat;
+        background-size:172px 172px, 100% 100%;
+        background-position: center,center;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        border-radius: 24px;
+}
+a.htcompare-product-image > img {
+    max-width: max-content;
+    width: 100%;
+    height: 173px;
+    margin-bottom: 30px;
+}
+.tinvwl_add_to_wishlist_button {
+    position: absolute;
+    top: 12px;
+    right: 52px;
+    margin: 0;
+    width: 32px;
+    height: 32px;
+    background-color: #FFFFFF;
+    background-image: url(/wp-content/themes/balace/img/icon/icon_wishlist_catalog.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 100px;
+    z-index: 99;
+}
+.tinvwl_add_to_wishlist_button:hover {
+    width: 32px;
+    height: 32px;
+    background-image: url('/wp-content/themes/balace/img/icon/icon_wishlist_header_hover.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.htcompare-primary-content-area .btn_add_to_basket {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 12px;
+    right: 12px;
+}
+
+.clear-compare-table-btn {
+    font-family: "Manrope", sans-serif;
+    cursor: pointer;
+    max-width: 157px;
+    width: 100%;
+    height: 48px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    border-radius: 100px;
+    background: transparent;
+    border: 1px solid rgba(172, 169, 157, 1);
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    color: rgba(34, 29, 23, 1);
+
+}
+
+
+.compare_product_add {
+    font-family: "Manrope", sans-serif;
+    cursor: pointer;
+    max-width: 157px;
+    width: 100%;
+    height: 48px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    border-radius: 100px;
+    background: transparent;
+    border: 1px solid rgba(172, 169, 157, 1);
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgba(34, 29, 23, 1);
+}
+
+.htcompare-col.htcolumn-field-name{
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    text-align: left;
+    color: rgba(172, 169, 157, 1);
+}
+.htcompare-product-title {
+    color: rgba(34, 29, 23, 1);
+}
+.htcompare-product-title {
+    font-family: "Manrope", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32.02px;
+    letter-spacing: 0.02em;
+    text-align: left;
+}
+.htcompare-return-to-shop {
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+
+.htcompare-return-to-shop p {
+    font-family: "Manrope", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    text-align: left;
+}
+
+.htcompare-return-to-shop  a.button {
+    margin-top: 30px;
+    cursor: pointer;
+    max-width: 157px;
+    width: 100%;
+    height: 48px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    border-radius: 100px;
+    background: transparent;
+    border: 1px solid rgba(172, 169, 157, 1);
+    color: rgba(34, 29, 23, 1);
+}
+
+.wrapp-btn-compare-mob {
+    display: none;
+}
+
+@media(max-width:767px){
+    .htcompare-product-title {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 15.6px;
+        letter-spacing: 0.04em;
+        text-align: left;
+    }
+    .wrapp-btn-compare-mob {
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+    }
+    .compare_product_add {
+        margin-bottom: 0;
+        margin-right: 20px;
+    }
+   .compare-wrapp .htcolumn-value:before{
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 15.6px;
+        letter-spacing: 0.04em;
+        text-align: left;
+        color: rgba(172, 169, 157, 1);
+    }
+    .htcompare-row.compare-data-primary > .htcompare-col {
+        flex: 1 0 48%;
+        height: 254px;
+    }
+    .htcompare-primary-content-area {
+            background-size:105px 105px, 100% 100%;
+    }
+    a.htcompare-product-image > img {
+        height: 115px;
+        margin-bottom: 22px;
+    }
+    .compare-wrapp .htcolumn-value:before{ 
+        background: transparent;
+        margin-bottom: 12px;
+    }
+    .htcompare-row {
+        /* border-bottom: 1px solid rgba(236, 233, 219, 1); */
+    }
+    .compare-wrapp .htcompare-row:nth-child(2n) .htcompare-col {
+        border-bottom: 1px solid rgba(236, 233, 219, 1);
+    }
+    .compare-wrapp .htcompare-col {
+        align-items: flex-start;
+        border-bottom: 1px solid rgba(236, 233, 219, 1);
+    }
+}
+

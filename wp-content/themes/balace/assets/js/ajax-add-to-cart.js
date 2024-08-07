@@ -6,13 +6,13 @@ jQuery(document).ready(function($) {
         // Открытие попапа корзины
         $('.btn_basket').on('click', function() {
             $popupBasket.addClass('active-popup-basket');
-            console.log('Popup basket opened');
+            //console.log('Popup basket opened');
         });
     
         // Закрытие попапа корзины
         $('.clouse-basket-popup').on('click', function() {
             $popupBasket.removeClass('active-popup-basket');
-            console.log('Popup basket closed');
+            //console.log('Popup basket closed');
         });
     }
 

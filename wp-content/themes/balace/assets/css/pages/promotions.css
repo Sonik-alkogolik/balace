@@ -144,13 +144,22 @@
     margin-bottom: 14px;
 }
 
-.single-promotion-content {
+.single-promotion-content-bottom {
+margin-top: 54px;
+  display: flex;
+  justify-content: flex-end;
+}
+.single-promotion-content-text {
+    width: 50%;
+}
+.single-promotion-content-text p{
     font-family: "Manrope", sans-serif;
     font-size: 20px;
     font-weight: 600;
     line-height: 30px;
     letter-spacing: 0.02em;
     text-align: left;
+    margin-bottom: 30px;
 }
 
 .single-promotion-dates {
@@ -170,6 +179,9 @@
     }
 
     .promotion-dates {
+        width: 100%;
+    }
+    .single-promotion-content-text {
         width: 100%;
     }
 }

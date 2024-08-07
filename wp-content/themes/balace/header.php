@@ -32,7 +32,7 @@
                     </div>
                     <div class="header-link-pages">
                         <a class="subtitle2 text_main" href="">О нас</a>
-                        <a class="subtitle2 text_main" href="">Сравнение товаров</a>
+                        <a class="subtitle2 text_main" href="/?page_id=388">Сравнение товаров</a>
                     </div>
                     <div class="header-product-actions">
                         <button class="btn_add-to-wishlist"></button>

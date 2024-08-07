@@ -1079,18 +1079,39 @@ function chekout_remove_cart_item() {
     wp_send_json_success();
 }
 
+function comparison_page_styles() {
+    if (is_page_template('pages/product-comparison.php')) {
+        wp_enqueue_style('comparison-page-style', get_template_directory_uri() . '/assets/css/pages/comparison.css');
+        wp_enqueue_script( 'compare-script', get_template_directory_uri() . '/assets/js/compare.js', array('jquery'), null, true );
+    }
+}
+add_action('wp_enqueue_scripts', 'comparison_page_styles');
 
-// function loadbasket_scripts() {
-//     wp_enqueue_script('jquery');
-//     wp_enqueue_script(
-//         'loadbasket-script',
-//         get_template_directory_uri() . '/assets/js/loadbasket.js',
-//         array('jquery'),
-//         null,
-//         true // Подключаем внизу страницы
-//     );
-//     wp_localize_script('loadbasket-script', 'ajax_add_to_cart_params', array(
-//         'nonce' => wp_create_nonce('check_cart_status_nonce')
-//     ));
-// }
-// add_action('wp_enqueue_scripts', 'loadbasket_scripts');
+function translate_wcboost_compare_texts($translated_text, $text) {
+    if (is_page_template('pages/product-comparison.php')) {
+        switch ($text) {
+            case 'Title':
+                $translated_text = 'Заголовок';
+                break;
+            case 'Price':
+                $translated_text = 'Цена';
+                break;
+            case 'Add To Cart':
+                $translated_text = 'Добавить в корзину';
+                break;
+            case 'Availability':
+                $translated_text = 'Наличие';
+                break;
+            case 'Sku':
+                $translated_text = 'Артикул';
+                break;
+            case 'Dimensions':
+                $translated_text = 'Размеры';
+                break;
+        }
+    }
+    return $translated_text;
+}
+add_filter('gettext', 'translate_wcboost_compare_texts', 20, 3);
+
+
