@@ -318,7 +318,6 @@ function my_theme_enqueue_styles_scripts() {
         wp_dequeue_style('woocommerce-general');
         wp_dequeue_style('woocommerce-smallscreen');
     }
-
 }
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles_scripts');
 
@@ -1034,7 +1033,7 @@ function custom_override_checkout_fields( $fields ) {
 add_filter( 'woocommerce_order_button_html', 'truemisha_order_button_html' );
  
 function truemisha_order_button_html( $button_html ) {
-	return ( '<button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="Подтвердить заказ" data-value="Подтвердить заказ">Оформить заказ</button>');
+	return ( '<button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="Оформить покупку" data-value="Оформить покупку">Оформить покупку</button>');
 }
 
 add_filter( 'woocommerce_available_payment_gateways', 'truemisha_payments_on_shipping' );
@@ -1115,3 +1114,10 @@ function translate_wcboost_compare_texts($translated_text, $text) {
 add_filter('gettext', 'translate_wcboost_compare_texts', 20, 3);
 
 
+function contacts_page_styles() {
+    if (is_page_template('pages/сontacts.php')) {
+        wp_enqueue_style('contacts-page-style', get_template_directory_uri() . '/assets/css/pages/contacts.css');
+        wp_enqueue_script( 'contact_page_popup', get_template_directory_uri() . '/assets/js/contact_page_popup.js', null, true );
+    }
+}
+add_action('wp_enqueue_scripts', 'contacts_page_styles');
