@@ -123,6 +123,10 @@
     top: 12px;
     right: 52px;
 }
+.woocommerce ul.swiper-wrapper li.swiper-slide .tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart.no-txt:before  {
+    width: 32px;
+    height: 32px;
+}
 .best-slider-btn {
     max-width: 135px;
     width: 100%;

@@ -236,7 +236,23 @@
     background-size: cover;
     cursor: pointer;
 }
-
+.tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart.tinvwl-product-in-list:before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 84px;
+    margin: 0;
+    width: 52px;
+    height: 52px;
+    background-color: #FFFFFF;
+    background-image: url(/wp-content/themes/balace/img/icon/bg_btn_wishlist_page.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 100px;
+    z-index: 99;
+}
 .woocommerce a.button.btn_add_to_basket {
     position: absolute;
     top: 20px;
@@ -375,6 +391,10 @@
     }
     .tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart.no-txt {
         background: url('/wp-content/themes/balace/img/icon/icon_wishlist_catalog_mob.svg');
+    }
+    .tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart.tinvwl-product-in-list:before {
+        width: 32px;
+        height: 32px;
     }
     .btn_learn_more {
         height: 64px;

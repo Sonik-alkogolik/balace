@@ -1121,3 +1121,16 @@ function contacts_page_styles() {
     }
 }
 add_action('wp_enqueue_scripts', 'contacts_page_styles');
+
+function wishlist_page_styles() {
+    if (is_page_template('pages/wishlist-page.php')) {
+        wp_dequeue_style('tinvwl'); 
+        wp_dequeue_style('woocommerce-layout');
+        wp_dequeue_style('woocommerce-general');
+        wp_dequeue_style('woocommerce-smallscreen');
+        wp_enqueue_style('wishlist-page-style', get_template_directory_uri() . '/assets/css/pages/wishlist.css');
+        wp_enqueue_script( 'wishlist', get_template_directory_uri() . '/assets/js/wishlist.js', null, true );
+    }
+}
+add_action('wp_enqueue_scripts', 'wishlist_page_styles');
+
