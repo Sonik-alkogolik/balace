@@ -263,10 +263,11 @@
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   }
   .switch-on {
-    background: rgba(255, 234, 123, 1);
+    background:rgba(46, 125, 50, 1);
   }
   .switch-on::after {
     left: 17px;
+    background:rgba(46, 125, 50, 1);
   }
  .btn_form_submit {
     width: 100%;

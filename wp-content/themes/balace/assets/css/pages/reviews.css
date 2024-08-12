@@ -1,0 +1,457 @@
+.star_rating_class > img.raty-cancel {
+    display: none;
+}
+
+.star-rating img {
+    width: 28px;
+    height: 28px;
+}
+.star_rating_class img{
+    width: 28px;
+    height: 28px;
+}
+
+.contact-info-item {
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+    font-family: "Manrope", sans-serif;
+}
+.contact-info-item:nth-child(1){
+    width: 20%;
+}
+.contact-info-item:nth-child(2){
+    width: 20%;
+}
+.contact-info-item:nth-child(3){
+    width: 40%;
+}
+.contact-info-item p {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    color:rgba(172, 169, 157, 1);
+    margin-bottom: 20px;
+}
+.contact-info-item a {
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 41.99px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: rgba(34, 29, 23, 1);
+}
+.contact-info-item span {
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 41.99px;
+    letter-spacing: 0.01em;
+    text-align: left;
+}
+.btn-form-wrapp {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+}
+.btn-form-popup {
+    max-width: 251px;
+    width: 100%;
+    height: 48px;
+    margin-top: 24px;
+    margin-bottom: 66px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 1);
+    border-radius: 100px;
+    font-family: "Manrope", sans-serif;
+    line-height: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-align: center;
+    color: rgba(255, 234, 123, 1);
+}
+.contact-map {
+    width: 100%;
+    height: 379px;
+    border-radius: 24xp;
+}
+
+.popup-wrapp-container {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-wrapp-container.active {
+    display: flex;
+}
+
+.popup-content {
+    margin: 0 auto;
+    margin-top: 50px;
+    max-width: 708px;
+    height: 803px;
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.5);
+}
+
+
+.wpcf7-form {
+    font-family: "Manrope", sans-serif;
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+    padding: 50px;
+}
+
+.popup-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+.popup-title h2{
+    width: 80%;
+}
+.close-popup-btn {
+   margin-top: 10px;
+   cursor: pointer;
+   background: transparent;
+}
+.popup-column {
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+.popup-column-item {
+    margin-top: 12px;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+.title-input {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    margin-bottom: 8px;
+}
+.popup-column-item p {
+    width: 100%;
+}
+.popup-column-item p span {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid rgba(236, 233, 219, 1);
+}
+.wpcf7-form-control-wrap input{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    height: 48px;
+}
+.wpcf7-form-control-wrap input::placeholder{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    text-align: left;
+}
+
+.wpcf7-form-control-wrap[data-name="textarea-462"] {
+    height: 215px;
+    width: 100%;
+    border: 1px solid rgba(236, 233, 219, 1);
+}
+
+.wpcf7-form-control-wrap[data-name="textarea-462"] textarea {
+    width: 100%;
+    height: 100%; 
+    box-sizing: border-box; 
+    resize: none;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    border: none;
+    outline: none; 
+}
+.wpcf7-form-control-wrap[data-name="textarea-462"] textarea:focus {
+    border: none;
+    outline: none; 
+}
+
+.wpcf7-form-control-wrap input[name="email-333"] {
+    height: 24px;
+}
+
+.wpcf7-form-control-wrap input.placeholder-red[name="text-801"]::placeholder{
+    color: red;
+}
+.wpcf7-form-control-wrap input.placeholder-red[name="text-802"]::placeholder{
+    color: red;
+}
+.form-group input[type="checkbox"] {
+    display: none;
+}
+.checkbox-custom.checked {
+    background-image: url(/wp-content/themes/balace/img/icon/_Checkbox_.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+}
+.checkbox-custom {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 8px;
+}
+.switch-btn {
+    display: inline-block;
+    width: 34px; 
+    height: 14px;
+    background: rgba(172, 169, 157, 1); 
+    z-index: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition-duration: 300ms; 
+    border-radius: 100px;
+  }
+  .switch-btn::after {
+    content: "";
+    height: 20px; 
+    width: 20px;
+    background: #fff; 
+    top: -3px; 
+    left: -3px;
+    transition-duration: 300ms; 
+    position: absolute;
+    z-index: 1;
+    border-radius: 100px;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  }
+  .switch-on {
+    background:rgba(46, 125, 50, 1);
+  }
+  .switch-on::after {
+    left: 17px;
+    background:rgba(46, 125, 50, 1);
+  }
+ .btn_form_submit {
+    width: 100%;
+    height: 48px;
+    margin: 0 auto;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 1);
+    border-radius: 100px;
+    font-family: "Manrope", sans-serif;
+    line-height: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-align: center;
+    color: rgba(255, 234, 123, 1);
+ }
+
+ .send-popup {
+    display: none;
+    max-width: 620px;
+    width: 100%;
+    font-family: "Manrope", sans-serif;
+    position:absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background: rgba(100, 95, 77, 1);
+    border-radius: 16px;
+ }
+ .send-popup.active {
+    display: flex;
+ }
+ .send-content {
+    padding: 48px;
+    width: 71%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+ }
+ .send-popup p {
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 41.99px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: #fff;
+    padding-bottom:8px;
+ }
+ .send-popup span  {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    color: #fff;
+    padding-bottom:40px;
+ }
+ .send-popup button  {
+    max-width: 150px;
+    width: 100%;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    background: rgba(236, 233, 219, 1);
+    color:rgba(0, 0, 0, 1);
+    border-radius: 100px;
+ }
+
+ .wpcf7-spinner {
+    display: none;
+ }
+
+@media(max-width:1280px){
+    .contact-info-item p {
+        font-size: 12px;
+        line-height: 15.6px;
+        margin-bottom: 12px;
+    }
+    .contact-info-item a {
+        font-size: 24px;
+        line-height: 32.02px;
+    }
+    .contact-info-item span {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+@media(max-width:820px){
+    .wpcf7-form {
+        padding: 20px;
+    }
+    .popup-content {
+        width: 90%;
+    }
+    .popup-title h2 {
+     width: 100%;
+     font-size: 24px;
+     line-height: 32.99px;
+    }
+    .popup-title {
+        flex-direction: column-reverse;
+        align-items: end;
+        margin-bottom: 10px;
+    }
+    
+}
+
+@media(max-width:680px){
+   
+    .contact-info-block {
+        display:flex;
+        flex-wrap: wrap;
+    }
+    .contact-info-item:nth-child(1) {
+        width: 50%;
+    }
+    .contact-info-item:nth-child(2) {
+        width: 50%;
+    }
+    .contact-info-item:nth-child(3) {
+        width: 70%;
+    }
+    .contact-info-item {
+        margin-bottom: 30px;
+    }
+    .btn_form_submit {
+        margin-top: 25px;
+    }
+    .popup-content {
+        margin-top: 0px;
+    }
+    .wpcf7-form {
+        padding: 0;
+    }
+    .send-popup {
+        width: 90%;
+    }
+    .send-popup p {
+        font-size: 24px;
+        line-height: 28.99px;
+    }
+    .send-content {
+        padding: 23px;
+        width: 90%;
+    }
+    .send-popup span {
+        font-size: 14px;
+        line-height: 21px;
+    }
+    .send-popup button {
+        height: 48px;
+        font-size: 16px;
+        line-height: 21px;
+    }
+}
+
+
+@media(max-width:480px){
+    .contact-info-item:nth-child(1) {
+        width: 100%;
+    }
+    .contact-info-item:nth-child(2) {
+        width: 100%;
+    }
+    .contact-info-item:nth-child(3) {
+        width: 100%;
+    }
+    .popup-content {
+        width: 85%;
+    }
+}
+
+@media(max-width:360px){
+    
+}

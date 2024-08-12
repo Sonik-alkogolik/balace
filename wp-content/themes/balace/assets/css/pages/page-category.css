@@ -84,7 +84,8 @@
         color: rgba(255, 255, 255, 1);
 }
 .catalog-category-product {
-    width: 100%;
+    width: 97%;
+    margin: 0 auto;
     margin-top: 84px;
 }
 .woocommerce.columns-3  ul.products.category-main {
@@ -117,6 +118,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: url(/wp-content/themes/balace/img/icon/icon_circle_product.svg), url(/wp-content/themes/balace/img/icon/bg_item_product.png);
+    background-repeat: no-repeat;
+    background-size: 172px 172px, 100% 100%;
+    background-position: center, center;
+    border-radius: 24px;
 }
 
 .wrapper-catalog-category .catalog-category-product .woocommerce.columns-3 .products.category-main li.product .tinv-wraper.tinv-wishlist a{
@@ -125,6 +131,10 @@
     margin-top: 0;
     top: 12px;
     right: 52px;
+}
+.wrapper-catalog-category .catalog-category-product .woocommerce.columns-3 .products.category-main li.product .tinv-wraper.tinv-wishlist a:before{
+    width: 32px;
+    height: 32px;
 }
 .wrapper-catalog-category .catalog-category-product .woocommerce.columns-3 .products.category-main li.product a.btn_add_to_basket {
     width: 32px;

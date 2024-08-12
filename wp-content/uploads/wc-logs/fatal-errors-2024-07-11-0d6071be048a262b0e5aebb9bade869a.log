@@ -1,6 +1,0 @@
-2024-07-11T10:24:58+00:00 CRITICAL syntax error, unexpected token "array", expecting ")" в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 608
-
-2024-07-11T10:24:59+00:00 CRITICAL syntax error, unexpected token "array", expecting ")" в C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php на строке 608
-
-2024-07-11T12:21:34+00:00 CRITICAL syntax error, unexpected end of file, expecting "elseif" or "else" or "endif" в C:\OSPanel\domains\balace\wp-content\themes\balace\woocommerce\content-single-product.php на строке 289
-

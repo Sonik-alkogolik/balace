@@ -1134,3 +1134,119 @@ function wishlist_page_styles() {
 }
 add_action('wp_enqueue_scripts', 'wishlist_page_styles');
 
+function reviews_page_styles() {
+    if (is_page_template('pages/reviews.php')) {
+        wp_enqueue_style('reviews-page-style', get_template_directory_uri() . '/assets/css/pages/reviews.css');
+        wp_enqueue_script( 'wishlist', get_template_directory_uri() . '/assets/js/reviews.js', null, true );
+    }
+}
+add_action('wp_enqueue_scripts', 'reviews_page_styles');
+
+
+
+// Добавляем мета-бокс для рейтинга
+function add_journal_meta_boxes() {
+    add_meta_box(
+        'journal_rating_meta_box',  
+        'Рейтинг',                  
+        'render_journal_rating_meta_box',  
+        'journal',                 
+        'side',                  
+        'default'                  
+    );
+}
+add_action('add_meta_boxes', 'add_journal_meta_boxes');
+
+// Функция для отображения мета-бокса
+function render_journal_rating_meta_box($post) {
+    $rating = get_post_meta($post->ID, '_journal_rating', true);
+    ?>
+    <label for="journal_rating">Рейтинг (1-5):</label>
+    <input type="number" id="journal_rating" name="journal_rating" value="<?php echo esc_attr($rating); ?>" min="0.1" max="5" step="0.1" />
+    <?php
+}
+
+// Сохраняем данные из мета-бокса
+function save_journal_meta_box_data($post_id) {
+    if (array_key_exists('journal_rating', $_POST)) {
+        update_post_meta(
+            $post_id,
+            '_journal_rating',
+            sanitize_text_field($_POST['journal_rating'])
+        );
+    }
+}
+add_action('save_post', 'save_journal_meta_box_data');
+
+add_action( 'init', 'create_post_type' );
+ 
+function create_post_type() {
+  register_post_type( 'journal',
+   array(
+    'public' => true,
+    'has_archive' => false,
+    'menu_icon' => 'dashicons-testimonial', 
+    'menu_position' => 2,
+    'labels' => array(
+      'name' => 'Все Отзывы',
+      'singular_name' => 'Отзыв',
+      'menu_name' => 'Отзывы',
+      'all_items' => 'Все отзывы',
+      'add_new' => 'Добавить',
+      'add_new_item' => 'Добавить',
+      'edit_item' => 'Редактировать',
+      'not_found' => 'Ничего не найдено',
+      'not_found_in_trash' => 'Корзина отзывов пуста'
+   ),
+
+   'supports' => array('title', 'thumbnail', 'editor'),
+  ));
+}
+
+add_action('wpcf7_mail_sent', 'hookToProcessFormData', 10, 1);
+function hookToProcessFormData($contact_form) {
+    if ($contact_form->id() == "527") { 
+        $post_data = WPCF7_Submission::get_instance();
+        if ($post_data) {
+            $posted_data = $post_data->get_posted_data();
+
+            $meta_fields = array(
+                'text-805' => '_journal_last_name', 
+                'text-807' => '_journal_first_name',
+                'email-335' => '_journal_email', 
+                'star_rating-852' => '_journal_rating', 
+            );
+
+            $meta_input = array();
+            foreach ($meta_fields as $field => $metakey) {
+                $meta_input[$metakey] = isset($posted_data[$field]) ? trim(strip_tags($posted_data[$field])) : '';
+            }
+
+            // Проверяем, если фамилия или имя пустые, заменяем на "Анонимный"
+            $last_name = !empty($meta_input['_journal_last_name']) ? $meta_input['_journal_last_name'] : 'Анонимный';
+            $first_name = !empty($meta_input['_journal_first_name']) ? $meta_input['_journal_first_name'] : '';
+            if (empty($first_name)) {
+                $post_title = $last_name;
+            } else {
+                $post_title = $last_name . ' ' . $first_name;
+            }
+
+            $post_arr = array(
+                'post_title'   => $post_title,
+                'post_type'    => 'journal',
+                'post_status'  => 'pending',
+                'post_content' => trim(strip_tags($posted_data['textarea-462'])), 
+                'meta_input'   => $meta_input,
+            );
+
+            // Вставляем запись в базу данных
+            $my_post_id = wp_insert_post($post_arr);
+        } else {
+            // Логируем ошибку, если нет данных
+            error_log('No post data found');
+        }
+    } else {
+        // Логируем ошибку, если ID формы не совпадает
+        error_log('Form ID does not match');
+    }
+}
