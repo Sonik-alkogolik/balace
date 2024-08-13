@@ -159,6 +159,9 @@
 .popup-column-item p {
     width: 100%;
 }
+.popup-column-item p span.wpcf7-spinner {
+    display: none;
+}
 .popup-column-item p span {
     width: 100%;
     display: flex;
@@ -182,6 +185,7 @@
     height: 215px;
     width: 100%;
     border: 1px solid rgba(236, 233, 219, 1);
+    border-radius:4px;
 }
 
 .wpcf7-form-control-wrap[data-name="textarea-462"] textarea {

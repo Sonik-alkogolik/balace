@@ -1235,7 +1235,7 @@ function hookToProcessFormData($contact_form) {
                 'post_title'   => $post_title,
                 'post_type'    => 'journal',
                 'post_status'  => 'pending',
-                'post_content' => trim(strip_tags($posted_data['textarea-462'])), 
+                'post_content' => trim(strip_tags($posted_data['textarea-465'])), 
                 'meta_input'   => $meta_input,
             );
 
@@ -1243,10 +1243,10 @@ function hookToProcessFormData($contact_form) {
             $my_post_id = wp_insert_post($post_arr);
         } else {
             // Логируем ошибку, если нет данных
-            error_log('No post data found');
+            //error_log('No post data found');
         }
     } else {
         // Логируем ошибку, если ID формы не совпадает
-        error_log('Form ID does not match');
+       // error_log('Form ID does not match');
     }
 }

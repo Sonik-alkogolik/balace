@@ -300,10 +300,4 @@ do_action( 'woocommerce_before_cart' ); ?>
 
  </div>
 
-<script type="text/javascript">
-        // var timeToReload = 5000; 
-        // function reloadPage() {
-        //     window.location.reload();
-        // }
-        // setTimeout(reloadPage, timeToReload);
-    </script>
+

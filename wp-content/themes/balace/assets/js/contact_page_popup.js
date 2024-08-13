@@ -40,6 +40,7 @@ jQuery(document).ready(function($) {
   const emailField = $('input[name="email-333"]');
   const submitButton = $('.wpcf7-submit');
   const sendPopup = $('.send-popup');
+  const agreePersonal = $('.agree-personal-data');
 
   function checkFields() {
       console.log('Toggle Switch Class:', toggleSwitch.attr('class'));
@@ -49,11 +50,13 @@ jQuery(document).ready(function($) {
           firstNameField.attr('required', 'required');
           lastNameField.show();
           firstNameField.show();
+          agreePersonal.show();
       } else {
           lastNameField.removeAttr('required');
           firstNameField.removeAttr('required');
           lastNameField.hide();
           firstNameField.hide();
+          agreePersonal.hide();
           submitButton.prop('disabled', false);
       }
   }
