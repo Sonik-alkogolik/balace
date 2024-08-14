@@ -1250,3 +1250,44 @@ function hookToProcessFormData($contact_form) {
        // error_log('Form ID does not match');
     }
 }
+
+
+add_action( 'init', 'licenses_post_type' );
+ 
+function licenses_post_type() {
+  register_post_type( 'licenses',
+   array(
+    'public' => true,
+    'has_archive' => false,
+    'menu_icon' => 'dashicons-testimonial', 
+    'menu_position' => 2,
+    'labels' => array(
+      'name' => 'Все лицензии',
+      'singular_name' => 'лицензии',
+      'menu_name' => 'лицензии',
+      'all_items' => 'Все лицензии',
+      'add_new' => 'Добавить',
+      'add_new_item' => 'Добавить',
+      'edit_item' => 'Редактировать',
+      'not_found' => 'Ничего не найдено',
+      'not_found_in_trash' => 'Корзина лицензии пуста'
+   ),
+
+   'supports' => array( 'title','thumbnail'),
+  ));
+}
+function licenses_page_styles() {
+    if (is_page_template('pages/licenses-page.php')) {
+        wp_enqueue_style('licenses-page-style', get_template_directory_uri() . '/assets/css/pages/licenses.css');
+        wp_enqueue_script( 'licenses', get_template_directory_uri() . '/assets/js/licenses.js', null, true );
+    }
+}
+add_action('wp_enqueue_scripts', 'licenses_page_styles');
+
+function delivery_page_styles() {
+    if (is_page_template('pages/delivery-page.php')) {
+        wp_enqueue_style('delivery-page-style', get_template_directory_uri() . '/assets/css/pages/delivery.css');
+        wp_enqueue_script( 'delivery', get_template_directory_uri() . '/assets/js/delivery.js', null, true );
+    }
+}
+add_action('wp_enqueue_scripts', 'delivery_page_styles');

@@ -1,7 +1,7 @@
-[13-Aug-2024 14:52:50 UTC] PHP Warning:  Undefined array key "textarea-462" in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1238
-[13-Aug-2024 14:53:50 UTC] PHP Warning:  Undefined array key "textarea-462" in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1238
-[13-Aug-2024 14:57:23 UTC] PHP Warning:  Undefined array key "textarea-462" in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1238
-[13-Aug-2024 14:59:34 UTC] PHP Warning:  Undefined array key "textarea-462" in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1238
-[13-Aug-2024 15:02:26 UTC] PHP Warning:  Undefined array key "textarea-462" in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1238
-[13-Aug-2024 15:03:52 UTC] PHP Warning:  Undefined array key "textarea-462" in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1238
-[13-Aug-2024 15:06:07 UTC] PHP Warning:  Undefined array key "textarea-462" in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1238
+[14-Aug-2024 12:54:15 UTC] PHP Fatal error:  Cannot redeclare create_post_type() (previously declared in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1184) in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1257
+[14-Aug-2024 12:54:15 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\OSPanel\domains\balace\wp-includes\class-wp-recovery-mode-email-service.php on line 367
+[14-Aug-2024 12:54:15 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\OSPanel\domains\balace\wp-includes\class-wp-recovery-mode-email-service.php on line 368
+[14-Aug-2024 12:55:30 UTC] PHP Fatal error:  Cannot redeclare create_post_type() (previously declared in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1184) in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1257
+[14-Aug-2024 12:55:47 UTC] PHP Fatal error:  Cannot redeclare create_post_type() (previously declared in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1184) in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1257
+[14-Aug-2024 12:55:49 UTC] PHP Fatal error:  Cannot redeclare create_post_type() (previously declared in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1184) in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1257
+[14-Aug-2024 14:40:04 UTC] WordPress database error Server shutdown in progress for query SELECT autoload FROM wp_options WHERE option_name = 'cron' LIMIT 1 made by wp_reschedule_event, wp_schedule_event, _set_cron_array, update_option

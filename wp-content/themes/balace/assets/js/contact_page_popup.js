@@ -94,8 +94,7 @@ jQuery(document).ready(function($) {
     
       setTimeout(function() {
           const status = $('.wpcf7-form.failed').attr('data-status'); 
-          if (status === 'send') {
-            closePopup('.popup-wrapp-container');
+          if (status === 'sent') {
               sendPopup.addClass('active');
               setTimeout(function() {
                location.reload();

@@ -5,7 +5,10 @@ Template Name: Отзывы
 get_header();
 ?>
 
-<section>
+
+
+
+<section class="reviews-section">
 
     <div class="block-title">
             <div class="block-title-content">
@@ -166,13 +169,14 @@ get_header();
         ?>       
     </div>
     <?php echo do_shortcode('[contact-form-7 id="3cfea36" title="Form reviews"]'); ?>
-
+    <div class="popup-wrapp-container">
     <div class="send-popup">
         <div class="send-content">
           <p>Ваш отзыв успешно отправлен! </p>
           <span>Служба поддержки проверит и опубликует ваш отзыв.</span>
             <button class="close-popup-btn">Хорошо</button>
         </div>
+      </div>
       </div>
 </section>
 

@@ -120,12 +120,15 @@ const toggleSwitch = $('.switch-btn');
 const firstNameField = $('span[data-name="text-807"]');
  const lastNameFieldInput = $('span[data-name="text-805"] input');
  const firstNameFieldInput = $('span[data-name="text-807"] input');
+ const emailFieldSpan =  $('span[data-name="email-335"]');
 const emailField = $('input[name="email-335"]');
 const submitButton = $('.wpcf7-submit');
 const sendPopup = $('.send-popup');
 const agreePersonal = $('.agree-personal-data');
+const textComment = $('textarea[name="textarea-465"]');
+const textCommentSpan = $('span[data-name="textarea-465"]');
 
-console.log(sendPopup);
+console.log(textComment);
 
 function checkFields() {
     //console.log('Toggle Switch Class:', toggleSwitch.attr('class'));
@@ -150,48 +153,66 @@ function checkFields() {
 toggleSwitch.click(function() {
     $(this).toggleClass('switch-on');
     checkFields();
+    submitButton.prop('disabled', false);
+    submitButton.css('background','rgba(0, 0, 0, 1)');
+  
 });
 
 function validateEmail() {
     const emailValue = emailField.val();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(emailValue)) {
+    if (!emailRegex.test(emailValue)|| textComment.val().trim() === '') {
         emailField.addClass('invalid');
         submitButton.prop('disabled', true);
+        emailFieldSpan.addClass('placeholder-red');
+        textCommentSpan.addClass('placeholder-red');
     } else {
         emailField.removeClass('invalid');
         submitButton.prop('disabled', false);
+        submitButton.css('background','rgba(0, 0, 0, 1)');
+        emailFieldSpan.removeClass('placeholder-red');
+        textCommentSpan.removeClass('placeholder-red');
     }
 }
 
 emailField.on('input', validateEmail);
-validateEmail();
+// validateEmail();
 
 submitButton.click(function() {
-    if (lastNameFieldInput.val() === '' || firstNameFieldInput.val() === '') {
+   if (toggleSwitch.hasClass('switch-on') ) {
+        validateEmail();
+    } else {
+
+    if (lastNameFieldInput.val() === '' || firstNameFieldInput.val() === ''  || textComment.val().trim() === '') {
         submitButton.prop('disabled', true);
+        submitButton.css('background','#645F4D');
         lastNameFieldInput.addClass('placeholder-red');
         firstNameFieldInput.addClass('placeholder-red');
+        textCommentSpan.addClass('placeholder-red');
     } else {
         submitButton.prop('disabled', false);
+        submitButton.css('background','rgba(0, 0, 0, 1)');
         lastNameFieldInput.removeClass('placeholder-red');
         firstNameFieldInput.removeClass('placeholder-red');
+        textCommentSpan.removeClass('placeholder-red');
     }
   
     setTimeout(checkFormStatus, 5000);
+  }
 });
 
 function checkFormStatus() {
     const status = $('.wpcf7-form').attr('data-status');
-    console.log('Статус:', status);
+    //console.log('Статус:', status);
     if (status === 'sent') {
-        console.log('Processing status:', status);
+        //console.log('Processing status:', status);
+        $('.popup-wrapp-container').addClass('active');
         sendPopup.addClass('active');
         setTimeout(function() {
             location.reload();
         }, 2000);
     } else if (status === 'resetting') {
-        console.log('resetting');
+        //console.log('resetting');
         setTimeout(checkFormStatus, 1000);
     } else {
         setTimeout(checkFormStatus, 1000); 
