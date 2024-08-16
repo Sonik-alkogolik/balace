@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-    $('#clear_cart').on('click', function(e) {
+        $('body').on('click', '#clear_cart', function(e) {
         console.log(true);
         e.preventDefault();
 

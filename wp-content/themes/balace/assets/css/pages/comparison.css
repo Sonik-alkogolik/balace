@@ -94,7 +94,20 @@ a.htcompare-product-image > img {
     color: rgba(34, 29, 23, 1);
 
 }
-
+.compare-title h1{
+    font-family: "Manrope", sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 48px;
+    letter-spacing: 0.05em;
+    text-align: left;   
+}
+@media(max-width:520px){
+    .licenses-title h1 {
+      font-size: 24px;
+      line-height: 32.02px;
+    }
+}
 
 .compare_product_add {
     font-family: "Manrope", sans-serif;
@@ -153,6 +166,7 @@ a.htcompare-product-image > img {
 }
 
 .htcompare-return-to-shop  a.button {
+    font-family: "Manrope", sans-serif;
     margin-top: 30px;
     cursor: pointer;
     max-width: 157px;
@@ -165,6 +179,11 @@ a.htcompare-product-image > img {
     background: transparent;
     border: 1px solid rgba(172, 169, 157, 1);
     color: rgba(34, 29, 23, 1);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15.6px;
+    letter-spacing: 0.04em;
+    text-align: center;
 }
 
 .wrapp-btn-compare-mob {
@@ -223,3 +242,10 @@ a.htcompare-product-image > img {
     }
 }
 
+
+@media(max-width:520px){
+    .compare-title h1{
+      font-size: 24px;
+      line-height: 32.02px;
+    }
+}

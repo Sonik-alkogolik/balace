@@ -25,14 +25,6 @@ if ( post_password_required() ) {
 }
 ?>
 
-<script type="text/javascript">
-        // var timeToReload = 5000; 
-        // function reloadPage() {
-        //     window.location.reload();
-        // }
-        // setTimeout(reloadPage, timeToReload);
-    </script>
-
 
 <section class="section-page-product-card">
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
@@ -145,8 +137,10 @@ if ( post_password_required() ) {
                 <div class="card-deskription-product">
                     <div class="deskription-product-item">
                         <span class="h6">Описание</span>
+						<p class="h6">
                         <?php  echo $product->get_description();?>
-                    </div>
+				       </p>
+                     </div>
 
 					<div class="deskription-product-item">
 						<span class="h6">Состав</span>
@@ -239,18 +233,47 @@ if ( post_password_required() ) {
        </div>
     <div class="btn_slider_left card-slider-gallery"></div>
     <div class="btn_slider_right card-slider-gallery"></div>
-	<!-- <button> в сравнение </button> -->
-	<?php $video_url = get_field('url_video_link'); ?>
-	<button class="card-play-video"></button>
-	<iframe id="video-frame" width="560" height="315" src="<?php echo $video_url; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="display: none;"></iframe>
+	<div class="btn_ever_compare">
+	<?php echo do_shortcode('[evercompare_button]'); ?>
+	</div>
+	<?php 
+$video_url = get_field('url_video_link'); 
+if ($video_url): ?>
+    <button class="card-play-video"></button>
+    <button class="card-sound-toggle">🔊</button> 
+    <video id="video-frame" width="560" height="315" muted style="display: none;">
+        <source src="<?php echo esc_url($video_url); ?>" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+<?php endif; ?>
 
 
 
 	<div class="product-card-item-bottom">
-	      <?php
-			woocommerce_template_single_add_to_cart();
-		   ?>
-          <a class="btn_ozon_white product-page"></a>
+		   <button class="add_to_cart_button">
+		   <a href="?add-to-cart=<?php echo esc_attr( $product_id ); ?>" 
+				data-quantity="1" 
+				class="add_to_cart_button ajax_add_to_cart" 
+				data-product_id="<?php echo esc_attr( $product_id ); ?>" 
+				data-product_sku="<?php echo esc_attr( $product->get_sku() ); ?>" 
+				aria-label="Add to cart: <?php echo esc_attr( $product->get_name() ); ?>" 
+				rel="nofollow">
+				В корзину
+				</a>
+			</button>
+			<a role="button" 
+			tabindex="0" 
+			name="" 
+			aria-label="Добавить в избранное" 
+			class="tinvwl_add_to_wishlist_button tinvwl-icon-heart no-txt tinvwl-position-after tinvwl-loop" 
+			data-tinv-wl-list="[]" 
+			data-tinv-wl-product="<?php echo esc_attr( $product_id ); ?>" 
+			data-tinv-wl-productvariation="0" 
+			data-tinv-wl-productvariations="[]" 
+			data-tinv-wl-producttype="simple" 
+			data-tinv-wl-action="addto">
+			</a>
+		   <a class="btn_ozon_white product-page"></a>
            <a class="btn_wild_white product-page"></a>
         </div> 
 </div>

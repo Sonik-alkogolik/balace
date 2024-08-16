@@ -179,6 +179,15 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 add_theme_support( 'woocommerce' );
 
+//redirect
+add_action('template_redirect', 'redirect_shop_to_balace');
+function redirect_shop_to_balace() {
+    if (is_shop()) { 
+        wp_redirect(home_url('/balace/'), 301);
+        exit;
+    }
+}
+
 
 function top_nav_menu() {
     register_nav_menus(
@@ -303,6 +312,7 @@ function my_theme_enqueue_styles_scripts() {
 		wp_enqueue_script('marquee-jq', get_template_directory_uri() . '/assets/js/marquee_jq.js');
 		wp_enqueue_script('marquee', get_template_directory_uri() . '/assets/js/marquee.js');
 		wp_enqueue_script('faq', get_template_directory_uri() . '/assets/js/faq.js');
+        
 	}
  
      if (strpos($_SERVER['REQUEST_URI'], '/balace/') !== false) {
@@ -719,6 +729,7 @@ function enqueue_custom_scripts() {
     ));
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
+
 function my_custom_add_to_cart_function() {
     if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], 'ajax-add-to-cart-nonce' ) ) {
         wp_send_json_error('Nonce verification failed');
@@ -1222,7 +1233,7 @@ function hookToProcessFormData($contact_form) {
                 $meta_input[$metakey] = isset($posted_data[$field]) ? trim(strip_tags($posted_data[$field])) : '';
             }
 
-            // Проверяем, если фамилия или имя пустые, заменяем на "Анонимный"
+            // Проверяем на "Анонимный"
             $last_name = !empty($meta_input['_journal_last_name']) ? $meta_input['_journal_last_name'] : 'Анонимный';
             $first_name = !empty($meta_input['_journal_first_name']) ? $meta_input['_journal_first_name'] : '';
             if (empty($first_name)) {
@@ -1242,8 +1253,7 @@ function hookToProcessFormData($contact_form) {
             // Вставляем запись в базу данных
             $my_post_id = wp_insert_post($post_arr);
         } else {
-            // Логируем ошибку, если нет данных
-            //error_log('No post data found');
+            //error_log('нет данных');
         }
     } else {
         // Логируем ошибку, если ID формы не совпадает
@@ -1287,7 +1297,346 @@ add_action('wp_enqueue_scripts', 'licenses_page_styles');
 function delivery_page_styles() {
     if (is_page_template('pages/delivery-page.php')) {
         wp_enqueue_style('delivery-page-style', get_template_directory_uri() . '/assets/css/pages/delivery.css');
-        wp_enqueue_script( 'delivery', get_template_directory_uri() . '/assets/js/delivery.js', null, true );
     }
 }
 add_action('wp_enqueue_scripts', 'delivery_page_styles');
+
+function license_verification_page_styles() {
+    if (is_page_template('pages/license-verification.php')) {
+        wp_enqueue_style('license-verification-page-style', get_template_directory_uri() . '/assets/css/pages/license-verification.css');
+       
+    }
+}
+add_action('wp_enqueue_scripts', 'license_verification_page_styles');
+
+function licenseVerification() {
+    wp_enqueue_script('license-verification-js', get_template_directory_uri() . '/assets/js/license-verification.js', array('jquery'), null, true);
+    wp_localize_script('license-verification-js', 'licenseVerification', array(
+        'ajaxurl' => admin_url('admin-ajax.php')
+    ));
+}
+add_action('wp_enqueue_scripts', 'licenseVerification');
+
+function check_number_in_file() {
+    $file_url = isset($_POST['file_url']) ? esc_url_raw($_POST['file_url']) : '';
+    $search_number = isset($_POST['search_number']) ? sanitize_text_field($_POST['search_number']) : '';
+
+    if (empty($file_url) || empty($search_number)) {
+        echo 'Введите номер и URL файла для поиска.';
+        exit;
+    }
+    $file_extension = pathinfo($file_url, PATHINFO_EXTENSION);
+    if ($file_extension === 'csv') {
+        if (($handle = fopen($file_url, "r")) !== FALSE) {
+            $found = false;
+            while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                if (in_array($search_number, $data)) {
+                    $found = true;
+                    break;
+                }
+            }
+            fclose($handle);
+            echo $found ? 'Номер существует в CSV файле.' : 'Номер не существует в CSV файле.';
+        } else {
+            echo 'Не удалось открыть CSV файл.';
+        }
+    } elseif ($file_extension === 'xml') {
+        $xml = simplexml_load_file($file_url);
+        if ($xml === false) {
+            echo 'Не удалось загрузить XML файл.';
+            exit;
+        }
+        $found = false;
+        foreach ($xml->children() as $element) {
+            if (strpos((string)$element, $search_number) !== false) {
+                $found = true;
+                break;
+            }
+        }
+        
+        echo $found ? 'Номер существует в XML файле.' : 'Номер не существует в XML файле.';
+    } else {
+        echo 'Поддерживаются только файлы CSV и XML.';
+    }
+    exit;
+
+}
+add_action('wp_ajax_check_number_in_file', 'check_number_in_file');
+add_action('wp_ajax_nopriv_check_number_in_file', 'check_number_in_file');
+
+
+
+
+
+
+//Поиск
+add_shortcode("woo_search", "woo_search_func");
+function woo_search_func($atts)
+{
+    $atts = shortcode_atts(
+        [
+            "image" => "true",
+            "check_stock" => "", // on
+            "sku" => "", // off
+            "description" => "", // off
+            "price" => "", // off
+            "num" => "5",
+            "cat" => "on", // on
+        ],
+        $atts,
+        "woo_search"
+    );
+    static $woo_search_first_call = 1;
+    $image = $atts["image"];
+    $stock = $atts["check_stock"];
+    $sku = $atts["sku"];
+    $description = $atts["description"];
+    $price = $atts["price"];
+    $num = $atts["num"];
+    $cat = $atts["cat"];
+
+    $woo_search_form =
+        '<div class="woo_search_bar woo_bar_el">
+    <form class="woo_search woo_bar_el" id="woo_search' .
+        $woo_search_first_call .
+        '" action="/" method="get" autocomplete="off">
+		<span class="loading woo_bar_el" >
+		<svg width="25px" height="25px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none" class="hds-flight-icon--animation-loading woo_bar_el">
+<g fill="#676767" fill-rule="evenodd" clip-rule="evenodd">
+<path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8z" opacity=".2"/>
+<path d="M7.25.75A.75.75 0 018 0a8 8 0 018 8 .75.75 0 01-1.5 0A6.5 6.5 0 008 1.5a.75.75 0 01-.75-.75z"/>
+</g>
+</svg>
+		</span>
+        <input type="search" name="s" placeholder="быстрый и удобный поиск" id="keyword" class="input_search input_search_header woo_bar_el" onkeyup="searchFetch(this)"><button type="button" id="mybtn" class="btn_search_header search' .
+        $woo_search_first_call .
+        ' woo_bar_el">
+        </button>
+        <input type="hidden" name="post_type" value="product">
+        <input type="hidden" name="search_id" value="' .
+        $woo_search_first_call .
+        '">
+        <input type="hidden" name="check_stock" value="' .
+        $stock .
+        '">
+        <input type="hidden" name="sku" value="' .
+        $sku .
+        '">
+        <input type="hidden" name="description" value="' .
+        $description .
+        '">
+        <input type="hidden" name="price" value="' .
+        $price .
+        '">
+        <input type="hidden" name="num" value="' .
+        $num .
+        '">
+        <input type="hidden" name="cat" value="' .
+        $cat .
+        '">
+    </form><div class="search_result woo_bar_el" id="datafetch" style="display: none;">
+        <ul>
+            <li>Please wait..</li>
+        </ul>
+    </div></div>';
+    $java =
+        '<script>
+function searchFetch(e) {
+const searchForm = e.parentElement;	
+searchForm.querySelector(".loading").style.visibility = "visible";
+
+var datafetch = e.parentElement.nextSibling
+if (e.value.trim().length > 0) { datafetch.style.display = "block"; } else { datafetch.style.display = "none"; }
+
+e.nextSibling.value = "Please wait..."
+var formdata' .
+        $woo_search_first_call .
+        ' = new FormData(searchForm);
+formdata' .
+        $woo_search_first_call .
+        '.append("image", "' .
+        $image .
+        '") 
+formdata' .
+        $woo_search_first_call .
+        '.append("action", "woo_search") 
+Ajaxwoo_search(formdata' .
+        $woo_search_first_call .
+        ',e) 
+
+}
+async function Ajaxwoo_search(formdata,e) {
+  const url = "' .
+        admin_url("admin-ajax.php") .
+        '?action=woo_search";
+  const response = await fetch(url, {
+      method: "POST",
+      body: formdata,
+  });
+  const data = await response.text();
+if (data){	e.parentElement.nextSibling.innerHTML = data}else  {
+e.parentElement.nextSibling.innerHTML = `<ul><a href="#" style="display: block; padding-inline-start: 14px;"><li>Ничего не найдено</li></a></ul>`
+}
+e.parentElement.querySelector(".loading").style.visibility = "hidden";
+}	
+function goSearch(id){document.querySelector(id).click(); console.log(`clicked`) }
+
+document.addEventListener("click", function(e) { if (document.activeElement.classList.contains("woo_bar_el") == false ) { [...document.querySelectorAll("div.search_result")].forEach(e => e.style.display = "none") } else {if  (e.target?.value.trim().length > 0) { e.target.parentElement.nextSibling.style.display = "block"}} })
+
+</script>';
+    $css = '<style>
+</style>';
+    if ($woo_search_first_call == 1) {
+        $woo_search_first_call++;
+        return "{$woo_search_form}{$java}{$css}";
+    } elseif ($woo_search_first_call > 1) {
+        $woo_search_first_call++;
+        return "{$woo_search_form}";
+    }
+}
+
+add_action("wp_ajax_woo_search", "woo_search");
+add_action("wp_ajax_nopriv_woo_search", "woo_search");
+function woo_search()
+{
+    //sleep(1s);
+    $search_id = esc_attr($_POST["search_id"]);
+    $stock = "";
+    $sku = esc_attr($_POST["sku"]);
+    $description = esc_attr($_POST["description"]);
+    $price = esc_attr($_POST["price"]);
+    $num = esc_attr($_POST["num"]);
+    $cat = "";
+    $search_term = esc_attr($_POST["s"]);
+
+    if ($sku == "off") {
+        $sku = "style='display: none;'";
+    }
+    if ($description == "off") {
+        $description = "style='display: none;'";
+    }
+
+    if ($cat == "on") {
+        // Get categories
+
+        $categories = get_terms([
+            "taxonomy" => "product_cat",
+            "name__like" => $search_term,
+            "orderby" => "name",
+            "order" => "ASC",
+        ]);
+
+        if (!empty($categories) && !is_wp_error($categories)) {
+            echo '<p class="search_title">CATEGORIES</p> ';
+            echo '<hr class="search_title">';
+            echo '<ul class="cat_ul woo_bar_el">';
+
+            foreach ($categories as $category) {
+                $category_link = get_term_link(
+                    $category->term_id,
+                    "product_cat"
+                );
+                $product_count = $category->count;
+                echo '<li class="cat_li woo_bar_el"><a class="cat_a woo_bar_el" href="' .
+                    esc_url($category_link) .
+                    '">' .
+                    esc_html($category->name) .
+                    " (" .
+                    $product_count .
+                    ")</a></li>";
+            }
+            echo "</ul>";
+        }
+    }
+
+    $the_query = new WP_Query([
+        "posts_per_page" => $num,
+        "post_type" => "product",
+        "s" => $search_term,
+    ]);
+
+    if (!$the_query->have_posts()) {
+        $the_query = new WP_Query([
+            "posts_per_page" => $num,
+            "post_type" => "product",
+            "meta_query" => [
+                [
+                    "key" => "_sku",
+                    "value" => $search_term,
+                    "compare" => "LIKE",
+                ],
+            ],
+        ]);
+    }
+
+    $number_of_result = $the_query->found_posts;
+    if ($number_of_result > 20) {
+        $show_all =
+            '<button class="show_all woo_bar_el" style="text-align: center; background: white; width: 100%; padding: 5px; color: #666464; cursor: pointer; font-size: 0.95em;border: none; "   onclick="goSearch(`button.search' .
+            $search_id .
+            '`)"  >SEE ALL PRODUCTS.. (' .
+            $number_of_result .
+            ")</button>";
+    } else {
+        $show_all = "";
+    }
+
+    if ($the_query->have_posts()):
+        if ($cat == "on") {
+            echo '<p class="search_title">PRODUCTS</p> ';
+            echo '<hr class="search_title">';
+        }
+
+        echo '<ul class="woo_bar_el">';
+        while ($the_query->have_posts()):
+
+            $the_query->the_post();
+            $product = wc_get_product();
+            $current_price = $product->get_price_html();
+            if ($current_price == "") {
+                $current_price = "SOLD OUT";
+                $sold_style =
+                    "style='font-size: 0.75em; font-weight: bold; color: red; '";
+            } else {
+                $sold_style = "";
+            }
+            if ($current_price == "SOLD OUT" && $stock == "on") {
+                $stock_hide = "style='display: none;'";
+            } else {
+                $stock_hide = "";
+            }
+            ?>
+        
+            <a href="<?php echo esc_url(
+                post_permalink()
+            ); ?>" class="woo_bar_el" <?= $stock_hide ?> >
+<?php $image = wp_get_attachment_image_src(
+    get_post_thumbnail_id(),
+    "single-post-thumbnail"
+); ?>                               
+<?php if (
+    $image[0] &&
+    trim(esc_attr($_POST["image"])) == "true"
+) { ?>  <img src="<?php the_post_thumbnail_url(
+      "thumbnail"
+  ); ?>" style="height: 60px;padding: 0px 5px; display:none;">
+<li><span class="title_r_1"><h5><?php the_title(); ?></h5 class="product_name"><h5 style="height: 60px;padding: 0px 5px; display:none;" class="sku" <?= $sku ?> >(SKU:  <?php echo $product->get_sku(); ?>) </h5></span><p class="des" <?= $description ?> > <?php echo wp_trim_words(
+     $product->get_short_description(),
+     15,
+     "..."
+ ); ?> </p> </li>	
+
+
+<?php if ($price != "off") { ?> 
+	<span class="price" <?= $sold_style ?> > <span> <?= $current_price ?> </span></span>
+ <?php }} ?> 
+</a>
+        <?php
+        endwhile;
+        echo $show_all;
+        echo "</ul>";
+        wp_reset_postdata();
+    endif;
+    die();
+}
+

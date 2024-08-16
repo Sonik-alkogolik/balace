@@ -1,7 +1,75 @@
-[14-Aug-2024 12:54:15 UTC] PHP Fatal error:  Cannot redeclare create_post_type() (previously declared in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1184) in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1257
-[14-Aug-2024 12:54:15 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\OSPanel\domains\balace\wp-includes\class-wp-recovery-mode-email-service.php on line 367
-[14-Aug-2024 12:54:15 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\OSPanel\domains\balace\wp-includes\class-wp-recovery-mode-email-service.php on line 368
-[14-Aug-2024 12:55:30 UTC] PHP Fatal error:  Cannot redeclare create_post_type() (previously declared in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1184) in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1257
-[14-Aug-2024 12:55:47 UTC] PHP Fatal error:  Cannot redeclare create_post_type() (previously declared in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1184) in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1257
-[14-Aug-2024 12:55:49 UTC] PHP Fatal error:  Cannot redeclare create_post_type() (previously declared in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php:1184) in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1257
-[14-Aug-2024 14:40:04 UTC] WordPress database error Server shutdown in progress for query SELECT autoload FROM wp_options WHERE option_name = 'cron' LIMIT 1 made by wp_reschedule_event, wp_schedule_event, _set_cron_array, update_option
+[16-Aug-2024 14:11:04 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1066
+[16-Aug-2024 14:11:14 UTC] URL файла: 
+[16-Aug-2024 14:13:08 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1066
+[16-Aug-2024 14:13:14 UTC] URL файла: 
+[16-Aug-2024 14:15:55 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1066
+[16-Aug-2024 14:16:35 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1066
+[16-Aug-2024 14:19:31 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1066
+[16-Aug-2024 14:20:18 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1066
+[16-Aug-2024 14:21:50 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1066
+[16-Aug-2024 14:23:54 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1066
+[16-Aug-2024 14:25:36 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1066
+[16-Aug-2024 14:26:53 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\license-verification.php:9
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include()
+#1 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\license-verification.php on line 9
+[16-Aug-2024 14:27:08 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\license-verification.php:9
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include()
+#1 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\license-verification.php on line 9
+[16-Aug-2024 14:27:24 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\license-verification.php:9
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include()
+#1 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\license-verification.php on line 9
+[16-Aug-2024 14:27:37 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\license-verification.php:9
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include()
+#1 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\license-verification.php on line 9
+[16-Aug-2024 14:28:04 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\license-verification.php:9
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include()
+#1 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\license-verification.php on line 9
+[16-Aug-2024 14:28:25 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\license-verification.php:9
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include()
+#1 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\license-verification.php on line 9
+[16-Aug-2024 14:29:44 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\license-verification.php:9
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include()
+#1 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\license-verification.php on line 9
+[16-Aug-2024 14:29:53 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1066
+[16-Aug-2024 14:30:51 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\license-verification.php:10
+Stack trace:
+#0 C:\OSPanel\domains\balace\wp-includes\template-loader.php(106): include()
+#1 C:\OSPanel\domains\balace\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\balace\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\license-verification.php on line 10
+[16-Aug-2024 14:31:08 UTC] PHP Warning:  Undefined variable $file_url in C:\OSPanel\domains\balace\wp-content\themes\balace\pages\license-verification.php on line 20
+[16-Aug-2024 14:31:09 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1066
+[16-Aug-2024 14:31:51 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1066
+[16-Aug-2024 14:32:25 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1066
+[16-Aug-2024 14:33:56 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1066
+[16-Aug-2024 14:34:34 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1066
+[16-Aug-2024 14:34:53 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\domains\balace\wp-content\themes\balace\functions.php on line 1066

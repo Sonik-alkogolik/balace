@@ -187,6 +187,26 @@ button[name="tinvwl-action-product_all"] {
     width: 100%;
     height: 100%;
 }
+.cart-empty.woocommerce-info {
+    font-family: "Manrope", sans-serif;
+}
+.btn_return_wishlist {
+    font-family: "Manrope", sans-serif;
+    margin-top: 30px;
+    width: 157px;
+    height: 48px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    color: #221D17;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15.6px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    border: 1px solid #ACA99D;
+    border-radius: 100px;
+}
 
 @media (max-width: 1430px) {
     .wishlist_item {

@@ -338,7 +338,7 @@
     background-size: cover;
     cursor: pointer;
     border-radius: 100px;
-    z-index: 99;
+    z-index: 90;
 }
 
 .tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart:hover {

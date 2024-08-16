@@ -44,11 +44,26 @@
         $searchButton.on('click', function() {
             $(this).toggleClass('search_mob_active');
             $('.search-mob-wrapp').toggleClass("hide show");
+        
             if ($(this).hasClass('search_mob_active')) {
-              $('.header-section').css('background', 'rgba(245, 243, 232, 1)');
-          } else {
-              $('.header-section').css('background', '');
-          }
+                $('.header-section').css('background', 'rgba(245, 243, 232, 1)');
+                $(this).html(`
+                    <svg width="52" height="52" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="20" fill="#221D17"/>
+                        <path d="M23.4818 16.5187L16.5195 23.481" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16.5201 16.5187L23.4824 23.481" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                `);
+            } else {
+                $('.header-section').css('background', '');
+                $(this).html(`
+                    <svg id="searchIcon" width="52" height="52" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="19.25" stroke="#ECE9DB" stroke-width="1.5"></circle>
+                        <path d="M14.2747 21.3369C14.8332 22.6512 15.8911 23.6898 17.2154 24.2242C18.5397 24.7586 20.0221 24.745 21.3364 24.1865C22.6507 23.6279 23.6894 22.5701 24.2238 21.2457C24.7581 19.9214 24.7445 18.439 24.1859 17.1247C23.6274 15.8104 22.5696 14.7718 21.2452 14.2374C19.9209 13.703 18.4385 13.7166 17.1242 14.2752C15.8099 14.8337 14.7713 15.8915 14.2369 17.2159C13.7025 18.5402 13.7161 20.0226 14.2747 21.3369Z" stroke="#645F4D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M23.0762 23.0771L26.1531 26.1541" stroke="#645F4D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                `);
+            }
         });
    
         $(document).on('added_to_cart', function(event, fragments, cart_hash, $button) {
@@ -129,13 +144,26 @@
           $popupBasket.removeClass('active-popup-basket');
           //console.log(true);
       });
-    //   $(document).on('click', function(event) {
-    //     var $contentPopup = $('.wrapp-popup-basket.active-popup-basket');
-    //     var $targetElement = $(event.target);
-    //     if (!$contentPopup.is($targetElement) && $contentPopup.has($targetElement).length === 0) {
-    //         $popupBasket.removeClass('active-popup-basket');
-    //     }
-    // });
+      var $button = $('.clouse-basket-popup');
+      var $tableContainer = $('.table-container');
+  
+      $tableContainer.on('scroll', function() {
+          var scrollTop = $tableContainer.scrollTop();
+          console.log('scrollTop:', scrollTop);
+  
+          if (scrollTop === 0) {
+              console.log('At the top, setting z-index to 5');
+              $button.css('z-index', '5');
+          } else {
+              console.log('Scrolled, setting z-index to -1');
+              $button.css('z-index', '-1');
+          }
+      });
+
+      $('.btn_search_header').on('click', function() {
+        const searchInput = $('.input_search_header').get(0);
+        searchFetch(searchInput);
+    });
     
 
   });

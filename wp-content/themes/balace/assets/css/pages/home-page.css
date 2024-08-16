@@ -150,6 +150,10 @@
     border: 1px solid rgba(255, 234, 123, 1);
 }
 @media(max-width:1080px){
+        section.top-content-block-wrapp {
+            overflow: hidden;
+        }
+
     .top-content-item-img.desktop {
         display: none;
     }

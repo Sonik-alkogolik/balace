@@ -38,25 +38,46 @@ jQuery(document).ready(function($) {
 });
 
 
+
+
 document.addEventListener('DOMContentLoaded', function() {
     var button = document.querySelector('.card-play-video');
-    var iframe = document.getElementById('video-frame');
+    var video = document.getElementById('video-frame');
+    var soundToggleButton = document.querySelector('.card-sound-toggle');
     var btnLeft = document.querySelector('.btn_slider_left.card-slider-gallery');
     var btnRight = document.querySelector('.btn_slider_right.card-slider-gallery');
+
     button.addEventListener('click', function() {
-        iframe.style.display = 'block';
+        video.style.display = 'block';
+        video.play(); 
         button.style.display = 'none';
-        iframe.style.zIndex = '99'; 
+        video.style.zIndex = '95'; 
+        soundToggleButton.style.display = 'block';
+    });
+
+    soundToggleButton.addEventListener('click', function() {
+        if (video.muted) {
+            video.muted = false;
+            soundToggleButton.textContent = '🔊'; 
+        } else {
+            video.muted = true;
+            soundToggleButton.textContent = '🔈'; 
+        }
     });
 
     btnLeft.addEventListener('click', function() {
-        iframe.style.zIndex = '-1'; 
-        iframe.style.display = 'block'; 
+        video.pause(); 
+        video.style.zIndex = '-1'; 
+        video.style.display = 'none'; 
+        soundToggleButton.style.display = 'none';
         button.style.display = 'block';
     });
+
     btnRight.addEventListener('click', function() {
-        iframe.style.zIndex = '-1'; 
-        iframe.style.display = 'block';
-        button.style.display = 'block'; 
+        video.pause(); 
+        video.style.zIndex = '-1'; 
+        video.style.display = 'none'; 
+        soundToggleButton.style.display = 'none';
+        button.style.display = 'block';
     });
 });

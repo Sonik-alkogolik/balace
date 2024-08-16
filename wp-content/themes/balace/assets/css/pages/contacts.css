@@ -1,3 +1,7 @@
+.wpcf7 form.sent .wpcf7-response-output {
+    display: none;
+}
+
 .contact-wrapp {
     display:flex;
     flex-direction: column;
@@ -201,6 +205,9 @@
     border: none;
     outline: none; 
 }
+.wpcf7-form-control-wrap.placeholder-red[data-name="textarea-462"] {
+    border: 1px solid red;
+}
 .wpcf7-form-control-wrap[data-name="textarea-462"] textarea:focus {
     border: none;
     outline: none; 
@@ -208,6 +215,9 @@
 
 .wpcf7-form-control-wrap input[name="email-333"] {
     height: 24px;
+}
+.wpcf7-form-control-wrap.placeholder-red [name="email-333"]{
+    border: 1px solid red;
 }
 
 .wpcf7-form-control-wrap input.placeholder-red[name="text-801"]::placeholder{
@@ -298,7 +308,7 @@
     max-width: 620px;
     width: 100%;
     font-family: "Manrope", sans-serif;
-    position:absolute;
+    position:fixed;
     margin: 0;
     top: 50%;
     left: 50%;

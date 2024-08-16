@@ -28,7 +28,7 @@
                             </button>
                      </div>
                      <div class="header-search">
-                            <input type="text" placeholder="быстрый и удобный поиск"> 
+                     <?php echo do_shortcode('[woo_search]'); ?>
                     </div>
                     <div class="header-link-pages">
                         <a class="subtitle2 text_main" href="">О нас</a>
@@ -52,7 +52,12 @@
                             </button>
                        </div>
                        <div class="header-search mob">
-                    
+                       <svg id="searchIcon width="52" height="52" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="19.25" stroke="#ECE9DB" stroke-width="1.5"/>
+                        <path d="M14.2747 21.3369C14.8332 22.6512 15.8911 23.6898 17.2154 24.2242C18.5397 24.7586 20.0221 24.745 21.3364 24.1865C22.6507 23.6279 23.6894 22.5701 24.2238 21.2457C24.7581 19.9214 24.7445 18.439 24.1859 17.1247C23.6274 15.8104 22.5696 14.7718 21.2452 14.2374C19.9209 13.703 18.4385 13.7166 17.1242 14.2752C15.8099 14.8337 14.7713 15.8915 14.2369 17.2159C13.7025 18.5402 13.7161 20.0226 14.2747 21.3369Z" stroke="#645F4D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M23.0762 23.0771L26.1531 26.1541" stroke="#645F4D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+
                       </div>
                       
                       </div>
@@ -220,7 +225,7 @@
             </div>
             <div class="search-mob-wrapp hide">
                 <div class="search-mob-input-wrapp">
-                            <input type="text" placeholder="быстрый и удобный поиск"> 
+                <?php echo do_shortcode('[woo_search]'); ?>
                             </div>
                         </div>
                         <div class="header-catalog mob background_main hide">
@@ -470,6 +475,16 @@
                 </div>
 
 </section>
+<section class="section-breadcrumbs">
+    <?php
+    if(!is_front_page()){
+        if ( function_exists( 'yoast_breadcrumb' ) ) :
+        yoast_breadcrumb( '<div id="breadcrumbs">', '</div>' );
+        endif;
+     }
+    ?>
+</section>
+
 
 
 
