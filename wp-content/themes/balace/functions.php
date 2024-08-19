@@ -1322,7 +1322,7 @@ function check_number_in_file() {
     $search_number = isset($_POST['search_number']) ? sanitize_text_field($_POST['search_number']) : '';
 
     if (empty($file_url) || empty($search_number)) {
-        echo 'Введите номер и URL файла для поиска.';
+        echo 'Введите номер для поиска.';
         exit;
     }
     $file_extension = pathinfo($file_url, PATHINFO_EXTENSION);
@@ -1336,14 +1336,14 @@ function check_number_in_file() {
                 }
             }
             fclose($handle);
-            echo $found ? 'Номер существует в CSV файле.' : 'Номер не существует в CSV файле.';
+            echo $found ? 'существует' : '<span class="error_number">не существует</span> <style>.check-bottom-text{ display: flex;}</style>';
         } else {
-            echo 'Не удалось открыть CSV файл.';
+            //echo 'Не удалось открыть CSV файл.';
         }
     } elseif ($file_extension === 'xml') {
         $xml = simplexml_load_file($file_url);
         if ($xml === false) {
-            echo 'Не удалось загрузить XML файл.';
+            //echo 'Не удалось загрузить XML файл.';
             exit;
         }
         $found = false;
@@ -1353,10 +1353,9 @@ function check_number_in_file() {
                 break;
             }
         }
-        
-        echo $found ? 'Номер существует в XML файле.' : 'Номер не существует в XML файле.';
+        echo $found ? 'существует' : '<span class="error_number">не существует</span> <style>.check-bottom-text{ display: flex;}</style>';
     } else {
-        echo 'Поддерживаются только файлы CSV и XML.';
+       // echo 'Поддерживаются только файлы CSV и XML.';
     }
     exit;
 

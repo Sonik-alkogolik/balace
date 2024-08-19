@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-    $('#checkNumberButton').on('click', function() {
+    $('.checkNumberButton').on('click', function() {
         var searchNumber = $('#search_number').val();
         var fileUrl = $('#file_url').val();
         if ($.trim(searchNumber) === '' || $.trim(fileUrl) === '') {
@@ -15,6 +15,8 @@ jQuery(document).ready(function($) {
                 file_url: fileUrl
             },
             success: function(response) {
+                $('.result-search').css('display','flex');
+                $('.result-number-span').html(searchNumber);
                 $('#resultMessage').html(response);
             },
             error: function() {
