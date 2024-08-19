@@ -13,6 +13,33 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+
+    <?php if (is_front_page()) : ?>
+        <div id="preloader">
+        <div class="dws-progress-bar"></div>
+        <div class="preloader-logo-div">
+            <img src="<?php get_template_directory_uri() ?>/wp-content/themes/balace/img/icon/preloader_logo.png" alt="logo">
+        </div>
+    </div>
+        <script src="<?php get_template_directory_uri() ?>/wp-content/themes/balace/assets/js/scircular-plugin.js"></script> 
+        <script src="<?php get_template_directory_uri() ?>/wp-content/themes/balace/assets/js/circular-script.js"></script> 
+        <div class="age-verification" style="display: none;">
+        <div class="age-verification-wrapp">
+          <span>18+</span>
+            <p>Сайт содержит информацию, которая не рекомендована лицам, не достигшим совершеннолетия. Для входа на сайт, подтвердите свой возраст.</p>
+         <div class="age-verification-btn">
+           <button class="age-yes">Подтверждаю, что мне 18 лет</button>
+          <button class="age-no">Мне ещё нет 18</button>
+        </div>
+    </div>
+    <div class="age-verification-logo-div">
+            <img src="<?php get_template_directory_uri() ?>/wp-content/themes/balace/img/icon/age-verification-logo.png" alt="logo">
+        </div>
+</div>
+
+
+        <?php endif; ?>
+
 <div class="container">
  <section class="header-section">
             <div class="header-wrapp">
