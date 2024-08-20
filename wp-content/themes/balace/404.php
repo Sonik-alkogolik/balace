@@ -10,51 +10,32 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
-
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'balace' ); ?></h1>
-			</header><!-- .page-header -->
-
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'balace' ); ?></p>
-
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'balace' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$balace_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'balace' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$balace_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
-
-	</main><!-- #main -->
+	<section>
+		<div class="wrapp-page">
+		<div class="title">
+				<h1>страница не найдена</h1>
+		</div>
+		<div class="wrapp-content">
+			 <p>
+				4<svg class="icon_center_404" width="156" height="156" viewBox="0 0 156 156" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M147.189 77.625C147.189 115.814 116.283 146.75 78.1864 146.75C40.0898 146.75 9.18359 115.814 9.18359 77.625C9.18359 39.4357 40.0898 8.5 78.1864 8.5C116.283 8.5 147.189 39.4357 147.189 77.625Z" stroke="#FFEA7B" stroke-width="17"/>
+				</svg>4
+			</p>
+			<span class="deskription">
+				возможно, она была перемещена, 
+				  или неверно указан адрес
+			</span>
+			<div class="top-content-center-btn">
+				<a class="btn_go_catalog page_404 h6 text_main" href="">
+					<span>вернуться на главную </span>    
+				</a>
+			</div>
+		</div>
+		
+	
+		 <img src="/wp-content/themes/balace/img/icon/" alt="">
+		</div>
+	</section>
 
 <?php
 get_footer();

@@ -1317,6 +1317,14 @@ function licenseVerification() {
 }
 add_action('wp_enqueue_scripts', 'licenseVerification');
 
+
+function error_page() {
+    if (is_404()) {
+        wp_enqueue_style('404-page-style', get_template_directory_uri() . '/assets/css/pages/404.css');
+    }
+}
+add_action('wp_enqueue_scripts', 'error_page');
+
 function check_number_in_file() {
     $file_url = isset($_POST['file_url']) ? esc_url_raw($_POST['file_url']) : '';
     $search_number = isset($_POST['search_number']) ? sanitize_text_field($_POST['search_number']) : '';
