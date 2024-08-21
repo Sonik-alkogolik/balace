@@ -24,8 +24,8 @@ jQuery(document).ready(function($) {
         });
         
         $('.age-no').on('click', function () {
-            alert('Извините, доступ к сайту ограничен.');
-            window.location.href = 'https://www.google.com';
+            $('.age-verification-wrapp').remove();
+            $('.age-no-text').css('display','block');
         });
     });
     

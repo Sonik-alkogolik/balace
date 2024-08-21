@@ -847,6 +847,7 @@ span {
 .product_cat_list li {
     width: 100%;
     margin-bottom: 20px;
+    text-align: left;
 }
 
 .header_product_cat_sub_menu {
@@ -927,7 +928,21 @@ a.added_to_cart.wc-forward {
     display: none;
 }
 
-
+.age-no-text {
+    display: none;
+    position:absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    margin-top: 40px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
 
 @media(max-width:1439px) {
     .logo {

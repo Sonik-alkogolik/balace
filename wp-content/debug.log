@@ -308,3 +308,35 @@ Stack trace:
 [20-Aug-2024 12:34:59 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
 [20-Aug-2024 12:36:16 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
 [20-Aug-2024 12:36:55 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[21-Aug-2024 13:14:53 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[21-Aug-2024 13:14:58 UTC] Automatic updates starting...
+[21-Aug-2024 13:14:59 UTC]   Automatic plugin updates starting...
+[21-Aug-2024 13:14:59 UTC]   Automatic plugin updates complete.
+[21-Aug-2024 13:14:59 UTC]   Automatic theme updates starting...
+[21-Aug-2024 13:14:59 UTC]   Automatic theme updates complete.
+[21-Aug-2024 13:14:59 UTC] Automatic updates complete.
+[21-Aug-2024 13:15:03 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php:1062
+Stack trace:
+#0 C:\OSPanel\home\balace\wp-includes\class-wp-hook.php(324): truemisha_payments_on_shipping(Array)
+#1 C:\OSPanel\home\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(333): apply_filters('woocommerce_ava...', Array)
+#3 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Internal\Admin\WcPayWelcomePage.php(395): WC_Payment_Gateways->get_available_payment_gateways()
+#4 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Internal\Admin\WcPayWelcomePage.php(82): Automattic\WooCommerce\Internal\Admin\WcPayWelcomePage->get_incentive()
+#5 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Internal\Admin\Notes\PaymentsMoreInfoNeeded.php(42): Automattic\WooCommerce\Internal\Admin\WcPayWelcomePage->must_be_visible()
+#6 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Internal\Admin\Notes\PaymentsMoreInfoNeeded.php(63): Automattic\WooCommerce\Internal\Admin\Notes\PaymentsMoreInfoNeeded::should_display_note()
+#7 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Admin\Notes\NoteTraits.php(83): Automattic\WooCommerce\Internal\Admin\Notes\PaymentsMoreInfoNeeded::get_note()
+#8 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Internal\Admin\Events.php(203): Automattic\WooCommerce\Internal\Admin\Notes\PaymentsMoreInfoNeeded::possibly_add_note()
+#9 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Internal\Admin\Events.php(143): Automattic\WooCommerce\Internal\Admin\Events->possibly_add_notes()
+#10 C:\OSPanel\home\balace\wp-includes\class-wp-hook.php(324): Automattic\WooCommerce\Internal\Admin\Events->do_wc_admin_daily()
+#11 C:\OSPanel\home\balace\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#12 C:\OSPanel\home\balace\wp-includes\plugin.php(565): WP_Hook->do_action(Array)
+#13 C:\OSPanel\home\balace\wp-cron.php(191): do_action_ref_array('wc_admin_daily', Array)
+#14 {main}
+  thrown in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1062
+[21-Aug-2024 13:17:16 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[21-Aug-2024 13:21:47 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[21-Aug-2024 13:24:42 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[21-Aug-2024 13:25:04 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[21-Aug-2024 13:26:13 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[21-Aug-2024 13:27:21 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[21-Aug-2024 13:27:49 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066

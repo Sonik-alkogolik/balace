@@ -24,12 +24,14 @@
         <script src="<?php get_template_directory_uri() ?>/wp-content/themes/balace/assets/js/scircular-plugin.js"></script> 
         <script src="<?php get_template_directory_uri() ?>/wp-content/themes/balace/assets/js/circular-script.js"></script> 
         <div class="age-verification" style="display: none;">
+        <p class="age-no-text">Будем ждать в нашем магазине, когда достигнете совершеннолетия! </p>
         <div class="age-verification-wrapp">
           <span>18+</span>
             <p>Сайт содержит информацию, которая не рекомендована лицам, не достигшим совершеннолетия. Для входа на сайт, подтвердите свой возраст.</p>
          <div class="age-verification-btn">
            <button class="age-yes">Подтверждаю, что мне 18 лет</button>
-          <button class="age-no">Мне ещё нет 18</button>
+           <button class="age-no">Мне ещё нет 18</button>
+          
         </div>
     </div>
     <div class="age-verification-logo-div">
