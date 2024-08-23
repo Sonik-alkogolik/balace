@@ -89,6 +89,7 @@
                
             }
         });
+
         $(document).on('added_to_cart', function(event, fragments, cart_hash, $button) {
             var $product = $button.closest('.product, .swiper-slide.best_products_slide, .product-item');
             
@@ -149,13 +150,13 @@
   
       $tableContainer.on('scroll', function() {
           var scrollTop = $tableContainer.scrollTop();
-          console.log('scrollTop:', scrollTop);
+        //   console.log('scrollTop:', scrollTop);
   
           if (scrollTop === 0) {
-              console.log('At the top, setting z-index to 5');
+            //   console.log('At the top, setting z-index to 5');
               $button.css('z-index', '5');
           } else {
-              console.log('Scrolled, setting z-index to -1');
+            //   console.log('Scrolled, setting z-index to -1');
               $button.css('z-index', '-1');
           }
       });

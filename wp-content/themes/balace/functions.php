@@ -1148,7 +1148,7 @@ add_action('wp_enqueue_scripts', 'wishlist_page_styles');
 function reviews_page_styles() {
     if (is_page_template('pages/reviews.php')) {
         wp_enqueue_style('reviews-page-style', get_template_directory_uri() . '/assets/css/pages/reviews.css');
-        wp_enqueue_script( 'wishlist', get_template_directory_uri() . '/assets/js/reviews.js', null, true );
+        wp_enqueue_script( 'reviews', get_template_directory_uri() . '/assets/js/reviews.js', null, true );
     }
 }
 add_action('wp_enqueue_scripts', 'reviews_page_styles');

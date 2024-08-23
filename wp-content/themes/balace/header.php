@@ -14,7 +14,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-    <?php if (is_front_page()) : ?>
+
         <div id="preloader">
         <div class="dws-progress-bar"></div>
         <div class="preloader-logo-div">
@@ -39,8 +39,6 @@
         </div>
 </div>
 
-
-        <?php endif; ?>
 
 <div class="container">
  <section class="header-section">

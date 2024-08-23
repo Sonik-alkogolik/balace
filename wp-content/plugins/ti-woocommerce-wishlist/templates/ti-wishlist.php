@@ -160,7 +160,7 @@ wp_enqueue_script( 'tinvwl' );
 								<?php
 								if ( apply_filters( 'tinvwl_wishlist_item_action_add_to_cart', $wishlist_table_row['add_to_cart'], $wl_product, $product ) ) {
 									?>
-									<button class="button alt" name="tinvwl-add-to-cart"
+									<button class="button wishlist_add_to_card alt" data-product_id="<?php echo get_the_ID(); ?>" name="tinvwl-add-to-cart "
 											value="<?php echo esc_attr( $wl_product['ID'] ); ?>"
 											title="<?php echo esc_html( apply_filters( 'tinvwl_wishlist_item_add_to_cart', $wishlist_table_row['text_add_to_cart'], $wl_product, $product ) ); ?>">
 										<i
