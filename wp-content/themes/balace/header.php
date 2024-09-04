@@ -20,7 +20,7 @@
         <div class="preloader-logo-div">
             <img src="<?php get_template_directory_uri() ?>/wp-content/themes/balace/img/icon/preloader_logo.png" alt="logo">
         </div>
-    </div>
+        </div>
         <script src="<?php get_template_directory_uri() ?>/wp-content/themes/balace/assets/js/scircular-plugin.js"></script> 
         <script src="<?php get_template_directory_uri() ?>/wp-content/themes/balace/assets/js/circular-script.js"></script> 
         <div class="age-verification" style="display: none;">
@@ -31,13 +31,13 @@
          <div class="age-verification-btn">
            <button class="age-yes">Подтверждаю, что мне 18 лет</button>
            <button class="age-no">Мне ещё нет 18</button>
-          
         </div>
     </div>
     <div class="age-verification-logo-div">
             <img src="<?php get_template_directory_uri() ?>/wp-content/themes/balace/img/icon/age-verification-logo.png" alt="logo">
         </div>
 </div>
+
 
 
 <div class="container">
@@ -89,7 +89,9 @@
                       
                       </div>
                         <div class="logo">
+                        <a href="/">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="">
+                        </a>
                        </div>
                        <div class="header-product-actions">
                         <button class="btn_add-to-wishlist"></button>
@@ -211,7 +213,7 @@
                                                         }
                                                         
                                                         echo '
-                                                        <a href="" class="product_cat_item_all_category"> смотреть всё </a>
+                                                        <a href="'. esc_url($category_url) .'" class="product_cat_item_all_category"> смотреть всё </a>
                                                         </div>';
                                                     }
                                                 }
@@ -328,13 +330,14 @@
                                             if (!empty($categories) ) {
                                                 foreach ($categories as $category) {
                                                     if ($category->parent == 0 && in_array($category->name, $desired_categories)) {
+                                                        $category_url = get_term_link($category);
                                                         echo '<div class="product_cat_item"><a href="'  . esc_url($category_url) .  '">' . htmlspecialchars($category->name) . '</a>';
                                                         $subcategories = get_terms(array(
                                                             'taxonomy' => 'product_cat',
                                                             'hide_empty' => false,
                                                             'parent' => $category->term_id,
                                                         ));
-                                                        
+                                                       
                                                         if (!empty($subcategories)) {
                                                             echo '<ul class="product_cat_list">';
                                                             foreach ($subcategories as $subcategory) {
@@ -363,7 +366,7 @@
                                                         }
                                                         
                                                         echo '
-                                                        <a href="" class="product_cat_item_all_category"> смотреть всё </a>
+                                                        <a href="' . esc_url($category_url) . '" class="product_cat_item_all_category"> смотреть всё </a>
                                                         </div>';
                                                     }
                                                 }
@@ -374,8 +377,8 @@
                                 </div>
 
                             </div>
-            </div>
-                <div class="header-catalog-info">
+                   </div>
+                    <div class="header-catalog-info">
                         <div class="catalog-info-link mob">
                             <?php
                             wp_nav_menu(array(
@@ -418,33 +421,33 @@
                                     $date = get_the_date('d.m.y');
                                     $image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
 
-                            ?>
-<div class="action-content mob background_main">
-    <div class="action-content-deskription">
-        <div class="content-deskription-top mob">
-            <p class="caption"><?php echo esc_html($title); ?></p>
-            <?php if ($discount_percentage) : ?>
-                <span class="h5"><?php echo esc_html($discount_percentage); ?></span>
-            <?php endif; ?>
-        </div>
-        <div class="content-deskription-bottom mob">
-            <p class="body2"><?php echo esc_html($date); ?></p>
-            <a href="<?php the_permalink(); ?>" class="caption">подробнее</a>
-        </div>
-    </div>
-    <img src="<?php echo esc_url($image_url); ?>" alt="">
-</div>
-<?php
-    }
-    wp_reset_postdata(); 
-} else {
+                                         ?>
+                                        <div class="action-content mob background_main">
+                                            <div class="action-content-deskription">
+                                                <div class="content-deskription-top mob">
+                                                    <p class="caption"><?php echo esc_html($title); ?></p>
+                                                    <?php if ($discount_percentage) : ?>
+                                                        <span class="h5"><?php echo esc_html($discount_percentage); ?></span>
+                                                    <?php endif; ?>
+                                                </div>
+                                                <div class="content-deskription-bottom mob">
+                                                    <p class="body2"><?php echo esc_html($date); ?></p>
+                                                    <a href="<?php the_permalink(); ?>" class="caption">подробнее</a>
+                                                </div>
+                                            </div>
+                                            <img src="<?php echo esc_url($image_url); ?>" alt="">
+                                        </div>
+                                        <?php
+                                            }
+                                            wp_reset_postdata(); 
+                                        } else {
 
-   // echo 'Записей не найдено.';
-}
-?>
+                                        // echo 'Записей не найдено.';
+                                        }
+                                        ?>
 
-                      </div>
-                      <div class="woocommerce_categories mob background_main hide">
+                                  </div>
+                       <div class="woocommerce_categories mob background_main hide">
                                     <?php                                                                                                                
                                             $categories = get_terms(array(
                                                 'taxonomy' => 'product_cat',
@@ -455,6 +458,7 @@
                                             if (!empty($categories) ) {
                                                 foreach ($categories as $category) {
                                                     if ($category->parent == 0 && in_array($category->name, $desired_categories)) {
+                                                        $category_url = get_term_link($category);
                                                         echo '<div class="product_cat_item"><a href="'  . esc_url($category_url) .  '">' . htmlspecialchars($category->name) . '</a>';
                                                         $subcategories = get_terms(array(
                                                             'taxonomy' => 'product_cat',
@@ -490,7 +494,7 @@
                                                         }
                                                         
                                                         echo '
-                                                        <a href="" class="product_cat_item_all_category"> смотреть всё </a>
+                                                        <a href="'. esc_url($category_url) .'" class="product_cat_item_all_category"> смотреть всё </a>
                                                         </div>';
                                                     }
                                                 }

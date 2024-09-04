@@ -15,7 +15,7 @@
                                 </a>
                             </div>
                             <div class="brands-item-btn-bottom">
-                            <a class="btn_brand_products_black caption" href="#"> К товарам бренда</a>
+                            <a class="btn_brand_products_black caption" href="/balace/"> К товарам бренда</a>
                         </div>
                      </div>
                     </div>
@@ -33,7 +33,7 @@
                                 </a>
                             </div>
                             <div class="brands-item-btn-bottom">
-                            <a class="btn_brand_products_light caption" href="#"> к товарам бренда</a>
+                            <a class="btn_brand_products_light caption" href="/balace-natural-pharm/"> к товарам бренда</a>
                         </div>
                      </div>
                     </div>

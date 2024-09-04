@@ -327,5 +327,27 @@ section {
     }
 }
 
+.woocommerce a.button.loading::after {
+  position: absolute;
+  margin: 0;
+  top: 35%;
+  right: auto;
+  left: 36%;
+  margin-right: -30%;
+}
 
+@media(max-width:1200px){
+  .woocommerce a.button.loading::after {
+    left: 34%;
+  }
+}
+
+@media(max-width:640px){
+  .woocommerce a.button.loading::after {
+    margin: 0;
+    top: 26%;
+    left: 26%;
+    margin-right: -30%;
+}
+}
 

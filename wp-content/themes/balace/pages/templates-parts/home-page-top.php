@@ -45,7 +45,7 @@
        </div>
        </div>
        <div class="top-content-center-btn">
-        <a class="btn_go_catalog primery_main h6 text_main" href="">
+        <a class="btn_go_catalog primery_main h6 text_main" href="/balace/">
             <span>Перейти в каталог </span>    
         </a>
       </div>

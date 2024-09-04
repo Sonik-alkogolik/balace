@@ -8,6 +8,6 @@
             ?>
         </div>
         <div class="btn-go-catalog-product-block">
-            <a href="" class="go-catalog-home-page h6 text_dark">перейти в каталог</a>
+            <a href="/balace/" class="go-catalog-home-page h6 text_dark">перейти в каталог</a>
         </div>
 </section>
