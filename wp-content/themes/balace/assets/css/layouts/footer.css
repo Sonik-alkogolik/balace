@@ -48,6 +48,7 @@
 }
 
 .footer__list-item {
+  text-align: left;
   margin-bottom: 24px;
 }
 

@@ -10,19 +10,54 @@
     <title><?php wp_title(); ?></title>
 </head>
 
+<style>
+.dws-progress-bar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+
+.progress-percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFFFFF;
+    font-family: "Manrope", sans-serif;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 56.02px;
+    letter-spacing: 0.01em;
+    text-align: center;
+
+}
+
+#preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    background: #645F4D;
+}
+
+</style>
+<script src="<?php get_template_directory_uri() ?>/wp-content/themes/balace/assets/js/scircular-plugin.js"></script> 
+<script src="<?php get_template_directory_uri() ?>/wp-content/themes/balace/assets/js/circular-script.js"></script> 
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
 
-        <div id="preloader">
+        <div id="preloader" style="display: none;">
         <div class="dws-progress-bar"></div>
         <div class="preloader-logo-div">
             <img src="<?php get_template_directory_uri() ?>/wp-content/themes/balace/img/icon/preloader_logo.png" alt="logo">
         </div>
         </div>
-        <script src="<?php get_template_directory_uri() ?>/wp-content/themes/balace/assets/js/scircular-plugin.js"></script> 
-        <script src="<?php get_template_directory_uri() ?>/wp-content/themes/balace/assets/js/circular-script.js"></script> 
         <div class="age-verification" style="display: none;">
         <p class="age-no-text">Будем ждать в нашем магазине, когда достигнете совершеннолетия! </p>
         <div class="age-verification-wrapp">

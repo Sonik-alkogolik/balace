@@ -6,6 +6,7 @@
     line-height: 120%;
     color: #000000;
     margin-bottom: 40px;
+    text-align: left;
 }
 .blog-item-wrapp {
     display:flex;

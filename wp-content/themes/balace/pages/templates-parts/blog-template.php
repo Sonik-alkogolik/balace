@@ -46,7 +46,7 @@
         <div class="blog-wrapp-item right-item">
                     <div class="blog-item-title desktop">
                         <h3 class="h3">Блог</h3>
-                        <a class="btn_learn_more h6" href="<?php the_permalink(); ?>">Узнать больше</a>
+                        <a class="btn_learn_more h6" href="/блог/">Узнать больше</a>
                     </div>
                
             <div class="blog-news-wrapp desktop">
@@ -81,6 +81,6 @@
             ?>
             </div>
         </div>
-        <a class="btn_learn_more blog-mob h6" href="<?php the_permalink(); ?>">Узнать больше</a>
+        <a class="btn_learn_more blog-mob h6" href="/блог/">Узнать больше</a>
     </div>
 </section>
