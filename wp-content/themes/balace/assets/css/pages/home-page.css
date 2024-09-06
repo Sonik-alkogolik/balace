@@ -149,6 +149,21 @@
     align-items:center;
     border: 1px solid rgba(255, 234, 123, 1);
 }
+.js-marquee p {
+    display: flex;
+    align-items: center;
+    height: auto;
+}
+
+.dot {
+    display: inline-block;
+    width: 6px;  
+    height: 6px; 
+    background-color: #ACA99D; 
+    border-radius: 50%; 
+    margin: 0 24px; 
+}
+
 @media(max-width:1080px){
         section.top-content-block-wrapp {
             overflow: hidden;
@@ -426,7 +441,7 @@
         max-width: 128px;
         height: 122px;
         right: 23%;
-        bottom: 6%;
+        bottom: 5%;
     }
     .blog-wrapp-item-content-tablet > div.title > h4 {
         font-size: 20px;
@@ -1042,6 +1057,9 @@
         max-width: 60% !important;
         margin-bottom: 44px;
     }
+    .section-marquee {
+        margin-bottom: 0;
+    }
 }
 @media(max-width:640px){
     .advantages-content-item {
@@ -1053,7 +1071,7 @@
         width: 100%!important;
     }
     .advantages-content-block {
-        background-size: 280px 300px, 622px 138px;
+        background-size: 280px 300px, 622px 350px;
     }
 }
 

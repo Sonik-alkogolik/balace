@@ -635,3 +635,96 @@ Stack trace:
 #26 C:\OSPanel\home\balace\index.php(17): require('C:\\OSPanel\\home...')
 #27 {main}
   thrown in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1062
+[06-Sep-2024 10:13:24 UTC] PHP Warning:  mysqli_real_connect(): php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  in C:\OSPanel\home\balace\wp-includes\class-wpdb.php on line 1982
+[06-Sep-2024 10:13:24 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  in C:\OSPanel\home\balace\wp-includes\class-wpdb.php on line 1982
+[06-Sep-2024 10:13:25 UTC] PHP Warning:  mysqli_real_connect(): php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  in C:\OSPanel\home\balace\wp-includes\class-wpdb.php on line 1982
+[06-Sep-2024 10:13:25 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  in C:\OSPanel\home\balace\wp-includes\class-wpdb.php on line 1982
+[06-Sep-2024 10:13:26 UTC] PHP Warning:  mysqli_real_connect(): php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  in C:\OSPanel\home\balace\wp-includes\class-wpdb.php on line 1982
+[06-Sep-2024 10:13:26 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  in C:\OSPanel\home\balace\wp-includes\class-wpdb.php on line 1982
+[06-Sep-2024 10:13:26 UTC] PHP Warning:  mysqli_real_connect(): php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  in C:\OSPanel\home\balace\wp-includes\class-wpdb.php on line 1982
+[06-Sep-2024 10:13:26 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  in C:\OSPanel\home\balace\wp-includes\class-wpdb.php on line 1982
+[06-Sep-2024 10:13:45 UTC] PHP Warning:  mysqli_real_connect(): php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  in C:\OSPanel\home\balace\wp-includes\class-wpdb.php on line 1982
+[06-Sep-2024 10:13:45 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  in C:\OSPanel\home\balace\wp-includes\class-wpdb.php on line 1982
+[06-Sep-2024 10:13:46 UTC] PHP Warning:  mysqli_real_connect(): php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  in C:\OSPanel\home\balace\wp-includes\class-wpdb.php on line 1982
+[06-Sep-2024 10:13:46 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  in C:\OSPanel\home\balace\wp-includes\class-wpdb.php on line 1982
+[06-Sep-2024 10:15:35 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 10:30:43 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 10:30:45 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php:1062
+Stack trace:
+#0 C:\OSPanel\home\balace\wp-includes\class-wp-hook.php(324): truemisha_payments_on_shipping(Array)
+#1 C:\OSPanel\home\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(333): apply_filters('woocommerce_ava...', Array)
+#3 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Internal\Admin\WcPayWelcomePage.php(395): WC_Payment_Gateways->get_available_payment_gateways()
+#4 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Internal\Admin\WcPayWelcomePage.php(82): Automattic\WooCommerce\Internal\Admin\WcPayWelcomePage->get_incentive()
+#5 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Internal\Admin\Notes\PaymentsMoreInfoNeeded.php(42): Automattic\WooCommerce\Internal\Admin\WcPayWelcomePage->must_be_visible()
+#6 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Internal\Admin\Notes\PaymentsMoreInfoNeeded.php(63): Automattic\WooCommerce\Internal\Admin\Notes\PaymentsMoreInfoNeeded::should_display_note()
+#7 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Admin\Notes\NoteTraits.php(83): Automattic\WooCommerce\Internal\Admin\Notes\PaymentsMoreInfoNeeded::get_note()
+#8 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Internal\Admin\Events.php(203): Automattic\WooCommerce\Internal\Admin\Notes\PaymentsMoreInfoNeeded::possibly_add_note()
+#9 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Internal\Admin\Events.php(143): Automattic\WooCommerce\Internal\Admin\Events->possibly_add_notes()
+#10 C:\OSPanel\home\balace\wp-includes\class-wp-hook.php(324): Automattic\WooCommerce\Internal\Admin\Events->do_wc_admin_daily()
+#11 C:\OSPanel\home\balace\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#12 C:\OSPanel\home\balace\wp-includes\plugin.php(565): WP_Hook->do_action(Array)
+#13 C:\OSPanel\home\balace\wp-cron.php(191): do_action_ref_array('wc_admin_daily', Array)
+#14 {main}
+  thrown in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1062
+[06-Sep-2024 10:32:24 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 10:34:32 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 10:34:45 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 10:38:05 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 10:38:29 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 10:41:00 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 10:41:12 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 10:41:24 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 10:42:13 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 10:42:36 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 10:42:47 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 10:43:32 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 10:43:51 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 10:44:00 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 10:44:11 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 10:44:27 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 10:44:39 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 10:44:51 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 10:47:41 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 10:48:25 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 10:51:58 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 10:56:24 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 10:56:31 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 10:57:05 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 10:57:46 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 10:58:40 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:00:00 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:00:23 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:01:45 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:02:13 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:03:38 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:06:24 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:06:33 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:06:54 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:07:15 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:08:44 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:09:44 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:10:41 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:11:50 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:12:49 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:14:34 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:16:22 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:17:59 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:18:02 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:18:05 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:18:40 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:19:18 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:19:45 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:20:32 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:21:05 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:22:57 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:26:13 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:28:31 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:29:04 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:30:33 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:33:36 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:35:23 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:36:44 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:36:54 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:37:31 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 11:37:43 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066

@@ -295,6 +295,9 @@
     .blog-wrapp-item.left-item > a {
         height: 220px;
     }
+    .blog-wrapp-item.left-item .thumbnail {
+        height: 220px;
+    }
 }
 
 @media(max-width:580px){
@@ -338,8 +341,9 @@
         height: auto;
     }
     .blog-news-item .thumbnail {
-        height: 200px;
+        height: 165px;
     }
+    
     .btn_learn_more.blog-mob {
         display: flex;
         margin-top: 16px;
@@ -354,6 +358,7 @@
     .btn_learn_more.blog-mob:after{
         display: none;
     }
+  
  
 }
 

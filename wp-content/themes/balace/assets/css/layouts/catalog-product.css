@@ -315,6 +315,7 @@ a.button.added::after {
     }
     .btn-go-catalog-product-block {
         height: 56px;
+        border-radius: 16px;
     }
     
 }
