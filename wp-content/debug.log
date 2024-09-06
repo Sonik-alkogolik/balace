@@ -592,3 +592,46 @@ Stack trace:
 [05-Sep-2024 15:34:22 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
 [05-Sep-2024 15:34:40 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
 [05-Sep-2024 15:34:47 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[06-Sep-2024 06:35:55 UTC] PHP Warning:  mysqli_real_connect(): php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  in C:\OSPanel\home\balace\wp-includes\class-wpdb.php on line 1982
+[06-Sep-2024 06:35:55 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  in C:\OSPanel\home\balace\wp-includes\class-wpdb.php on line 1982
+[06-Sep-2024 06:35:55 UTC] PHP Warning:  mysqli_real_connect(): php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  in C:\OSPanel\home\balace\wp-includes\class-wpdb.php on line 1982
+[06-Sep-2024 06:35:55 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  in C:\OSPanel\home\balace\wp-includes\class-wpdb.php on line 1982
+[06-Sep-2024 06:35:55 UTC] PHP Warning:  mysqli_real_connect(): php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  in C:\OSPanel\home\balace\wp-includes\class-wpdb.php on line 1982
+[06-Sep-2024 06:35:55 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  in C:\OSPanel\home\balace\wp-includes\class-wpdb.php on line 1982
+[06-Sep-2024 06:35:55 UTC] PHP Warning:  mysqli_real_connect(): php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  in C:\OSPanel\home\balace\wp-includes\class-wpdb.php on line 1982
+[06-Sep-2024 06:35:55 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  in C:\OSPanel\home\balace\wp-includes\class-wpdb.php on line 1982
+[06-Sep-2024 06:35:57 UTC] PHP Warning:  mysqli_real_connect(): php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  in C:\OSPanel\home\balace\wp-includes\class-wpdb.php on line 1982
+[06-Sep-2024 06:35:57 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  in C:\OSPanel\home\balace\wp-includes\class-wpdb.php on line 1982
+[06-Sep-2024 06:35:57 UTC] PHP Warning:  mysqli_real_connect(): php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  in C:\OSPanel\home\balace\wp-includes\class-wpdb.php on line 1982
+[06-Sep-2024 06:35:57 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  in C:\OSPanel\home\balace\wp-includes\class-wpdb.php on line 1982
+[06-Sep-2024 08:41:23 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php:1062
+Stack trace:
+#0 C:\OSPanel\home\balace\wp-includes\class-wp-hook.php(324): truemisha_payments_on_shipping(Array)
+#1 C:\OSPanel\home\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(333): apply_filters('woocommerce_ava...', Array)
+#3 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(89): WC_Payment_Gateways->get_available_payment_gateways()
+#4 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(67): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments::has_gateways()
+#5 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments.php(106): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments->is_complete()
+#6 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(305): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments->can_view()
+#7 [internal function]: Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->Automattic\WooCommerce\Admin\Features\OnboardingTasks\{closure}(Object(Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments))
+#8 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(306): array_filter(Array, Object(Closure))
+#9 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(240): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_viewable_tasks()
+#10 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(338): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->is_complete()
+#11 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(415): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->possibly_track_completion()
+#12 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(745): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_json()
+#13 [internal function]: Automattic\WooCommerce\Admin\API\OnboardingTasks->Automattic\WooCommerce\Admin\API\{closure}(Object(Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList))
+#14 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(744): array_map(Object(Closure), Array)
+#15 C:\OSPanel\home\balace\wp-includes\rest-api\class-wp-rest-server.php(1230): Automattic\WooCommerce\Admin\API\OnboardingTasks->get_tasks(Object(WP_REST_Request))
+#16 C:\OSPanel\home\balace\wp-includes\rest-api\class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wc-admin/onboa...', Array, NULL)
+#17 C:\OSPanel\home\balace\wp-includes\rest-api\class-wp-rest-server.php(439): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#18 C:\OSPanel\home\balace\wp-includes\rest-api.php(420): WP_REST_Server->serve_request('/wc-admin/onboa...')
+#19 C:\OSPanel\home\balace\wp-includes\class-wp-hook.php(324): rest_api_loaded(Object(WP))
+#20 C:\OSPanel\home\balace\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#21 C:\OSPanel\home\balace\wp-includes\plugin.php(565): WP_Hook->do_action(Array)
+#22 C:\OSPanel\home\balace\wp-includes\class-wp.php(418): do_action_ref_array('parse_request', Array)
+#23 C:\OSPanel\home\balace\wp-includes\class-wp.php(813): WP->parse_request('')
+#24 C:\OSPanel\home\balace\wp-includes\functions.php(1336): WP->main('')
+#25 C:\OSPanel\home\balace\wp-blog-header.php(16): wp()
+#26 C:\OSPanel\home\balace\index.php(17): require('C:\\OSPanel\\home...')
+#27 {main}
+  thrown in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1062

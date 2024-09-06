@@ -134,6 +134,9 @@
 
 .footer__bottom-right a {
   color: #FFFFFF;
+  max-width: 200px;
+  display: flex;
+  align-items: center;
 }
 
 .footer__bottom-right p {
@@ -142,7 +145,7 @@
 }
 
 .footer__developer img {
-  transform: translate(10px, 10px);
+  margin-left: 8px;
 }
 
 
@@ -182,11 +185,6 @@
     height: auto;
   }
 
-  .footer__developer img {
-    transform: translate(0px, 10px);
-    margin-left: 10px;
-  }
-
   .footer__bottom-logo p {
     margin-top: 49px;
     color: #FFFFFF;
@@ -199,6 +197,9 @@
 
   .footer__bottom-right_text {
     margin-top: 48px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
   }
 
   .footer__bottom-right_text>a:nth-child(1) {
@@ -207,6 +208,12 @@
 
   .footer-section {
     background-size: contain;
+  }
+  .footer__bottom-right .label{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
 }
 
@@ -350,7 +357,14 @@
   .label_text_bottom_mob {
     display: flex;
     flex-direction: column;
+    margin-bottom: 56px;
   }
+ .footer__bottom-right > div.label > div > a:nth-child(1) {
+  margin-bottom: 8px;
+ }
+ .footer__bottom-logo p {
+  margin-top: 26px;
+}
 
   .footer__bottom-right_text {
     display: none;
@@ -372,6 +386,13 @@
     background-image: url(/wp-content/themes/balace/img/icon/footer-bg-mob.png);
     background-position: 6% 100%;
 }
+
+.footer__bottom-right .label {
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 }
 
 @media(max-width:400px){

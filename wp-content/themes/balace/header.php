@@ -547,6 +547,14 @@
         if ( function_exists( 'yoast_breadcrumb' ) ) :
         yoast_breadcrumb( '<div id="breadcrumbs">', '</div>' );
         endif;
+     } else {
+        echo 
+        '<style>
+          .section-breadcrumbs {
+            display:none;
+           }
+         </style>
+        ';
      }
     ?>
 </section>

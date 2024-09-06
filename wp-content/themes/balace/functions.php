@@ -1647,3 +1647,16 @@ function woo_search()
     die();
 }
 
+// удаляем 0 после запятой 
+add_filter('woocommerce_price_trim_zeros', 'wc_hide_trailing_zeros', 10, 1);
+function wc_hide_trailing_zeros( $trim ) {
+    return true;
+}
+
+add_filter('woocommerce_currency_symbol', 'change_existing_currency_symbol', 10, 2);
+function change_existing_currency_symbol( $currency_symbol, $currency ) {
+     switch( $currency ) {
+          case 'RUB': $currency_symbol = 'р'; break;
+     }
+     return $currency_symbol;
+}

@@ -294,6 +294,12 @@ a.button.added::after {
     .product_image_item {
         border-radius: 10px;
     }
+    .catalog-product-title {
+        justify-content: flex-start;
+    }
+    .catalog-product-title h3 {
+        margin-left: 16px;
+    }
 }
 
 @media(max-width:420px){
