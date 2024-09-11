@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+if (!isset($_COOKIE['preloader_shown'])) {
+    setcookie('preloader_shown', 'true', 0, '/');
+    $show_preloader = true;
+    //echo 'Прелоадер будет показан.';
+} else {
+    $show_preloader = false;
+   // echo 'Прелоадер уже был показан.';
+}
+?>
 
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -9,6 +21,7 @@
 	<?php wp_head(); ?>
     <title><?php wp_title(); ?></title>
 </head>
+
 
 <style>
 .dws-progress-bar {
@@ -51,13 +64,15 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
+<?php if ($show_preloader): ?>
+<div id="preloader">
+    <div class="dws-progress-bar"></div>
+    <div class="preloader-logo-div">
+        <img src="<?php echo get_template_directory_uri(); ?>/wp-content/themes/balace/img/icon/preloader_logo.png" alt="logo">
+    </div>
+</div>
+<?php endif; ?>
 
-        <div id="preloader" style="display: none;">
-        <div class="dws-progress-bar"></div>
-        <div class="preloader-logo-div">
-            <img src="<?php get_template_directory_uri() ?>/wp-content/themes/balace/img/icon/preloader_logo.png" alt="logo">
-        </div>
-        </div>
         <div class="age-verification" style="display: none;">
         <p class="age-no-text">Будем ждать в нашем магазине, когда достигнете совершеннолетия! </p>
         <div class="age-verification-wrapp">
