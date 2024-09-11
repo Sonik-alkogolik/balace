@@ -233,9 +233,14 @@ if ( post_password_required() ) {
        </div>
     <div class="btn_slider_left card-slider-gallery"></div>
     <div class="btn_slider_right card-slider-gallery"></div>
-	<div class="btn_ever_compare">
-	<?php echo do_shortcode('[evercompare_button]'); ?>
-	</div>
+
+	<button class="ever_compare_button"> 
+		<?php echo do_shortcode('[evercompare_button]'); ?>
+	</button>
+     
+	<div class="btn_ever_compare" style="display: none;">
+     <a href="/sravnenie-tovarov/">В сравнение</a>
+   </div>
 	<?php 
 $video_url = get_field('url_video_link'); 
 if ($video_url): ?>

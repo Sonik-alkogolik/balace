@@ -144,7 +144,7 @@ if (!isset($_COOKIE['preloader_shown'])) {
                         </a>
                        </div>
                        <div class="header-product-actions">
-                        <button class="btn_add-to-wishlist"></button>
+                        <button class="btn_add-to-wishlist">  <a class="" href="/wishlist/"></a></button>
                         <button class="btn_basket">
                           <img class="basket-empty" src="/wp-content/themes/balace/img/icon/active_basket_img.png" alt="">
                         </button>

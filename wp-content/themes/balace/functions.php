@@ -1660,3 +1660,33 @@ function change_existing_currency_symbol( $currency_symbol, $currency ) {
      }
      return $currency_symbol;
 }
+
+
+
+
+function check_compare_status_js() {
+    wp_enqueue_script('check-compare-status', get_template_directory_uri() . '/assets/js/chek_compare_status.js', array('jquery'), null, true);
+    wp_localize_script('check-compare-status', 'ajax_compare_params', array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'nonce'    => wp_create_nonce('check_compare_nonce')
+    ));
+}
+add_action('wp_enqueue_scripts', 'check_compare_status_js');
+
+
+add_action('wp_ajax_check_compare_status', 'check_compare_status');
+add_action('wp_ajax_nopriv_check_compare_status', 'check_compare_status');
+
+function check_compare_status() {
+    check_ajax_referer('check_compare_nonce', 'nonce');
+    $product_id = intval($_POST['product_id']);
+    $is_in_compare = false;
+    if (function_exists('evercompare_is_in_compare')) {
+        $is_in_compare = evercompare_is_in_compare($product_id);
+    }
+    if ($is_in_compare) {
+        wp_send_json_success(['in_compare' => true]);
+    } else {
+        wp_send_json_success(['in_compare' => false]);
+    }
+}

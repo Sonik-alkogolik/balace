@@ -359,7 +359,7 @@
 .tinvwl_add_to_wishlist_button{
     position: absolute;
     top: 20px;
-    right: 24px;
+    right: 80px;
     margin: 0;
     width: 52px;
     height: 52px;
@@ -378,6 +378,28 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+.ever_compare_button {
+    position: absolute;
+    top: 20px;
+    right: 16px;
+    margin: 0;
+    width: 52px;
+    height: 52px;
+    background-color:#FFFFFF;
+    background-image: url('/wp-content/themes/balace/img/icon/add_sravnenie_plus.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 100px;
+    z-index: 90;
+}
+.ever_compare_button a {
+    width: 100%;
+    height:100%;
+}
+.evercompare-btn-text {
+    display: none;
+}
 .add_to_cart_button a:hover {
     background: rgba(223, 196, 92, 1);
 }
@@ -385,6 +407,7 @@
 .htcompare-button-area a svg {
     display: none;
 }
+
 
 .btn_ever_compare {
     font-family: "Manrope", sans-serif;
@@ -409,6 +432,9 @@
 }
 .btn_ever_compare:hover {
     background: #ECE9DB;
+}
+.btn_ever_compare a {
+    color: #221D17;
 }
 
 .btn_ozon_white.product-page {
