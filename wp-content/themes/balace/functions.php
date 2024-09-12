@@ -1665,11 +1665,13 @@ function change_existing_currency_symbol( $currency_symbol, $currency ) {
 
 
 function check_compare_status_js() {
+    if (is_product()) {
     wp_enqueue_script('check-compare-status', get_template_directory_uri() . '/assets/js/chek_compare_status.js', array('jquery'), null, true);
     wp_localize_script('check-compare-status', 'ajax_compare_params', array(
         'ajax_url' => admin_url('admin-ajax.php'),
         'nonce'    => wp_create_nonce('check_compare_nonce')
     ));
+}
 }
 add_action('wp_enqueue_scripts', 'check_compare_status_js');
 

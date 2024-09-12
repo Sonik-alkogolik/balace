@@ -3,3 +3,4 @@ wp-config.php
 wp-config-sample.php
 .vscode/
 wp-content/uploads/wc-logs/
+debug.log

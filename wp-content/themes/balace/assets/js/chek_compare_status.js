@@ -1,11 +1,8 @@
 
 jQuery(document).ready(function($) {
-
-    $('.ever_compare_button').on('click', function(e) {
-        //console.log(true);
-        e.preventDefault();
-        var button = $(this);
-        var productId = button.data('product-id');
+    var button = $(this);
+    var productId = button.data('product-id');
+    function ever_check_onload() {
         $.ajax({
             url: ajax_compare_params.ajax_url, 
             method: 'POST',
@@ -26,5 +23,13 @@ jQuery(document).ready(function($) {
                 alert('Произошла ошибка при проверке товара в сравнении.');
             }
         });
+    }
+    ever_check_onload();
+
+
+    $('.ever_compare_button').on('click', function(e) {
+        //console.log(true);
+        e.preventDefault();
+        ever_check_onload();
     });
 });

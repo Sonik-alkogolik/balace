@@ -67,6 +67,7 @@
     letter-spacing: 0.01em;
     text-align: left;
     color: rgba(100, 95, 77, 1);
+    margin-bottom: 0px;
 }
 
 .block-card-info-wrapp {
@@ -435,6 +436,12 @@
 }
 .btn_ever_compare a {
     color: #221D17;
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15.6px;
+    letter-spacing: 0.04em;
+    text-align: center;
 }
 
 .btn_ozon_white.product-page {
@@ -481,18 +488,28 @@
     top: 20px;
     right: 20px;
 }
-@media(max-width:640px){
+@media(max-width:1080px){
     .tinvwl_add_to_wishlist_button {
-        width: 32px;
-        height: 32px;
+        top: 12px;
+        right: 60px;
+        width: 40px;
+        height: 40px;
         background: url('/wp-content/themes/balace/img/icon/icon_wishlist_catalog_mob.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
     }
     .tinvwl_add_to_wishlist_button:hover {
-        width: 32px;
-        height: 32px;
+        width: 40px;
+        height: 40px;
         background-image: url(/wp-content/themes/balace/img/icon/icon_wishlist_header_hover.webp);
         background-repeat: no-repeat;
         background-size: cover;
+    }
+    .ever_compare_button {
+        top: 12px;
+        right: 12px;
+        width: 40px;
+        height: 40px;
     }
 }
 
@@ -759,6 +776,10 @@ a.button.added::after {
     top: 0; 
     margin-bottom: 20px; 
 }
+
+.card-info-item-deskription span {
+    color: #645F4D;
+}
 @media(max-width:1430px) {
     .product-card-item-title h1 {
         font-size: 48px;
@@ -900,6 +921,29 @@ a.button.added::after {
     .swiper-slide.card-slide img {
         height: 424px;
     }
+    .btn_ever_compare {
+        height: 40px;
+        right: 12px;
+    }
+
+    .btn_slider_left.card-slider-gallery {
+        width: 40px;
+        height: 40px;
+        background: url('/wp-content/themes/balace/img/icon/slider_arrow_right_yelow.png');
+        background-repeat: no-repeat;
+        left: 60px;
+    }
+
+    .btn_slider_right.card-slider-gallery {
+        width: 40px;
+        height: 40px;
+        background: url('/wp-content/themes/balace/img/icon/slider_arrow_left_yelow.png');
+        background-repeat: no-repeat;
+        left: 12px;
+    }
+    .product-card-item-title {
+        margin-bottom: 16px;
+    }
 
 }
 
@@ -1006,6 +1050,19 @@ a.button.added::after {
         bottom: 66px;
     }
 
+    .product-card-item.left {
+        margin-top: 24px;
+        margin-left: 24px;
+    }
+    .card-deskription-list {
+        margin-left: 17px;
+    }
+    .card-deskription-list-item p {
+        padding-left: 10px;
+    }
+    .card-deskription-wrapp p {
+        margin-bottom: 20px;
+    }
 }
 
 
@@ -1043,7 +1100,6 @@ a.button.added::after {
 
     .card-deskription-wrapp p {
         margin-top: 20px;
-        margin-bottom: 8px;
         margin-left: 17px;
     }
 
@@ -1138,7 +1194,7 @@ a.button.added::after {
     }
 
     .card-deskription-list {
-        margin-left: 15px;
+        margin-left: 17px;
     }
 
     .deskription-product-item {
