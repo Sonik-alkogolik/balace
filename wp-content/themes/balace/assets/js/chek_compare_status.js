@@ -15,7 +15,8 @@ jQuery(document).ready(function($) {
                 nonce: ajax_compare_params.nonce
             },
             success: function(response) {
-                if (response.success && response.data.in_compare) {
+                if (response.success) {
+                    console.log("response true");
                     $('.btn_ever_compare').show();
                 } else {
                     $('.btn_ever_compare').hide(); 

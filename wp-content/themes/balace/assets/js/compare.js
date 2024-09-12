@@ -70,7 +70,7 @@ jQuery(document).ready(function($) {
     data_id.each(function() {
         var id = $(this).data('product_id');
         productIds.push(id);
-        console.log(productIds);
+       // console.log(productIds);
     });
  
     function removeProductsSequentially(productIds, callback) {
@@ -95,13 +95,13 @@ jQuery(document).ready(function($) {
             method: 'GET',
             success: function(response) {
                 if (response) {
-                    console.log('Удаление товара:', id);
+                   // console.log('Удаление товара:', id);
                 } else {
-                    console.log('Ошибка при удалении товара:', id);
+                   // console.log('Ошибка при удалении товара:', id);
                 }
             },
             error: function() {
-                console.log('Ошибка запроса для товара:', id);
+               // console.log('Ошибка запроса для товара:', id);
             },
             complete: function() {
                 setTimeout(function() {
