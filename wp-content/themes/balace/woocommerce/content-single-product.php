@@ -103,36 +103,50 @@ if ( post_password_required() ) {
 							</div>
 						</div>
             </div> 
+			
+			
+             <div class="card-deskription-wrapp">
+			 <?php 
+				$active_substances = get_field('active_substance_list');
 
-            <div class="card-deskription-wrapp">
-				<div class="card-deskription-content">
-				<p class="h6">Действующее вещество</p>
-				 <?php
-					$active_substances = get_field('active_substance_list'); 
-					if ($active_substances && is_array($active_substances)) {
-						echo '<div class="card-deskription-list">';
-						if (isset($active_substances['picture_substance']) && isset($active_substances['description_substance'])) {
-							echo '<div class="card-deskription-list-item">';
-							echo '<img src="' . $active_substances['picture_substance'] . '" />';
-							echo '<p class="body1">' . $active_substances['description_substance'] . '</p>';
-							echo '</div>';
-						}
-						if (isset($active_substances['picture_substance_2']) && isset($active_substances['description_substance_2'])) {
-							echo '<div class="card-deskription-list-item">';
-							echo '<img src="' . $active_substances['picture_substance_2'] . '" />';
-							echo '<p class="body1">' . $active_substances['description_substance_2'] . '</p>';
-							echo '</div>';
-						}
-						if (isset($active_substances['picture_substance_3']) && isset($active_substances['description_substance_3'])) {
-							echo '<div class="card-deskription-list-item">';
-							echo '<img src="' . $active_substances['picture_substance_3'] . '" />';
-							echo '<p class="body1">' . $active_substances['description_substance_3'] . '</p>';
-							echo '</div>';
-						}
-						echo '</div>';
-					}
+				if (is_array($active_substances) && (
+					!empty($active_substances['picture_substance']) || 
+					!empty($active_substances['description_substance']) || 
+					!empty($active_substances['picture_substance_2']) || 
+					!empty($active_substances['description_substance_2']) || 
+					!empty($active_substances['picture_substance_3']) || 
+					!empty($active_substances['description_substance_3'])
+				)) {
 					?>
-				</div>
+					<div class="card-deskription-content">
+						<p class="h6">Действующее вещество</p>
+						<div class="card-deskription-list">
+							<?php
+							if (!empty($active_substances['picture_substance']) && !empty($active_substances['description_substance'])) {
+								echo '<div class="card-deskription-list-item">';
+								echo '<img src="' . esc_url($active_substances['picture_substance']) . '" />';
+								echo '<p class="body1">' . esc_html($active_substances['description_substance']) . '</p>';
+								echo '</div>';
+							}
+							if (!empty($active_substances['picture_substance_2']) && !empty($active_substances['description_substance_2'])) {
+								echo '<div class="card-deskription-list-item">';
+								echo '<img src="' . esc_url($active_substances['picture_substance_2']) . '" />';
+								echo '<p class="body1">' . esc_html($active_substances['description_substance_2']) . '</p>';
+								echo '</div>';
+							}
+							if (!empty($active_substances['picture_substance_3']) && !empty($active_substances['description_substance_3'])) {
+								echo '<div class="card-deskription-list-item">';
+								echo '<img src="' . esc_url($active_substances['picture_substance_3']) . '" />';
+								echo '<p class="body1">' . esc_html($active_substances['description_substance_3']) . '</p>';
+								echo '</div>';
+							}
+							?>
+						</div>
+					</div>
+					<?php 
+				}
+
+				?>
 
                 <div class="card-deskription-product">
                     <div class="deskription-product-item">
@@ -207,7 +221,7 @@ if ( post_password_required() ) {
                 </div>
 
             </div>
-
+			
         </div>
 
        <div class="product-card-item right">
