@@ -1,35 +1,32 @@
-
 jQuery(document).ready(function($) {
+    var compareFlag = false;
     var button = $('button.ever_compare_button > span > a');
-    var productId = button.data('product_id');
-    function ever_check_onload() {
-        $.ajax({
-            url: ajax_compare_params.ajax_url, 
-            method: 'POST',
-            data: {
-                action: 'check_compare_status', 
-                product_id: productId,
-                nonce: ajax_compare_params.nonce
-            },
-            success: function(response) {
-                if (response.success) {
-                    console.log("response true");
-                    $('.btn_ever_compare').show();
-                } else {
-                    $('.btn_ever_compare').hide(); 
-                }
-            },
-            error: function() {
-                alert('Произошла ошибка при проверке товара в сравнении.');
-            }
-        });
+    function checkForButton() {
+        if (button.length && !compareFlag) {
+            compareFlag = true; 
+            checkProductStatus(button);
+        }
     }
-    ever_check_onload();
-
-
-    $('.ever_compare_button').on('click', function(e) {
-        //console.log(true);
+    function checkProductStatus(button) {
+        if (button.hasClass('added')) {
+            console.log("Товар в сравнении, показываем кнопку");
+            $('.btn_ever_compare').show();
+        } else {
+            console.log("Товар не в сравнении, скрываем кнопку");
+            $('.btn_ever_compare').hide();
+        }
+    }
+    var interval = setInterval(function() {
+        checkForButton();
+        if (compareFlag) {
+            clearInterval(interval);
+        }
+    }, 500);
+    $(document).on('click', '.ever_compare_button', function(e) {
         e.preventDefault();
-        ever_check_onload();
+        setTimeout(function() {
+        checkProductStatus(button); 
+      }, 8000);
     });
+
 });

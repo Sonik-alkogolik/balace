@@ -1682,13 +1682,22 @@ add_action('wp_ajax_nopriv_check_compare_status', 'check_compare_status');
 function check_compare_status() {
     check_ajax_referer('check_compare_nonce', 'nonce');
     $product_id = intval($_POST['product_id']);
-    $is_in_compare = false;
-    if (function_exists('evercompare_is_in_compare')) {
-        $is_in_compare = evercompare_is_in_compare($product_id);
-    }
-    if ($is_in_compare) {
+
+    error_log("Проверка продукта с ID: " . $product_id);
+
+    // Проверяем, находится ли товар в сравнении
+    if (ever_compare_remove_from_compare($product_id)) {
+        // Товар успешно удален из сравнения
+        error_log("Товар успешно удален из сравнения.");
+        wp_send_json_success(['in_compare' => false]);
+    } elseif (ever_compare_add_to_compare($product_id)) {
+        // Товар успешно добавлен в сравнение
+        error_log("Товар успешно добавлен в сравнение.");
         wp_send_json_success(['in_compare' => true]);
     } else {
-        wp_send_json_success(['in_compare' => false]);
+        // Если ни одна из функций не сработала
+        error_log("Не удалось изменить статус товара.");
+        wp_send_json_error(['in_compare' => false]);
     }
 }
+
