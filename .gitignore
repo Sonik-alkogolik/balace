@@ -4,6 +4,6 @@ wp-config-sample.php
 .vscode/
 wp-content/uploads/wc-logs/
 debug.log
-wp-content/upload
+wp-content/uploads
 wp-admin
 wp-include

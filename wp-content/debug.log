@@ -178,3 +178,80 @@ Stack trace:
 [18-Sep-2024 13:15:05 UTC] PHP Warning:  Undefined array key "product_id" in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1684
 [18-Sep-2024 13:15:28 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
 [18-Sep-2024 13:15:31 UTC] PHP Warning:  Undefined array key "product_id" in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1684
+[20-Sep-2024 11:07:17 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[20-Sep-2024 11:07:22 UTC] Automatic updates starting...
+[20-Sep-2024 11:07:23 UTC]   Automatic plugin updates starting...
+[20-Sep-2024 11:07:23 UTC]   Automatic plugin updates complete.
+[20-Sep-2024 11:07:23 UTC]   Automatic theme updates starting...
+[20-Sep-2024 11:07:23 UTC]   Automatic theme updates complete.
+[20-Sep-2024 11:07:23 UTC] Automatic updates complete.
+[20-Sep-2024 11:07:27 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php:1062
+Stack trace:
+#0 C:\OSPanel\home\balace\wp-includes\class-wp-hook.php(324): truemisha_payments_on_shipping(Array)
+#1 C:\OSPanel\home\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(333): apply_filters('woocommerce_ava...', Array)
+#3 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Internal\Admin\WcPayWelcomePage.php(395): WC_Payment_Gateways->get_available_payment_gateways()
+#4 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Internal\Admin\WcPayWelcomePage.php(82): Automattic\WooCommerce\Internal\Admin\WcPayWelcomePage->get_incentive()
+#5 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Internal\Admin\Notes\PaymentsMoreInfoNeeded.php(42): Automattic\WooCommerce\Internal\Admin\WcPayWelcomePage->must_be_visible()
+#6 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Internal\Admin\Notes\PaymentsMoreInfoNeeded.php(63): Automattic\WooCommerce\Internal\Admin\Notes\PaymentsMoreInfoNeeded::should_display_note()
+#7 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Admin\Notes\NoteTraits.php(83): Automattic\WooCommerce\Internal\Admin\Notes\PaymentsMoreInfoNeeded::get_note()
+#8 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Internal\Admin\Events.php(203): Automattic\WooCommerce\Internal\Admin\Notes\PaymentsMoreInfoNeeded::possibly_add_note()
+#9 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Internal\Admin\Events.php(143): Automattic\WooCommerce\Internal\Admin\Events->possibly_add_notes()
+#10 C:\OSPanel\home\balace\wp-includes\class-wp-hook.php(324): Automattic\WooCommerce\Internal\Admin\Events->do_wc_admin_daily()
+#11 C:\OSPanel\home\balace\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#12 C:\OSPanel\home\balace\wp-includes\plugin.php(565): WP_Hook->do_action(Array)
+#13 C:\OSPanel\home\balace\wp-cron.php(191): do_action_ref_array('wc_admin_daily', Array)
+#14 {main}
+  thrown in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1062
+[20-Sep-2024 11:08:24 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[20-Sep-2024 11:08:27 UTC] PHP Warning:  Undefined array key "product_id" in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1684
+[20-Sep-2024 11:08:43 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[20-Sep-2024 11:09:37 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[20-Sep-2024 11:09:42 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[20-Sep-2024 11:09:45 UTC] PHP Warning:  Undefined array key "product_id" in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1684
+[20-Sep-2024 11:09:48 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[20-Sep-2024 11:09:52 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[20-Sep-2024 11:09:55 UTC] PHP Warning:  Undefined array key "product_id" in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1684
+[20-Sep-2024 11:18:21 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1066
+[20-Sep-2024 11:18:46 UTC] PHP Warning:  Undefined array key "product_id" in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1684
+[20-Sep-2024 11:19:14 UTC] PHP Warning:  Undefined array key "product_id" in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1684
+[20-Sep-2024 11:19:23 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php:1062
+Stack trace:
+#0 C:\OSPanel\home\balace\wp-includes\class-wp-hook.php(324): truemisha_payments_on_shipping(Array)
+#1 C:\OSPanel\home\balace\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(333): apply_filters('woocommerce_ava...', Array)
+#3 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(89): WC_Payment_Gateways->get_available_payment_gateways()
+#4 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\Payments.php(67): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments::has_gateways()
+#5 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments.php(106): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\Payments->is_complete()
+#6 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(305): Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments->can_view()
+#7 [internal function]: Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->Automattic\WooCommerce\Admin\Features\OnboardingTasks\{closure}(Object(Automattic\WooCommerce\Admin\Features\OnboardingTasks\Tasks\WooCommercePayments))
+#8 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(306): array_filter(Array, Object(Closure))
+#9 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(240): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_viewable_tasks()
+#10 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(338): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->is_complete()
+#11 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Admin\Features\OnboardingTasks\TaskList.php(415): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->possibly_track_completion()
+#12 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(745): Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList->get_json()
+#13 [internal function]: Automattic\WooCommerce\Admin\API\OnboardingTasks->Automattic\WooCommerce\Admin\API\{closure}(Object(Automattic\WooCommerce\Admin\Features\OnboardingTasks\TaskList))
+#14 C:\OSPanel\home\balace\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php(744): array_map(Object(Closure), Array)
+#15 C:\OSPanel\home\balace\wp-includes\rest-api\class-wp-rest-server.php(1230): Automattic\WooCommerce\Admin\API\OnboardingTasks->get_tasks(Object(WP_REST_Request))
+#16 C:\OSPanel\home\balace\wp-includes\rest-api\class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wc-admin/onboa...', Array, NULL)
+#17 C:\OSPanel\home\balace\wp-includes\rest-api\class-wp-rest-server.php(439): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#18 C:\OSPanel\home\balace\wp-includes\rest-api.php(420): WP_REST_Server->serve_request('/wc-admin/onboa...')
+#19 C:\OSPanel\home\balace\wp-includes\class-wp-hook.php(324): rest_api_loaded(Object(WP))
+#20 C:\OSPanel\home\balace\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#21 C:\OSPanel\home\balace\wp-includes\plugin.php(565): WP_Hook->do_action(Array)
+#22 C:\OSPanel\home\balace\wp-includes\class-wp.php(418): do_action_ref_array('parse_request', Array)
+#23 C:\OSPanel\home\balace\wp-includes\class-wp.php(813): WP->parse_request('')
+#24 C:\OSPanel\home\balace\wp-includes\functions.php(1336): WP->main('')
+#25 C:\OSPanel\home\balace\wp-blog-header.php(16): wp()
+#26 C:\OSPanel\home\balace\index.php(17): require('C:\\OSPanel\\home...')
+#27 {main}
+  thrown in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1062
+[20-Sep-2024 11:20:07 UTC] PHP Warning:  Undefined array key "product_id" in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1684
+[20-Sep-2024 11:20:24 UTC] PHP Warning:  Undefined array key "product_id" in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1684
+[20-Sep-2024 11:20:33 UTC] PHP Warning:  Undefined array key "product_id" in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1684
+[20-Sep-2024 11:21:03 UTC] PHP Warning:  Undefined array key "product_id" in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1684
+[20-Sep-2024 11:23:09 UTC] PHP Warning:  Undefined array key "product_id" in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1684
+[20-Sep-2024 11:24:57 UTC] PHP Warning:  Undefined array key "product_id" in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1684
+[20-Sep-2024 11:25:45 UTC] PHP Warning:  Undefined array key "product_id" in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1684
+[20-Sep-2024 11:29:32 UTC] PHP Warning:  Undefined array key "product_id" in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1684
+[20-Sep-2024 11:31:01 UTC] PHP Warning:  Undefined array key "product_id" in C:\OSPanel\home\balace\wp-content\themes\balace\functions.php on line 1684

@@ -1,7 +1,7 @@
 
 jQuery(document).ready(function($) {
-    var button = $(this);
-    var productId = button.data('product-id');
+    var button = $('button.ever_compare_button > span > a');
+    var productId = button.data('product_id');
     function ever_check_onload() {
         $.ajax({
             url: ajax_compare_params.ajax_url, 
