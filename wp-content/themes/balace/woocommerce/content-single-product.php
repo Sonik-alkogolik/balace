@@ -151,9 +151,7 @@ if ( post_password_required() ) {
                 <div class="card-deskription-product">
                     <div class="deskription-product-item">
                         <span class="h6">Описание</span>
-						<p class="h6">
                         <?php  echo $product->get_description();?>
-				       </p>
                      </div>
 
 					<div class="deskription-product-item">

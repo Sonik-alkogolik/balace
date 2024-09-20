@@ -287,9 +287,9 @@
 
 .swiper-slide.card-slide img {
     border-radius: 24px;
-    /* object-fit: cover;
+    /* object-fit: cover;*/
     display: flex;
-    width: 100%; */
+    width: 100%; 
 }
 
 .btn_slider_right.card-slider-gallery {
