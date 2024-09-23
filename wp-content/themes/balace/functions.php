@@ -1663,41 +1663,9 @@ function change_existing_currency_symbol( $currency_symbol, $currency ) {
 
 
 
-
 function check_compare_status_js() {
     if (is_product()) {
     wp_enqueue_script('check-compare-status', get_template_directory_uri() . '/assets/js/chek_compare_status.js', array('jquery'), null, true);
-    wp_localize_script('check-compare-status', 'ajax_compare_params', array(
-        'ajax_url' => admin_url('admin-ajax.php'),
-        'nonce'    => wp_create_nonce('check_compare_nonce')
-    ));
-}
+  }
 }
 add_action('wp_enqueue_scripts', 'check_compare_status_js');
-
-
-add_action('wp_ajax_check_compare_status', 'check_compare_status');
-add_action('wp_ajax_nopriv_check_compare_status', 'check_compare_status');
-
-function check_compare_status() {
-    check_ajax_referer('check_compare_nonce', 'nonce');
-    $product_id = intval($_POST['product_id']);
-
-    error_log("Проверка продукта с ID: " . $product_id);
-
-    // Проверяем, находится ли товар в сравнении
-    if (ever_compare_remove_from_compare($product_id)) {
-        // Товар успешно удален из сравнения
-        error_log("Товар успешно удален из сравнения.");
-        wp_send_json_success(['in_compare' => false]);
-    } elseif (ever_compare_add_to_compare($product_id)) {
-        // Товар успешно добавлен в сравнение
-        error_log("Товар успешно добавлен в сравнение.");
-        wp_send_json_success(['in_compare' => true]);
-    } else {
-        // Если ни одна из функций не сработала
-        error_log("Не удалось изменить статус товара.");
-        wp_send_json_error(['in_compare' => false]);
-    }
-}
-

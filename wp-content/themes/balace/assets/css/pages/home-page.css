@@ -36,7 +36,9 @@
 }
 .top-content-block3 > div > p {
     background: rgba(241,241, 237, 1);
+    padding: 16px 45px;
 }
+
 .top-content-block5 > div > p {
     background: #e5e2de;
 }
@@ -162,6 +164,10 @@
     background-color: #ACA99D; 
     border-radius: 50%; 
     margin: 0 24px; 
+}
+
+section.top-content-block-wrapp {
+    margin-bottom: 72px;
 }
 
 @media(max-width:1080px){

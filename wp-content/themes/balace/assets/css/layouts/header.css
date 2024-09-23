@@ -363,7 +363,7 @@ header {
     border-radius: 46px;
     border: 1px solid #BFBBA8;
     cursor: pointer;
-    margin-right: 180px;
+    margin-right: 200px;
 }
 
 /* .header-search::after {
@@ -433,6 +433,7 @@ header {
 
 .header-product-actions {
     position: relative;
+    display: flex;
 }
 
 .header-product-actions .btn_add-to-wishlist {

@@ -1,22 +1,11 @@
-
 jQuery(document).ready(function($) {
     var $preloader = $('#preloader');
     var animationCompleted = false;
     var pageLoaded = false;
 
-    // Проверка и управление прелоадером
-    if (!getCookie('preloader_show')) {
-        $preloader.show();
-        $preloader.delay(1800).fadeOut('slow', function () {
-            //setSessionCookie('preloader_show', 'true');
-            if (!getCookie('age_verified')) {
-                $('.age-verification').fadeIn('slow');
-            }
-        });
-    } else {
-        $preloader.hide();
-        console.log("Куки записана");
-    }
+    // Вызов функций для проверки прелоадера и возрастной верификации
+    checkPreloader();
+    checkAgeVerification();
 
     // Обработчики кликов
     $('.age-yes').on('click', function () {
@@ -26,6 +15,7 @@ jQuery(document).ready(function($) {
     
     $('.age-no').on('click', function () {
         $('.age-verification-wrapp').remove();
+        setSessionCookie('age_verified', 'false'); 
         $('.age-no-text').css('display', 'block');
     });
 
@@ -55,11 +45,35 @@ jQuery(document).ready(function($) {
         checkAndHidePreloader();
     });
 
+    // Функция для проверки прелоадера
+    function checkPreloader() {
+        if (!getCookie('preloader_show')) {
+            $preloader.show();
+            $preloader.delay(1800).fadeOut('slow', function () {
+                // Логика после исчезновения прелоадера (если необходима)
+            });
+        } else {
+            $preloader.hide();
+            console.log("Куки 'preloader_show' записана");
+        }
+    }
+
+    // Функция для проверки возрастной верификации
+    function checkAgeVerification() {
+        var ageVerified = getCookie('age_verified');
+        if (ageVerified === 'false') {
+            $('.age-verification').fadeIn('slow');
+        } else if (ageVerified === 'true') {
+            $('.age-verification').fadeOut('slow');
+        } else  {
+            $('.age-verification').fadeIn('slow');
+        }
+    }
+
     // Функция для установки сессионной куки
     function setSessionCookie(name, value) {
         document.cookie = name + "=" + (value || "") + "; path=/; SameSite=Lax"; 
     }
-    
     
     // Функция для получения значения cookie
     function getCookie(name) {

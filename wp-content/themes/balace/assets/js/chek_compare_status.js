@@ -9,10 +9,10 @@ jQuery(document).ready(function($) {
     }
     function checkProductStatus(button) {
         if (button.hasClass('added')) {
-            console.log("Товар в сравнении, показываем кнопку");
+           // console.log("Товар в сравнении показываем кнопку");
             $('.btn_ever_compare').show();
         } else {
-            console.log("Товар не в сравнении, скрываем кнопку");
+            //console.log("Товар не в сравнении скрываем кнопку");
             $('.btn_ever_compare').hide();
         }
     }

@@ -201,6 +201,14 @@
     background-size: 100%;
     cursor: pointer;
 }
+.btn_header_menu.menu_clouse:hover {
+    width: 52px;
+    height: 52px;
+    background: url('/wp-content/themes/balace/img/icon/clouse_menu_hover.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+}
 
 .btn_add-to-wishlist {
     width: 52px;
