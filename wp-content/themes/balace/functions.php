@@ -1441,13 +1441,22 @@ function woo_search_func($atts)
         <input type="hidden" name="cat" value="' .
         $cat .
         '">
-    </form><div class="search_result woo_bar_el" id="datafetch" style="display: none;">
+    </form><div class="search_result woo_bar_el onload" id="datafetch" style="display: none;">
         <ul>
-            <li>Please wait..</li>
+           
         </ul>
+        <div class="brand_search_res onload">
+            <a href="/product-category/balace/">balace</a>
+            <a href="/product-category/balace-natural-pharm/">balace natural pharm</a>
+        </div>
     </div></div>';
+
+
+   
     $java =
         '<script>
+
+     
 function searchFetch(e) {
 const searchForm = e.parentElement;	
 searchForm.querySelector(".loading").style.visibility = "visible";
@@ -1482,20 +1491,27 @@ async function Ajaxwoo_search(formdata,e) {
   });
   const data = await response.text();
 if (data){	e.parentElement.nextSibling.innerHTML = data}else  {
-e.parentElement.nextSibling.innerHTML = `<ul><a href="#" style="display: block; padding-inline-start: 14px;"><li>Ничего не найдено</li></a></ul>`
+e.parentElement.nextSibling.innerHTML = `<div class="brand_search_res onload">
+<a href="/product-category/balace/">balace</a>
+<a href="/product-category/balace-natural-pharm/">balace natural pharm</a>
+</div>`
 }
+
+
 e.parentElement.querySelector(".loading").style.visibility = "hidden";
 }	
 function goSearch(id){document.querySelector(id).click(); console.log(`clicked`) }
 
 document.addEventListener("click", function(e) { if (document.activeElement.classList.contains("woo_bar_el") == false ) { [...document.querySelectorAll("div.search_result")].forEach(e => e.style.display = "none") } else {if  (e.target?.value.trim().length > 0) { e.target.parentElement.nextSibling.style.display = "block"}} })
+</script>
+';
 
-</script>';
+
     $css = '<style>
 </style>';
     if ($woo_search_first_call == 1) {
         $woo_search_first_call++;
-        return "{$woo_search_form}{$java}{$css}";
+        return "{$woo_search_form}{$java}{$java_custom}{$css}";
     } elseif ($woo_search_first_call > 1) {
         $woo_search_first_call++;
         return "{$woo_search_form}";
@@ -1553,6 +1569,10 @@ function woo_search()
                     ")</a></li>";
             }
             echo "</ul>";
+            echo '<div class="brand_search_res">
+                   <a href="/product-category/balace/">balace</a>
+                   <a href="/product-category/balace-natural-pharm/">balace natural pharm</a>
+                 </div>';
         }
     }
 
@@ -1643,6 +1663,10 @@ function woo_search()
         echo $show_all;
         echo "</ul>";
         wp_reset_postdata();
+        echo '   <div class="brand_search_res">
+        <a href="/product-category/balace/">balace</a>
+        <a href="/product-category/balace-natural-pharm/">balace natural pharm</a>
+    </div>';
     endif;
     die();
 }
