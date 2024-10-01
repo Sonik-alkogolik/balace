@@ -1441,13 +1441,22 @@ function woo_search_func($atts)
         <input type="hidden" name="cat" value="' .
         $cat .
         '">
-    </form><div class="search_result woo_bar_el" id="datafetch" style="display: none;">
+    </form><div class="search_result woo_bar_el onload" id="datafetch" style="display: none;">
         <ul>
-            <li>Please wait..</li>
+           
         </ul>
+        <div class="brand_search_res onload">
+            <a href="/product-category/balace/">balace</a>
+            <a href="/product-category/balace-natural-pharm/">balace natural pharm</a>
+        </div>
     </div></div>';
+
+
+   
     $java =
         '<script>
+
+     
 function searchFetch(e) {
 const searchForm = e.parentElement;	
 searchForm.querySelector(".loading").style.visibility = "visible";
@@ -1482,20 +1491,27 @@ async function Ajaxwoo_search(formdata,e) {
   });
   const data = await response.text();
 if (data){	e.parentElement.nextSibling.innerHTML = data}else  {
-e.parentElement.nextSibling.innerHTML = `<ul><a href="#" style="display: block; padding-inline-start: 14px;"><li>Ничего не найдено</li></a></ul>`
+e.parentElement.nextSibling.innerHTML = `<div class="brand_search_res onload">
+<a href="/product-category/balace/">balace</a>
+<a href="/product-category/balace-natural-pharm/">balace natural pharm</a>
+</div>`
 }
+
+
 e.parentElement.querySelector(".loading").style.visibility = "hidden";
 }	
 function goSearch(id){document.querySelector(id).click(); console.log(`clicked`) }
 
 document.addEventListener("click", function(e) { if (document.activeElement.classList.contains("woo_bar_el") == false ) { [...document.querySelectorAll("div.search_result")].forEach(e => e.style.display = "none") } else {if  (e.target?.value.trim().length > 0) { e.target.parentElement.nextSibling.style.display = "block"}} })
+</script>
+';
 
-</script>';
+
     $css = '<style>
 </style>';
     if ($woo_search_first_call == 1) {
         $woo_search_first_call++;
-        return "{$woo_search_form}{$java}{$css}";
+        return "{$woo_search_form}{$java}{$java_custom}{$css}";
     } elseif ($woo_search_first_call > 1) {
         $woo_search_first_call++;
         return "{$woo_search_form}";
@@ -1553,6 +1569,10 @@ function woo_search()
                     ")</a></li>";
             }
             echo "</ul>";
+            echo '<div class="brand_search_res">
+                   <a href="/product-category/balace/">balace</a>
+                   <a href="/product-category/balace-natural-pharm/">balace natural pharm</a>
+                 </div>';
         }
     }
 
@@ -1643,6 +1663,10 @@ function woo_search()
         echo $show_all;
         echo "</ul>";
         wp_reset_postdata();
+        echo '   <div class="brand_search_res">
+        <a href="/product-category/balace/">balace</a>
+        <a href="/product-category/balace-natural-pharm/">balace natural pharm</a>
+    </div>';
     endif;
     die();
 }
@@ -1663,41 +1687,9 @@ function change_existing_currency_symbol( $currency_symbol, $currency ) {
 
 
 
-
 function check_compare_status_js() {
     if (is_product()) {
     wp_enqueue_script('check-compare-status', get_template_directory_uri() . '/assets/js/chek_compare_status.js', array('jquery'), null, true);
-    wp_localize_script('check-compare-status', 'ajax_compare_params', array(
-        'ajax_url' => admin_url('admin-ajax.php'),
-        'nonce'    => wp_create_nonce('check_compare_nonce')
-    ));
-}
+  }
 }
 add_action('wp_enqueue_scripts', 'check_compare_status_js');
-
-
-add_action('wp_ajax_check_compare_status', 'check_compare_status');
-add_action('wp_ajax_nopriv_check_compare_status', 'check_compare_status');
-
-function check_compare_status() {
-    check_ajax_referer('check_compare_nonce', 'nonce');
-    $product_id = intval($_POST['product_id']);
-
-    error_log("Проверка продукта с ID: " . $product_id);
-
-    // Проверяем, находится ли товар в сравнении
-    if (ever_compare_remove_from_compare($product_id)) {
-        // Товар успешно удален из сравнения
-        error_log("Товар успешно удален из сравнения.");
-        wp_send_json_success(['in_compare' => false]);
-    } elseif (ever_compare_add_to_compare($product_id)) {
-        // Товар успешно добавлен в сравнение
-        error_log("Товар успешно добавлен в сравнение.");
-        wp_send_json_success(['in_compare' => true]);
-    } else {
-        // Если ни одна из функций не сработала
-        error_log("Не удалось изменить статус товара.");
-        wp_send_json_error(['in_compare' => false]);
-    }
-}
-

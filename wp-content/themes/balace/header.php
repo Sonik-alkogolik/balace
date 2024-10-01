@@ -68,7 +68,7 @@ if (!isset($_COOKIE['preloader_shown'])) {
 <div id="preloader">
     <div class="dws-progress-bar"></div>
     <div class="preloader-logo-div">
-        <img src="<?php echo get_template_directory_uri(); ?>/wp-content/themes/balace/img/icon/preloader_logo.png" alt="logo">
+        <img src="<?php echo get_template_directory_uri(); ?>/img/icon/preloader_logo.png" alt="logo">
     </div>
 </div>
 <?php endif; ?>
